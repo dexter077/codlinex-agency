@@ -3,11 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Security meta tags (Vercel headers are primary; these serve as fallback) -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.country.is; img-src 'self' data: https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"/>
 <title>CodLinex | Dijital Otomasyon Ajansı</title>
 <meta name="description" content="COD LINEX — Yapay zeka destekli otomasyon çözümleri ile işletmenizi geleceğe taşıyoruz. Daha az efor, daha fazla sonuç."/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -542,7 +546,7 @@
           <input type="checkbox" id="intro-noshow" style="width:13px;height:13px;accent-color:#37ea9e;cursor:pointer;">
           <span style="font-size:12px;color:#3d4a5b;" data-en="Don't show again">Bir daha gösterme</span>
         </label>
-        <button id="intro-explore" class="intro-cta" style="background:linear-gradient(135deg,#37ea9e,#54ffb0);color:#003822;font-weight:800;font-size:14px;border:none;border-radius:12px;padding:12px 26px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;gap:7px;transition:transform 0.2s,opacity 0.2s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+        <button id="intro-explore" class="intro-cta" style="background:linear-gradient(135deg,#37ea9e,#54ffb0);color:#003822;font-weight:800;font-size:14px;border:none;border-radius:12px;padding:12px 26px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;gap:7px;transition:transform 0.2s,opacity 0.2s;">
           <span class="material-symbols-outlined" style="font-size:18px;">rocket_launch</span>
           <span data-en="Explore Services">Hizmetleri Keşfet</span>
         </button>
@@ -1674,19 +1678,25 @@
           30 dakikalık ücretsiz keşif görüşmesinde işletmenizi analiz ediyoruz ve size özel otomasyon haritasını çıkarıyoruz.
         </p>
 
-        <form class="max-w-lg mx-auto flex flex-col gap-4 mb-8" onsubmit="submitForm(event)">
+        <form class="max-w-lg mx-auto flex flex-col gap-4 mb-8" onsubmit="submitForm(event)" novalidate>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-on-surface text-sm outline-none transition-colors placeholder:text-slate-600"
-              placeholder="Adınız" data-en-ph="Your Name" type="text" required/>
+              placeholder="Adınız" data-en-ph="Your Name"
+              type="text" name="name" autocomplete="name"
+              maxlength="100" required/>
             <input
               class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-on-surface text-sm outline-none transition-colors placeholder:text-slate-600"
-              placeholder="İşletme Adı" data-en-ph="Business Name" type="text"/>
+              placeholder="İşletme Adı" data-en-ph="Business Name"
+              type="text" name="business" autocomplete="organization"
+              maxlength="150"/>
           </div>
           <input
             class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-on-surface text-sm outline-none transition-colors placeholder:text-slate-600"
-            placeholder="E-posta adresiniz" data-en-ph="Your email address" type="email" required/>
-          <select id="service-select" class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-slate-500 text-sm outline-none transition-colors">
+            placeholder="E-posta adresiniz" data-en-ph="Your email address"
+            type="email" name="email" autocomplete="email"
+            maxlength="254" required/>
+          <select id="service-select" name="service" class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-slate-500 text-sm outline-none transition-colors">
             <option value="" data-en="Which service interests you?">Hangi hizmet sizi ilgilendiriyor?</option>
             <option data-en="AI Business Automation">YZ İş Otomasyonu</option>
             <option data-en="Email Automation">Email Otomasyon</option>
@@ -1749,11 +1759,11 @@
         </p>
         <div class="flex gap-2.5 flex-wrap">
           <!-- Instagram -->
-          <a href="#" aria-label="Instagram" class="group w-9 h-9 rounded-xl bg-surface-container-high border border-white/5 flex items-center justify-center text-slate-400 hover:text-primary-container hover:border-primary-container/30 hover:-translate-y-0.5 transition-all duration-200">
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="group w-9 h-9 rounded-xl bg-surface-container-high border border-white/5 flex items-center justify-center text-slate-400 hover:text-primary-container hover:border-primary-container/30 hover:-translate-y-0.5 transition-all duration-200">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           </a>
           <!-- LinkedIn -->
-          <a href="#" aria-label="LinkedIn" class="group w-9 h-9 rounded-xl bg-surface-container-high border border-white/5 flex items-center justify-center text-slate-400 hover:text-primary-container hover:border-primary-container/30 hover:-translate-y-0.5 transition-all duration-200">
+          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="group w-9 h-9 rounded-xl bg-surface-container-high border border-white/5 flex items-center justify-center text-slate-400 hover:text-primary-container hover:border-primary-container/30 hover:-translate-y-0.5 transition-all duration-200">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M7 10v7M7 7.5v.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11 17v-3.5c0-1.5 1-2.5 2.5-2.5S16 12 16 13.5V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11 10v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </a>
         </div>
@@ -1946,9 +1956,16 @@
   // Form submit
   function submitForm(e) {
     e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('input[type="email"]');
+    // Basic email format guard (type=email handles most, this covers edge cases)
+    if (email && !/^[^\s@]{1,64}@[^\s@]{1,255}$/.test(email.value.trim())) {
+      email.focus();
+      return;
+    }
     const msg = document.getElementById('success-msg');
     msg.classList.remove('hidden');
-    e.target.reset();
+    form.reset();
     setTimeout(() => msg.classList.add('hidden'), 5000);
   }
 
@@ -2119,7 +2136,7 @@
         document.getElementById('i-name').textContent       = l === 'en' ? s.nameEn : s.name;
         document.getElementById('i-desc').textContent       = l === 'en' ? s.descEn : s.desc;
         const tagsEl = document.getElementById('i-tags');
-        tagsEl.innerHTML = '';
+        tagsEl.replaceChildren();
         s.tags.forEach(t => {
           const sp = document.createElement('span');
           sp.style.cssText = 'background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:6px;padding:3px 8px;font-size:10px;color:#4a5568;font-family:Inter,sans-serif;';
@@ -2169,11 +2186,12 @@
       const container = document.querySelector('.intro-showcase');
       if (!container) return;
       const frame = document.createElement('iframe');
-      frame.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`;
-      frame.allow = 'autoplay; encrypted-media';
+      frame.src = `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`;
+      frame.allow = 'autoplay; encrypted-media; fullscreen';
       frame.allowFullscreen = true;
+      frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation allow-fullscreen');
       frame.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;display:block;';
-      container.innerHTML = '';
+      container.replaceChildren();
       container.style.minHeight = 'auto';
       container.appendChild(frame);
     };
@@ -2246,6 +2264,10 @@
     closeBtn   && closeBtn.addEventListener('click', closePopup);
     rewatchBtn && rewatchBtn.addEventListener('click', openPopup);
     backdrop   && backdrop.addEventListener('click', closePopup);
+    if (exploreBtn) {
+      exploreBtn.addEventListener('mouseover', () => { exploreBtn.style.transform = 'scale(1.04)'; });
+      exploreBtn.addEventListener('mouseout',  () => { exploreBtn.style.transform = 'scale(1)'; });
+    }
     exploreBtn && exploreBtn.addEventListener('click', () => {
       closePopup();
       document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });

@@ -6,7 +6,7 @@
 <!-- Security meta tags (Vercel headers are primary; these serve as fallback) -->
 <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.country.is; img-src 'self' data: https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.country.is https://formspree.io; img-src 'self' data: https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"/>
 <title>CodLinex | Dijital Otomasyon Ajansı</title>
 <meta name="description" content="COD LINEX — Yapay zeka destekli otomasyon çözümleri ile işletmenizi geleceğe taşıyoruz. Daha az efor, daha fazla sonuç."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -1954,20 +1954,36 @@
   countEls.forEach(el => countObserver.observe(el));
 
   // Form submit
-  function submitForm(e) {
+  const submitForm = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.querySelector('input[type="email"]');
-    // Basic email format guard (type=email handles most, this covers edge cases)
     if (email && !/^[^\s@]{1,64}@[^\s@]{1,255}$/.test(email.value.trim())) {
       email.focus();
       return;
     }
-    const msg = document.getElementById('success-msg');
-    msg.classList.remove('hidden');
-    form.reset();
-    setTimeout(() => msg.classList.add('hidden'), 5000);
-  }
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xzdoqpnz', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (res.ok) {
+        const msg = document.getElementById('success-msg');
+        msg.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => msg.classList.add('hidden'), 5000);
+      } else {
+        alert('Bir hata oluştu, lütfen tekrar deneyin.');
+      }
+    } catch {
+      alert('Bağlantı hatası, lütfen tekrar deneyin.');
+    } finally {
+      btn.disabled = false;
+    }
+  };
 
   // Scroll reveal
   const revealObserver = new IntersectionObserver((entries) => {

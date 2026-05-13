@@ -1830,28 +1830,20 @@
       return;
     }
 
-    // Quick browser language hint first (instant, no network)
-    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    const looksLikeTR = browserLang.startsWith('tr');
-
-    if (looksLikeTR) {
-      // Already showing Turkish — nothing to do
-      return;
-    }
-
-    // For non-TR browser languages, confirm via IP geolocation
+    // IP geolocation is primary — only show Turkish if user is in Turkey
     fetch('https://api.country.is/', { cache: 'no-store', signal: AbortSignal.timeout(3000) })
       .then(r => r.json())
       .then(data => {
-        if (data && data.country && data.country !== 'TR') {
+        if (!data || !data.country || data.country !== 'TR') {
           currentLang = 'en';
           applyLang('en');
         }
-        // If country === 'TR', keep Turkish default
+        // TR visitors keep Turkish default
       })
       .catch(() => {
-        // If API fails, fallback: use browser language decision made above
-        if (!looksLikeTR) {
+        // If IP API fails, fall back to browser language
+        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (!browserLang.startsWith('tr')) {
           currentLang = 'en';
           applyLang('en');
         }

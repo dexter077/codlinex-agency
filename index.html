@@ -431,6 +431,15 @@
     0%,100% { box-shadow: 0 0 0 0 rgba(55,234,158,0.35), 0 8px 28px rgba(55,234,158,0.22); }
     50%     { box-shadow: 0 0 0 10px rgba(55,234,158,0), 0 8px 36px rgba(55,234,158,0.38); }
   }
+  @keyframes hookBeam {
+    0%   { background-position: -100% 0; }
+    60%  { background-position: 200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes hookOrb {
+    0%,100% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+    50%     { opacity: 1;   transform: translateY(-50%) scale(1.15); }
+  }
   .intro-cta { animation: iCTAPulse 2.6s ease-in-out 1.8s infinite; }
 
   #intro-rewatch {
@@ -860,6 +869,29 @@
       <p class="text-slate-400 max-w-sm text-base leading-relaxed" data-en="We develop intelligent custom systems across 9 automation areas for your brand.">
         9 farklı otomasyon alanında, markanıza özel akıllı sistemler geliştiriyoruz.
       </p>
+    </div>
+
+    <!-- AI hook banner -->
+    <div class="relative mt-10 overflow-hidden rounded-2xl border border-primary-container/20 bg-surface-container-high/60" style="backdrop-filter:blur(12px);">
+      <!-- Sweeping light beam -->
+      <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(55,234,158,0.07) 50%,transparent 70%);background-size:200% 100%;animation:hookBeam 3.5s ease-in-out infinite;pointer-events:none;"></div>
+      <!-- Glow orb left -->
+      <div style="position:absolute;left:-40px;top:50%;transform:translateY(-50%);width:160px;height:160px;background:radial-gradient(circle,rgba(55,234,158,0.12) 0%,transparent 70%);animation:hookOrb 4s ease-in-out infinite;pointer-events:none;"></div>
+      <!-- Glow orb right -->
+      <div style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:120px;height:120px;background:radial-gradient(circle,rgba(55,234,158,0.08) 0%,transparent 70%);animation:hookOrb 4s ease-in-out 2s infinite;pointer-events:none;"></div>
+      <div class="relative flex flex-col sm:flex-row items-center gap-4 px-6 py-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-primary-container/15 border border-primary-container/30 flex items-center justify-center" style="animation:nodeAppear 3s ease-in-out infinite;">
+          <span class="material-symbols-outlined text-primary-container" style="font-size:18px;font-variation-settings:'FILL' 1">psychology</span>
+        </div>
+        <p class="text-sm sm:text-base font-semibold text-slate-200 text-center sm:text-left leading-snug"
+          data-en='"Your customers now ask ChatGPT instead of Google — are you being recommended?"'>
+          "Müşteriniz artık Google'a değil, ChatGPT'ye soruyor — peki sizi öneriyor mu?"
+        </p>
+        <a href="#contact" class="flex-shrink-0 flex items-center gap-1.5 text-xs font-black text-on-primary-container bg-primary-container px-4 py-2 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap" style="animation:iCTAPulse 3s ease-in-out infinite;">
+          <span data-en="Get Visible">Görünür Ol</span>
+          <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+        </a>
+      </div>
     </div>
   </div>
 

@@ -939,20 +939,42 @@
 
         <!-- Buying Triggers -->
         <div class="mb-7">
-          <p class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-4" data-en="Buying Triggers — When your prospect says &quot;Let's look at GEO&quot;">Tetikleyici Olaylar — Prospect'in "GEO'ya bakalım" dediği an</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <!-- Trigger 1: Traffic Drop -->
-            <div class="bg-surface-container-lowest/70 rounded-2xl p-5 border border-white/5 relative overflow-hidden">
-              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(239,68,68,0.9),rgba(239,68,68,0.2));"></div>
-              <div class="w-9 h-9 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-3">
-                <span class="material-symbols-outlined text-red-400" style="font-size:18px;font-variation-settings:'FILL' 1">trending_down</span>
+          <p class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-4" data-en="Buying Triggers — Who needs this most?">Tetikleyici Olaylar — Bu hizmet kim için?</p>
+
+          <!-- Trigger 1: Traffic Drop — FEATURED (full width) -->
+          <div class="bg-surface-container-lowest/70 rounded-2xl p-6 border border-red-500/20 relative overflow-hidden mb-4">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(239,68,68,1),rgba(239,68,68,0.3),transparent);"></div>
+            <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(239,68,68,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+            <div class="flex flex-col md:flex-row md:items-start gap-5">
+              <!-- Left: icon + label -->
+              <div class="flex-shrink-0">
+                <div class="w-11 h-11 rounded-xl bg-red-500/12 border border-red-500/25 flex items-center justify-center mb-2">
+                  <span class="material-symbols-outlined text-red-400" style="font-size:22px;font-variation-settings:'FILL' 1">trending_down</span>
+                </div>
+                <span class="inline-flex items-center gap-1 text-[10px] font-black text-red-400 uppercase tracking-wide bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full whitespace-nowrap" data-en="★ Strongest Signal">★ En Güçlü Sinyal</span>
               </div>
-              <h4 class="text-sm font-black text-white mb-2" data-en="Google Traffic Dropped 20%+">Google Trafiği %20+ Düştü</h4>
-              <p class="text-xs text-slate-400 leading-relaxed mb-3" data-en="6-month organic traffic loss → panic + alternative search. The prospect is already living that pain — waiting for someone to name it.">
-                Son 6 ayda organik trafik kaybı → panik + alternatif arama. Prospect zaten o ağrıyı yaşıyor, sadece dile getirilmesini bekliyor.
-              </p>
-              <span class="inline-flex items-center gap-1 text-[10px] font-black text-red-400 uppercase tracking-wide bg-red-500/10 px-2 py-0.5 rounded-full" data-en="★ Strongest trigger">★ En Güçlü Trigger</span>
+              <!-- Center: main copy -->
+              <div class="flex-1">
+                <h4 class="text-base font-black text-white mb-1" data-en="Google Traffic Is Dropping — And You Know Why">Google Trafiği Düşüyor — Ve Nedenini Biliyorsunuz</h4>
+                <p class="text-sm text-slate-300 leading-relaxed mb-3" data-en="Organic clicks are falling even when rankings hold. AI Overviews answer the question before users click. Your visitor is going — to ChatGPT, to Gemini, to Perplexity. If your brand isn't the source being cited there, you're invisible.">
+                  Organik tıklamalar düşüyor — sıralama değişmese bile. AI Overviews soruyu kullanıcı tıklamadan yanıtlıyor. Ziyaretçiniz gidiyor — ChatGPT'ye, Gemini'ye, Perplexity'e. Markanız orada kaynak olarak anılmıyorsa, görünmüyorsunuz.
+                </p>
+                <!-- Recognition checklist -->
+                <div class="flex flex-col sm:flex-row gap-2 flex-wrap">
+                  <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-surface-container-high/60 px-3 py-1.5 rounded-lg border border-white/5" data-en="✗ Organic traffic down 15–40%">✗ Organik trafik %15–40 düşüş</span>
+                  <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-surface-container-high/60 px-3 py-1.5 rounded-lg border border-white/5" data-en="✗ Rankings intact but clicks vanishing">✗ Sıralama aynı, tıklama yok</span>
+                  <span class="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-surface-container-high/60 px-3 py-1.5 rounded-lg border border-white/5" data-en="✗ AI engines don't mention you">✗ AI motorları sizi önermiyor</span>
+                </div>
+              </div>
+              <!-- Right: empathy quote -->
+              <div class="flex-shrink-0 md:max-w-[220px] bg-red-500/5 border border-red-500/15 rounded-xl p-4 hidden md:block">
+                <p class="text-xs text-slate-400 italic leading-relaxed" data-en='"This pain already exists. They just need someone to name it and offer a solution."'>"Bu acı zaten yaşanıyor. Sadece bunu dile getirecek ve çözüm sunacak biri bekleniyor."</p>
+              </div>
             </div>
+          </div>
+
+          <!-- Triggers 2 & 3 — smaller, side by side -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <!-- Trigger 2: New CMO -->
             <div class="bg-surface-container-lowest/70 rounded-2xl p-5 border border-white/5 relative overflow-hidden">
               <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(55,234,158,0.7),rgba(55,234,158,0.15));"></div>

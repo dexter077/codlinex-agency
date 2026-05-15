@@ -898,13 +898,117 @@
   <!-- Bento Grid -->
   <div class="grid grid-cols-12 gap-5">
 
-    <!-- 1. YZ Otomasyon — Large -->
+    <!-- 01. AI Arama Görünürlüğü — GEO & AEO (FEATURED) -->
+    <div class="service-card col-span-12 glass-card rounded-3xl p-8 md:p-10 border border-primary-container/25 relative overflow-hidden">
+      <!-- Background glow orbs -->
+      <div style="position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(55,234,158,0.09) 0%,transparent 70%);pointer-events:none;animation:hookOrb 5s ease-in-out infinite;"></div>
+      <div style="position:absolute;bottom:-60px;left:15%;width:240px;height:240px;background:radial-gradient(circle,rgba(55,234,158,0.05) 0%,transparent 70%);pointer-events:none;animation:hookOrb 5s ease-in-out 2.5s infinite;"></div>
+      <!-- Sweeping light beam -->
+      <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 25%,rgba(55,234,158,0.05) 50%,transparent 75%);background-size:200% 100%;animation:hookBeam 4s ease-in-out infinite;pointer-events:none;border-radius:1.5rem;"></div>
+      <!-- Top accent line -->
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.8) 50%,rgba(55,234,158,0.6) 70%,transparent);border-radius:1.5rem 1.5rem 0 0;"></div>
+
+      <div class="relative">
+        <!-- Card header -->
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-5 mb-8">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-primary-container/15 border border-primary-container/30 flex items-center justify-center" style="animation:nodeAppear 3s ease-in-out infinite;">
+                <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings:'FILL' 1">travel_explore</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-3 py-1 rounded-full self-start border border-primary-container/20">[ 01 ] — TRENDING</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-[9px] font-black text-primary-container bg-primary-container/15 px-2 py-0.5 rounded-full border border-primary-container/30" style="animation:barGrow 1s ease 0.1s both;transform-origin:left;">ChatGPT ✓</span>
+                  <span class="text-[9px] font-black text-primary-container/70 bg-primary-container/10 px-2 py-0.5 rounded-full border border-primary-container/20" style="animation:barGrow 1s ease 0.3s both;transform-origin:left;">Gemini ✓</span>
+                  <span class="text-[9px] font-black text-primary-container/50 bg-primary-container/5 px-2 py-0.5 rounded-full border border-primary-container/15" style="animation:barGrow 1s ease 0.5s both;transform-origin:left;">Perplexity ✓</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black font-headline text-white mb-2" data-en="AI Search Visibility — GEO & AEO">AI Arama Görünürlüğü — GEO & AEO</h3>
+            <p class="text-primary-container/90 font-semibold italic text-sm md:text-base mb-3" data-en='"Your customers now ask ChatGPT instead of Google — are you being recommended?"'>"Müşteriniz artık Google'a değil, ChatGPT'ye soruyor — peki sizi öneriyor mu?"</p>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-2xl" data-en="We build systems that ensure your brand is cited as a source and recommended over competitors in AI engines like ChatGPT, Gemini and Perplexity.">
+              ChatGPT, Gemini ve Perplexity gibi AI motorlarında markanızın kaynak olarak anılmasını ve rakip yerine sizin önerilmenizi sağlayan sistemler kuruyoruz.
+            </p>
+          </div>
+          <div class="hidden md:flex flex-col items-end gap-1 flex-shrink-0">
+            <span class="text-5xl font-black text-primary-container/10 font-mono leading-none">GEO</span>
+            <span class="text-5xl font-black text-primary-container/10 font-mono leading-none">AEO</span>
+          </div>
+        </div>
+
+        <!-- Buying Triggers -->
+        <div class="mb-7">
+          <p class="text-xs font-bold text-slate-500 tracking-widest uppercase mb-4" data-en="Buying Triggers — When your prospect says &quot;Let's look at GEO&quot;">Tetikleyici Olaylar — Prospect'in "GEO'ya bakalım" dediği an</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Trigger 1: Traffic Drop -->
+            <div class="bg-surface-container-lowest/70 rounded-2xl p-5 border border-white/5 relative overflow-hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(239,68,68,0.9),rgba(239,68,68,0.2));"></div>
+              <div class="w-9 h-9 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-red-400" style="font-size:18px;font-variation-settings:'FILL' 1">trending_down</span>
+              </div>
+              <h4 class="text-sm font-black text-white mb-2" data-en="Google Traffic Dropped 20%+">Google Trafiği %20+ Düştü</h4>
+              <p class="text-xs text-slate-400 leading-relaxed mb-3" data-en="6-month organic traffic loss → panic + alternative search. The prospect is already living that pain — waiting for someone to name it.">
+                Son 6 ayda organik trafik kaybı → panik + alternatif arama. Prospect zaten o ağrıyı yaşıyor, sadece dile getirilmesini bekliyor.
+              </p>
+              <span class="inline-flex items-center gap-1 text-[10px] font-black text-red-400 uppercase tracking-wide bg-red-500/10 px-2 py-0.5 rounded-full" data-en="★ Strongest trigger">★ En Güçlü Trigger</span>
+            </div>
+            <!-- Trigger 2: New CMO -->
+            <div class="bg-surface-container-lowest/70 rounded-2xl p-5 border border-white/5 relative overflow-hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(55,234,158,0.7),rgba(55,234,158,0.15));"></div>
+              <div class="w-9 h-9 rounded-xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-primary-container" style="font-size:18px;font-variation-settings:'FILL' 1">person_add</span>
+              </div>
+              <h4 class="text-sm font-black text-white mb-2" data-en="New CMO / Marketing Director">Yeni CMO / Marketing Director</h4>
+              <p class="text-xs text-slate-400 leading-relaxed" data-en="High desire to try new channels. The new executive wants to 'make a difference' — GEO is a perfectly timed offer.">
+                Yeni kanal deneme isteği yüksek. Yeni gelen yönetici "fark yaratmak" istiyor — GEO tam zamanında bir teklif.
+              </p>
+            </div>
+            <!-- Trigger 3: Competitor bragging -->
+            <div class="bg-surface-container-lowest/70 rounded-2xl p-5 border border-white/5 relative overflow-hidden">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(251,191,36,0.7),rgba(251,191,36,0.15));"></div>
+              <div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-amber-400" style="font-size:18px;font-variation-settings:'FILL' 1">workspace_premium</span>
+              </div>
+              <h4 class="text-sm font-black text-white mb-2" data-en="Competitor Bragged on LinkedIn">Rakip LinkedIn'de Övündü</h4>
+              <p class="text-xs text-slate-400 leading-relaxed" data-en='"We rank #1 on ChatGPT" post → FOMO + urgent action. Competitive pressure is the fastest decision trigger.'>
+                "ChatGPT'de 1. çıkıyoruz" postu → FOMO + acil eylem. Rekabet baskısı en hızlı karar aldıran tetikleyicidir.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outreach example + CTA -->
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4 pt-6 border-t border-white/5">
+          <div class="flex-1 bg-surface-container-lowest/50 rounded-xl px-5 py-4 border border-primary-container/10">
+            <span class="text-[10px] font-black text-primary-container uppercase tracking-widest" data-en="Example Outreach Line">Örnek Outreach Cümlesi</span>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed italic" data-en='"Last month, Google traffic in your sector dropped an average of 23% — we can prove it with data. Where do you stand?"'>
+              "Geçen ay sektörünüzde Google trafiği ortalama %23 düştü — biz bunu kanıtla gösterebiliyoruz. Sizinki ne durumda?"
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 flex-shrink-0">
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-on-primary-container bg-primary-container px-5 py-3 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap" style="animation:iCTAPulse 3s ease-in-out infinite;">
+              <span class="material-symbols-outlined text-base">bolt</span>
+              <span data-en="Get AI Visibility Now">AI'da Görünür Ol — Hemen Başla</span>
+            </a>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium text-slate-400">AI Görünürlük Takibi</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium text-slate-400">İçerik Optimizasyonu</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium text-slate-400">Rakip Analizi</span>
+              <span class="px-2.5 py-1 rounded-full bg-primary-container/15 border border-primary-container/20 text-xs font-medium text-primary-container">Haftalık Rapor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02. YZ Otomasyon — Large -->
     <div class="service-card col-span-12 md:col-span-8 glass-card rounded-3xl p-10 border border-white/5 relative overflow-hidden">
       <div class="flex justify-between items-start mb-8">
         <div class="w-14 h-14 rounded-2xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
           <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings:'FILL' 1">smart_toy</span>
         </div>
-        <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-3 py-1 rounded-full">[ 01 ]</span>
+        <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-3 py-1 rounded-full">[ 02 ]</span>
       </div>
       <!-- Animated neural network SVG -->
       <div class="mb-8 relative h-20 overflow-hidden rounded-xl bg-surface-container-lowest/50">
@@ -968,7 +1072,7 @@
         </div>
         <span class="text-xs text-slate-500 ml-auto font-mono">→ 1.247 kişi</span>
       </div>
-      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 02 ]</div>
+      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 03 ]</div>
       <h3 class="text-2xl font-black font-headline text-white mb-3" data-en="Email Automation">Email Otomasyon</h3>
       <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Professional email flows that strengthen customer relationships. Welcome series, conversion campaigns, abandoned cart flows.">
         Müşteri ilişkilerinizi güçlendiren profesyonel email akışları. Hoş geldin serileri, dönüşüm kampanyaları, terk sepet akışları.
@@ -1001,7 +1105,7 @@
           <div class="h-2 rounded bg-primary-container/10 w-1/4" style="animation:barGrow 1.5s ease 0.4s forwards;transform-origin:bottom;"></div>
         </div>
       </div>
-      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 03 ]</div>
+      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 04 ]</div>
       <h3 class="text-2xl font-black font-headline text-white mb-3" data-en="Web Design & Digital Infrastructure">Web Tasarım & Dijital Altyapı</h3>
       <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Modern, fast, and conversion-focused websites tailored to your brand. Every solution from landing pages to e-commerce.">
         Markanıza özel modern, hızlı ve dönüşüm odaklı web siteleri. Landing page'den e-ticarete kadar her çözüm.
@@ -1046,7 +1150,7 @@
         <div class="w-14 h-14 rounded-2xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
           <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings:'FILL' 1">share</span>
         </div>
-        <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-3 py-1 rounded-full">[ 04 ]</span>
+        <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-3 py-1 rounded-full">[ 05 ]</span>
       </div>
       <h3 class="text-3xl font-black font-headline text-white mb-3" data-en="Social Media Content Automation">Sosyal Medya İçerik Otomasyonları</h3>
       <p class="text-slate-400 text-base max-w-lg mb-4 leading-relaxed" data-en="Systems that continuously produce and schedule content for your brand. Automatic post generation, AI caption writing and multi-platform publishing.">
@@ -1078,7 +1182,7 @@
         <div class="w-5 rounded-t bg-primary-container" style="height:100%;animation:barGrow 1.5s ease 0.6s both;transform-origin:bottom;box-shadow:0 0 10px rgba(55,234,158,0.5);"></div>
         <span class="text-xs text-primary-container font-bold ml-2 self-start mt-1">↑SEO</span>
       </div>
-      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 05 ]</div>
+      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 06 ]</div>
       <h3 class="text-2xl font-black font-headline text-white mb-3" data-en="Blog & SEO Automation">Blog & SEO Otomasyonları</h3>
       <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Content systems that boost your Google visibility. SEO-compatible blog production and AI article systems.">
         Google görünürlüğünüzü artıran içerik sistemleri. SEO uyumlu blog üretimi ve AI makale sistemleri.
@@ -1093,43 +1197,7 @@
       </div>
     </div>
 
-    <!-- 6. AI Arama Görünürlüğü — GEO & AEO -->
-    <div class="service-card col-span-12 md:col-span-4 bg-surface-container-high rounded-3xl p-8 border border-white/5">
-      <!-- Animated AI platform mentions -->
-      <div class="h-16 mb-6 bg-surface-container-lowest/40 rounded-xl flex items-center justify-center gap-3 px-4 overflow-hidden">
-        <span class="material-symbols-outlined text-primary-container" style="font-size:26px;animation:nodeAppear 2.5s ease-in-out infinite;font-variation-settings:'FILL' 1">travel_explore</span>
-        <div class="flex flex-col gap-1">
-          <div style="animation:barGrow 1s ease 0.1s both;transform-origin:left;">
-            <span class="text-[9px] font-black text-primary-container bg-primary-container/15 px-2 py-0.5 rounded-full border border-primary-container/30 whitespace-nowrap">ChatGPT ✓</span>
-          </div>
-          <div style="animation:barGrow 1s ease 0.35s both;transform-origin:left;">
-            <span class="text-[9px] font-black text-primary-container/70 bg-primary-container/10 px-2 py-0.5 rounded-full border border-primary-container/20 whitespace-nowrap">Gemini ✓</span>
-          </div>
-          <div style="animation:barGrow 1s ease 0.6s both;transform-origin:left;">
-            <span class="text-[9px] font-black text-primary-container/50 bg-primary-container/5 px-2 py-0.5 rounded-full border border-primary-container/15 whitespace-nowrap">Perplexity ✓</span>
-          </div>
-        </div>
-      </div>
-      <div class="text-xs font-bold text-primary-container tracking-widest uppercase mb-3">[ 06 ]</div>
-      <h3 class="text-2xl font-black font-headline text-white mb-1" data-en="AI Search Visibility — GEO & AEO">AI Arama Görünürlüğü — GEO & AEO</h3>
-      <p class="text-xs text-primary-container/70 font-semibold italic mb-3" data-en='"Your customers now ask ChatGPT instead of Google — are you being recommended?"'>"Müşteriniz artık Google'a değil, ChatGPT'ye soruyor — peki sizi öneriyor mu?"</p>
-      <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="We build systems that ensure your brand is cited as a source and recommended over competitors in AI engines like ChatGPT, Gemini and Perplexity.">
-        ChatGPT, Gemini ve Perplexity gibi AI motorlarında markanızın kaynak olarak anılmasını ve rakip yerine sizin önerilmenizi sağlayan sistemler kuruyoruz.
-      </p>
-      <a href="#contact" class="flex items-center gap-2 text-xs font-bold text-primary-container hover:text-white transition-colors mb-4">
-        <span class="material-symbols-outlined text-sm">arrow_circle_right</span>
-        <span data-en="Your competitor is being recommended by AI while you're invisible — change that now">Rakibiniz AI'da önerilirken siz görünmüyorsunuz — şimdi değiştirin</span>
-      </a>
-      <p class="text-[10px] text-slate-600 italic mb-4" data-en="By 2026, 25% of Google searches are shifting to AI assistants. Where does your brand stand in this transformation?">2026 itibarıyla Google aramalarının %25'i AI asistanlara kayıyor. Markanız bu dönüşümde nerede duruyor?</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium text-slate-400">AI Görünürlük Takibi</span>
-        <span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium text-slate-400">İçerik Optimizasyonu</span>
-        <span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium text-slate-400">Rakip Analizi</span>
-        <span class="px-2.5 py-1 rounded-full bg-primary-container/15 border border-primary-container/20 text-xs font-medium text-primary-container">Haftalık Rapor</span>
-      </div>
-    </div>
-
-    <!-- 8. YouTube -->
+    <!-- 7. YouTube -->
     <div class="service-card col-span-12 md:col-span-4 bg-surface-container-high rounded-3xl p-8 border border-white/5">
       <!-- Animated waveform / play bar -->
       <div class="h-16 mb-6 bg-surface-container-lowest/40 rounded-xl flex items-center justify-center gap-1 px-4 overflow-hidden">

@@ -973,6 +973,93 @@
       <!-- Top accent line -->
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.8) 50%,rgba(55,234,158,0.6) 70%,transparent);border-radius:1.5rem 1.5rem 0 0;"></div>
 
+      <!-- GEO Background Visual — Globe + AI Platforms -->
+      <div style="position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;border-radius:1.5rem;opacity:0.13;">
+        <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice" style="width:100%;height:100%;">
+          <defs>
+            <clipPath id="geo-bg-clip">
+              <circle cx="950" cy="250" r="230"/>
+            </clipPath>
+            <radialGradient id="geo-bg-glow" cx="50%" cy="50%" r="55%">
+              <stop offset="30%" stop-color="#37ea9e" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#37ea9e" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- ── Globe ──────────────────────────────── -->
+          <circle cx="950" cy="250" r="230" fill="none" stroke="url(#geo-bg-glow)" stroke-width="1"/>
+
+          <!-- Latitude lines -->
+          <g clip-path="url(#geo-bg-clip)">
+            <ellipse cx="950" cy="80"  rx="84"  ry="25"  fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.7"/>
+            <ellipse cx="950" cy="145" rx="157" ry="46"  fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.7"/>
+            <ellipse cx="950" cy="210" rx="220" ry="64"  fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.7"/>
+            <ellipse cx="950" cy="250" rx="230" ry="68"  fill="none" stroke="#37ea9e" stroke-width="0.65" opacity="0.8"/>
+            <ellipse cx="950" cy="290" rx="220" ry="64"  fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.7"/>
+            <ellipse cx="950" cy="355" rx="157" ry="46"  fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.7"/>
+            <ellipse cx="950" cy="420" rx="84"  ry="25"  fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.7"/>
+          </g>
+
+          <!-- Longitude lines -->
+          <g clip-path="url(#geo-bg-clip)">
+            <ellipse cx="950" cy="250" rx="66"  ry="230" fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.6"/>
+            <ellipse cx="950" cy="250" rx="136" ry="230" fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.6"/>
+            <ellipse cx="950" cy="250" rx="200" ry="230" fill="none" stroke="#37ea9e" stroke-width="0.5" opacity="0.6"/>
+            <line x1="950" y1="20"  x2="950" y2="480" stroke="#37ea9e" stroke-width="0.5" opacity="0.6"/>
+          </g>
+
+          <!-- Glowing nodes on globe surface -->
+          <circle cx="1010" cy="195" r="5" fill="#37ea9e"/>
+          <circle cx="1010" cy="195" r="11" fill="none" stroke="#37ea9e" stroke-width="0.8" opacity="0.45"/>
+          <circle cx="870"  cy="235" r="4" fill="#37ea9e"/>
+          <circle cx="870"  cy="235" r="9"  fill="none" stroke="#37ea9e" stroke-width="0.7" opacity="0.4"/>
+          <circle cx="1040" cy="295" r="3.5" fill="#37ea9e"/>
+          <circle cx="1040" cy="295" r="8"  fill="none" stroke="#37ea9e" stroke-width="0.7" opacity="0.35"/>
+          <circle cx="955"  cy="168" r="3"  fill="#37ea9e" opacity="0.8"/>
+          <circle cx="900"  cy="310" r="3"  fill="#37ea9e" opacity="0.8"/>
+          <circle cx="1075" cy="245" r="2.5" fill="#37ea9e" opacity="0.8"/>
+
+          <!-- ── Left: AI Platform nodes ─────────────── -->
+          <!-- ChatGPT -->
+          <rect x="48" y="90" width="192" height="58" rx="10" fill="rgba(55,234,158,0.06)" stroke="#37ea9e" stroke-width="0.9"/>
+          <circle cx="71" cy="119" r="9" fill="none" stroke="#37ea9e" stroke-width="0.8"/>
+          <line x1="67" y1="115" x2="75" y2="123" stroke="#37ea9e" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="75" y1="115" x2="67" y2="123" stroke="#37ea9e" stroke-width="0" />
+          <text x="87"  y="115" fill="#37ea9e" font-size="13" font-weight="700" font-family="Inter,sans-serif">ChatGPT</text>
+          <text x="87"  y="132" fill="#37ea9e" font-size="9.5" font-family="Inter,sans-serif" opacity="0.6">AI Yanıt Motoru · #1</text>
+          <!-- dashed connector -->
+          <path d="M240 119 C370 119 480 200 720 240" fill="none" stroke="#37ea9e" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.75"/>
+          <circle cx="720" cy="240" r="3" fill="#37ea9e"/>
+
+          <!-- Perplexity -->
+          <rect x="48" y="220" width="192" height="58" rx="10" fill="rgba(55,234,158,0.06)" stroke="#37ea9e" stroke-width="0.9"/>
+          <circle cx="71" cy="249" r="9" fill="none" stroke="#37ea9e" stroke-width="0.8"/>
+          <text x="87"  y="245" fill="#37ea9e" font-size="13" font-weight="700" font-family="Inter,sans-serif">Perplexity</text>
+          <text x="87"  y="262" fill="#37ea9e" font-size="9.5" font-family="Inter,sans-serif" opacity="0.6">AI Arama · Büyüyor</text>
+          <!-- dashed connector -->
+          <path d="M240 249 C400 249 540 252 720 252" fill="none" stroke="#37ea9e" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.75"/>
+          <circle cx="720" cy="252" r="3" fill="#37ea9e"/>
+
+          <!-- Google AI -->
+          <rect x="48" y="350" width="192" height="58" rx="10" fill="rgba(55,234,158,0.06)" stroke="#37ea9e" stroke-width="0.9"/>
+          <circle cx="71" cy="379" r="9" fill="none" stroke="#37ea9e" stroke-width="0.8"/>
+          <text x="87"  y="375" fill="#37ea9e" font-size="13" font-weight="700" font-family="Inter,sans-serif">Google AI</text>
+          <text x="87"  y="392" fill="#37ea9e" font-size="9.5" font-family="Inter,sans-serif" opacity="0.6">Overview · SGE</text>
+          <!-- dashed connector -->
+          <path d="M240 379 C370 379 490 310 720 262" fill="none" stroke="#37ea9e" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.75"/>
+          <circle cx="720" cy="262" r="3" fill="#37ea9e"/>
+
+          <!-- ── Brand mention bubbles on globe ──── -->
+          <rect x="750" y="172" width="116" height="26" rx="6" fill="rgba(55,234,158,0.12)" stroke="#37ea9e" stroke-width="0.7"/>
+          <text x="808" y="189" text-anchor="middle" fill="#37ea9e" font-size="9" font-weight="700" font-family="Inter,sans-serif">✓ Senin Markan</text>
+          <line x1="866" y1="185" x2="880" y2="200" stroke="#37ea9e" stroke-width="0.6" opacity="0.5"/>
+
+          <rect x="740" y="296" width="130" height="26" rx="6" fill="rgba(55,234,158,0.12)" stroke="#37ea9e" stroke-width="0.7"/>
+          <text x="805" y="313" text-anchor="middle" fill="#37ea9e" font-size="9" font-weight="700" font-family="Inter,sans-serif">✓ Önerilen Kaynak</text>
+          <line x1="870" y1="309" x2="882" y2="295" stroke="#37ea9e" stroke-width="0.6" opacity="0.5"/>
+        </svg>
+      </div>
+
       <div class="relative">
         <!-- Card header -->
         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-5 mb-8">

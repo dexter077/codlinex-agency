@@ -614,7 +614,7 @@
       </button>
       <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary-container to-primary-fixed text-on-primary-container text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition-all active:scale-95 glow-green-sm">
         <span class="material-symbols-outlined text-base">rocket_launch</span>
-        <span data-en="Free Discovery">Ücretsiz Keşif</span>
+        <span data-en="Free Analysis">Ücretsiz Analiz</span>
       </a>
       <!-- Mobile menu btn -->
       <button id="menu-btn" class="lg:hidden p-2 rounded-lg bg-surface-container-high text-slate-400" onclick="toggleMenu()">
@@ -657,38 +657,103 @@
       <!-- Left: Text -->
       <div>
         <!-- Badge -->
-        <div class="fade-up delay-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-primary-container/20 mb-8">
-          <span class="relative w-2 h-2 pulse-dot flex-shrink-0">
-            <span class="absolute inset-0 rounded-full bg-primary-container"></span>
+        <div class="fade-up delay-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-red-500/25 mb-8">
+          <span class="relative w-2 h-2 flex-shrink-0">
+            <span class="absolute inset-0 rounded-full bg-red-400" style="animation:pulse-ring 2s ease-out infinite;"></span>
+            <span class="absolute inset-0 rounded-full bg-red-400"></span>
           </span>
-          <span class="text-xs font-semibold tracking-widest text-on-surface-variant uppercase" data-en="Next-Gen Business Systems">Yeni Nesil İş Sistemleri</span>
+          <span class="text-xs font-semibold tracking-widest text-red-400/90 uppercase" data-en="AI Search Traffic Is Shifting — Right Now">AI Arama Trafiği Kayıyor — Şu An</span>
         </div>
 
         <!-- Headline -->
-        <h1 class="fade-up delay-2 text-5xl md:text-6xl lg:text-7xl font-black font-headline leading-[0.95] tracking-tighter text-white mb-6"
-          data-en-html="Designing<br/><span class='gradient-text text-glow'>Tomorrow's Business</span><br/>Systems<br/>Today.">
-          Geleceğin<br/>
-          <span class="gradient-text text-glow">İş Sistemlerini</span><br/>
-          Bugünden<br/>
-          Tasarlıyoruz.
+        <h1 class="fade-up delay-2 text-5xl md:text-6xl lg:text-7xl font-black font-headline leading-[0.92] tracking-tighter text-white mb-6"
+          data-en-html="Your Competitor<br/>Shows Up in ChatGPT.<br/><span class='gradient-text text-glow'>You Don't.</span>">
+          Rakibin<br/>
+          ChatGPT'de Çıkıyor.<br/>
+          <span class="gradient-text text-glow">Sen Çıkmıyorsun.</span>
         </h1>
 
         <!-- Subtitle -->
-        <p class="fade-up delay-3 text-lg md:text-xl text-slate-400 max-w-xl mb-10 leading-relaxed"
-          data-en-html="We build AI-powered software systems that automate your business, make you visible in ChatGPT &amp; Perplexity, and scale your growth. <span class='text-slate-200 font-medium'>Less effort, more results.</span>">
-          AI tabanlı yazılım sistemleri kuruyoruz — süreçleri otomatize eder, ChatGPT &amp; Perplexity'de görünür kılar, büyümenizi ölçeklendirir. <span class="text-slate-200 font-medium">Daha az efor, daha fazla sonuç.</span>
+        <p class="fade-up delay-3 text-base md:text-lg text-slate-400 max-w-xl mb-6 leading-relaxed"
+          data-en="AI engines route hundreds of customers every day. To your competitor, not you. We fix that.">
+          AI motorları her gün yüzlerce müşteriyi yönlendiriyor. Seni değil, <span class="text-slate-200 font-medium">rakibini.</span> Bunu değiştiriyoruz.
         </p>
 
-        <!-- CTAs -->
-        <div class="fade-up delay-4 flex flex-col sm:flex-row gap-4 mb-12">
-          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-container to-primary-fixed text-on-primary-container text-base font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-all active:scale-95 glow-green">
-            <span class="material-symbols-outlined">rocket_launch</span>
-            <span data-en="Free Discovery Call">Ücretsiz Keşif Çağrısı</span>
-          </a>
-          <a href="#services" class="inline-flex items-center justify-center gap-2 bg-surface-container-high text-slate-200 text-base font-semibold px-8 py-4 rounded-xl border border-white/5 hover:bg-surface-container-highest hover:border-white/10 transition-all">
-            <span class="material-symbols-outlined">grid_view</span>
-            <span data-en="View Services">Hizmetleri Gör</span>
-          </a>
+        <!-- URL Analyzer Tool -->
+        <div class="fade-up delay-4 mb-10" id="geo-analyzer-wrap">
+          <p class="text-xs text-slate-500 mb-2.5 flex items-center gap-1.5" data-en="Free AI Visibility Analysis — enter your URL, see your score instantly.">
+            <span class="material-symbols-outlined text-primary-container" style="font-size:13px;font-variation-settings:'FILL' 1">verified</span>
+            Ücretsiz AI Görünürlük Analizi — URL'ini gir, skorunu gör.
+          </p>
+          <!-- Input row -->
+          <div class="flex gap-2 p-1.5 rounded-2xl bg-surface-container-high border border-white/10 focus-within:border-primary-container/40 transition-colors mb-3">
+            <div class="flex items-center pl-3 text-slate-600 flex-shrink-0">
+              <span class="material-symbols-outlined" style="font-size:18px;">language</span>
+            </div>
+            <input
+              type="url"
+              id="geo-url-input"
+              placeholder="sirketiniz.com"
+              data-en-ph="yoursite.com"
+              class="flex-1 bg-transparent text-white placeholder-slate-600 text-sm font-medium outline-none py-2 pr-2 min-w-0"
+            />
+            <button
+              id="geo-analyze-btn"
+              onclick="runGeoAnalysis()"
+              class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container text-sm font-black px-5 py-2.5 rounded-xl hover:opacity-90 transition-all active:scale-95 whitespace-nowrap flex-shrink-0"
+            >
+              <span class="material-symbols-outlined flex-shrink-0" style="font-size:16px;" id="geo-btn-icon">travel_explore</span>
+              <span id="geo-btn-text" data-en="Analyze Free">Analiz Et — Ücretsiz</span>
+            </button>
+          </div>
+
+          <!-- Loading state -->
+          <div id="geo-loading" class="hidden rounded-2xl bg-surface-container-high/70 border border-white/5 p-4 relative overflow-hidden">
+            <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(55,234,158,0.05) 50%,transparent 70%);background-size:200% 100%;animation:hookBeam 1.4s ease-in-out infinite;pointer-events:none;"></div>
+            <div class="relative flex items-center gap-3 mb-3">
+              <div style="width:18px;height:18px;border:2px solid rgba(55,234,158,0.25);border-top-color:#37ea9e;border-radius:50%;animation:coreSpin 0.75s linear infinite;flex-shrink:0;"></div>
+              <p id="geo-loading-msg" class="text-sm text-slate-300 font-medium"></p>
+            </div>
+            <div class="flex gap-2 flex-wrap relative">
+              <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">ChatGPT</span>
+              <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Perplexity</span>
+              <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Google AI</span>
+              <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Gemini</span>
+            </div>
+          </div>
+
+          <!-- Results teaser -->
+          <div id="geo-results" class="hidden rounded-2xl border border-primary-container/25 overflow-hidden" style="background:rgba(6,20,35,0.9);">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.9) 50%,rgba(55,234,158,0.6) 70%,transparent);"></div>
+            <div class="p-5 relative">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-slate-500" style="font-size:16px;font-variation-settings:'FILL' 1">domain</span>
+                <span id="geo-result-url" class="text-sm font-black text-white"></span>
+                <span class="text-[10px] font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 ml-auto whitespace-nowrap" data-en="Preliminary Analysis">Ön Analiz</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 mb-4">
+                <div class="rounded-xl p-3 bg-red-500/8 border border-red-500/20 text-center">
+                  <div class="text-base font-black text-red-400 mb-0.5" data-en="Low">Düşük</div>
+                  <div class="text-[10px] text-slate-600 leading-tight" data-en="ChatGPT Visibility">ChatGPT Görünürlük</div>
+                </div>
+                <div class="rounded-xl p-3 bg-red-500/8 border border-red-500/20 text-center">
+                  <div class="text-base font-black text-red-400 mb-0.5">0</div>
+                  <div class="text-[10px] text-slate-600 leading-tight" data-en="Perplexity Citations">Perplexity Atıf</div>
+                </div>
+                <div class="rounded-xl p-3 bg-amber-500/8 border border-amber-500/20 text-center">
+                  <div class="text-base font-black text-amber-400 mb-0.5" data-en="Medium">Orta</div>
+                  <div class="text-[10px] text-slate-600 leading-tight" data-en="AI Overview Ready">AI Overview Hazır</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5 rounded-xl bg-surface-container-highest/50 border border-white/5 px-3.5 py-2.5 mb-4">
+                <span class="material-symbols-outlined text-slate-600 flex-shrink-0" style="font-size:16px;">lock</span>
+                <p class="text-xs text-slate-500" data-en="Full report with 18 metrics — unlocked in your free session.">Tam rapor <strong class="text-slate-400">18 metrik</strong> içeriyor — ücretsiz görüşmede açılıyor.</p>
+              </div>
+              <a href="#contact" onclick="document.getElementById('geo-results').classList.add('hidden')" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Analyze Your Business in 30 Minutes →">
+                30 Dakikada İşletmeni Analiz Edelim →
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- Mini stats -->
@@ -862,12 +927,12 @@
     </div>
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
       <h2 class="text-4xl md:text-5xl font-black font-headline text-white leading-tight"
-        data-en-html="Automate Your Business,<br/><span class='gradient-text'>Accelerate</span> Your Growth.">
-        İşletmenizi <span class="gradient-text">Otomatikleştirin</span><br/>
-        Büyümenizi Hızlandırın.
+        data-en-html="AI Search Visibility First.<br/>Then <span class='gradient-text'>Full Automation.</span>">
+        Önce AI'da Görünürlük.<br/>
+        Sonra <span class="gradient-text">Tam Otomasyon.</span>
       </h2>
-      <p class="text-slate-400 max-w-sm text-base leading-relaxed" data-en="We develop intelligent custom systems across 9 automation areas for your brand.">
-        9 farklı otomasyon alanında, markanıza özel akıllı sistemler geliştiriyoruz.
+      <p class="text-slate-400 max-w-sm text-base leading-relaxed" data-en="GEO & AEO is our flagship — making your brand the source AI recommends. Everything else automates and scales your business.">
+        GEO & AEO öncü hizmetimiz — markanı AI'ın önerdiği kaynak yapar. Diğer sistemler ise işletmeni otomatize eder ve ölçeklendirir.
       </p>
     </div>
 
@@ -1100,6 +1165,16 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Diğer Hizmetler Ayırıcı -->
+    <div class="col-span-12 flex items-center gap-4 pt-2 pb-1">
+      <div class="h-px bg-white/5 flex-1"></div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-slate-700" style="font-size:14px;">settings</span>
+        <span class="text-xs font-bold text-slate-700 tracking-widest uppercase" data-en="Automation Services">Otomasyon Hizmetleri</span>
+      </div>
+      <div class="h-px bg-white/5 flex-1"></div>
     </div>
 
     <!-- 02. YZ Otomasyon — Large -->
@@ -1906,14 +1981,14 @@
       <div class="relative z-10">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-primary-container/20 mb-6">
           <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-          <span class="text-xs font-bold text-primary-container tracking-widest uppercase" data-en="Free Discovery Call">Ücretsiz Keşif Çağrısı</span>
+          <span class="text-xs font-bold text-primary-container tracking-widest uppercase" data-en="Free · 30 Minutes · No Commitment">Ücretsiz · 30 Dakika · Bağlayıcı Değil</span>
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-black font-headline text-white mb-5" data-en="Ready for Automation?">
-          Otomasyona Hazır mısınız?
+        <h2 class="text-4xl md:text-5xl font-black font-headline text-white mb-5" data-en="Analyze Your Business in 30 Minutes">
+          30 Dakikada İşletmeni Analiz Edelim
         </h2>
-        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed" data-en="In a 30-minute free discovery session we analyze your business and map out a custom automation plan.">
-          30 dakikalık ücretsiz keşif görüşmesinde işletmenizi analiz ediyoruz ve size özel otomasyon haritasını çıkarıyoruz.
+        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed" data-en="Your sector, your competitors, your digital gaps — we lay it all out on the table in one session. Then we build the roadmap.">
+          Sektörün, rakiplerin, dijital açıkların — hepsini görüşmede masaya yatırıyoruz. Sonra yol haritanı birlikte çiziyoruz.
         </p>
 
         <form class="max-w-lg mx-auto flex flex-col gap-4 mb-8" onsubmit="submitForm(event)" novalidate>
@@ -1936,6 +2011,7 @@
             maxlength="254" required/>
           <select id="service-select" name="service" class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-slate-500 text-sm outline-none transition-colors">
             <option value="" data-en="Which service interests you?">Hangi hizmet sizi ilgilendiriyor?</option>
+            <option value="geo-aeo" data-en="AI Search Visibility — GEO &amp; AEO ★">AI Arama Görünürlüğü — GEO &amp; AEO ★</option>
             <option data-en="AI Business Automation">YZ İş Otomasyonu</option>
             <option data-en="Email Automation">Email Otomasyon</option>
             <option data-en="Web Design & Infrastructure">Web Tasarım & Altyapı</option>
@@ -1951,7 +2027,7 @@
             type="submit"
             class="w-full bg-gradient-to-r from-primary-container to-primary-fixed text-on-primary-container font-bold text-base py-4 rounded-xl hover:opacity-90 transition-all active:scale-[0.98] glow-green flex items-center justify-center gap-2">
             <span class="material-symbols-outlined">send</span>
-            <span data-en="Get Free Discovery Call">Ücretsiz Keşif Çağrısı Al</span>
+            <span data-en="Book 30-Minute Analysis Session">30 Dakikalık Analiz Randevusu Al</span>
           </button>
         </form>
 
@@ -1960,7 +2036,7 @@
           <p class="text-primary-container font-semibold text-sm" data-en="✓ Your request has been received! We'll get back to you shortly.">✓ Talebiniz alındı! En kısa sürede size ulaşacağız.</p>
         </div>
 
-        <p class="text-slate-600 text-xs" data-en="No credit card required · Free 30 minutes · Non-binding">Kredi kartı gerekmez · Ücretsiz 30 dakika · Bağlayıcı değil</p>
+        <p class="text-slate-600 text-xs" data-en="No credit card required · Free 30 minutes · Sector + competitor analysis included">Kredi kartı gerekmez · Ücretsiz 30 dakika · Sektör + rakip analizi dahil</p>
       </div>
     </div>
   </div>
@@ -2529,6 +2605,59 @@
     // }
     rewatchBtn.style.display = 'flex';
   })();
+
+  // ── GEO URL ANALYZER ─────────────────────────────────
+  const runGeoAnalysis = () => {
+    const input    = document.getElementById('geo-url-input');
+    let url        = (input ? input.value : '').trim();
+    if (!url) { if (input) input.focus(); return; }
+    if (!url.match(/^https?:\/\//)) url = 'https://' + url;
+
+    let domain;
+    try { domain = new URL(url).hostname.replace(/^www\./, ''); }
+    catch { domain = url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] || url; }
+
+    const isEn       = (typeof currentLang !== 'undefined' && currentLang === 'en');
+    const loadingEl  = document.getElementById('geo-loading');
+    const resultsEl  = document.getElementById('geo-results');
+    const btn        = document.getElementById('geo-analyze-btn');
+    const btnText    = document.getElementById('geo-btn-text');
+    const loadingMsg = document.getElementById('geo-loading-msg');
+    const resultUrl  = document.getElementById('geo-result-url');
+    if (!loadingEl || !resultsEl || !btn) return;
+
+    resultsEl.classList.add('hidden');
+    loadingEl.classList.remove('hidden');
+    btn.disabled = true;
+    if (btnText) btnText.textContent = isEn ? 'Analyzing...' : 'Analiz Ediliyor...';
+
+    const msgs = isEn
+      ? ['Scanning ChatGPT index...', 'Checking Perplexity citations...', 'Measuring Google AI readiness...', 'Calculating competitor score...', 'Preparing your report...']
+      : ['ChatGPT veri tabanı taranıyor...', 'Perplexity atıfları kontrol ediliyor...', 'Google AI hazırlığı ölçülüyor...', 'Rakip görünürlük skoru hesaplanıyor...', 'Rapor hazırlanıyor...'];
+
+    let mi = 0;
+    if (loadingMsg) loadingMsg.textContent = msgs[0];
+    const msgInt = setInterval(() => {
+      mi = (mi + 1) % msgs.length;
+      if (loadingMsg) loadingMsg.textContent = msgs[mi];
+    }, 680);
+
+    setTimeout(() => {
+      clearInterval(msgInt);
+      loadingEl.classList.add('hidden');
+      if (resultUrl) resultUrl.textContent = domain;
+      resultsEl.classList.remove('hidden');
+      btn.disabled = false;
+      if (btnText) btnText.textContent = isEn ? 'Re-analyze' : 'Tekrar Analiz';
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 3400);
+  };
+
+  // Enter key support for URL input
+  const geoInput = document.getElementById('geo-url-input');
+  if (geoInput) {
+    geoInput.addEventListener('keydown', e => { if (e.key === 'Enter') runGeoAnalysis(); });
+  }
 </script>
 </body>
 </html>

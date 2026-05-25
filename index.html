@@ -1183,8 +1183,191 @@
       <div class="h-px bg-white/5 flex-1"></div>
     </div>
 
+    <!-- ═══ AUTOMATION SERVICES SLIDER ═══ -->
+    <div class="col-span-12">
+      <div class="relative" id="svc-slider">
+
+        <!-- Left/right fade edges -->
+        <div style="position:absolute;left:0;top:0;bottom:52px;width:88px;background:linear-gradient(90deg,#061423 20%,transparent);z-index:20;pointer-events:none;"></div>
+        <div style="position:absolute;right:0;top:0;bottom:52px;width:88px;background:linear-gradient(270deg,#061423 20%,transparent);z-index:20;pointer-events:none;"></div>
+
+        <!-- Arrow: prev -->
+        <button id="svc-prev" aria-label="Önceki" style="position:absolute;left:14px;top:calc(50% - 26px);transform:translateY(-50%);z-index:30;width:40px;height:40px;border-radius:50%;background:rgba(19,32,48,0.96);border:1px solid rgba(55,234,158,0.22);color:#37ea9e;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.5)';this.style.boxShadow='0 0 14px rgba(55,234,158,0.15)'" onmouseout="this.style.borderColor='rgba(55,234,158,0.22)';this.style.boxShadow='none'">
+          <span class="material-symbols-outlined" style="font-size:22px;">chevron_left</span>
+        </button>
+        <!-- Arrow: next -->
+        <button id="svc-next" aria-label="Sonraki" style="position:absolute;right:14px;top:calc(50% - 26px);transform:translateY(-50%);z-index:30;width:40px;height:40px;border-radius:50%;background:rgba(19,32,48,0.96);border:1px solid rgba(55,234,158,0.22);color:#37ea9e;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.5)';this.style.boxShadow='0 0 14px rgba(55,234,158,0.15)'" onmouseout="this.style.borderColor='rgba(55,234,158,0.22)';this.style.boxShadow='none'">
+          <span class="material-symbols-outlined" style="font-size:22px;">chevron_right</span>
+        </button>
+
+        <!-- Overflow wrapper -->
+        <div style="overflow:hidden;padding:6px 2px 4px;">
+          <div id="svc-track" style="display:flex;gap:20px;transition:transform 0.58s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
+
+            <!-- [02] YZ İş Otomasyonları -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">smart_toy</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 02 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="AI Business Automation">Yapay Zeka İş Otomasyonları</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Intelligent systems that handle daily operations. Repetitive tasks done by software — your team focuses on growth.">Günlük operasyonları yöneten akıllı sistemler. Tekrarlayan görevler yazılımla çözülür, ekibiniz büyümeye odaklanır.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Süreç Oto.</span>
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">CRM</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">AI Chatbot</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [03] Email Otomasyon -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">mark_email_read</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 03 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Email Automation">Email Otomasyon</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Professional email flows that strengthen customer relationships. Welcome series, conversion campaigns, cart abandonment flows.">Müşteri ilişkilerini güçlendiren email akışları. Hoş geldin serileri, dönüşüm kampanyaları, terk sepet akışları.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Newsletter</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">Satış Funnel</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [04] Web Tasarım & Dijital Altyapı -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">web</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 04 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Web Design & Digital Infrastructure">Web Tasarım & Dijital Altyapı</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Modern, fast, conversion-focused websites built for your brand. Landing pages to full e-commerce.">Markanıza özel modern, hızlı, dönüşüm odaklı web siteleri. Landing page'den e-ticarete her çözüm.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Mobil Uyumlu</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">E-Ticaret</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [05] Sosyal Medya İçerik Oto. -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">share</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 05 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Social Media Content Automation">Sosyal Medya İçerik Otomasyonları</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Systems that continuously produce and schedule content. Auto posts, AI captions, multi-platform publishing.">Sürekli içerik üreten ve planlayan sistemler. Otomatik post, AI caption yazımı, çoklu platform yayını.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Otomatik Post</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">Reels / Shorts</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [06] Blog & SEO Otomasyonları -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">analytics</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 06 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Blog & SEO Automation">Blog & SEO Otomasyonları</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Content systems that boost your Google visibility. SEO-compatible blog production and AI article systems.">Google görünürlüğünü artıran içerik sistemleri. SEO uyumlu blog üretimi ve AI makale sistemleri.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">SEO Blogu</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">Backlink</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [07] YouTube Otomasyon Sistemleri -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">play_circle</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 07 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="YouTube Automation Systems">YouTube Otomasyon Sistemleri</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Scalable video content systems. Shorts automation, script generation, thumbnail and publishing planning.">Ölçeklenebilir video içerik sistemleri. Shorts otomasyonu, senaryo üretimi, thumbnail ve yayın planlaması.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Shorts</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">Senaryo AI</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [08] Randevu & Rezervasyon -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">calendar_month</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 08 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Appointment & Booking">Randevu & Rezervasyon</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Digitize your appointment process. WhatsApp integration, reminder system and calendar sync.">Randevu süreçlerini dijitalleştiriyoruz. WhatsApp entegrasyonu, hatırlatma sistemi, takvim senkronizasyonu.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">WhatsApp</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">Takvim Sync</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [09] Dijital Ajans Altyapıları -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">corporate_fare</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 09 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Agency Infrastructure">Dijital Ajans Altyapıları</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Manage all agency operations from one hub. Client panel, project tracking, content delivery and automated reporting.">Tüm operasyonları tek merkezden yönetin. Müşteri paneli, proje takibi, içerik teslimat, otomatik raporlama.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Müşteri Paneli</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">Oto. Raporlama</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+            <!-- [10] Marketing Growth Sistemleri -->
+            <div class="service-card glass-card rounded-2xl p-6 border border-white/5 flex flex-col" style="min-width:300px;max-width:300px;flex-shrink:0;transition:border-color 0.3s,transform 0.3s;" onmouseover="this.style.borderColor='rgba(55,234,158,0.2)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">trending_up</span>
+                </div>
+                <span class="text-primary-container font-mono text-xs font-bold bg-primary-container/10 px-2.5 py-1 rounded-full border border-primary-container/15">[ 10 ]</span>
+              </div>
+              <h3 class="text-base font-black font-headline text-white mb-2" data-en="Marketing Growth Systems">Marketing Growth Sistemleri</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4 flex-1" data-en="Sales-focused digital marketing infrastructure. Lead funnel, CRM pipeline, remarketing and AI sales support.">Satış odaklı dijital pazarlama altyapıları. Lead funnel, CRM pipeline, remarketing ve AI satış destek sistemleri.</p>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-xs text-slate-400">Lead Funnel</span>
+                <span class="px-2 py-0.5 rounded-full bg-primary-container/10 border border-primary-container/20 text-xs text-primary-container">CRM Pipeline</span>
+              </div>
+              <a href="#contact" class="flex items-center gap-1.5 text-xs font-bold text-primary-container hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:14px;">arrow_circle_right</span><span data-en="Start Now">Hemen Başla</span></a>
+            </div>
+
+          </div>
+        </div>
+        <!-- Slider dots -->
+        <div id="svc-dots" style="display:flex;justify-content:center;align-items:center;gap:8px;margin-top:20px;"></div>
+      </div>
+    </div>
+    <!-- ═══════════════════════════════════════════ -->
+
     <!-- 02. YZ Otomasyon — Large -->
-    <div class="service-card col-span-12 md:col-span-8 glass-card rounded-3xl p-10 border border-white/5 relative overflow-hidden">
+    <div class="hidden service-card col-span-12 md:col-span-8 glass-card rounded-3xl p-10 border border-white/5 relative overflow-hidden">
       <div class="flex justify-between items-start mb-8">
         <div class="w-14 h-14 rounded-2xl bg-primary-container/15 border border-primary-container/20 flex items-center justify-center">
           <span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings:'FILL' 1">smart_toy</span>
@@ -1235,7 +1418,7 @@
     </div>
 
     <!-- 2. Email Otomasyon — Small -->
-    <div class="service-card col-span-12 md:col-span-4 bg-surface-container-high rounded-3xl p-8 border border-white/5">
+    <div class="hidden service-card col-span-12 md:col-span-4 bg-surface-container-high rounded-3xl p-8 border border-white/5">
       <!-- Animated email visual -->
       <div class="relative h-16 mb-6 overflow-hidden rounded-xl bg-surface-container-lowest/40 flex items-center px-4 gap-3">
         <span class="material-symbols-outlined text-primary-container text-3xl anim-email-icon" style="font-variation-settings:'FILL' 1">mark_email_read</span>
@@ -1269,7 +1452,7 @@
     </div>
 
     <!-- 3. Web Tasarım — Small -->
-    <div class="service-card col-span-12 md:col-span-4 bg-surface-container-high rounded-3xl p-8 border border-white/5">
+    <div class="hidden service-card col-span-12 md:col-span-4 bg-surface-container-high rounded-3xl p-8 border border-white/5">
       <!-- Animated browser mockup -->
       <div class="relative h-16 mb-6 overflow-hidden rounded-xl bg-surface-container-lowest/40 border border-white/5 p-3">
         <div class="flex items-center gap-1.5 mb-2">
@@ -2669,6 +2852,79 @@
   if (geoInput) {
     geoInput.addEventListener('keydown', e => { if (e.key === 'Enter') runGeoAnalysis(); });
   }
+
+  // ═══ AUTOMATION SERVICES SLIDER ═══
+  (() => {
+    const track = document.getElementById('svc-track');
+    const dotsEl = document.getElementById('svc-dots');
+    const prevBtn = document.getElementById('svc-prev');
+    const nextBtn = document.getElementById('svc-next');
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    const GAP = 20;
+    let cur = 0, autoTimer = null;
+
+    const slideW = () => slides[0] ? slides[0].offsetWidth + GAP : 320;
+    const visibleN = () => Math.max(1, Math.floor((track.parentElement.offsetWidth + GAP) / slideW()));
+    const maxIdx = () => Math.max(0, slides.length - visibleN());
+
+    const setDots = (idx) => {
+      if (!dotsEl) return;
+      Array.from(dotsEl.children).forEach((d, i) => {
+        d.style.opacity = i === idx ? '1' : '0.3';
+        d.style.width = i === idx ? '20px' : '8px';
+      });
+    };
+
+    const go = (idx) => {
+      cur = Math.max(0, Math.min(idx, maxIdx()));
+      track.style.transform = `translateX(-${cur * slideW()}px)`;
+      setDots(cur);
+    };
+
+    const next = () => go(cur >= maxIdx() ? 0 : cur + 1);
+    const prev = () => go(cur <= 0 ? maxIdx() : cur - 1);
+
+    const startAuto = () => {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 4200);
+    };
+    const stopAuto = () => clearInterval(autoTimer);
+
+    // Build dots
+    if (dotsEl) {
+      slides.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.style.cssText = 'height:8px;border-radius:4px;background:#37ea9e;transition:all 0.3s ease;cursor:pointer;';
+        d.addEventListener('click', () => { go(i); startAuto(); });
+        dotsEl.appendChild(d);
+      });
+    }
+
+    // Arrows
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAuto(); });
+
+    // Hover pause
+    const wrapper = track.parentElement;
+    wrapper.addEventListener('mouseenter', stopAuto);
+    wrapper.addEventListener('mouseleave', startAuto);
+
+    // Touch swipe
+    let touchX = 0;
+    track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const dx = touchX - e.changedTouches[0].clientX;
+      if (Math.abs(dx) > 40) { dx > 0 ? next() : prev(); startAuto(); }
+    }, { passive: true });
+
+    // Resize recalc
+    window.addEventListener('resize', () => go(cur));
+
+    go(0);
+    startAuto();
+  })();
 </script>
 </body>
 </html>

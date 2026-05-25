@@ -1998,6 +1998,8 @@
         </p>
 
         <form class="max-w-lg mx-auto flex flex-col gap-4 mb-8" onsubmit="submitForm(event)" novalidate>
+          <!-- Honeypot: botlar doldurur, insanlar görmez — Formspree bu alanı dolu görürse reddeder -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-on-surface text-sm outline-none transition-colors placeholder:text-slate-600"
@@ -2269,6 +2271,9 @@
   const submitForm = async (e) => {
     e.preventDefault();
     const form = e.target;
+    // Honeypot check — bot doldurmuşsa sessizce reddet
+    const hp = form.querySelector('input[name="_gotcha"]');
+    if (hp && hp.value) return;
     const email = form.querySelector('input[type="email"]');
     if (email && !/^[^\s@]{1,64}@[^\s@]{1,255}$/.test(email.value.trim())) {
       email.focus();

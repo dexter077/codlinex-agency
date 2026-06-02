@@ -812,38 +812,93 @@
             </div>
           </div>
 
-          <!-- Floating service nodes — positioned absolutely around center (260px from center = ~50% of 520px) -->
-          <!-- Top center -->
-          <div class="hero-node glass-card rounded-2xl p-4 border border-primary-container/25 glow-green-sm absolute" style="top:20px;left:50%;transform:translateX(-50%);animation-delay:0s;">
-            <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings:'FILL' 1">smart_toy</span>
+          <!-- Floating service nodes -->
+
+          <!-- Top center — GEO -->
+          <div class="hero-node glass-card rounded-2xl px-4 py-3 border border-primary-container/35 glow-green-sm absolute" style="top:20px;left:50%;transform:translateX(-50%);animation-delay:0s;">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary-container" style="font-size:20px;font-variation-settings:'FILL' 1">travel_explore</span>
+              <span class="text-sm font-black text-primary-container tracking-widest">GEO</span>
+            </div>
           </div>
-          <!-- Right middle -->
-          <div class="hero-node glass-card rounded-2xl p-4 border border-white/8 absolute" style="top:50%;right:10px;transform:translateY(-50%);animation-delay:0.6s;">
-            <span class="material-symbols-outlined text-sky-400 text-2xl" style="font-variation-settings:'FILL' 1">language</span>
+
+          <!-- Right middle — Gemini -->
+          <div class="hero-node glass-card rounded-2xl px-4 py-3 border border-blue-400/30 absolute" style="top:50%;right:10px;transform:translateY(-50%);animation-delay:0.6s;">
+            <div class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C10.5 7 7 10.5 2 12C7 13.5 10.5 17 12 22C13.5 17 17 13.5 22 12C17 10.5 13.5 7 12 2Z" fill="url(#gemGrad1)"/>
+                <defs>
+                  <linearGradient id="gemGrad1" x1="2" y1="2" x2="22" y2="22">
+                    <stop offset="0%" stop-color="#4285F4"/>
+                    <stop offset="50%" stop-color="#8AB4F8"/>
+                    <stop offset="100%" stop-color="#34A853"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="text-sm font-black text-blue-400">Gemini</span>
+            </div>
           </div>
-          <!-- Bottom center -->
-          <div class="hero-node glass-card rounded-2xl p-4 border border-white/8 absolute" style="bottom:20px;left:50%;transform:translateX(-50%);animation-delay:1.2s;">
-            <span class="material-symbols-outlined text-violet-400 text-2xl" style="font-variation-settings:'FILL' 1">analytics</span>
+
+          <!-- Bottom center — AI AGENT -->
+          <div class="hero-node glass-card rounded-2xl px-4 py-3 border border-violet-400/30 absolute" style="bottom:20px;left:50%;transform:translateX(-50%);animation-delay:1.2s;">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-violet-400" style="font-size:20px;font-variation-settings:'FILL' 1">smart_toy</span>
+              <span class="text-sm font-black text-violet-400 tracking-wide">AI Agent</span>
+            </div>
           </div>
-          <!-- Left middle -->
-          <div class="hero-node glass-card rounded-2xl p-4 border border-white/8 absolute" style="top:50%;left:10px;transform:translateY(-50%);animation-delay:1.8s;">
-            <span class="material-symbols-outlined text-amber-400 text-2xl" style="font-variation-settings:'FILL' 1">mark_email_read</span>
+
+          <!-- Left middle — SEO (muted = eski dünya) -->
+          <div class="hero-node glass-card rounded-2xl px-4 py-3 border border-white/8 absolute" style="top:50%;left:10px;transform:translateY(-50%);animation-delay:1.8s;">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-slate-500" style="font-size:20px;font-variation-settings:'FILL' 1">search</span>
+              <span class="text-sm font-black text-slate-500 tracking-widest">SEO</span>
+            </div>
           </div>
-          <!-- Top-right -->
-          <div class="hero-node glass-card rounded-xl p-3 border border-white/8 absolute" style="top:80px;right:60px;animation-delay:0.3s;">
-            <span class="material-symbols-outlined text-slate-400 text-xl" style="font-variation-settings:'FILL' 1">share</span>
+
+          <!-- Top-right — Claude Code -->
+          <div class="hero-node glass-card rounded-xl px-3 py-2.5 border border-orange-400/30 absolute" style="top:80px;right:55px;animation-delay:0.3s;">
+            <div class="flex items-center gap-1.5">
+              <!-- Anthropic / Claude simplified mark -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M13.8 3.5L20.5 16.5H17.2L13.8 9.8L10.4 16.5H7.1L13.8 3.5Z" fill="#D97706"/>
+                <path d="M7.5 10H4.5L3 13H6L7.5 10Z" fill="#D97706" opacity="0.6"/>
+              </svg>
+              <span class="text-xs font-black text-orange-400">Claude Code</span>
+            </div>
           </div>
-          <!-- Top-left -->
-          <div class="hero-node glass-card rounded-xl p-3 border border-white/8 absolute" style="top:80px;left:60px;animation-delay:0.9s;">
-            <span class="material-symbols-outlined text-slate-400 text-xl" style="font-variation-settings:'FILL' 1">calendar_month</span>
+
+          <!-- Top-left — ChatGPT -->
+          <div class="hero-node glass-card rounded-xl px-3 py-2.5 border border-emerald-400/30 absolute" style="top:80px;left:55px;animation-delay:0.9s;">
+            <div class="flex items-center gap-1.5">
+              <!-- OpenAI simplified mark -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="#10B981" stroke-width="1.5" opacity="0.8"/>
+                <path d="M8 12C8 9.8 9.8 8 12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16" stroke="#10B981" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="2" fill="#10B981"/>
+              </svg>
+              <span class="text-xs font-black text-emerald-400">ChatGPT</span>
+            </div>
           </div>
-          <!-- Bottom-right -->
-          <div class="hero-node glass-card rounded-xl p-3 border border-white/8 absolute" style="bottom:80px;right:60px;animation-delay:1.5s;">
-            <span class="material-symbols-outlined text-slate-400 text-xl" style="font-variation-settings:'FILL' 1">trending_up</span>
+
+          <!-- Bottom-right — Perplexity -->
+          <div class="hero-node glass-card rounded-xl px-3 py-2.5 border border-sky-400/30 absolute" style="bottom:80px;right:55px;animation-delay:1.5s;">
+            <div class="flex items-center gap-1.5">
+              <!-- Perplexity simplified P mark -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 4H12C14.8 4 17 6.2 17 9C17 11.8 14.8 14 12 14H7V4Z" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+                <line x1="7" y1="14" x2="7" y2="20" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="12" y1="14" x2="12" y2="20" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+              <span class="text-xs font-black text-sky-400">Perplexity</span>
+            </div>
           </div>
-          <!-- Bottom-left -->
-          <div class="hero-node glass-card rounded-xl p-3 border border-white/8 absolute" style="bottom:80px;left:60px;animation-delay:2.1s;">
-            <span class="material-symbols-outlined text-slate-400 text-xl" style="font-variation-settings:'FILL' 1">play_circle</span>
+
+          <!-- Bottom-left — AEO -->
+          <div class="hero-node glass-card rounded-xl px-3 py-2.5 border border-amber-400/30 absolute" style="bottom:80px;left:55px;animation-delay:2.1s;">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-amber-400" style="font-size:16px;font-variation-settings:'FILL' 1">record_voice_over</span>
+              <span class="text-xs font-black text-amber-400 tracking-widest">AEO</span>
+            </div>
           </div>
 
           <!-- Animated SVG connector lines -->

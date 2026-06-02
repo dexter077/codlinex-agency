@@ -1240,8 +1240,7 @@
                 </a>
                 <button type="button"
                   data-cal-link="orhan-karakas-ayxidt/30min"
-                  data-cal-namespace="codlinex"
-                  data-cal-config='{"layout":"month_view"}'
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'
                   class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-slate-300 bg-surface-container-highest px-6 py-3 rounded-xl hover:bg-surface-container-high transition-colors whitespace-nowrap border border-white/5 cursor-pointer">
                   <span class="material-symbols-outlined text-base">calendar_month</span>
                   <span data-en="Book Discovery Call">Keşif Çağrısı Al</span>
@@ -2886,25 +2885,7 @@
 
 </script>
 
-<!-- Cal.com Popup Embed -->
-<script type="text/javascript">
-(function(C,A,L){
-  let p=function(a,ar){a.q.push(ar);};
-  let d=C.document;
-  C.Cal=C.Cal||function(){
-    let cal=C.Cal;let ar=arguments;
-    if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}
-    if(ar[0]===L){const api=function(){p(api,arguments);};const ns=ar[1];api.q=api.q||[];
-      if(typeof ns==="string"){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,[L,ns,ar[2]]);}else p(cal,ar);return;}
-    p(cal,ar);
-  };
-})(window,"https://app.cal.com/embed/embed.js","init");
-Cal("init","codlinex",{origin:"https://cal.com"});
-Cal.ns["codlinex"]("ui",{
-  "theme":"dark",
-  "hideEventTypeDetails":false,
-  "layout":"month_view"
-});
-</script>
+<!-- Cal.com embed — async, no init required -->
+<script async src="https://app.cal.com/embed/embed.js"></script>
 </body>
 </html>

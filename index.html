@@ -1239,7 +1239,8 @@
                   <span class="material-symbols-outlined text-base">bolt</span>
                   <span data-en="Free AI Audit">Ücretsiz AI Audit</span>
                 </a>
-                <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener"
+                <a id="calendly-btn" href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+                  onclick="window.open('https://calendly.com/ecomlinex/30min','_blank','noopener');return false;"
                   class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-slate-300 bg-surface-container-highest px-6 py-3 rounded-xl hover:bg-surface-container-high transition-colors whitespace-nowrap border border-white/5">
                   <span class="material-symbols-outlined text-base">calendar_month</span>
                   <span data-en="Book Discovery Call">Keşif Çağrısı Al</span>
@@ -2214,9 +2215,21 @@
         <h2 class="text-4xl md:text-5xl font-black font-headline text-white mb-5" data-en="Analyze Your Business in 30 Minutes">
           30 Dakikada İşletmeni Analiz Edelim
         </h2>
-        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed" data-en="Your sector, your competitors, your digital gaps — we lay it all out on the table in one session. Then we build the roadmap.">
+        <p class="text-slate-400 text-lg mb-6 max-w-2xl mx-auto leading-relaxed" data-en="Your sector, your competitors, your digital gaps — we lay it all out on the table in one session. Then we build the roadmap.">
           Sektörün, rakiplerin, dijital açıkların — hepsini görüşmede masaya yatırıyoruz. Sonra yol haritanı birlikte çiziyoruz.
         </p>
+
+        <!-- Randevu direkt linki -->
+        <div class="mb-8 flex flex-col items-center gap-2">
+          <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+            onclick="window.open('https://calendly.com/ecomlinex/30min','_blank','noopener');return false;"
+            class="inline-flex items-center gap-2 bg-surface-container-high border border-primary-container/30 text-primary-container font-bold text-sm px-6 py-3 rounded-xl hover:bg-primary-container/10 transition-colors">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1">calendar_month</span>
+            <span data-en="Or book directly: Calendly">Ya da direkt randevu al: Calendly</span>
+            <span class="material-symbols-outlined text-sm opacity-60">open_in_new</span>
+          </a>
+          <span class="text-xs text-slate-600" data-en="Opens in a new tab — Google Calendar sync included">Yeni sekmede açılır — Google Calendar sync dahil</span>
+        </div>
 
         <form class="max-w-lg mx-auto flex flex-col gap-4 mb-8" onsubmit="submitForm(event)" novalidate>
           <!-- Honeypot: botlar doldurur, insanlar görmez — Formspree bu alanı dolu görürse reddeder -->

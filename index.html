@@ -2901,17 +2901,21 @@
 </div>
 
 <script>
-  const CAL_URL = 'https://cal.com/orhan-karakas-ayxidt/30min?embed=true&theme=dark&layout=month_view';
-  const openCalModal = () => {
-    document.getElementById('cal-iframe').src = CAL_URL;
-    document.getElementById('cal-modal').style.display = 'flex';
+  var CAL_URL = 'https://cal.com/orhan-karakas-ayxidt/30min?embed=true&theme=dark&layout=month_view';
+  function openCalModal() {
+    var iframe = document.getElementById('cal-iframe');
+    var modal  = document.getElementById('cal-modal');
+    if (!iframe || !modal) { window.open('https://cal.com/orhan-karakas-ayxidt/30min', '_blank'); return; }
+    iframe.src = CAL_URL;
+    modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-  };
-  const closeCalModal = () => {
-    document.getElementById('cal-modal').style.display = 'none';
+  }
+  function closeCalModal() {
+    var modal = document.getElementById('cal-modal');
+    if (modal) modal.style.display = 'none';
     document.body.style.overflow = '';
-  };
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCalModal(); });
+  }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCalModal(); });
 </script>
 </body>
 </html>

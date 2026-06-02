@@ -1238,9 +1238,7 @@
                   <span class="material-symbols-outlined text-base">bolt</span>
                   <span data-en="Free AI Audit">Ücretsiz AI Audit</span>
                 </a>
-                <button type="button"
-                  data-cal-link="orhan-karakas-ayxidt/30min"
-                  data-cal-config='{"layout":"month_view","theme":"dark"}'
+                <button type="button" onclick="openCalModal()"
                   class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-slate-300 bg-surface-container-highest px-6 py-3 rounded-xl hover:bg-surface-container-high transition-colors whitespace-nowrap border border-white/5 cursor-pointer">
                   <span class="material-symbols-outlined text-base">calendar_month</span>
                   <span data-en="Book Discovery Call">Keşif Çağrısı Al</span>
@@ -2885,7 +2883,39 @@
 
 </script>
 
-<!-- Cal.com embed — async, no init required -->
-<script async src="https://app.cal.com/embed/embed.js"></script>
+<!-- ══ Cal.com Randevu Modal ══ -->
+<div id="cal-modal"
+  style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;padding:16px;"
+  onclick="if(event.target===this)closeCalModal()">
+  <div style="position:relative;width:100%;max-width:680px;height:min(85vh,720px);background:#0a1628;border-radius:20px;overflow:hidden;border:1px solid rgba(55,234,158,0.2);box-shadow:0 0 60px rgba(55,234,158,0.08);">
+    <!-- Kapat butonu -->
+    <button onclick="closeCalModal()"
+      style="position:absolute;top:12px;right:14px;z-index:10;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#94a3b8;width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;">✕</button>
+    <!-- İframe -->
+    <iframe id="cal-iframe"
+      src=""
+      style="width:100%;height:100%;border:none;border-radius:20px;"
+      loading="lazy"
+      title="Randevu Al — CodLinex">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  const openCalModal = () => {
+    const iframe = document.getElementById('cal-iframe');
+    if (!iframe.src) {
+      iframe.src = 'https://cal.com/orhan-karakas-ayxidt/30min?embed=true&theme=dark&hideEventTypeDetails=false&layout=month_view';
+    }
+    const modal = document.getElementById('cal-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
+  const closeCalModal = () => {
+    document.getElementById('cal-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCalModal(); });
+</script>
 </body>
 </html>

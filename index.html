@@ -2891,24 +2891,19 @@
     <!-- Kapat butonu -->
     <button onclick="closeCalModal()"
       style="position:absolute;top:12px;right:14px;z-index:10;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#94a3b8;width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;">✕</button>
-    <!-- İframe -->
+    <!-- İframe — src başlangıçta boş, modal açılınca set edilir -->
     <iframe id="cal-iframe"
-      src=""
       style="width:100%;height:100%;border:none;border-radius:20px;"
-      loading="lazy"
       title="Randevu Al — CodLinex">
     </iframe>
   </div>
 </div>
 
 <script>
+  const CAL_URL = 'https://cal.com/orhan-karakas-ayxidt/30min?embed=true&theme=dark&layout=month_view';
   const openCalModal = () => {
-    const iframe = document.getElementById('cal-iframe');
-    if (!iframe.src) {
-      iframe.src = 'https://cal.com/orhan-karakas-ayxidt/30min?embed=true&theme=dark&hideEventTypeDetails=false&layout=month_view';
-    }
-    const modal = document.getElementById('cal-modal');
-    modal.style.display = 'flex';
+    document.getElementById('cal-iframe').src = CAL_URL;
+    document.getElementById('cal-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
   };
   const closeCalModal = () => {

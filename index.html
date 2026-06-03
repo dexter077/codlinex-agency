@@ -2265,8 +2265,15 @@
         </form>
 
         <!-- Success message (hidden) -->
-        <div id="success-msg" class="hidden bg-primary-container/10 border border-primary-container/30 rounded-xl p-4 mb-6">
-          <p class="text-primary-container font-semibold text-sm" data-en="✓ Your request has been received! We'll get back to you shortly.">✓ Talebiniz alındı! En kısa sürede size ulaşacağız.</p>
+        <div id="success-msg" class="hidden bg-primary-container/10 border border-primary-container/30 rounded-2xl p-5 mb-6">
+          <p class="text-primary-container font-bold text-sm mb-3" data-en="✓ Your request has been received!">✓ Talebiniz alındı!</p>
+          <p class="text-slate-400 text-xs mb-4" data-en="Now pick a time — your name and email are pre-filled in the calendar.">Şimdi bir randevu saati seçin — adınız ve e-postanız takvimde otomatik dolu gelecek.</p>
+          <a id="calendly-success-btn" href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+            onclick="window.open(this.href,'_blank','noopener');return false;"
+            class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1">calendar_month</span>
+            <span data-en="Book Your Time Slot →">Randevu Saatini Seç →</span>
+          </a>
         </div>
 
         <p class="text-slate-600 text-xs" data-en="No credit card required · Free 30 minutes · Sector + competitor analysis included">Kredi kartı gerekmez · Ücretsiz 30 dakika · Sektör + rakip analizi dahil</p>
@@ -2513,10 +2520,22 @@
         body: new FormData(form)
       });
       if (res.ok) {
+        // Calendly URL'ini form verileriyle oluştur
+        const nameVal  = (form.querySelector('input[name="name"]')?.value  || '').trim();
+        const emailVal = (form.querySelector('input[type="email"]')?.value || '').trim();
+        const params   = new URLSearchParams();
+        if (nameVal)  params.set('name',  nameVal);
+        if (emailVal) params.set('email', emailVal);
+        const calUrl = 'https://calendly.com/ecomlinex/30min' + (params.toString() ? '?' + params.toString() : '');
+        const successBtn = document.getElementById('calendly-success-btn');
+        if (successBtn) {
+          successBtn.href = calUrl;
+          successBtn.onclick = function() { window.open(calUrl, '_blank', 'noopener'); return false; };
+        }
         const msg = document.getElementById('success-msg');
         msg.classList.remove('hidden');
         form.reset();
-        setTimeout(() => msg.classList.add('hidden'), 5000);
+        msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
         alert('Bir hata oluştu, lütfen tekrar deneyin.');
       }

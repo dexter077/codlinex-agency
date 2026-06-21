@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<title>CodLinex | Business Automation Audit — 2 Minutes, 5 Questions</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061423'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2337ea9e' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2337ea9e'/%3E%3C/svg%3E"/>
+<meta name="description" content="Find the AI agent built for your exact business problem. 2 minutes, 5 questions, personalized recommendation."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container-high": "#1e2b3b", "surface-container": "#132030",
+          "primary-fixed": "#54ffb0", "primary": "#9effc8", "inverse-primary": "#006c45",
+          "surface-dim": "#061423", "secondary": "#bac7dd", "secondary-container": "#3d4a5b",
+          "on-secondary": "#243142", "tertiary": "#eaebec", "surface-variant": "#293646",
+          "on-background": "#d6e3f9", "on-primary": "#003822", "primary-container": "#37ea9e",
+          "on-surface-variant": "#bacbbe", "on-primary-container": "#006540",
+          "outline-variant": "#3c4a40", "surface-container-low": "#0f1c2c",
+          "surface-container-lowest": "#020f1e", "on-surface": "#d6e3f9",
+          "surface-container-highest": "#293646", "surface-bright": "#2d3a4b",
+          "surface": "#061423", "background": "#061423", "outline": "#859589",
+        },
+        fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] }
+      }
+    }
+  }
+</script>
+<style>
+  * { scroll-behavior: smooth; }
+  body { background-color: #061423; color: #d6e3f9; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(55,234,158,0.06) 1px, transparent 0); background-size: 40px 40px; }
+  .glass-card { background: rgba(30,43,59,0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .glass-nav { background: rgba(6,20,35,0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .gradient-text { background: linear-gradient(135deg,#37ea9e 0%,#9effc8 50%,#54ffb0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .text-glow { text-shadow: 0 0 40px rgba(55,234,158,0.4); }
+  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background:#061423; } ::-webkit-scrollbar-thumb { background:#1e2b3b; border-radius:3px; }
+
+  /* ── QUIZ STEPS ── */
+  .quiz-step { display: none; }
+  .quiz-step.active { display: block; animation: stepIn 0.4s ease forwards; }
+  @keyframes stepIn { from { opacity:0; transform:translateX(18px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes stepBack { from { opacity:0; transform:translateX(-18px); } to { opacity:1; transform:translateX(0); } }
+  .quiz-step.back { animation: stepBack 0.4s ease forwards; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-track { background: rgba(255,255,255,0.06); border-radius: 999px; height: 4px; }
+  .progress-fill { background: linear-gradient(90deg,#37ea9e,#06d68a); border-radius:999px; height:4px; transition: width 0.5s ease; }
+
+  /* ── QUIZ CARDS ── */
+  .quiz-card {
+    background: rgba(19,32,48,0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+    position: relative;
+  }
+  .quiz-card:hover { border-color: rgba(55,234,158,0.35); background: rgba(30,43,59,0.7); transform: translateY(-1px); }
+  .quiz-card.selected { border-color: rgba(55,234,158,0.65) !important; background: rgba(55,234,158,0.09); }
+  .quiz-card.selected .sel-ring { background: #37ea9e; border-color: #37ea9e; }
+  .quiz-card.selected .sel-check { display: flex; color: #003822; }
+  .quiz-card.disabled { opacity: 0.35; pointer-events: none; }
+  .quiz-card.shake { animation: shake 0.3s ease; }
+
+  /* Selection ring */
+  .sel-ring { width:20px; height:20px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.2s; }
+  .sel-check { display:none; font-size:13px; font-weight:900; line-height:1; }
+
+  @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+
+  /* ── NEXT BUTTON ── */
+  .next-btn { background:linear-gradient(135deg,#37ea9e,#06d68a); color:#003822; font-weight:700; border:none; cursor:pointer; transition:all 0.2s ease; }
+  .next-btn:hover { background:linear-gradient(135deg,#54ffb0,#37ea9e); box-shadow:0 8px 32px rgba(55,234,158,0.35); transform:translateY(-2px); }
+  .next-btn:disabled { background:rgba(55,234,158,0.2); color:rgba(55,234,158,0.4); cursor:not-allowed; transform:none; box-shadow:none; }
+  .back-btn { background:transparent; border:1px solid rgba(255,255,255,0.1); color:#859589; font-weight:500; cursor:pointer; transition:all 0.2s; }
+  .back-btn:hover { border-color:rgba(255,255,255,0.25); color:#d6e3f9; }
+
+  /* ── ANALYZING SCREEN ── */
+  #analyzing { display:none; align-items:center; justify-content:center; min-height:60vh; flex-direction:column; }
+  @keyframes dotBounce { 0%,100%{transform:translateY(0);opacity:0.4;} 50%{transform:translateY(-8px);opacity:1;} }
+  @keyframes agentPulse { 0%,100%{box-shadow:0 0 0 0 rgba(55,234,158,0.4),0 0 30px rgba(55,234,158,0.2);} 50%{box-shadow:0 0 0 14px rgba(55,234,158,0),0 0 60px rgba(55,234,158,0.35);} }
+  .orb-pulse { animation: agentPulse 2.8s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+
+  /* ── RESULT PAGE ── */
+  @keyframes resultReveal { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+  .result-block { animation: resultReveal 0.6s ease forwards; }
+  .result-block:nth-child(2){animation-delay:0.1s;opacity:0;}
+  .result-block:nth-child(3){animation-delay:0.2s;opacity:0;}
+  .result-block:nth-child(4){animation-delay:0.3s;opacity:0;}
+  .result-block:nth-child(5){animation-delay:0.4s;opacity:0;}
+  .result-block:nth-child(6){animation-delay:0.5s;opacity:0;}
+
+  .check-icon { color:#37ea9e; }
+  .stripe-btn { background:linear-gradient(135deg,#37ea9e,#06d68a); color:#003822; font-weight:700; transition:all 0.2s; }
+  .stripe-btn:hover { background:linear-gradient(135deg,#54ffb0,#37ea9e); box-shadow:0 8px 32px rgba(55,234,158,0.4); transform:translateY(-2px); }
+  .ghost-btn { border:1px solid rgba(55,234,158,0.35); color:#37ea9e; font-weight:600; transition:all 0.2s; }
+  .ghost-btn:hover { background:rgba(55,234,158,0.08); border-color:rgba(55,234,158,0.6); }
+
+  /* Result plan card glow */
+  @keyframes planGlow { 0%,100%{box-shadow:0 0 0 1.5px rgba(55,234,158,0.5),0 0 40px rgba(55,234,158,0.1);} 50%{box-shadow:0 0 0 1.5px rgba(55,234,158,0.8),0 0 60px rgba(55,234,158,0.2);} }
+  .plan-card-result { animation: planGlow 3s ease-in-out infinite; border-color:transparent !important; }
+</style>
+</head>
+<body class="neural-grid font-body">
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-white/5">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-primary-container/20 border border-primary-container/30 flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#37ea9e"/><circle cx="8" cy="8" r="6" fill="none" stroke="#37ea9e" stroke-width="1" stroke-opacity="0.4"/></svg>
+        </div>
+        <span class="font-headline font-bold text-on-background text-base tracking-tight">CodLinex</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="ai-agent.html" class="text-xs text-secondary hover:text-primary-container transition-colors">← All Plans</a>
+        <a href="index.html#contact"
+           class="text-xs font-semibold px-4 py-2 rounded-full border border-primary-container/30 text-primary-container hover:bg-primary-container/10 transition-all">
+          Talk to Sales
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO — Compact intro
+══════════════════════════════════════════ -->
+<section class="pt-28 pb-8 px-4 text-center">
+  <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-container/30 bg-primary-container/8 mb-5">
+    <span class="w-2 h-2 rounded-full bg-primary-container" style="animation:blink 1.5s ease infinite;"></span>
+    <span class="text-xs font-medium text-primary-container tracking-wide uppercase">Business Automation Audit</span>
+  </div>
+  <h1 class="font-headline font-black text-3xl md:text-5xl text-on-background leading-tight mb-3">
+    Tell us your problem.<br/><span class="gradient-text text-glow">We'll build your solution.</span>
+  </h1>
+  <p class="text-secondary text-sm md:text-base">2 minutes &nbsp;·&nbsp; 5 questions &nbsp;·&nbsp; Live in 48 hours</p>
+
+  <!-- Trust stats -->
+  <div class="flex items-center justify-center gap-6 mt-5 flex-wrap">
+    <div class="flex items-center gap-1.5 text-xs text-outline">
+      <span class="material-symbols-outlined text-primary-container text-sm">people</span>
+      50+ businesses audited
+    </div>
+    <div class="flex items-center gap-1.5 text-xs text-outline">
+      <span class="material-symbols-outlined text-primary-container text-sm">schedule</span>
+      Avg. 2 min 14 sec to complete
+    </div>
+    <div class="flex items-center gap-1.5 text-xs text-outline">
+      <span class="material-symbols-outlined text-primary-container text-sm">verified_user</span>
+      No email required to see results
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     QUIZ CONTAINER
+══════════════════════════════════════════ -->
+<div class="max-w-3xl mx-auto px-4 pb-24">
+
+  <!-- Progress bar -->
+  <div id="progress-section" class="mb-8">
+    <div class="flex items-center justify-between mb-2.5">
+      <span class="text-xs text-outline">Step <span id="step-num">1</span> of 5</span>
+      <span class="text-xs text-primary-container font-medium" id="step-label">Your Business</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:20%;"></div></div>
+  </div>
+
+  <!-- ════════════════════════
+       STEP 1: Sector
+  ════════════════════════ -->
+  <div id="step-1" class="quiz-step active">
+    <div class="mb-7">
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">What best describes your business?</h2>
+      <p class="text-sm text-secondary">Select one — we'll personalize your agent profile.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','ecommerce',this)">
+        <span class="text-2xl mb-1">🛍️</span>
+        <span class="text-sm font-semibold text-on-background">E-commerce</span>
+        <span class="text-xs text-outline">& Retail</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','healthcare',this)">
+        <span class="text-2xl mb-1">🏥</span>
+        <span class="text-sm font-semibold text-on-background">Healthcare</span>
+        <span class="text-xs text-outline">& Clinics</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','realestate',this)">
+        <span class="text-2xl mb-1">🏠</span>
+        <span class="text-sm font-semibold text-on-background">Real Estate</span>
+        <span class="text-xs text-outline">& Property</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','legal',this)">
+        <span class="text-2xl mb-1">⚖️</span>
+        <span class="text-sm font-semibold text-on-background">Legal</span>
+        <span class="text-xs text-outline">& Professional</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','marketing',this)">
+        <span class="text-2xl mb-1">📊</span>
+        <span class="text-sm font-semibold text-on-background">Marketing</span>
+        <span class="text-xs text-outline">& Agency</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','restaurant',this)">
+        <span class="text-2xl mb-1">🍽️</span>
+        <span class="text-sm font-semibold text-on-background">Restaurant</span>
+        <span class="text-xs text-outline">& Hospitality</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','b2b-saas',this)">
+        <span class="text-2xl mb-1">💼</span>
+        <span class="text-sm font-semibold text-on-background">B2B / SaaS</span>
+        <span class="text-xs text-outline">& Tech</span>
+      </button>
+      <button class="quiz-card flex flex-col items-start gap-1" onclick="selectSingle('sector','other',this)">
+        <span class="text-2xl mb-1">🔧</span>
+        <span class="text-sm font-semibold text-on-background">Other</span>
+        <span class="text-xs text-outline">Industry</span>
+      </button>
+    </div>
+
+    <p class="text-xs text-outline text-center">Select one — page advances automatically</p>
+  </div>
+
+  <!-- ════════════════════════
+       STEP 2: Pain Points
+  ════════════════════════ -->
+  <div id="step-2" class="quiz-step">
+    <div class="mb-7">
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">What's draining your team's time right now?</h2>
+      <p class="text-sm text-secondary">Select up to 3 — this helps us prioritize your agent's capabilities.</p>
+      <div class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-lg bg-surface-container/60 border border-white/8">
+        <span class="material-symbols-outlined text-primary-container text-sm">check_box</span>
+        <span class="text-xs text-secondary" id="pain-counter">0 / 3 selected</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','same-questions',this,'pain-counter',3)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">💬</span><span class="text-sm font-semibold text-on-background block">Answering the same customer questions</span><span class="text-xs text-outline">Over and over, every single day</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','scheduling',this,'pain-counter',3)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">📅</span><span class="text-sm font-semibold text-on-background block">Scheduling chaos & appointment no-shows</span><span class="text-xs text-outline">Revenue lost to empty time slots</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','leads',this,'pain-counter',3)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">🔍</span><span class="text-sm font-semibold text-on-background block">Leads falling through the cracks</span><span class="text-xs text-outline">Poor follow-up = lost sales</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','reporting',this,'pain-counter',3)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">📊</span><span class="text-sm font-semibold text-on-background block">Manual reporting that takes hours every week</span><span class="text-xs text-outline">Time that should go to growth</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','inventory',this,'pain-counter',3)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">📦</span><span class="text-sm font-semibold text-on-background block">Order & inventory updates done by hand</span><span class="text-xs text-outline">Error-prone and time-consuming</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','complaints',this,'pain-counter',3)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">😤</span><span class="text-sm font-semibold text-on-background block">Customer complaints that pile up unanswered</span><span class="text-xs text-outline">Damaging your reputation</span></div>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button class="back-btn px-5 py-3 rounded-xl text-sm" onclick="goBack(2)">← Back</button>
+      <button id="next-2" class="next-btn px-7 py-3 rounded-xl text-sm flex-1 md:flex-none" onclick="goNext(2)" disabled>Continue →</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════
+       STEP 3: What Tried
+  ════════════════════════ -->
+  <div id="step-3" class="quiz-step">
+    <div class="mb-7">
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">Have you tried solving this before?</h2>
+      <p class="text-sm text-secondary">Be honest — this helps us find the right approach for you. Select all that apply.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('tried','zapier',this)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">🔧</span><span class="text-sm font-semibold text-on-background block">Tried Zapier or Make.com</span><span class="text-xs text-outline">Too complicated, required constant maintenance</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('tried','chatbot',this)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">🤖</span><span class="text-sm font-semibold text-on-background block">Used a chatbot</span><span class="text-xs text-outline">Too rigid — customers hated the scripted responses</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('tried','staff',this)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">👤</span><span class="text-sm font-semibold text-on-background block">Hired staff or a virtual assistant</span><span class="text-xs text-outline">Costs kept rising, quality was inconsistent</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('tried','other-ai',this)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">🛠️</span><span class="text-sm font-semibold text-on-background block">Tried other AI tools</span><span class="text-xs text-outline">Too generic — not built for my specific business</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('tried','nothing',this)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">❌</span><span class="text-sm font-semibold text-on-background block">Haven't found the right solution yet</span><span class="text-xs text-outline">Still doing it manually</span></div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('tried','researching',this)">
+        <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div><span class="text-base mb-1 block">🔍</span><span class="text-sm font-semibold text-on-background block">Still researching options</span><span class="text-xs text-outline">Comparing tools and approaches</span></div>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button class="back-btn px-5 py-3 rounded-xl text-sm" onclick="goBack(3)">← Back</button>
+      <button id="next-3" class="next-btn px-7 py-3 rounded-xl text-sm flex-1 md:flex-none" onclick="goNext(3)" disabled>Continue →</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════════
+       STEP 4: Confidence
+  ════════════════════════ -->
+  <div id="step-4" class="quiz-step">
+    <div class="mb-7">
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">How do you feel about AI tools for your business?</h2>
+      <p class="text-sm text-secondary">Be honest — there's no wrong answer here.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+      <button class="quiz-card flex items-start gap-3" onclick="selectSingle('confidence','excited',this)">
+        <span class="text-2xl flex-shrink-0">🚀</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block mb-0.5">Excited — I know AI is the future</span>
+          <span class="text-xs text-outline">I just need the right fit for my business</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="selectSingle('confidence','cautious',this)">
+        <span class="text-2xl flex-shrink-0">🤔</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block mb-0.5">Curious but cautious</span>
+          <span class="text-xs text-outline">I need proof before I commit any budget</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="selectSingle('confidence','skeptical',this)">
+        <span class="text-2xl flex-shrink-0">😤</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block mb-0.5">Skeptical — I've been let down before</span>
+          <span class="text-xs text-outline">AI tools haven't delivered what they promised</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-start gap-3" onclick="selectSingle('confidence','ready',this)">
+        <span class="text-2xl flex-shrink-0">✅</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block mb-0.5">Ready to move — just need the right partner</span>
+          <span class="text-xs text-outline">I know what I want, I need someone to build it</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button class="back-btn px-5 py-3 rounded-xl text-sm" onclick="goBack(4)">← Back</button>
+      <p class="text-xs text-outline flex-1">Select one — page advances automatically</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════
+       STEP 5: Success Vision
+  ════════════════════════ -->
+  <div id="step-5" class="quiz-step">
+    <div class="mb-7">
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">If this problem was solved tomorrow, what would that mean for you?</h2>
+      <p class="text-sm text-secondary">Select the outcome that matters most to you.</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-3 mb-8">
+      <button class="quiz-card flex items-center gap-4" onclick="selectSingle('goal','time',this)">
+        <span class="text-2xl flex-shrink-0">⏰</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block">I'd get back 20+ hours every week</span>
+          <span class="text-xs text-outline">Time to think, plan, and actually lead my business</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-center gap-4" onclick="selectSingle('goal','scale',this)">
+        <span class="text-2xl flex-shrink-0">📈</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block">I could handle 3x more customers without hiring</span>
+          <span class="text-xs text-outline">Scale revenue without scaling headcount</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-center gap-4" onclick="selectSingle('goal','revenue',this)">
+        <span class="text-2xl flex-shrink-0">💰</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block">I'd stop losing revenue to slow response times</span>
+          <span class="text-xs text-outline">Every delayed reply is a potential lost customer</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-center gap-4" onclick="selectSingle('goal','focus',this)">
+        <span class="text-2xl flex-shrink-0">🎯</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block">My team could finally focus on growth, not admin</span>
+          <span class="text-xs text-outline">Stop doing $15/hr tasks with $100/hr people</span>
+        </div>
+      </button>
+      <button class="quiz-card flex items-center gap-4" onclick="selectSingle('goal','balance',this)">
+        <span class="text-2xl flex-shrink-0">😌</span>
+        <div>
+          <span class="text-sm font-semibold text-on-background block">I'd stop working nights and weekends</span>
+          <span class="text-xs text-outline">My business should run without me being on-call 24/7</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button class="back-btn px-5 py-3 rounded-xl text-sm" onclick="goBack(5)">← Back</button>
+      <p class="text-xs text-outline flex-1">Select one — we'll generate your custom agent profile</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════
+       ANALYZING SCREEN
+  ════════════════════════ -->
+  <div id="analyzing" class="flex-col">
+    <div class="w-20 h-20 rounded-2xl bg-primary-container/15 border border-primary-container/30 flex items-center justify-center mb-6 orb-pulse">
+      <span class="material-symbols-outlined text-primary-container" style="font-size:40px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 40;">smart_toy</span>
+    </div>
+    <h3 class="font-headline font-bold text-xl text-on-background mb-2">Analyzing your answers...</h3>
+    <p class="text-secondary text-sm mb-8">Building your custom agent profile</p>
+    <div class="flex gap-2.5">
+      <span class="w-2.5 h-2.5 rounded-full bg-primary-container" style="animation:dotBounce 1s ease-in-out infinite;"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-primary-container" style="animation:dotBounce 1s ease-in-out 0.2s infinite;"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-primary-container" style="animation:dotBounce 1s ease-in-out 0.4s infinite;"></span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════
+       RESULT PAGE
+  ════════════════════════ -->
+  <div id="result" class="quiz-step">
+
+    <!-- Header -->
+    <div class="result-block text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-container/30 bg-primary-container/8 mb-5">
+        <span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span>
+        <span class="text-xs font-medium text-primary-container tracking-wide uppercase">Your Agent Profile Is Ready</span>
+      </div>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-surface-container/60 mb-4">
+        <span class="text-xs text-outline" id="result-sector-badge">E-commerce & Retail</span>
+      </div>
+      <h2 class="font-headline font-black text-2xl md:text-4xl text-on-background mb-2">
+        "<span id="result-agent-name">E-commerce Support Agent</span>"
+      </h2>
+      <p class="text-secondary text-sm" id="result-problem-line">Your #1 problem: Answering the same customer questions repeatedly</p>
+    </div>
+
+    <!-- What your agent will do -->
+    <div class="result-block glass-card rounded-3xl p-7 border border-white/5 mb-5">
+      <h3 class="text-sm font-bold text-on-background mb-4 uppercase tracking-wider">What your agent will do</h3>
+      <ul class="space-y-3" id="result-capabilities-list">
+        <!-- Dynamic -->
+      </ul>
+
+      <!-- Skeptical contrast message -->
+      <div id="result-contrast" class="hidden mt-5 pt-5 border-t border-white/5">
+        <p class="text-sm text-secondary italic" id="result-contrast-text"></p>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="result-block glass-card rounded-3xl p-6 border border-white/5 mb-5">
+      <div class="flex gap-0.5 mb-3"><span style="color:#fbbf24;font-size:1rem;letter-spacing:1px;">★★★★★</span></div>
+      <p class="text-secondary text-sm leading-relaxed mb-4 italic" id="result-testimonial-quote">"Support tickets dropped 91% in the first month."</p>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0" id="result-avatar"
+             style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7;">SK</div>
+        <div>
+          <p class="text-sm font-bold text-on-background" id="result-testimonial-name">Sarah K.</p>
+          <p class="text-xs text-outline" id="result-testimonial-role">Fashion Brand Owner · Austin, TX</p>
+        </div>
+        <div class="ml-auto text-right">
+          <p class="text-xs text-outline">Similar businesses</p>
+          <p class="text-sm font-bold text-primary-container">save avg. 23 hrs/week</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plan recommendation -->
+    <div class="result-block glass-card rounded-3xl p-7 border plan-card-result mb-5">
+      <div class="flex items-start justify-between mb-5">
+        <div>
+          <p class="text-xs text-primary-container font-bold uppercase tracking-widest mb-1">Recommended Plan</p>
+          <div class="flex items-baseline gap-2">
+            <span class="font-headline font-black text-4xl text-on-background" id="result-plan-price">$997</span>
+            <span class="text-secondary text-sm">/mo</span>
+          </div>
+          <p class="text-xs text-outline mt-1" id="result-plan-yearly-note">or $748/mo billed yearly — save $994</p>
+        </div>
+        <div class="text-right">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-container/15 border border-primary-container/30">
+            <span class="material-symbols-outlined text-primary-container text-sm">workspace_premium</span>
+            <span class="text-sm font-bold text-primary-container" id="result-plan-name">Growth</span>
+          </div>
+          <p class="text-xs text-primary-container mt-2" id="result-plan-reason">Best fit for your goals</p>
+        </div>
+      </div>
+
+      <!-- Why this plan -->
+      <div class="bg-surface-container/50 rounded-2xl p-4 mb-6" id="result-plan-why-box">
+        <p class="text-xs text-outline mb-1">Why we recommend this</p>
+        <p class="text-sm text-secondary" id="result-plan-why">Based on your goals and experience, this plan gives you the right balance of power and simplicity to see results fast.</p>
+      </div>
+
+      <!-- Guarantee banner (prominent for skeptical) -->
+      <div id="result-guarantee-banner" class="hidden flex items-center gap-3 bg-primary-container/8 border border-primary-container/20 rounded-2xl p-4 mb-6">
+        <span class="material-symbols-outlined text-primary-container text-xl" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">verified_user</span>
+        <div>
+          <p class="text-sm font-bold text-primary-container">30-Day Money-Back Guarantee</p>
+          <p class="text-xs text-secondary">If Hermes doesn't perform, you get a full refund. No questions asked.</p>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <a id="result-cta-primary" href="#"
+           onclick="alert('Stripe payment link — contact us to start now'); return false;"
+           class="stripe-btn flex-1 text-center py-4 rounded-2xl text-sm font-bold block">
+          <span id="result-cta-text">Start in 48 Hours →</span>
+        </a>
+        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+           onclick="window.open('https://calendly.com/ecomlinex/30min','_blank','noopener');return false;"
+           class="ghost-btn flex-1 text-center py-4 rounded-2xl text-sm block bg-transparent">
+          Talk to Sales
+        </a>
+      </div>
+      <p class="text-center text-xs text-outline">30-day money-back guarantee &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; Cancel anytime</p>
+    </div>
+
+    <!-- Bottom actions -->
+    <div class="result-block flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+      <button onclick="restartQuiz()" class="back-btn px-5 py-2.5 rounded-xl text-sm">
+        ← Start Over
+      </button>
+      <a href="ai-agent.html#pricing" class="text-sm text-secondary hover:text-primary-container transition-colors">
+        View all plans & pricing →
+      </a>
+    </div>
+
+  </div><!-- /result -->
+</div><!-- /quiz container -->
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="border-t border-white/5 py-8 px-4">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-lg bg-primary-container/20 border border-primary-container/30 flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#37ea9e"/><circle cx="8" cy="8" r="6" fill="none" stroke="#37ea9e" stroke-width="1" stroke-opacity="0.4"/></svg>
+      </div>
+      <span class="font-headline font-bold text-on-background text-sm">CodLinex</span>
+    </a>
+    <p class="text-xs text-outline">© 2026 CodLinex. No email required. No commitment until you choose a plan.</p>
+    <a href="ai-agent.html" class="text-xs text-secondary hover:text-primary-container transition-colors">AI Agent Product →</a>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     QUIZ STATE MACHINE
+══════════════════════════════════════════ -->
+<script>
+  /* ── State ── */
+  const state = { sector: null, pains: [], tried: [], confidence: null, goal: null };
+
+  const stepMeta = [
+    null,
+    { label: 'Your Business',       progress: 20 },
+    { label: 'Current Challenges',  progress: 40 },
+    { label: "What You've Tried",   progress: 60 },
+    { label: 'Your Mindset',        progress: 80 },
+    { label: 'Your Goal',           progress: 100 },
+  ];
+
+  let currentStep = 1;
+  let direction = 'forward';
+
+  /* ── Navigation ── */
+  const showStep = (id) => {
+    document.querySelectorAll('.quiz-step').forEach(el => { el.classList.remove('active','back'); });
+    const el = document.getElementById(id);
+    if (direction === 'back') el.classList.add('back');
+    el.classList.add('active');
+  };
+
+  const updateProgress = (n) => {
+    if (n < 1 || n > 5) return;
+    currentStep = n;
+    document.getElementById('step-num').textContent = n;
+    document.getElementById('step-label').textContent = stepMeta[n].label;
+    document.getElementById('progress-fill').style.width = stepMeta[n].progress + '%';
+    document.getElementById('progress-section').style.display = 'block';
+  };
+
+  const goTo = (n) => { updateProgress(n); showStep(`step-${n}`); };
+
+  const goNext = (fromStep) => {
+    direction = 'forward';
+    if (fromStep < 5) goTo(fromStep + 1);
+  };
+
+  const goBack = (fromStep) => {
+    direction = 'back';
+    if (fromStep > 1) goTo(fromStep - 1);
+  };
+
+  /* ── Selection helpers ── */
+  const selectSingle = (field, value, card) => {
+    const stepId = card.closest('.quiz-step').id;
+    document.querySelectorAll(`#${stepId} .quiz-card`).forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    state[field] = value;
+    // Auto-advance
+    setTimeout(() => {
+      direction = 'forward';
+      if (field === 'sector')     goTo(2);
+      if (field === 'confidence') goTo(5);
+      if (field === 'goal')       triggerAnalyzing();
+    }, 280);
+  };
+
+  const toggleMulti = (field, value, card, counterId, max) => {
+    if (card.classList.contains('selected')) {
+      card.classList.remove('selected');
+      state[field] = state[field].filter(v => v !== value);
+    } else {
+      if (max && state[field].length >= max) {
+        card.classList.add('shake');
+        setTimeout(() => card.classList.remove('shake'), 400);
+        return;
+      }
+      card.classList.add('selected');
+      state[field].push(value);
+    }
+    if (counterId) {
+      document.getElementById(counterId).textContent = `${state[field].length} / ${max} selected`;
+      // Disable unchosen cards at max
+      const stepEl = card.closest('.quiz-step');
+      stepEl.querySelectorAll('.quiz-card:not(.selected)').forEach(c => {
+        c.classList.toggle('disabled', max && state[field].length >= max);
+      });
+    }
+    // Enable next button
+    const nextId = `next-${card.closest('.quiz-step').id.split('-')[1]}`;
+    const nextBtn = document.getElementById(nextId);
+    if (nextBtn) nextBtn.disabled = state[field].length === 0;
+  };
+
+  /* ── Analyzing transition ── */
+  const triggerAnalyzing = () => {
+    document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active','back'));
+    document.getElementById('progress-section').style.display = 'none';
+    document.getElementById('analyzing').style.display = 'flex';
+    setTimeout(() => {
+      document.getElementById('analyzing').style.display = 'none';
+      generateResult();
+      showStep('result');
+    }, 2200);
+  };
+
+  /* ── Restart ── */
+  const restartQuiz = () => {
+    state.sector = null; state.pains = []; state.tried = []; state.confidence = null; state.goal = null;
+    document.querySelectorAll('.quiz-card').forEach(c => c.classList.remove('selected','disabled'));
+    document.querySelectorAll('[id^="next-"]').forEach(b => b.disabled = true);
+    document.getElementById('pain-counter').textContent = '0 / 3 selected';
+    direction = 'forward';
+    goTo(1);
+  };
+
+  /* ══════════════════════════════════
+     RESULT GENERATOR
+  ══════════════════════════════════ */
+  const generateResult = () => {
+
+    /* Agent profiles per sector */
+    const profiles = {
+      'ecommerce':  { name: 'E-commerce Support Agent',    sector: 'E-commerce & Retail',          avatar: 'SK', avatarStyle: 'background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7;' },
+      'healthcare': { name: 'Patient Experience Agent',    sector: 'Healthcare & Clinics',          avatar: 'JR', avatarStyle: 'background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#93c5fd;' },
+      'realestate': { name: 'Real Estate Lead Agent',      sector: 'Real Estate & Property',        avatar: 'DM', avatarStyle: 'background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fcd34d;' },
+      'legal':      { name: 'Client Intake Agent',         sector: 'Legal & Professional Services', avatar: 'AC', avatarStyle: 'background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:#c4b5fd;' },
+      'marketing':  { name: 'Agency Ops Agent',            sector: 'Marketing & Agency',            avatar: 'RL', avatarStyle: 'background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3);color:#f9a8d4;' },
+      'restaurant': { name: 'Guest Experience Agent',      sector: 'Restaurant & Hospitality',      avatar: 'MT', avatarStyle: 'background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.3);color:#fdba74;' },
+      'b2b-saas':   { name: 'B2B Pipeline Agent',          sector: 'B2B SaaS & Tech',               avatar: 'MT', avatarStyle: 'background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;' },
+      'other':      { name: 'Custom Business Agent',       sector: 'Your Business',                 avatar: 'YB', avatarStyle: 'background:rgba(55,234,158,0.15);border:1px solid rgba(55,234,158,0.3);color:#37ea9e;' },
+    };
+
+    /* Pain → capability text */
+    const painCaps = {
+      'same-questions': 'Auto-answer 90%+ of repetitive customer questions — 24 hours a day',
+      'scheduling':     'Eliminate no-shows with smart reminders 24h & 2h before appointments',
+      'leads':          'Follow up with every new lead within 5 minutes — automatically',
+      'reporting':      'Auto-generate and deliver performance reports to your inbox every week',
+      'inventory':      'Real-time inventory & order update notifications across all channels',
+      'complaints':     'Categorize, prioritize, and respond to complaints before they escalate',
+    };
+
+    /* Pain → problem label */
+    const painLabels = {
+      'same-questions': 'Answering the same questions repeatedly',
+      'scheduling':     'Scheduling chaos & appointment no-shows',
+      'leads':          'Leads falling through the cracks',
+      'reporting':      'Manual reporting consuming hours every week',
+      'inventory':      'Manual order & inventory management',
+      'complaints':     'Customer complaints piling up unanswered',
+    };
+
+    /* Goal → phrase */
+    const goalPhrases = {
+      'time':    'Reclaim 20+ hours per week',
+      'scale':   'Handle 3x more customers without hiring',
+      'revenue': 'Stop losing revenue to slow response times',
+      'focus':   'Free your team to focus on growth',
+      'balance': 'Stop working nights and weekends',
+    };
+
+    /* Testimonials per sector */
+    const testimonials = {
+      'ecommerce':  { quote: '"Support tickets dropped 91% in month one. My team finally has time to grow the business."', name: 'Sarah K.', role: 'Fashion Brand Owner · Austin, TX' },
+      'healthcare': { quote: '"No-show rate went from 28% to 7%. That\'s thousands of dollars back every single month."', name: 'Dr. Jennifer R.', role: 'Clinic Director · Miami, FL' },
+      'b2b-saas':   { quote: '"Pipeline grew 3x in 8 weeks — without hiring a single person."', name: 'Marcus T.', role: 'Founder & CEO · Chicago, IL' },
+      'default':    { quote: '"Avg. saves 22 hours per week. Best investment I\'ve made in the business this year."', name: 'CodLinex Customer', role: 'Business Owner' },
+    };
+
+    /* Plan logic */
+    const getPlan = () => {
+      if (state.confidence === 'ready') return 'growth';
+      if (state.confidence === 'excited' && state.tried.filter(t => !['nothing','researching'].includes(t)).length >= 2) return 'enterprise';
+      if (state.confidence === 'excited') return 'growth';
+      if (state.confidence === 'cautious') return 'starter';
+      if (state.confidence === 'skeptical') return 'starter';
+      return 'growth';
+    };
+
+    const plans = {
+      starter:    { name: 'Starter',    price: '$497',   yearly: 'or $373/mo billed yearly — save $494',   cta: 'Start Free Trial →',    reason: 'Start small, prove it works, then scale up.',    why: 'Given your caution, we recommend starting with Starter. It\'s low-risk, and our 30-day guarantee means you lose nothing if it doesn\'t perform.', href: '#' },
+      growth:     { name: 'Growth',     price: '$997',   yearly: 'or $748/mo billed yearly — save $994',   cta: 'Start in 48 Hours →',   reason: 'Built for businesses ready to move fast.',        why: 'Based on your goals and business size, Growth gives you the power to automate multiple workflows simultaneously and see results in the first week.', href: '#' },
+      enterprise: { name: 'Enterprise', price: '$2,497', yearly: 'or $1,873/mo billed yearly — save $2,494', cta: 'Talk to Sales →', reason: 'You know exactly what you need — let\'s build it.',  why: 'You\'ve tried other solutions and know what doesn\'t work. Enterprise gives you unlimited agents, priority setup, and a dedicated team to get it right.', href: 'https://calendly.com/ecomlinex/30min' },
+    };
+
+    /* ── Render ── */
+    const profile = profiles[state.sector] || profiles['other'];
+    const plan = getPlan();
+    const pd = plans[plan];
+    const t = testimonials[state.sector] || testimonials['default'];
+    const topPains = state.pains.slice(0, 3);
+    const primaryPain = topPains[0];
+
+    // Agent name & sector
+    document.getElementById('result-agent-name').textContent = profile.name;
+    document.getElementById('result-sector-badge').textContent = profile.sector;
+
+    // Problem line
+    document.getElementById('result-problem-line').textContent =
+      `Your #1 challenge: ${painLabels[primaryPain] || 'Operational inefficiency'} · Your goal: ${goalPhrases[state.goal] || 'Free up time and scale'}`;
+
+    // Capabilities
+    const capHtml = topPains.map(p =>
+      `<li class="flex items-start gap-2.5">
+        <span class="material-symbols-outlined text-base mt-0.5" style="color:#37ea9e;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span>
+        <span class="text-sm text-secondary">${painCaps[p] || 'Automate your core business workflow'}</span>
+      </li>`
+    ).join('');
+    document.getElementById('result-capabilities-list').innerHTML = capHtml;
+
+    // Skeptical contrast
+    if (state.confidence === 'skeptical' && state.tried.filter(t => !['nothing','researching'].includes(t)).length > 0) {
+      const toolMap = { zapier: 'Zapier/Make', chatbot: 'a rigid chatbot', staff: 'hiring staff', 'other-ai': 'generic AI tools' };
+      const prevTool = toolMap[state.tried.find(t => !['nothing','researching'].includes(t))] || 'previous tools';
+      document.getElementById('result-contrast-text').textContent =
+        `Unlike ${prevTool} — Hermes is purpose-built for your specific business context, not a generic template you configure yourself. We build it. You use it.`;
+      document.getElementById('result-contrast').classList.remove('hidden');
+      document.getElementById('result-guarantee-banner').classList.remove('hidden');
+      document.getElementById('result-guarantee-banner').style.display = 'flex';
+    }
+
+    // Testimonial
+    document.getElementById('result-testimonial-quote').textContent = t.quote;
+    document.getElementById('result-testimonial-name').textContent = t.name;
+    document.getElementById('result-testimonial-role').textContent = t.role;
+    document.getElementById('result-avatar').textContent = profile.avatar;
+    document.getElementById('result-avatar').style.cssText += profile.avatarStyle;
+
+    // Plan
+    document.getElementById('result-plan-name').textContent = pd.name;
+    document.getElementById('result-plan-price').textContent = pd.price;
+    document.getElementById('result-plan-yearly-note').textContent = pd.yearly;
+    document.getElementById('result-plan-reason').textContent = pd.reason;
+    document.getElementById('result-plan-why').textContent = pd.why;
+    document.getElementById('result-cta-text').textContent = pd.cta;
+    if (plan === 'enterprise') {
+      const cta = document.getElementById('result-cta-primary');
+      cta.href = pd.href;
+      cta.onclick = () => { window.open(pd.href,'_blank','noopener'); return false; };
+    }
+  };
+</script>
+
+</body>
+</html>

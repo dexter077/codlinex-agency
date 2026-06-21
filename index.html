@@ -646,7 +646,11 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- HERO -->
 <!-- ═══════════════════════════════════════════════════ -->
-<section class="relative min-h-screen flex items-center pt-24 pb-16 neural-grid overflow-hidden" id="hero">
+<section class="relative min-h-screen flex items-center pt-24 pb-16 neural-grid overflow-hidden" id="hero"
+         style="background-image:url('homeservice-bg.jpg');background-size:cover;background-position:center 20%;">
+
+  <!-- Photo overlay — darkens bg image so text stays readable -->
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(105deg,rgba(3,11,20,0.92) 0%,rgba(3,11,20,0.78) 50%,rgba(3,11,20,0.60) 100%);"></div>
 
   <!-- Ambient blobs -->
   <div class="absolute inset-0 pointer-events-none">
@@ -781,12 +785,7 @@
 
       <!-- Right: Animated Visual -->
       <div class="relative hidden lg:block">
-        <div class="relative w-full overflow-hidden rounded-xl" style="height:580px;background-image:url('homeservice-bg.jpg');background-size:cover;background-position:center 15%;">
-
-          <!-- Edge fade — blends photo into page bg -->
-          <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,rgba(3,11,20,0.88) 0%,rgba(3,11,20,0.45) 35%,rgba(3,11,20,0.45) 65%,rgba(3,11,20,0.92) 100%),linear-gradient(90deg,rgba(3,11,20,0.90) 0%,transparent 30%,transparent 70%,rgba(3,11,20,0.90) 100%);"></div>
-          <!-- Green radial glow -->
-          <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 50%,rgba(55,234,158,0.07) 0%,transparent 60%);"></div>
+        <div class="relative w-full" style="height:580px;">
 
           <!-- Ambient background glow -->
           <div class="absolute inset-0 flex items-center justify-center pointer-events-none">

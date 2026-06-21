@@ -339,20 +339,21 @@
         <div><span class="text-base mb-1 block">😤</span><span class="text-sm font-semibold text-on-background block">Customer complaints that pile up unanswered</span><span class="text-xs text-outline">Damaging your reputation</span></div>
       </button>
       <!-- Other — full width -->
-      <button id="pain-other-card" class="quiz-card flex items-start gap-3 col-span-1 md:col-span-2" onclick="toggleOtherPain(this)">
-        <div class="sel-ring mt-0.5 flex-shrink-0"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
-        <div class="flex-1 min-w-0">
-          <span class="text-base mb-1 block">✍️</span>
-          <span class="text-sm font-semibold text-on-background block">Something else — describe your challenge</span>
-          <span class="text-xs text-outline">Tell us in your own words</span>
-          <textarea id="pain-other-text"
-                    placeholder="e.g. We spend 3 hours a day copying data between systems manually..."
-                    class="input-field hidden mt-3 resize-none"
-                    rows="3"
-                    onclick="event.stopPropagation()"
-                    oninput="state.otherPain = this.value"></textarea>
+      <div class="col-span-1 md:col-span-2">
+        <div id="pain-other-card" class="quiz-card flex items-start gap-3 cursor-pointer" onclick="toggleOtherPain(this)">
+          <div class="sel-ring mt-0.5 flex-shrink-0"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+          <div>
+            <span class="text-base mb-1 block">✍️</span>
+            <span class="text-sm font-semibold text-on-background block">Something else — describe your challenge</span>
+            <span class="text-xs text-outline">Tell us in your own words</span>
+          </div>
         </div>
-      </button>
+        <textarea id="pain-other-text"
+                  placeholder="e.g. We spend 3 hours a day copying data between systems manually..."
+                  class="input-field hidden mt-2 resize-none"
+                  rows="3"
+                  oninput="state.otherPain = this.value"></textarea>
+      </div>
     </div>
 
     <div class="flex items-center gap-3">
@@ -783,9 +784,9 @@
     }
     if (counterId) {
       document.getElementById(counterId).textContent = `${state[field].length} / ${max} selected`;
-      // Disable unchosen cards at max
+      // Disable unchosen cards at max (exclude the Other card — has its own handler)
       const stepEl = card.closest('.quiz-step');
-      stepEl.querySelectorAll('.quiz-card:not(.selected)').forEach(c => {
+      stepEl.querySelectorAll('.quiz-card:not(.selected):not(#pain-other-card)').forEach(c => {
         c.classList.toggle('disabled', max && state[field].length >= max);
       });
     }

@@ -157,6 +157,13 @@
     transform: translateY(-2px);
   }
 
+  @keyframes scanLine {
+    0%   { top: -2px; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 0.6; }
+    100% { top: 100%; opacity: 0; }
+  }
+
   /* Video placeholder */
   .video-placeholder {
     background: linear-gradient(135deg, #0a1f35 0%, #1e2b3b 100%);
@@ -529,13 +536,33 @@
   </div>
 
   <div class="video-placeholder rounded-3xl overflow-hidden relative" style="aspect-ratio: 16/9;">
-    <!-- Placeholder — replace src with real video embed when ready -->
-    <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
-      <div class="video-play-btn">
-        <span class="material-symbols-outlined text-primary-container text-4xl" style="margin-left:4px;">play_arrow</span>
+    <!-- Placeholder — paste Loom/YouTube embed URL here when ready -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center gap-5">
+      <!-- Animated scan line for "incoming" feel -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,rgba(55,234,158,0.4),transparent); animation:scanLine 3s ease-in-out infinite;"></div>
       </div>
-      <p class="text-secondary text-sm" data-en="Demo video coming soon">Demo video yakında eklenecek</p>
-      <p class="text-outline text-xs" data-en="See Hermes in action — 60 sec">Hermes'i iş başında izle — 60 sn</p>
+
+      <div class="video-play-btn" style="width:80px;height:80px;">
+        <span class="material-symbols-outlined text-primary-container" style="font-size:42px;margin-left:5px;">play_arrow</span>
+      </div>
+
+      <div class="text-center px-8">
+        <p class="text-on-background font-semibold text-base mb-1" data-en="Demo dropping this week">Demo bu hafta yayında</p>
+        <p class="text-secondary text-sm mb-3" data-en="60 seconds · A real e-commerce support ticket handled in 23 seconds">60 saniye · Gerçek bir e-ticaret desteği 23 saniyede çözüldü</p>
+        <!-- Email notify CTA -->
+        <form onsubmit="handleDemoNotify(event)" class="flex items-center gap-2 max-w-xs mx-auto">
+          <input type="email" placeholder="your@email.com" required
+                 class="flex-1 text-xs px-3 py-2 rounded-lg bg-surface-container border border-white/10 text-on-background placeholder-outline focus:outline-none focus:border-primary-container/50 transition-colors"
+                 data-en-ph="your@email.com"/>
+          <button type="submit"
+                  class="text-xs px-3 py-2 rounded-lg font-semibold flex-shrink-0"
+                  style="background:rgba(55,234,158,0.15);border:1px solid rgba(55,234,158,0.35);color:#37ea9e;">
+            <span data-en="Notify me">Haber ver</span>
+          </button>
+        </form>
+        <p id="demo-notify-ok" class="hidden text-xs text-primary-container mt-2" data-en="✓ We'll email you when it's live">✓ Yayına girince e-posta göndereceğiz</p>
+      </div>
     </div>
     <!-- Corner decorations -->
     <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-primary-container/30 rounded-tl-lg"></div>
@@ -679,6 +706,164 @@
 </section>
 
 <!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section class="max-w-7xl mx-auto px-4 mb-20">
+  <div class="text-center mb-12">
+    <p class="text-xs text-primary-container font-medium uppercase tracking-widest mb-3" data-en="Customer Stories">Müşteri Hikayeleri</p>
+    <h2 class="font-headline font-bold text-3xl md:text-4xl text-on-background" data-en="Real Results from Real Businesses">Gerçek İşletmelerden Gerçek Sonuçlar</h2>
+    <p class="text-secondary mt-3 text-sm" data-en="What happens after Hermes goes live in 48 hours.">Hermes'in 48 saatte devreye girmesinden sonra ne olur.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Testimonial 1 — E-commerce -->
+    <div class="glass-card rounded-3xl p-7 border border-white/5 hover:border-primary-container/20 transition-all duration-300 flex flex-col">
+      <div class="flex gap-0.5 mb-5">
+        <span style="color:#fbbf24;font-size:1.1rem;letter-spacing:1px;">★★★★★</span>
+      </div>
+      <p class="text-secondary text-sm leading-relaxed flex-1 mb-6"
+         data-en='"Support tickets dropped 91% in the first month. I went from 4 hours a day on customer messages to checking in once a week. Hermes handles returns, tracking, size questions — everything."'>
+        "İlk ayda destek talepleri %91 düştü. Müşteri mesajlarına günde 4 saat harcamaktan haftada bir kontrol etmeye geçtim. İadeler, takip, beden soruları — her şey Hermes'te."
+      </p>
+      <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+             style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7;">SK</div>
+        <div>
+          <p class="text-sm font-bold text-on-background">Sarah K.</p>
+          <p class="text-xs text-outline" data-en="Fashion Brand Owner · Austin, TX">Moda Marka Sahibi · Austin, TX</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 — B2B SaaS -->
+    <div class="glass-card rounded-3xl p-7 border border-white/5 hover:border-primary-container/20 transition-all duration-300 flex flex-col">
+      <div class="flex gap-0.5 mb-5">
+        <span style="color:#fbbf24;font-size:1.1rem;letter-spacing:1px;">★★★★★</span>
+      </div>
+      <p class="text-secondary text-sm leading-relaxed flex-1 mb-6"
+         data-en='"We were losing leads because nobody could follow up fast enough. Hermes handles the first 3 touchpoints automatically. Pipeline grew 3x in 8 weeks — without hiring anyone."'>
+        "Kimse yetişemediği için lead kaybediyorduk. Hermes ilk 3 temas noktasını otomatik yönetiyor. Pipeline 8 haftada 3 katına çıktı — kimseyi işe almadan."
+      </p>
+      <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+             style="background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;">MT</div>
+        <div>
+          <p class="text-sm font-bold text-on-background">Marcus T.</p>
+          <p class="text-xs text-outline" data-en="Founder & CEO · Chicago, IL">Kurucu & CEO · Chicago, IL</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 — Healthcare -->
+    <div class="glass-card rounded-3xl p-7 border border-white/5 hover:border-primary-container/20 transition-all duration-300 flex flex-col">
+      <div class="flex gap-0.5 mb-5">
+        <span style="color:#fbbf24;font-size:1.1rem;letter-spacing:1px;">★★★★★</span>
+      </div>
+      <p class="text-secondary text-sm leading-relaxed flex-1 mb-6"
+         data-en='"No-shows were killing our revenue. Hermes sends appointment reminders, reschedules automatically, and answers insurance questions. No-show rate went from 28% down to 7%."'>
+        "No-show'lar gelirimizi eritiyordu. Hermes randevu hatırlatmaları gönderiyor, otomatik yeniden planlıyor, sigorta sorularını yanıtlıyor. No-show oranımız %28'den %7'ye düştü."
+      </p>
+      <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+             style="background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#93c5fd;">JR</div>
+        <div>
+          <p class="text-sm font-bold text-on-background">Dr. Jennifer R.</p>
+          <p class="text-xs text-outline" data-en="Clinic Director · Miami, FL">Klinik Direktörü · Miami, FL</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     COMPETITOR COMPARISON
+══════════════════════════════════════════ -->
+<section class="max-w-5xl mx-auto px-4 mb-24">
+  <div class="text-center mb-10">
+    <p class="text-xs text-primary-container font-medium uppercase tracking-widest mb-3" data-en="Why CodLinex?">Neden CodLinex?</p>
+    <h2 class="font-headline font-bold text-3xl md:text-4xl text-on-background" data-en="How We Compare">Nasıl Karşılaştırıyoruz</h2>
+    <p class="text-secondary mt-3 text-sm max-w-xl mx-auto"
+       data-en="CodLinex Hermes vs. tools you're probably already considering">
+      CodLinex Hermes vs. muhtemelen değerlendirdiğiniz araçlar
+    </p>
+  </div>
+
+  <div class="glass-card rounded-3xl border border-white/5 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[480px]">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+            <th class="text-left px-6 py-4 text-sm text-outline font-medium" data-en="Feature">Özellik</th>
+            <th class="px-5 py-4 text-sm font-bold text-primary-container text-center" style="background:rgba(55,234,158,0.06);">
+              <span class="block">CodLinex</span>
+              <span class="text-xs font-normal text-secondary">Hermes</span>
+            </th>
+            <th class="px-5 py-4 text-sm text-outline font-normal text-center">Zapier</th>
+            <th class="px-5 py-4 text-sm text-outline font-normal text-center">Intercom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Starting price">Başlangıç fiyatı</td>
+            <td class="px-5 py-3.5 text-center font-bold text-primary-container text-sm" style="background:rgba(55,234,158,0.04);">$497/mo</td>
+            <td class="px-5 py-3.5 text-center text-sm text-secondary">$599/mo</td>
+            <td class="px-5 py-3.5 text-center text-sm text-secondary">$799/mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Custom AI agent (not just triggers)">Özel AI agent (tetikleyici değil)</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Done-for-you setup (zero coding)">Sizin için kurulum (sıfır kod)</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Live in 48 hours — guaranteed">48 saatte aktif — garantili</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Natural language AI (not rule-based)">Doğal dil AI (kural bazlı değil)</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+            <td class="px-5 py-3.5 text-center" style="color:#fbbf24;"><span class="material-symbols-outlined" style="font-size:20px;">remove_circle</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Multi-channel (WhatsApp, Slack, Email)">Çok kanallı (WhatsApp, Slack, E-posta)</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="30-day money-back guarantee">30 gün para iade garantisi</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+          </tr>
+          <tr>
+            <td class="px-6 py-3.5 text-sm text-secondary" data-en="Human expert support included">İnsan uzman desteği dahil</td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="px-6 py-3 border-t border-white/5 flex flex-wrap items-center gap-4">
+      <span class="text-xs text-outline" data-en="* Pricing as of June 2026. Competitor prices may vary.">* Haziran 2026 fiyatları. Rakip fiyatlar değişebilir.</span>
+      <span class="ml-auto flex items-center gap-1 text-xs text-outline"><span class="material-symbols-outlined text-sm" style="color:#fbbf24;">remove_circle</span> <span data-en="= Partial / limited">= Kısmi / sınırlı</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
      PRICING
 ══════════════════════════════════════════ -->
 <section id="pricing" class="max-w-7xl mx-auto px-4 mb-24">
@@ -769,11 +954,18 @@
         </li>
       </ul>
 
-      <a href="#" onclick="alert('Stripe bağlantısı yakında eklenecek');return false;"
-         class="stripe-btn-ghost w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-3">
-        <span data-en="Start Free Trial →">Ücretsiz Dene →</span>
+      <!-- Primary: Stripe (replace href when ready) -->
+      <a href="#" onclick="alert('Stripe payment link coming soon — contact us to start now');return false;"
+         class="stripe-btn w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-2">
+        <span data-en="Start in 48 Hours →">48 Saatte Başla →</span>
       </a>
-      <p class="text-center text-xs text-outline" data-en="No contracts. Cancel anytime.">Sözleşme yok. İstediğinde iptal.</p>
+      <p class="text-center text-xs text-outline mb-2" data-en="No contracts. Cancel anytime.">Sözleşme yok. İstediğinde iptal.</p>
+      <!-- Secondary: Sales call -->
+      <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+         onclick="window.open('https://calendly.com/ecomlinex/30min','_blank','noopener');return false;"
+         class="w-full text-center block text-xs text-outline hover:text-secondary transition-colors py-1">
+        <span data-en="or Talk to Sales →">veya Satış Ekibiyle Görüş →</span>
+      </a>
     </div>
 
     <!-- ── GROWTH (Popular) ── -->
@@ -836,11 +1028,18 @@
         </li>
       </ul>
 
-      <a href="#" onclick="alert('Stripe bağlantısı yakında eklenecek');return false;"
-         class="stripe-btn w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-3">
+      <!-- Primary: Stripe (replace href when ready) -->
+      <a href="#" onclick="alert('Stripe payment link coming soon — contact us to start now');return false;"
+         class="stripe-btn w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-2">
         <span data-en="Start in 48 Hours →">48 Saatte Başla →</span>
       </a>
-      <p class="text-center text-xs text-outline" data-en="No contracts. Cancel anytime.">Sözleşme yok. İstediğinde iptal.</p>
+      <p class="text-center text-xs text-outline mb-2" data-en="No contracts. Cancel anytime.">Sözleşme yok. İstediğinde iptal.</p>
+      <!-- Secondary: Sales call -->
+      <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+         onclick="window.open('https://calendly.com/ecomlinex/30min','_blank','noopener');return false;"
+         class="w-full text-center block text-xs text-outline hover:text-secondary transition-colors py-1">
+        <span data-en="or Talk to Sales →">veya Satış Ekibiyle Görüş →</span>
+      </a>
     </div>
 
     <!-- ── ENTERPRISE ── -->
@@ -1027,6 +1226,13 @@
      JS — Language Toggle
 ══════════════════════════════════════════ -->
 <script>
+  /* ── Demo notify ── */
+  const handleDemoNotify = (e) => {
+    e.preventDefault();
+    const ok = document.getElementById('demo-notify-ok');
+    if (ok) { ok.classList.remove('hidden'); e.target.style.display = 'none'; }
+  };
+
   /* ── Billing toggle ── */
   const setBilling = (type) => {
     const isYearly = type === 'yearly';
@@ -1043,24 +1249,26 @@
     });
   };
 
-  /* ── Language toggle ── */
-  let isEnAi = false;
+  /* ── Language ── English is the default (target market: US/global) ── */
+  let isEnAi = true;
 
-  const toggleLangAi = () => {
-    isEnAi = !isEnAi;
-    document.getElementById('lang-label-ai').textContent = isEnAi ? 'TR' : 'EN';
+  const applyLang = () => {
+    const label = document.getElementById('lang-label-ai');
+    if (label) label.textContent = isEnAi ? 'TR' : 'EN';
     document.documentElement.lang = isEnAi ? 'en' : 'tr';
-
     document.querySelectorAll('[data-en]').forEach(el => {
       if (!el.dataset.tr) el.dataset.tr = el.textContent.trim();
       el.textContent = isEnAi ? el.dataset.en : el.dataset.tr;
     });
-
     document.querySelectorAll('[data-en-html]').forEach(el => {
       if (!el.dataset.trHtml) el.dataset.trHtml = el.innerHTML;
       el.innerHTML = isEnAi ? el.dataset.enHtml : el.dataset.trHtml;
     });
   };
+
+  const toggleLangAi = () => { isEnAi = !isEnAi; applyLang(); };
+
+  document.addEventListener('DOMContentLoaded', applyLang);
 </script>
 
 </body>

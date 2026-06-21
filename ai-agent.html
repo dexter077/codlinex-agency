@@ -244,9 +244,22 @@
 
   /* Ticker */
   .ticker-wrap { overflow: hidden; }
-  .ticker { display: flex; width: max-content; animation: ticker 25s linear infinite; }
+  .ticker { display: flex; width: max-content; animation: ticker 35s linear infinite; align-items: center; }
   .ticker:hover { animation-play-state: paused; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Comparison table — animated cycling border */
+  @keyframes borderColorCycle {
+    0%   { box-shadow: 0 0 0 1.5px rgba(55,234,158,0.65),  0 0 50px rgba(55,234,158,0.12); }
+    25%  { box-shadow: 0 0 0 1.5px rgba(99,102,241,0.65),  0 0 50px rgba(99,102,241,0.12); }
+    50%  { box-shadow: 0 0 0 1.5px rgba(251,191,36,0.65),  0 0 50px rgba(251,191,36,0.10); }
+    75%  { box-shadow: 0 0 0 1.5px rgba(59,130,246,0.65),  0 0 50px rgba(59,130,246,0.12); }
+    100% { box-shadow: 0 0 0 1.5px rgba(55,234,158,0.65),  0 0 50px rgba(55,234,158,0.12); }
+  }
+  .compare-glow {
+    border-color: transparent !important;
+    animation: borderColorCycle 5s ease-in-out infinite;
+  }
 </style>
 </head>
 <body class="neural-grid font-body">
@@ -504,25 +517,97 @@
 <!-- ══════════════════════════════════════════
      TICKER — What Hermes does
 ══════════════════════════════════════════ -->
-<div class="ticker-wrap border-y border-white/5 bg-surface-container-low/40 py-3 mb-20">
+<div class="ticker-wrap border-y border-white/5 bg-surface-container-low/40 py-2.5 mb-20">
   <div class="ticker">
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Müşteri Desteği</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Lead Takibi</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Otomatik Raporlama</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Stok & Sipariş Bildirimi</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">CRM Entegrasyonu</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">E-posta Otomasyon</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Slack / WhatsApp Bot</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">7/24 Aktif</span><span class="text-primary-container text-xs px-2">✦</span>
-    <!-- duplicate for seamless loop -->
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Müşteri Desteği</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Lead Takibi</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Otomatik Raporlama</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Stok & Sipariş Bildirimi</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">CRM Entegrasyonu</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">E-posta Otomasyon</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">Slack / WhatsApp Bot</span><span class="text-primary-container text-xs px-2">✦</span>
-    <span class="text-xs text-secondary px-6 tracking-wider uppercase font-medium">7/24 Aktif</span><span class="text-primary-container text-xs px-2">✦</span>
+
+    <!-- ── SET 1 ── -->
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Customer Support</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <!-- Claude badge -->
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(217,119,87,0.12);border:1px solid rgba(217,119,87,0.3);">
+      <svg width="12" height="11" viewBox="0 0 24 22" fill="none"><path d="M12 1L23 21H1L12 1Z" fill="#d97757"/><path d="M12 8L17.5 21H6.5L12 8Z" fill="#061423"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#d97757;letter-spacing:0.04em;">Claude</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Lead Follow-up</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <!-- Gemini badge -->
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(66,133,244,0.12);border:1px solid rgba(66,133,244,0.3);">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 7.5 16.5 12 22 12C16.5 12 12 16.5 12 22C12 16.5 7.5 12 2 12C7.5 12 12 7.5 12 2Z" fill="url(#gm1)"/><defs><linearGradient id="gm1" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#4285f4"/><stop offset="1" stop-color="#a142f4"/></linearGradient></defs></svg>
+      <span style="font-size:11px;font-weight:700;color:#4285f4;letter-spacing:0.04em;">Gemini</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Auto Reporting</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <!-- Codex badge -->
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(16,163,127,0.12);border:1px solid rgba(16,163,127,0.3);">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#10a37f" stroke-width="2"/><path d="M8.5 12C8.5 10 10 8.5 12 8.5C14 8.5 15.5 10 15.5 12" stroke="#10a37f" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#10a37f;letter-spacing:0.04em;">Codex</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Stock & Order Alerts</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <!-- DeepSeek badge -->
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.3);">
+      <svg width="14" height="12" viewBox="0 0 28 22" fill="none"><ellipse cx="14" cy="11" rx="12" ry="7" fill="none" stroke="#00d4aa" stroke-width="2"/><path d="M14 7C14 7 18 9 22 11C18 13 14 15 14 15C14 15 10 13 6 11C10 9 14 7 14 7Z" fill="#00d4aa" opacity="0.6"/><circle cx="22" cy="8" r="2.5" fill="#00d4aa"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#00d4aa;letter-spacing:0.04em;">DeepSeek</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">CRM Integration</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Email Automation</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Slack / WhatsApp Bot</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Active 24/7</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <!-- ── SET 2 (seamless duplicate) ── -->
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Customer Support</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(217,119,87,0.12);border:1px solid rgba(217,119,87,0.3);">
+      <svg width="12" height="11" viewBox="0 0 24 22" fill="none"><path d="M12 1L23 21H1L12 1Z" fill="#d97757"/><path d="M12 8L17.5 21H6.5L12 8Z" fill="#061423"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#d97757;letter-spacing:0.04em;">Claude</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Lead Follow-up</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(66,133,244,0.12);border:1px solid rgba(66,133,244,0.3);">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 7.5 16.5 12 22 12C16.5 12 12 16.5 12 22C12 16.5 7.5 12 2 12C7.5 12 12 7.5 12 2Z" fill="url(#gm2)"/><defs><linearGradient id="gm2" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#4285f4"/><stop offset="1" stop-color="#a142f4"/></linearGradient></defs></svg>
+      <span style="font-size:11px;font-weight:700;color:#4285f4;letter-spacing:0.04em;">Gemini</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Auto Reporting</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(16,163,127,0.12);border:1px solid rgba(16,163,127,0.3);">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#10a37f" stroke-width="2"/><path d="M8.5 12C8.5 10 10 8.5 12 8.5C14 8.5 15.5 10 15.5 12" stroke="#10a37f" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#10a37f;letter-spacing:0.04em;">Codex</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Stock & Order Alerts</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.3);">
+      <svg width="14" height="12" viewBox="0 0 28 22" fill="none"><ellipse cx="14" cy="11" rx="12" ry="7" fill="none" stroke="#00d4aa" stroke-width="2"/><path d="M14 7C14 7 18 9 22 11C18 13 14 15 14 15C14 15 10 13 6 11C10 9 14 7 14 7Z" fill="#00d4aa" opacity="0.6"/><circle cx="22" cy="8" r="2.5" fill="#00d4aa"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#00d4aa;letter-spacing:0.04em;">DeepSeek</span>
+    </span>
+
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">CRM Integration</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Email Automation</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Slack / WhatsApp Bot</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+    <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Active 24/7</span>
+    <span class="text-primary-container text-xs px-2">✦</span>
+
   </div>
 </div>
 
@@ -790,7 +875,7 @@
     </p>
   </div>
 
-  <div class="glass-card rounded-3xl border border-white/5 overflow-hidden">
+  <div class="glass-card rounded-3xl overflow-hidden compare-glow">
     <div class="overflow-x-auto">
       <table class="w-full min-w-[480px]">
         <thead>

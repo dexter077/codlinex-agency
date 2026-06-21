@@ -103,6 +103,23 @@
   .result-block:nth-child(6){animation-delay:0.5s;opacity:0;}
 
   .check-icon { color:#37ea9e; }
+
+  /* ── INPUT FIELDS ── */
+  .input-field {
+    background: rgba(19,32,48,0.7);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #d6e3f9;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .input-field:focus { border-color: rgba(55,234,158,0.5); box-shadow: 0 0 0 3px rgba(55,234,158,0.08); }
+  .input-field::placeholder { color: #3d4a5b; }
+  .input-field.error { border-color: rgba(248,113,113,0.6); }
   .stripe-btn { background:linear-gradient(135deg,#37ea9e,#06d68a); color:#003822; font-weight:700; transition:all 0.2s; }
   .stripe-btn:hover { background:linear-gradient(135deg,#54ffb0,#37ea9e); box-shadow:0 8px 32px rgba(55,234,158,0.4); transform:translateY(-2px); }
   .ghost-btn { border:1px solid rgba(55,234,158,0.35); color:#37ea9e; font-weight:600; transition:all 0.2s; }
@@ -162,8 +179,8 @@
       Avg. 2 min 14 sec to complete
     </div>
     <div class="flex items-center gap-1.5 text-xs text-outline">
-      <span class="material-symbols-outlined text-primary-container text-sm">verified_user</span>
-      No email required to see results
+      <span class="material-symbols-outlined text-primary-container text-sm">mail</span>
+      Results delivered to your inbox
     </div>
   </div>
 </section>
@@ -173,8 +190,8 @@
 ══════════════════════════════════════════ -->
 <div class="max-w-3xl mx-auto px-4 pb-24">
 
-  <!-- Progress bar -->
-  <div id="progress-section" class="mb-8">
+  <!-- Progress bar (hidden on step-0) -->
+  <div id="progress-section" class="mb-8" style="display:none;">
     <div class="flex items-center justify-between mb-2.5">
       <span class="text-xs text-outline">Step <span id="step-num">1</span> of 5</span>
       <span class="text-xs text-primary-container font-medium" id="step-label">Your Business</span>
@@ -183,9 +200,55 @@
   </div>
 
   <!-- ════════════════════════
+       STEP 0: Contact Info
+  ════════════════════════ -->
+  <div id="step-0" class="quiz-step active">
+    <div class="mb-7">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary-container/10 border border-primary-container/20 mb-4">
+        <span class="material-symbols-outlined text-primary-container text-sm">person</span>
+        <span class="text-xs font-semibold text-primary-container tracking-wide uppercase">Step 1 of 6 — Your Info</span>
+      </div>
+      <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">First, let's get to know you.</h2>
+      <p class="text-sm text-secondary">We'll use this to personalize your agent profile and send you the results.</p>
+    </div>
+
+    <div class="space-y-4 mb-8">
+      <!-- Name row -->
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-secondary mb-2 block">First Name <span class="text-red-400">*</span></label>
+          <input id="input-firstname" type="text" placeholder="John" autocomplete="given-name"
+                 class="input-field" oninput="this.classList.remove('error')" />
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-secondary mb-2 block">Last Name</label>
+          <input id="input-lastname" type="text" placeholder="Smith" autocomplete="family-name"
+                 class="input-field" />
+        </div>
+      </div>
+      <!-- Email -->
+      <div>
+        <label class="text-xs font-semibold text-secondary mb-2 block">Business Email <span class="text-red-400">*</span></label>
+        <input id="input-email" type="email" placeholder="you@yourcompany.com" autocomplete="email"
+               class="input-field" oninput="this.classList.remove('error')" />
+        <p class="text-xs text-outline mt-2 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-xs" style="font-size:12px;">lock</span>
+          We never share your email. Used only to send your results.
+        </p>
+      </div>
+    </div>
+
+    <button onclick="submitContact()"
+            class="w-full inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container text-sm font-black py-4 rounded-2xl hover:opacity-90 transition-all active:scale-95">
+      Start the Audit
+      <span class="material-symbols-outlined text-base">arrow_forward</span>
+    </button>
+  </div>
+
+  <!-- ════════════════════════
        STEP 1: Sector
   ════════════════════════ -->
-  <div id="step-1" class="quiz-step active">
+  <div id="step-1" class="quiz-step">
     <div class="mb-7">
       <h2 class="font-headline font-bold text-2xl md:text-3xl text-on-background mb-2">What best describes your business?</h2>
       <p class="text-sm text-secondary">Select one — we'll personalize your agent profile.</p>
@@ -274,6 +337,21 @@
       <button class="quiz-card flex items-start gap-3" onclick="toggleMulti('pains','complaints',this,'pain-counter',3)">
         <div class="sel-ring mt-0.5"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
         <div><span class="text-base mb-1 block">😤</span><span class="text-sm font-semibold text-on-background block">Customer complaints that pile up unanswered</span><span class="text-xs text-outline">Damaging your reputation</span></div>
+      </button>
+      <!-- Other — full width -->
+      <button id="pain-other-card" class="quiz-card flex items-start gap-3 col-span-1 md:col-span-2" onclick="toggleOtherPain(this)">
+        <div class="sel-ring mt-0.5 flex-shrink-0"><span class="sel-check material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span></div>
+        <div class="flex-1 min-w-0">
+          <span class="text-base mb-1 block">✍️</span>
+          <span class="text-sm font-semibold text-on-background block">Something else — describe your challenge</span>
+          <span class="text-xs text-outline">Tell us in your own words</span>
+          <textarea id="pain-other-text"
+                    placeholder="e.g. We spend 3 hours a day copying data between systems manually..."
+                    class="input-field hidden mt-3 resize-none"
+                    rows="3"
+                    onclick="event.stopPropagation()"
+                    oninput="state.otherPain = this.value"></textarea>
+        </div>
       </button>
     </div>
 
@@ -449,7 +527,7 @@
     <div class="result-block text-center mb-8">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-container/30 bg-primary-container/8 mb-5">
         <span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span>
-        <span class="text-xs font-medium text-primary-container tracking-wide uppercase">Your Agent Profile Is Ready</span>
+        <span class="text-xs font-medium text-primary-container tracking-wide uppercase" id="result-greeting">Your Agent Profile Is Ready</span>
       </div>
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-surface-container/60 mb-4">
         <span class="text-xs text-outline" id="result-sector-badge">E-commerce & Retail</span>
@@ -566,7 +644,7 @@
       </div>
       <span class="font-headline font-bold text-on-background text-sm">CodLinex</span>
     </a>
-    <p class="text-xs text-outline">© 2026 CodLinex. No email required. No commitment until you choose a plan.</p>
+    <p class="text-xs text-outline">© 2026 CodLinex. Your data is private. No commitment until you choose a plan.</p>
     <a href="ai-agent.html" class="text-xs text-secondary hover:text-primary-container transition-colors">AI Agent Product →</a>
   </div>
 </footer>
@@ -576,7 +654,7 @@
 ══════════════════════════════════════════ -->
 <script>
   /* ── State ── */
-  const state = { sector: null, pains: [], tried: [], confidence: null, goal: null };
+  const state = { firstName: '', lastName: '', email: '', sector: null, pains: [], tried: [], confidence: null, goal: null, otherPain: '' };
 
   const stepMeta = [
     null,
@@ -587,7 +665,7 @@
     { label: 'Your Goal',           progress: 100 },
   ];
 
-  let currentStep = 1;
+  let currentStep = 0;
   let direction = 'forward';
 
   /* ── Navigation ── */
@@ -596,6 +674,13 @@
     const el = document.getElementById(id);
     if (direction === 'back') el.classList.add('back');
     el.classList.add('active');
+  };
+
+  const goToStep0 = () => {
+    direction = 'back';
+    document.getElementById('progress-section').style.display = 'none';
+    showStep('step-0');
+    currentStep = 0;
   };
 
   const updateProgress = (n) => {
@@ -616,7 +701,56 @@
 
   const goBack = (fromStep) => {
     direction = 'back';
-    if (fromStep > 1) goTo(fromStep - 1);
+    if (fromStep === 1) { goToStep0(); }
+    else if (fromStep > 1) { goTo(fromStep - 1); }
+  };
+
+  /* ── Contact step ── */
+  const highlightError = (id) => {
+    const el = document.getElementById(id);
+    el.classList.add('error');
+    el.focus();
+  };
+
+  const submitContact = () => {
+    const fn = document.getElementById('input-firstname').value.trim();
+    const em = document.getElementById('input-email').value.trim();
+    if (!fn) { highlightError('input-firstname'); return; }
+    if (!em || !em.includes('@')) { highlightError('input-email'); return; }
+    state.firstName = fn;
+    state.lastName  = document.getElementById('input-lastname').value.trim();
+    state.email     = em;
+    direction = 'forward';
+    goTo(1);
+  };
+
+  /* ── Other pain toggle ── */
+  const toggleOtherPain = (card) => {
+    const textarea = document.getElementById('pain-other-text');
+    if (card.classList.contains('selected')) {
+      card.classList.remove('selected');
+      state.pains = state.pains.filter(p => p !== 'other');
+      state.otherPain = '';
+      textarea.value = '';
+      textarea.classList.add('hidden');
+    } else {
+      if (state.pains.length >= 3) {
+        card.classList.add('shake');
+        setTimeout(() => card.classList.remove('shake'), 400);
+        return;
+      }
+      card.classList.add('selected');
+      state.pains.push('other');
+      textarea.classList.remove('hidden');
+      setTimeout(() => textarea.focus(), 80);
+    }
+    document.getElementById('pain-counter').textContent = `${state.pains.length} / 3 selected`;
+    const stepEl = card.closest('.quiz-step');
+    stepEl.querySelectorAll('.quiz-card:not(.selected)').forEach(c => {
+      c.classList.toggle('disabled', state.pains.length >= 3);
+    });
+    const nextBtn = document.getElementById('next-2');
+    if (nextBtn) nextBtn.disabled = state.pains.length === 0;
   };
 
   /* ── Selection helpers ── */
@@ -675,12 +809,14 @@
 
   /* ── Restart ── */
   const restartQuiz = () => {
-    state.sector = null; state.pains = []; state.tried = []; state.confidence = null; state.goal = null;
+    state.sector = null; state.pains = []; state.tried = []; state.confidence = null; state.goal = null; state.otherPain = '';
     document.querySelectorAll('.quiz-card').forEach(c => c.classList.remove('selected','disabled'));
     document.querySelectorAll('[id^="next-"]').forEach(b => b.disabled = true);
     document.getElementById('pain-counter').textContent = '0 / 3 selected';
+    const otherTa = document.getElementById('pain-other-text');
+    if (otherTa) { otherTa.value = ''; otherTa.classList.add('hidden'); }
     direction = 'forward';
-    goTo(1);
+    goToStep0();
   };
 
   /* ══════════════════════════════════
@@ -708,6 +844,7 @@
       'reporting':      'Auto-generate and deliver performance reports to your inbox every week',
       'inventory':      'Real-time inventory & order update notifications across all channels',
       'complaints':     'Categorize, prioritize, and respond to complaints before they escalate',
+      'other':          state.otherPain ? `Automate: ${state.otherPain.substring(0,80)}${state.otherPain.length > 80 ? '…' : ''}` : 'Build a custom automation for your unique workflow challenge',
     };
 
     /* Pain → problem label */
@@ -718,6 +855,7 @@
       'reporting':      'Manual reporting consuming hours every week',
       'inventory':      'Manual order & inventory management',
       'complaints':     'Customer complaints piling up unanswered',
+      'other':          state.otherPain ? state.otherPain.substring(0, 60) + (state.otherPain.length > 60 ? '…' : '') : 'Your custom workflow challenge',
     };
 
     /* Goal → phrase */
@@ -760,6 +898,12 @@
     const t = testimonials[state.sector] || testimonials['default'];
     const topPains = state.pains.slice(0, 3);
     const primaryPain = topPains[0];
+
+    // Greeting with name
+    const greetingEl = document.getElementById('result-greeting');
+    if (greetingEl && state.firstName) {
+      greetingEl.textContent = `${state.firstName}, your agent profile is ready`;
+    }
 
     // Agent name & sector
     document.getElementById('result-agent-name').textContent = profile.name;

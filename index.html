@@ -108,6 +108,8 @@
   .delay-5 { animation-delay: 0.5s; opacity: 0; }
 
   /* Pulse dot */
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+
   @keyframes pulse-ring {
     0% { transform: scale(0.8); opacity: 1; }
     100% { transform: scale(2); opacity: 0; }
@@ -970,6 +972,65 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- AI AGENT BANNER -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="px-6 md:px-10 max-w-7xl mx-auto mb-8">
+  <a href="ai-agent.html"
+     onclick="window.location.href='ai-agent.html';return false;"
+     class="group relative flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 rounded-3xl overflow-hidden px-8 py-6 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/50 hover:shadow-[0_0_60px_rgba(55,234,158,0.12)] no-underline"
+     style="background: linear-gradient(115deg, rgba(13,28,44,0.95) 0%, rgba(20,38,58,0.9) 50%, rgba(13,28,44,0.95) 100%);">
+
+    <!-- Subtle animated glow blob -->
+    <div class="absolute top-0 left-0 w-56 h-full pointer-events-none" style="background: radial-gradient(ellipse at 0% 50%, rgba(55,234,158,0.08) 0%, transparent 70%);"></div>
+    <div class="absolute bottom-0 right-0 w-56 h-full pointer-events-none" style="background: radial-gradient(ellipse at 100% 50%, rgba(99,102,241,0.06) 0%, transparent 70%);"></div>
+
+    <!-- Left: icon + copy -->
+    <div class="relative z-10 flex items-center gap-5">
+      <!-- Pulsing icon -->
+      <div class="relative flex-shrink-0">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center border border-primary-container/40 group-hover:border-primary-container/70 transition-all duration-300" style="background: rgba(55,234,158,0.12);">
+          <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">smart_toy</span>
+        </div>
+        <!-- Live dot -->
+        <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-primary-container border-2 border-surface" style="animation: blink 1.5s ease infinite;"></span>
+      </div>
+
+      <div>
+        <!-- Hook -->
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-xs font-bold text-primary-container uppercase tracking-widest" data-en="New">Yeni</span>
+          <span class="text-xs text-outline">·</span>
+          <span class="text-xs text-outline" data-en="AI Employee Product">AI Çalışan Ürünü</span>
+        </div>
+        <p class="font-headline font-black text-lg md:text-xl text-on-background leading-tight"
+           data-en="Your AI Employee — Works 24/7, Never Calls in Sick">
+          AI Çalışanın 7/24 Çalışır, Hiç İzin Almaz
+        </p>
+        <p class="text-sm text-secondary mt-1 max-w-md"
+           data-en="Custom AI agent deployed in 48 hours. Handles support, reports &amp; lead follow-up automatically.">
+          48 saatte kurulum. Destek, raporlama ve lead takibini otomatik yönetir.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: CTA -->
+    <div class="relative z-10 flex-shrink-0 flex items-center gap-3">
+      <!-- Plans preview -->
+      <div class="hidden lg:flex flex-col gap-1 text-right mr-2">
+        <span class="text-xs text-outline" data-en="from">başlangıç</span>
+        <span class="font-headline font-black text-xl text-on-background">$497<span class="text-sm text-secondary font-normal">/ay</span></span>
+      </div>
+      <div class="stripe-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold group-hover:shadow-[0_8px_32px_rgba(55,234,158,0.35)] transition-all duration-300"
+           style="background: linear-gradient(135deg, #37ea9e 0%, #06d68a 100%); color:#003822;">
+        <span data-en="See Plans →">Planları Gör →</span>
+        <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+      </div>
+    </div>
+
+  </a>
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->

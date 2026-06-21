@@ -796,7 +796,27 @@
   };
 
   /* ── Analyzing transition ── */
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyfGI2gcEkwdrpU5Mrfx5KvH6VbeIXCmPfa82rfHVBPwYfWlRRQ3qf8udexE2A2zdI/exec';
+
   const triggerAnalyzing = () => {
+    // Send to Google Sheets (fire-and-forget, silent on error)
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        firstName:  state.firstName,
+        lastName:   state.lastName,
+        email:      state.email,
+        sector:     state.sector,
+        pains:      state.pains,
+        tried:      state.tried,
+        confidence: state.confidence,
+        goal:       state.goal,
+        otherPain:  state.otherPain
+      })
+    }).catch(() => {});
+
     document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active','back'));
     document.getElementById('progress-section').style.display = 'none';
     document.getElementById('analyzing').style.display = 'flex';

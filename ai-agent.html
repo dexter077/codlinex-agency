@@ -220,6 +220,18 @@
   .task-log-item:nth-child(3) { animation-delay: 0.5s; opacity:0; }
   .task-log-item:nth-child(4) { animation-delay: 0.7s; opacity:0; }
 
+  /* Billing toggle */
+  .billing-btn { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #9ca3af; cursor: pointer; transition: all 0.2s ease; }
+  .billing-btn.active { background: rgba(55,234,158,0.12); border-color: rgba(55,234,158,0.4); color: #37ea9e; }
+
+  /* Save badge */
+  .save-badge { display:none; }
+  .save-badge.visible { display:inline-flex; }
+
+  /* Logo wall */
+  .logo-slot { filter: grayscale(1); opacity: 0.35; transition: opacity 0.2s; }
+  .logo-slot:hover { opacity: 0.6; }
+
   /* Lang toggle */
   #lang-toggle-ai { cursor: pointer; }
 
@@ -670,48 +682,82 @@
      PRICING
 ══════════════════════════════════════════ -->
 <section id="pricing" class="max-w-7xl mx-auto px-4 mb-24">
-  <div class="text-center mb-12">
+
+  <!-- Header -->
+  <div class="text-center mb-10">
     <p class="text-xs text-primary-container font-medium uppercase tracking-widest mb-3" data-en="Transparent Pricing">Şeffaf Fiyatlandırma</p>
-    <h2 class="font-headline font-bold text-3xl md:text-4xl text-on-background" data-en="Choose Your AI Employee">AI Çalışanını Seç</h2>
-    <p class="text-secondary mt-3 text-sm max-w-xl mx-auto" data-en="All plans include setup in 48 hours. Cancel anytime.">Tüm planlar 48 saatte kurulum içerir. İstediğinde iptal et.</p>
+    <h2 class="font-headline font-bold text-3xl md:text-4xl text-on-background mb-4" data-en="Choose Your AI Employee">AI Çalışanını Seç</h2>
+
+    <!-- ROI stat -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-container/25 bg-primary-container/8 mb-7">
+      <span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24">trending_up</span>
+      <span class="text-sm text-primary-container font-semibold" data-en="Avg. saves 22 hrs/week per business">Müşteriler ortalama haftada 22 saat tasarruf ediyor</span>
+    </div>
+
+    <!-- Billing toggle -->
+    <div class="inline-flex items-center gap-1 p-1 rounded-full border border-white/10 bg-surface-container-low/60">
+      <button id="toggle-monthly" onclick="setBilling('monthly')"
+              class="billing-btn active px-5 py-2 rounded-full text-sm font-semibold"
+              data-en="Monthly">Aylık</button>
+      <button id="toggle-yearly" onclick="setBilling('yearly')"
+              class="billing-btn px-5 py-2 rounded-full text-sm font-semibold">
+        <span data-en="Yearly">Yıllık</span>
+        <span class="ml-1.5 text-xs font-bold text-primary-container" data-en="(2 months free)">(2 ay ücretsiz)</span>
+      </button>
+    </div>
+
+    <!-- Action definition -->
+    <p class="text-xs text-outline mt-5" data-en="1 action = 1 reply, 1 report, or 1 workflow step. Rollover unused actions 30 days.">
+      1 aksiyon = 1 yanıt, 1 rapor veya 1 iş akışı adımı · Kullanılmayan aksiyonlar 30 gün devredilir
+    </p>
   </div>
 
+  <!-- Cards -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
 
-    <!-- Starter -->
+    <!-- ── STARTER ── -->
     <div class="plan-card glass-card rounded-3xl p-8 border border-white/8 flex flex-col">
-      <div class="mb-6">
+      <div class="mb-5">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-white/8 mb-4">
           <span class="material-symbols-outlined text-secondary text-sm">bolt</span>
-          <span class="text-xs font-medium text-secondary" data-en="Starter">Starter</span>
+          <span class="text-xs font-medium text-secondary">Starter</span>
         </div>
-        <div class="flex items-end gap-2 mb-2">
-          <span class="font-headline font-black text-5xl text-on-background">$497</span>
-          <span class="text-secondary text-sm mb-2" data-en="/month">/ay</span>
+
+        <!-- Price -->
+        <div class="flex items-end gap-2 mb-1">
+          <span class="price-display font-headline font-black text-5xl text-on-background" data-monthly="$497" data-yearly="$373">$497</span>
+          <span class="text-secondary text-sm mb-2" data-en="/mo">/ay</span>
         </div>
-        <p class="text-secondary text-sm" data-en="For small businesses just getting started with AI.">Küçük işletmeler için ideal başlangıç noktası.</p>
+        <div class="save-badge items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary-container/10 border border-primary-container/20 mb-2 text-xs text-primary-container font-semibold" data-en="Billed $4,470/yr — save $494">
+          Yıllık $4.470 — $494 tasarruf
+        </div>
+        <p class="text-secondary text-sm" data-en="Perfect for businesses ready to automate their first workflow.">İlk iş akışını otomatize etmeye hazır işletmeler için.</p>
       </div>
 
-      <ul class="space-y-3 mb-8 flex-1">
+      <ul class="space-y-3 mb-6 flex-1">
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="1 AI agent (custom-trained)">1 AI agent (özel eğitimli)</span>
+          <span class="text-sm text-secondary" data-en="1 AI agent (purpose-built for your business)">1 AI agent (işletmenize özel kurulum)</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="Up to 500 tasks/month">500 görev/ay'a kadar</span>
+          <span class="text-sm text-secondary" data-en="Up to 1,000 automated actions/month">1.000 otomatik aksiyona kadar / ay</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="1 integration (Shopify, WhatsApp, or email)">1 entegrasyon (Shopify, WhatsApp veya e-posta)</span>
+          <span class="text-sm text-secondary" data-en="1 platform integration (Shopify, WhatsApp, or Email)">1 platform entegrasyonu (Shopify, WhatsApp veya E-posta)</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="48h setup">48s kurulum</span>
+          <span class="text-sm text-secondary" data-en="Live in 48 hours — guaranteed">48 saatte aktif — garantili</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
           <span class="text-sm text-secondary" data-en="Monthly performance report">Aylık performans raporu</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
+          <span class="text-sm text-secondary" data-en="30-day money-back guarantee">30 gün para iade garantisi</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined cross-icon text-base mt-0.5">cancel</span>
@@ -723,16 +769,15 @@
         </li>
       </ul>
 
-      <!-- Stripe placeholder — replace href with actual payment link -->
       <a href="#" onclick="alert('Stripe bağlantısı yakında eklenecek');return false;"
-         class="stripe-btn-ghost w-full text-center py-3.5 rounded-2xl text-sm font-semibold block">
-        <span data-en="Get Started →">Başla →</span>
+         class="stripe-btn-ghost w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-3">
+        <span data-en="Start Free Trial →">Ücretsiz Dene →</span>
       </a>
+      <p class="text-center text-xs text-outline" data-en="No contracts. Cancel anytime.">Sözleşme yok. İstediğinde iptal.</p>
     </div>
 
-    <!-- Growth (Popular) -->
+    <!-- ── GROWTH (Popular) ── -->
     <div class="plan-card plan-popular rounded-3xl p-8 border flex flex-col relative">
-      <!-- Popular badge -->
       <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
         <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary-container text-on-primary text-xs font-bold">
           <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24">star</span>
@@ -740,34 +785,38 @@
         </div>
       </div>
 
-      <div class="mb-6 mt-2">
+      <div class="mb-5 mt-2">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/15 border border-primary-container/30 mb-4">
           <span class="material-symbols-outlined text-primary-container text-sm">trending_up</span>
-          <span class="text-xs font-medium text-primary-container" data-en="Growth">Growth</span>
+          <span class="text-xs font-medium text-primary-container">Growth</span>
         </div>
-        <div class="flex items-end gap-2 mb-2">
-          <span class="font-headline font-black text-5xl text-on-background">$997</span>
-          <span class="text-secondary text-sm mb-2" data-en="/month">/ay</span>
+
+        <div class="flex items-end gap-2 mb-1">
+          <span class="price-display font-headline font-black text-5xl text-on-background" data-monthly="$997" data-yearly="$748">$997</span>
+          <span class="text-secondary text-sm mb-2" data-en="/mo">/ay</span>
+        </div>
+        <div class="save-badge items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary-container/10 border border-primary-container/20 mb-2 text-xs text-primary-container font-semibold" data-en="Billed $8,970/yr — save $994">
+          Yıllık $8.970 — $994 tasarruf
         </div>
         <p class="text-secondary text-sm" data-en="For growing teams that need serious automation.">Ciddi otomasyon isteyen büyüyen ekipler için.</p>
       </div>
 
-      <ul class="space-y-3 mb-8 flex-1">
+      <ul class="space-y-3 mb-6 flex-1">
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="3 AI agents (each custom-trained)">3 AI agent (her biri özel eğitimli)</span>
+          <span class="text-sm text-secondary" data-en="3 AI agents (purpose-built for your business)">3 AI agent (işletmenize özel kurulum)</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="Up to 2,000 tasks/month">2.000 görev/ay'a kadar</span>
+          <span class="text-sm text-secondary" data-en="Up to 5,000 automated actions/month">5.000 otomatik aksiyona kadar / ay</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="Up to 5 integrations">5 entegrasyona kadar</span>
+          <span class="text-sm text-secondary" data-en="Up to 5 platform integrations">5 platform entegrasyonuna kadar</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="48h setup + onboarding call">48s kurulum + onboarding görüşmesi</span>
+          <span class="text-sm text-secondary" data-en="Live in 48 hours + onboarding call">48 saatte aktif + onboarding görüşmesi</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
@@ -775,7 +824,11 @@
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="Multi-channel (WhatsApp, Slack, email)">Çok kanallı (WhatsApp, Slack, e-posta)</span>
+          <span class="text-sm text-secondary" data-en="Multi-channel (WhatsApp, Slack, Email)">Çok kanallı (WhatsApp, Slack, E-posta)</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
+          <span class="text-sm text-secondary" data-en="30-day money-back guarantee">30 gün para iade garantisi</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined cross-icon text-base mt-0.5">cancel</span>
@@ -783,35 +836,39 @@
         </li>
       </ul>
 
-      <!-- Stripe placeholder -->
       <a href="#" onclick="alert('Stripe bağlantısı yakında eklenecek');return false;"
-         class="stripe-btn w-full text-center py-3.5 rounded-2xl text-sm font-bold block">
-        <span data-en="Buy Now →">Hemen Al →</span>
+         class="stripe-btn w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-3">
+        <span data-en="Start in 48 Hours →">48 Saatte Başla →</span>
       </a>
+      <p class="text-center text-xs text-outline" data-en="No contracts. Cancel anytime.">Sözleşme yok. İstediğinde iptal.</p>
     </div>
 
-    <!-- Enterprise -->
+    <!-- ── ENTERPRISE ── -->
     <div class="plan-card glass-card rounded-3xl p-8 border border-white/8 flex flex-col">
-      <div class="mb-6">
+      <div class="mb-5">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-white/8 mb-4">
           <span class="material-symbols-outlined text-amber-400 text-sm">workspace_premium</span>
-          <span class="text-xs font-medium text-amber-400" data-en="Enterprise">Enterprise</span>
+          <span class="text-xs font-medium text-amber-400">Enterprise</span>
         </div>
-        <div class="flex items-end gap-2 mb-2">
-          <span class="font-headline font-black text-5xl text-on-background">$2,497</span>
-          <span class="text-secondary text-sm mb-2" data-en="/month">/ay</span>
+
+        <div class="flex items-end gap-2 mb-1">
+          <span class="price-display font-headline font-black text-5xl text-on-background" data-monthly="$2,497" data-yearly="$1,873">$2,497</span>
+          <span class="text-secondary text-sm mb-2" data-en="/mo">/ay</span>
+        </div>
+        <div class="save-badge items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-400/10 border border-amber-400/20 mb-2 text-xs text-amber-400 font-semibold" data-en="Billed $22,470/yr — save $2,494">
+          Yıllık $22.470 — $2.494 tasarruf
         </div>
         <p class="text-secondary text-sm" data-en="For companies that want a full AI operations layer.">Tam AI operasyon katmanı isteyen şirketler için.</p>
       </div>
 
-      <ul class="space-y-3 mb-8 flex-1">
+      <ul class="space-y-3 mb-6 flex-1">
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
           <span class="text-sm text-secondary" data-en="Unlimited AI agents">Sınırsız AI agent</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
-          <span class="text-sm text-secondary" data-en="Unlimited tasks">Sınırsız görev</span>
+          <span class="text-sm text-secondary" data-en="Unlimited automated actions">Sınırsız otomatik aksiyon</span>
         </li>
         <li class="flex items-start gap-2.5">
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
@@ -833,21 +890,70 @@
           <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
           <span class="text-sm text-secondary" data-en="Dedicated account manager">Özel hesap yöneticisi</span>
         </li>
+        <li class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined check-icon text-base mt-0.5">check_circle</span>
+          <span class="text-sm text-secondary" data-en="30-day money-back guarantee">30 gün para iade garantisi</span>
+        </li>
       </ul>
 
-      <!-- Stripe placeholder -->
-      <a href="#" onclick="alert('Stripe bağlantısı yakında eklenecek');return false;"
-         class="stripe-btn-ghost w-full text-center py-3.5 rounded-2xl text-sm font-semibold block">
-        <span data-en="Get Started →">Başla →</span>
+      <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+         onclick="window.open('https://calendly.com/ecomlinex/30min','_blank','noopener');return false;"
+         class="stripe-btn-ghost w-full text-center py-3.5 rounded-2xl text-sm font-bold block mb-3">
+        <span data-en="Talk to Sales →">Satış Ekibiyle Görüş →</span>
       </a>
+      <p class="text-center text-xs text-outline" data-en="Custom contract available.">Özel sözleşme seçeneği mevcuttur.</p>
     </div>
 
   </div>
 
-  <!-- Money-back guarantee -->
-  <div class="mt-8 flex items-center justify-center gap-2.5 text-secondary text-sm">
-    <span class="material-symbols-outlined text-primary-container text-base">verified_user</span>
-    <span data-en="30-day money-back guarantee. Cancel anytime. No long-term contracts.">30 gün para iade garantisi. İstediğinde iptal. Uzun vadeli sözleşme yok.</span>
+  <!-- Logo wall -->
+  <div class="mt-14 text-center">
+    <p class="text-xs text-outline uppercase tracking-widest mb-6" data-en="Trusted by 50+ businesses across Turkey &amp; Europe">Türkiye ve Avrupa'da 50+ işletme tarafından güvenilir</p>
+    <div class="flex items-center justify-center gap-4 flex-wrap">
+      <!-- Placeholder logo slots — replace with actual logos when available -->
+      <div class="logo-slot flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-surface-container/40">
+        <span class="material-symbols-outlined text-secondary text-sm">storefront</span>
+        <span class="text-xs text-secondary font-medium">E-Ticaret</span>
+      </div>
+      <div class="logo-slot flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-surface-container/40">
+        <span class="material-symbols-outlined text-secondary text-sm">medical_services</span>
+        <span class="text-xs text-secondary font-medium">Sağlık</span>
+      </div>
+      <div class="logo-slot flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-surface-container/40">
+        <span class="material-symbols-outlined text-secondary text-sm">hub</span>
+        <span class="text-xs text-secondary font-medium">B2B SaaS</span>
+      </div>
+      <div class="logo-slot flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-surface-container/40">
+        <span class="material-symbols-outlined text-secondary text-sm">real_estate_agent</span>
+        <span class="text-xs text-secondary font-medium">Gayrimenkul</span>
+      </div>
+      <div class="logo-slot flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-surface-container/40">
+        <span class="material-symbols-outlined text-secondary text-sm">restaurant</span>
+        <span class="text-xs text-secondary font-medium">Restoran</span>
+      </div>
+      <div class="logo-slot flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-surface-container/40">
+        <span class="material-symbols-outlined text-secondary text-sm">balance</span>
+        <span class="text-xs text-secondary font-medium">Hukuk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guarantee footer -->
+  <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+    <div class="flex items-center gap-2 text-secondary">
+      <span class="material-symbols-outlined text-primary-container text-base">verified_user</span>
+      <span data-en="30-day money-back guarantee">30 gün para iade garantisi</span>
+    </div>
+    <div class="hidden sm:block w-px h-4 bg-white/10"></div>
+    <div class="flex items-center gap-2 text-secondary">
+      <span class="material-symbols-outlined text-primary-container text-base">cancel</span>
+      <span data-en="No long-term contracts">Uzun vadeli sözleşme yok</span>
+    </div>
+    <div class="hidden sm:block w-px h-4 bg-white/10"></div>
+    <div class="flex items-center gap-2 text-secondary">
+      <span class="material-symbols-outlined text-primary-container text-base">rocket_launch</span>
+      <span data-en="Live in 48 hours — guaranteed">48 saatte aktif — garantili</span>
+    </div>
   </div>
 </section>
 
@@ -921,6 +1027,23 @@
      JS — Language Toggle
 ══════════════════════════════════════════ -->
 <script>
+  /* ── Billing toggle ── */
+  const setBilling = (type) => {
+    const isYearly = type === 'yearly';
+
+    document.getElementById('toggle-monthly').classList.toggle('active', !isYearly);
+    document.getElementById('toggle-yearly').classList.toggle('active', isYearly);
+
+    document.querySelectorAll('.price-display').forEach(el => {
+      el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+    });
+
+    document.querySelectorAll('.save-badge').forEach(el => {
+      el.classList.toggle('visible', isYearly);
+    });
+  };
+
+  /* ── Language toggle ── */
   let isEnAi = false;
 
   const toggleLangAi = () => {

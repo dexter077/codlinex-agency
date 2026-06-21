@@ -797,26 +797,22 @@
   };
 
   /* ── Analyzing transition ── */
-  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyfGI2gcEkwdrpU5Mrfx5KvH6VbeIXCmPfa82rfHVBPwYfWlRRQ3qf8udexE2A2zdI/exec';
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxxRt0CowBqXkrC7qFpdOj3wg0bUqu5nA8Pu48oa9DdIgQLl8URKfCLWxKCL6ttdBEH/exec';
 
   const triggerAnalyzing = () => {
-    // Send to Google Sheets (fire-and-forget, silent on error)
-    fetch(SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({
-        firstName:  state.firstName,
-        lastName:   state.lastName,
-        email:      state.email,
-        sector:     state.sector,
-        pains:      state.pains,
-        tried:      state.tried,
-        confidence: state.confidence,
-        goal:       state.goal,
-        otherPain:  state.otherPain
-      })
-    }).catch(() => {});
+    // Send to Google Sheets via GET (fire-and-forget, silent on error)
+    const params = new URLSearchParams({
+      firstName:  state.firstName  || '',
+      lastName:   state.lastName   || '',
+      email:      state.email      || '',
+      sector:     state.sector     || '',
+      pains:      (state.pains  || []).join(', '),
+      tried:      (state.tried  || []).join(', '),
+      confidence: state.confidence || '',
+      goal:       state.goal       || '',
+      otherPain:  state.otherPain  || ''
+    });
+    new Image().src = SHEETS_URL + '?' + params.toString();
 
     document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active','back'));
     document.getElementById('progress-section').style.display = 'none';

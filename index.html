@@ -749,9 +749,10 @@
                 <span class="material-symbols-outlined text-slate-600 flex-shrink-0" style="font-size:16px;">lock</span>
                 <p class="text-xs text-slate-500" data-en="Full 18-point audit — unlocked in your free session." data-tr="Tam 18 maddelik denetim — ücretsiz görüşmede açılıyor.">Full 18-point audit — unlocked in your free session.</p>
               </div>
-              <a href="#contact" onclick="document.getElementById('geo-results').classList.add('hidden')" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">
+              <button type="button" onclick="bookFromAnalysis()" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">
+                <span class="material-symbols-outlined text-base">calendar_month</span>
                 Get Your Full Report — Free →
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -2361,9 +2362,23 @@
           <span class="text-xs text-slate-600" data-en="Opens in a new tab — Google Calendar sync included">Yeni sekmede açılır — Google Calendar sync dahil</span>
         </div>
 
+        <!-- Analysis context banner (hidden by default, shown when coming from analyzer) -->
+        <div id="contact-analysis-banner" class="hidden mb-5 rounded-2xl px-5 py-4 border border-primary-container/25 text-left" style="background:rgba(55,234,158,0.06);">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings:'FILL' 1">analytics</span>
+            <span class="text-xs font-bold text-primary-container uppercase tracking-wider">Your AI Visibility Audit Result</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-slate-300" id="banner-domain"></span>
+            <span class="text-sm font-black" id="banner-score"></span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1">We'll run a full 18-point audit in your session based on these findings.</p>
+        </div>
+
         <form class="max-w-lg mx-auto flex flex-col gap-4 mb-8" onsubmit="submitForm(event)" novalidate>
-          <!-- Honeypot: botlar doldurur, insanlar görmez — Formspree bu alanı dolu görürse reddeder -->
+          <!-- Honeypot -->
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
+          <input type="hidden" name="audit_score" id="contact-audit-score" />
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-on-surface text-sm outline-none transition-colors placeholder:text-slate-600"
@@ -2371,6 +2386,7 @@
               type="text" name="name" autocomplete="name"
               maxlength="100" required/>
             <input
+              id="contact-business-input"
               class="bg-surface-container-lowest border border-white/5 focus:border-primary-container/50 rounded-xl px-5 py-4 text-on-surface text-sm outline-none transition-colors placeholder:text-slate-600"
               placeholder="İşletme Adı" data-en-ph="Business Name"
               type="text" name="business" autocomplete="organization"
@@ -2992,6 +3008,46 @@
   })();
 
   // ── GEO URL ANALYZER ─────────────────────────────────
+  let _lastAnalysis = null;
+
+  const bookFromAnalysis = () => {
+    document.getElementById('geo-results').classList.add('hidden');
+    const contactEl = document.getElementById('contact');
+    if (!contactEl) return;
+
+    if (_lastAnalysis) {
+      const { domain, score, rating } = _lastAnalysis;
+      const isEn = (typeof currentLang === 'undefined' || currentLang === 'en');
+
+      // Pre-fill business field with domain
+      const bizInput = document.getElementById('contact-business-input');
+      if (bizInput && !bizInput.value) bizInput.value = domain;
+
+      // Pre-select service
+      const sel = document.getElementById('service-select');
+      if (sel) sel.value = 'geo-aeo';
+
+      // Store score in hidden field
+      const scoreField = document.getElementById('contact-audit-score');
+      if (scoreField) scoreField.value = `${domain} — ${score}/100`;
+
+      // Show banner
+      const banner = document.getElementById('contact-analysis-banner');
+      const bannerDomain = document.getElementById('banner-domain');
+      const bannerScore  = document.getElementById('banner-score');
+      if (banner && bannerDomain && bannerScore) {
+        const colors = { high: '#37ea9e', medium: '#fbbf24', low: '#f87171' };
+        const labels = { high: isEn ? 'Good' : 'İyi', medium: isEn ? 'Fair' : 'Orta', low: isEn ? 'Low' : 'Düşük' };
+        bannerDomain.textContent = domain;
+        bannerScore.textContent  = `${score}/100 · ${labels[rating] || labels.low}`;
+        bannerScore.style.color  = colors[rating] || colors.low;
+        banner.classList.remove('hidden');
+      }
+    }
+
+    contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const runGeoAnalysis = async () => {
     const input = document.getElementById('geo-url-input');
     let url = (input ? input.value : '').trim();
@@ -3062,6 +3118,7 @@
         }).join('');
       }
 
+      _lastAnalysis = data;
       resultsEl.classList.remove('hidden');
       btn.disabled = false;
       if (btnText) btnText.textContent = isEn ? 'Re-analyze' : 'Tekrar Analiz';

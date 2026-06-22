@@ -734,31 +734,23 @@
           <div id="geo-results" class="hidden rounded-2xl border border-primary-container/25 overflow-hidden" style="background:rgba(6,20,35,0.9);">
             <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.9) 50%,rgba(55,234,158,0.6) 70%,transparent);"></div>
             <div class="p-5 relative">
-              <div class="flex items-center gap-2 mb-4">
-                <span class="material-symbols-outlined text-slate-500" style="font-size:16px;font-variation-settings:'FILL' 1">domain</span>
-                <span id="geo-result-url" class="text-sm font-black text-white"></span>
-                <span class="text-[10px] font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 ml-auto whitespace-nowrap" data-en="Preliminary Analysis" data-tr="Ön Analiz">Preliminary Analysis</span>
+              <!-- Domain + Score -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-slate-500" style="font-size:16px;font-variation-settings:'FILL' 1">domain</span>
+                  <span id="geo-result-url" class="text-sm font-black text-white"></span>
+                </div>
+                <div id="geo-score-badge" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-black"></div>
               </div>
-              <div class="grid grid-cols-3 gap-2 mb-4">
-                <div class="rounded-xl p-3 bg-red-500/8 border border-red-500/20 text-center">
-                  <div class="text-base font-black text-red-400 mb-0.5" data-en="Low" data-tr="Düşük">Low</div>
-                  <div class="text-[10px] text-slate-600 leading-tight" data-en="ChatGPT Visibility" data-tr="ChatGPT Görünürlük">ChatGPT Visibility</div>
-                </div>
-                <div class="rounded-xl p-3 bg-red-500/8 border border-red-500/20 text-center">
-                  <div class="text-base font-black text-red-400 mb-0.5">0</div>
-                  <div class="text-[10px] text-slate-600 leading-tight" data-en="Perplexity Citations" data-tr="Perplexity Atıf">Perplexity Citations</div>
-                </div>
-                <div class="rounded-xl p-3 bg-amber-500/8 border border-amber-500/20 text-center">
-                  <div class="text-base font-black text-amber-400 mb-0.5" data-en="Medium" data-tr="Orta">Medium</div>
-                  <div class="text-[10px] text-slate-600 leading-tight" data-en="AI Overview Ready" data-tr="AI Overview Hazır">AI Overview Ready</div>
-                </div>
-              </div>
+              <!-- Checks list -->
+              <div id="geo-checks-list" class="space-y-2 mb-4"></div>
+              <!-- Lock -->
               <div class="flex items-center gap-2.5 rounded-xl bg-surface-container-highest/50 border border-white/5 px-3.5 py-2.5 mb-4">
                 <span class="material-symbols-outlined text-slate-600 flex-shrink-0" style="font-size:16px;">lock</span>
-                <p class="text-xs text-slate-500" data-en="Full report with 18 metrics — unlocked in your free session." data-tr="Tam rapor 18 metrik içeriyor — ücretsiz görüşmede açılıyor.">Full report with <strong class="text-slate-400">18 metrics</strong> — unlocked in your free session.</p>
+                <p class="text-xs text-slate-500" data-en="Full 18-point audit — unlocked in your free session." data-tr="Tam 18 maddelik denetim — ücretsiz görüşmede açılıyor.">Full 18-point audit — unlocked in your free session.</p>
               </div>
-              <a href="#contact" onclick="document.getElementById('geo-results').classList.add('hidden')" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Analyze Your Business in 30 Minutes →" data-tr="30 Dakikada İşletmeni Analiz Edelim →">
-                Analyze Your Business in 30 Minutes →
+              <a href="#contact" onclick="document.getElementById('geo-results').classList.add('hidden')" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">
+                Get Your Full Report — Free →
               </a>
             </div>
           </div>
@@ -3000,23 +2992,18 @@
   })();
 
   // ── GEO URL ANALYZER ─────────────────────────────────
-  const runGeoAnalysis = () => {
-    const input    = document.getElementById('geo-url-input');
-    let url        = (input ? input.value : '').trim();
+  const runGeoAnalysis = async () => {
+    const input = document.getElementById('geo-url-input');
+    let url = (input ? input.value : '').trim();
     if (!url) { if (input) input.focus(); return; }
     if (!url.match(/^https?:\/\//)) url = 'https://' + url;
 
-    let domain;
-    try { domain = new URL(url).hostname.replace(/^www\./, ''); }
-    catch { domain = url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] || url; }
-
-    const isEn       = (typeof currentLang !== 'undefined' && currentLang === 'en');
-    const loadingEl  = document.getElementById('geo-loading');
-    const resultsEl  = document.getElementById('geo-results');
-    const btn        = document.getElementById('geo-analyze-btn');
-    const btnText    = document.getElementById('geo-btn-text');
-    const loadingMsg = document.getElementById('geo-loading-msg');
-    const resultUrl  = document.getElementById('geo-result-url');
+    const isEn      = (typeof currentLang === 'undefined' || currentLang === 'en');
+    const loadingEl = document.getElementById('geo-loading');
+    const resultsEl = document.getElementById('geo-results');
+    const btn       = document.getElementById('geo-analyze-btn');
+    const btnText   = document.getElementById('geo-btn-text');
+    const loadingMsg= document.getElementById('geo-loading-msg');
     if (!loadingEl || !resultsEl || !btn) return;
 
     resultsEl.classList.add('hidden');
@@ -3025,25 +3012,69 @@
     if (btnText) btnText.textContent = isEn ? 'Analyzing...' : 'Analiz Ediliyor...';
 
     const msgs = isEn
-      ? ['Scanning ChatGPT index...', 'Checking Perplexity citations...', 'Measuring Google AI readiness...', 'Calculating competitor score...', 'Preparing your report...']
-      : ['ChatGPT veri tabanı taranıyor...', 'Perplexity atıfları kontrol ediliyor...', 'Google AI hazırlığı ölçülüyor...', 'Rakip görünürlük skoru hesaplanıyor...', 'Rapor hazırlanıyor...'];
-
+      ? ['Checking AI bot access...', 'Looking for llms.txt...', 'Scanning structured data...', 'Reading meta content...', 'Calculating your score...']
+      : ['AI bot erişimi kontrol ediliyor...', 'llms.txt aranıyor...', 'Yapısal veri taranıyor...', 'Meta içerik okunuyor...', 'Skor hesaplanıyor...'];
     let mi = 0;
     if (loadingMsg) loadingMsg.textContent = msgs[0];
-    const msgInt = setInterval(() => {
-      mi = (mi + 1) % msgs.length;
-      if (loadingMsg) loadingMsg.textContent = msgs[mi];
-    }, 680);
+    const msgInt = setInterval(() => { mi = (mi + 1) % msgs.length; if (loadingMsg) loadingMsg.textContent = msgs[mi]; }, 900);
 
-    setTimeout(() => {
+    try {
+      const res  = await fetch(`/api/analyze?url=${encodeURIComponent(url)}`);
+      const data = await res.json();
       clearInterval(msgInt);
       loadingEl.classList.add('hidden');
-      if (resultUrl) resultUrl.textContent = domain;
+
+      /* Score badge */
+      const scoreEl = document.getElementById('geo-score-badge');
+      const urlEl   = document.getElementById('geo-result-url');
+      if (urlEl) urlEl.textContent = data.domain || url;
+      if (scoreEl) {
+        const colors = { high: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10', medium: 'text-amber-400 border-amber-500/30 bg-amber-500/10', low: 'text-red-400 border-red-500/30 bg-red-500/10' };
+        const labels = { high: isEn ? 'Good' : 'İyi', medium: isEn ? 'Fair' : 'Orta', low: isEn ? 'Low' : 'Düşük' };
+        scoreEl.className = `flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-black ${colors[data.rating] || colors.low}`;
+        scoreEl.textContent = `${data.score}/100 · ${labels[data.rating] || labels.low}`;
+      }
+
+      /* Checks list */
+      const listEl = document.getElementById('geo-checks-list');
+      if (listEl && data.checks) {
+        const checkDefs = [
+          { key: 'robots', icon: 'smart_toy',   labelEn: 'AI Bot Access',    labelTr: 'AI Bot Erişimi' },
+          { key: 'llms',   icon: 'description', labelEn: 'llms.txt',         labelTr: 'llms.txt' },
+          { key: 'schema', icon: 'data_object', labelEn: 'Structured Data',  labelTr: 'Yapısal Veri' },
+          { key: 'content',icon: 'article',     labelEn: 'Content Signals',  labelTr: 'İçerik Sinyalleri' },
+        ];
+        listEl.innerHTML = checkDefs.map(({ key, icon, labelEn, labelTr }) => {
+          const c = data.checks[key];
+          if (!c) return '';
+          const pass  = c.pass === true;
+          const warn  = c.pass === null;
+          const color = pass ? '#37ea9e' : warn ? '#fbbf24' : '#f87171';
+          const tick  = pass ? 'check_circle' : warn ? 'help' : 'cancel';
+          const label = isEn ? labelEn : labelTr;
+          return `<div class="flex items-start gap-2.5 rounded-xl px-3 py-2.5" style="background:rgba(19,32,48,0.6);border:1px solid rgba(255,255,255,0.06);">
+            <span class="material-symbols-outlined flex-shrink-0 mt-0.5" style="font-size:16px;color:${color};font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">${tick}</span>
+            <div class="min-w-0">
+              <div class="text-xs font-bold text-slate-300">${label}</div>
+              <div class="text-[11px] text-slate-500 leading-snug mt-0.5">${c.label || ''}</div>
+            </div>
+          </div>`;
+        }).join('');
+      }
+
       resultsEl.classList.remove('hidden');
       btn.disabled = false;
       if (btnText) btnText.textContent = isEn ? 'Re-analyze' : 'Tekrar Analiz';
       resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 3400);
+
+    } catch (err) {
+      clearInterval(msgInt);
+      loadingEl.classList.add('hidden');
+      btn.disabled = false;
+      if (btnText) btnText.textContent = isEn ? 'Analyze Free' : 'Analiz Et';
+      if (loadingMsg) loadingMsg.textContent = '';
+      alert(isEn ? 'Analysis failed — please try again.' : 'Analiz başarısız — tekrar deneyin.');
+    }
   };
 
   // Enter key support for URL input

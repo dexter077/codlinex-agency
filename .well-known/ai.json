@@ -1,0 +1,15 @@
+{
+  "name": "CodLinex",
+  "url": "https://codlinex.com",
+  "description": "CodLinex is an AI automation agency building custom AI agent systems for US businesses. We automate operations and provide GEO optimization for AI search visibility.",
+  "contact": "info@codlinex.com",
+  "ai_endpoints": {
+    "summary": "https://codlinex.com/ai/summary.json",
+    "faq": "https://codlinex.com/ai/faq.json",
+    "service": "https://codlinex.com/ai/service.json"
+  },
+  "llms_txt": "https://codlinex.com/llms.txt",
+  "robots_txt": "https://codlinex.com/robots.txt",
+  "crawl_policy": "allow-all-ai-bots",
+  "languages": ["en-US", "tr-TR"]
+}

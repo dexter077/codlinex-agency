@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>CodLinex — AI Automation Agency</title>
+    <link>https://codlinex.com</link>
+    <description>CodLinex builds custom AI agent systems and provides Generative Engine Optimization (GEO) for US businesses. Latest updates, case studies, and AI automation insights.</description>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://codlinex.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <copyright>Copyright 2026 CodLinex</copyright>
+    <managingEditor>info@codlinex.com (CodLinex)</managingEditor>
+
+    <item>
+      <title>CodLinex Now Ranks in ChatGPT, Perplexity, and Google AI Answers</title>
+      <link>https://codlinex.com</link>
+      <description>CodLinex achieved a GEO score of 77/100 (Good band), making our AI automation services discoverable in ChatGPT Search (80/100), Google AI Overviews (83/100), and Perplexity (70/100). We implement robots.txt AI bot access, llms.txt, structured data schemas, and bilingual AI discovery endpoints.</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://codlinex.com/#geo-launch-2026</guid>
+      <dc:creator>CodLinex</dc:creator>
+    </item>
+
+    <item>
+      <title>AI Agent Systems: Automate Your Business in 48 Hours</title>
+      <link>https://codlinex.com</link>
+      <description>CodLinex builds custom multi-agent AI systems that automate customer support, lead follow-up, scheduling, and reporting. Clients achieve 91% auto-resolution rates, 73% fewer appointment no-shows, and save 23+ hours per week. Every system goes live within 48 hours. Plans start at $497/month.</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://codlinex.com/#ai-agents-2026</guid>
+      <dc:creator>CodLinex</dc:creator>
+    </item>
+
+    <item>
+      <title>What is Generative Engine Optimization (GEO)?</title>
+      <link>https://codlinex.com</link>
+      <description>GEO is the practice of optimizing a website to appear in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Gemini. According to Princeton University research (KDD 2024), GEO techniques can increase AI search visibility by up to 40%. CodLinex offers GEO as a standalone service for US businesses.</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://codlinex.com/#geo-explainer-2026</guid>
+      <dc:creator>CodLinex</dc:creator>
+    </item>
+
+  </channel>
+</rss>

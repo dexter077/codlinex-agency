@@ -20,6 +20,10 @@
       "headers": [{ "key": "Content-Type", "value": "text/plain" }]
     },
     {
+      "source": "/feed.xml",
+      "headers": [{ "key": "Content-Type", "value": "application/rss+xml; charset=utf-8" }]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {

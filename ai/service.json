@@ -1,0 +1,94 @@
+{
+  "name": "CodLinex",
+  "url": "https://codlinex.com",
+  "email": "info@codlinex.com",
+  "lastModified": "2026-06-23",
+  "services": [
+    {
+      "id": "ai-agent-systems",
+      "name": "AI Agent Systems",
+      "name_tr": "AI Agent Sistemleri",
+      "description": "Custom multi-agent automation systems that run business operations autonomously — customer support, lead follow-up, scheduling, reporting, and more. Each system is purpose-built for the client's industry and integrates with existing tools.",
+      "description_tr": "Müşteri desteği, lead takibi, randevu yönetimi ve raporlama gibi iş süreçlerini özerk olarak yürüten özel çok ajanlı otomasyon sistemleri. Her sistem müşterinin sektörüne özel tasarlanır.",
+      "results": [
+        "91% average auto-resolution rate on customer inquiries",
+        "23+ hours saved per week on average",
+        "48-hour setup guarantee"
+      ],
+      "integrations": ["Shopify", "WooCommerce", "WhatsApp", "Slack", "Email", "CRM", "Calendly"],
+      "url": "https://codlinex.com/ai-agent.html"
+    },
+    {
+      "id": "geo-optimization",
+      "name": "Generative Engine Optimization (GEO)",
+      "name_tr": "Generatif Arama Motoru Optimizasyonu (GEO)",
+      "description": "Technical and content optimization to make businesses visible in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Gemini. Includes robots.txt, llms.txt, structured data, schema markup, and answer-first content strategy.",
+      "description_tr": "ChatGPT, Perplexity, Google AI ve Gemini gibi yapay zeka motorlarının yanıtlarında görünürlük sağlamak için teknik ve içerik optimizasyonu. robots.txt, llms.txt, yapısal veri ve cevap odaklı içerik stratejisi içerir.",
+      "results": [
+        "Up to 40% increase in AI search visibility (Princeton 2024)",
+        "GEO score improvement from critical to good band",
+        "Presence in ChatGPT, Perplexity, and Google AI answers"
+      ],
+      "url": "https://codlinex.com"
+    },
+    {
+      "id": "business-automation",
+      "name": "Business Process Automation",
+      "name_tr": "İş Süreci Otomasyonu",
+      "description": "End-to-end automation of repetitive business workflows. Customer support ticketing, lead nurturing sequences, appointment reminders, inventory alerts, and daily reporting — all automated with AI agents.",
+      "description_tr": "Tekrar eden iş süreçlerinin uçtan uca otomasyonu. Müşteri destek biletleme, lead yetiştirme dizileri, randevu hatırlatmaları, stok uyarıları ve günlük raporlama — hepsi AI agent'larla otomatik.",
+      "results": [
+        "73% reduction in appointment no-shows (healthcare clients)",
+        "340% pipeline growth (B2B SaaS client)",
+        "3x faster lead response time (real estate clients)"
+      ],
+      "url": "https://codlinex.com"
+    }
+  ],
+  "pricing": [
+    {
+      "plan": "Starter",
+      "price_usd_monthly": 497,
+      "price_usd_annual": 4470,
+      "agents": 1,
+      "actions_per_month": 1000,
+      "integrations": 1,
+      "setup_hours": 48,
+      "guarantee_days": 30
+    },
+    {
+      "plan": "Growth",
+      "price_usd_monthly": 997,
+      "price_usd_annual": 8970,
+      "agents": 3,
+      "actions_per_month": 5000,
+      "integrations": 5,
+      "setup_hours": 48,
+      "guarantee_days": 30,
+      "most_popular": true
+    },
+    {
+      "plan": "Enterprise",
+      "price_usd_monthly": 2497,
+      "price_usd_annual": 22470,
+      "agents": "unlimited",
+      "actions_per_month": "unlimited",
+      "integrations": "unlimited",
+      "setup_hours": 48,
+      "guarantee_days": 30
+    }
+  ],
+  "industries": [
+    { "id": "ecommerce",  "name": "E-commerce",        "platforms": ["Shopify", "WooCommerce"] },
+    { "id": "healthcare", "name": "Healthcare Clinics", "use_case": "appointment automation, no-show reduction" },
+    { "id": "realestate", "name": "Real Estate",        "use_case": "lead follow-up, content automation" },
+    { "id": "legal",      "name": "Law Firms",          "use_case": "document processing, client communication" },
+    { "id": "marketing",  "name": "Marketing Agencies", "use_case": "reporting, content production" }
+  ],
+  "target_market": {
+    "geography": "United States",
+    "company_size": "5-100 employees",
+    "annual_revenue": "$500K - $10M"
+  },
+  "languages": ["en-US", "tr-TR"]
+}

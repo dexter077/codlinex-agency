@@ -1,0 +1,52 @@
+{
+  "name": "CodLinex",
+  "url": "https://codlinex.com",
+  "lastModified": "2026-06-23",
+  "areaServed": ["United States", "Turkey"],
+  "contact": "https://codlinex.com/#contact",
+  "guarantee": "48-hour setup, 30-day money-back",
+
+  "en": {
+    "language": "en-US",
+    "description": "CodLinex is a US-focused AI automation agency that builds custom AI agent systems for small and mid-size businesses. We automate customer support, lead follow-up, scheduling, and reporting — saving clients 20+ hours per week. We also help businesses appear in AI search results on ChatGPT, Perplexity, and Google AI (GEO optimization).",
+    "services": [
+      "AI Agent Systems",
+      "Business Process Automation",
+      "Generative Engine Optimization (GEO)",
+      "AI Search Visibility"
+    ],
+    "pricing": {
+      "starter": "$497/month — 1 AI agent, 1,000 automated actions",
+      "growth": "$997/month — 3 AI agents, 5,000 actions (most popular)",
+      "enterprise": "$2,497/month — unlimited agents and actions"
+    },
+    "results": [
+      "91% average customer support auto-resolution rate",
+      "73% reduction in appointment no-shows",
+      "23+ hours saved per week per client",
+      "Live in 48 hours guaranteed"
+    ]
+  },
+
+  "tr": {
+    "language": "tr-TR",
+    "description": "CodLinex, küçük ve orta ölçekli işletmeler için özel AI otomasyon sistemleri kuran bir yapay zeka ajansıdır. Müşteri desteği, lead takibi, randevu yönetimi ve raporlamayı otomatize ederek haftada 20+ saat tasarruf sağlıyoruz. Ayrıca işletmenizin ChatGPT, Perplexity ve Google AI aramalarında görünür olmasını sağlıyoruz (GEO optimizasyonu).",
+    "services": [
+      "AI Agent Sistemleri",
+      "İş Süreci Otomasyonu",
+      "Generatif Arama Motoru Optimizasyonu (GEO)",
+      "AI Arama Görünürlüğü"
+    ],
+    "pricing": {
+      "starter": "$497/ay — 1 AI agent, 1.000 otomatik aksiyon",
+      "growth": "$997/ay — 3 AI agent, 5.000 aksiyon (en popüler)",
+      "enterprise": "$2.497/ay — sınırsız agent ve aksiyon"
+    },
+    "results": [
+      "Ortalama %91 müşteri sorusu otomatik yanıtlama oranı",
+      "Randevu iptali %73 azalma",
+      "Müşteri başına haftada 20+ saat tasarruf",
+      "48 saat içinde sisteminiz canlıya geçiyor"
+    ]
+  }
+}

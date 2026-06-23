@@ -1,0 +1,65 @@
+# CodLinex
+
+> CodLinex is a US-focused AI automation agency that builds custom AI agent systems for small and mid-size businesses. We automate operations, save clients 20+ hours per week, and optimize their digital presence for AI search engines (GEO — Generative Engine Optimization).
+
+> CodLinex, küçük ve orta ölçekli işletmeler için özel AI otomasyon sistemleri kuran bir yapay zeka ajansıdır. İş süreçlerini otomatize eder, haftada 20+ saat tasarruf sağlar ve GEO optimizasyonu ile işletmenizi AI arama motorlarında görünür kılarız.
+
+---
+
+## Services / Hizmetler
+
+- [AI Agent Systems](https://codlinex.com/ai-agent.html) — Custom multi-agent automation for e-commerce, healthcare, real estate, law, and marketing agencies / E-ticaret, sağlık, emlak, hukuk ve ajanslar için özel çok ajanlı otomasyon
+- [GEO / AI Search Visibility](https://codlinex.com) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini / ChatGPT, Perplexity ve Google AI'da görünür ol
+- [Business Automation](https://codlinex.com) — Customer support, lead follow-up, reporting, scheduling / Müşteri desteği, lead takibi, raporlama, randevu yönetimi
+
+---
+
+## Pricing / Fiyatlandırma
+
+| Plan | Price / Fiyat | Includes / İçerik |
+|------|---------------|-------------------|
+| Starter | $497/mo | 1 AI agent, 1,000 actions / 1.000 aksiyon |
+| Growth | $997/mo | 3 AI agents, 5,000 actions / 5.000 aksiyon |
+| Enterprise | $2,497/mo | Unlimited / Sınırsız |
+
+48-hour setup guarantee · 30-day money-back · No contracts
+48 saat kurulum garantisi · 30 gün iade garantisi · Sözleşme yok
+
+---
+
+## Who We Help / Hedef Kitle
+
+**EN:** US businesses with 5–100 employees:
+- E-commerce (Shopify, WooCommerce)
+- Healthcare clinics (appointment automation, no-show reduction)
+- Real estate agencies (lead follow-up, content)
+- Law firms (document automation, client follow-up)
+- Marketing agencies (reporting, content production)
+
+**TR:** 5–100 çalışanlı işletmeler:
+- E-ticaret (Shopify, WooCommerce)
+- Sağlık klinikleri (randevu otomasyonu, iptal azaltma)
+- Emlak ofisleri (lead takibi, içerik)
+- Hukuk büroları (belge otomasyonu, müvekkil takibi)
+- Pazarlama ajansları (raporlama, içerik üretimi)
+
+---
+
+## Key Results / Temel Sonuçlar
+
+- 91% average customer support auto-resolution / Ortalama %91 otomatik yanıt oranı
+- 73% reduction in appointment no-shows / Randevu iptali %73 azalma
+- 23+ hours saved per week per client / Müşteri başına haftada 23+ saat tasarruf
+- 340% pipeline growth (B2B SaaS client) / Pipeline büyümesi %340
+
+---
+
+## Contact / İletişim
+
+- Website: https://codlinex.com
+- AI Agent Quiz: https://codlinex.com/ai-agent.html
+- Email: ecomlinex@gmail.com
+
+## Optional
+
+- llms-full.txt: https://codlinex.com/llms-full.txt

@@ -16,6 +16,7 @@
 - **Website:** https://codlinex.com
 - **LinkedIn:** https://www.linkedin.com/company/codlinex
 - **Crunchbase:** https://www.crunchbase.com/organization/codlinex
+- **GitHub:** https://github.com/Codlinex
 - **Legal entity:** Ecomlinex LLC (Delaware, est. 2020)
 
 ---

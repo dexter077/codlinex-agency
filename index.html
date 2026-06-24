@@ -1457,6 +1457,77 @@
             </div>
           </div>
 
+          <!-- GEO Kart — URL Analyzer -->
+          <div class="mb-6" id="geo-analyzer-wrap-geo">
+            <p class="text-xs text-slate-400 mb-2.5 flex items-center gap-1.5" data-en="Free AI Visibility Analysis — enter your URL, see your score instantly." data-tr="Ücretsiz AI Görünürlük Analizi — URL'ini gir, skorunu gör.">
+              <span class="material-symbols-outlined text-primary-container" style="font-size:13px;font-variation-settings:'FILL' 1">verified</span>
+              <span data-en="Free AI Visibility Analysis — enter your URL, see your score instantly." data-tr="Ücretsiz AI Görünürlük Analizi — URL'ini gir, skorunu gör.">Free AI Visibility Analysis — enter your URL, see your score instantly.</span>
+            </p>
+            <!-- Input row -->
+            <div class="flex gap-2 p-1.5 rounded-2xl bg-surface-container-high border border-white/10 focus-within:border-primary-container/40 transition-colors mb-3">
+              <div class="flex items-center pl-3 text-slate-600 flex-shrink-0">
+                <span class="material-symbols-outlined" style="font-size:18px;">language</span>
+              </div>
+              <input
+                type="url"
+                id="geo-url-input-geo"
+                placeholder="yoursite.com"
+                data-en-ph="yoursite.com"
+                data-tr-ph="siteniz.com"
+                class="flex-1 bg-transparent text-white placeholder-slate-600 text-sm font-medium outline-none py-2 pr-2 min-w-0"
+              />
+              <button
+                id="geo-analyze-btn-geo"
+                onclick="runGeoAnalysis('-geo')"
+                class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container text-sm font-black px-5 py-2.5 rounded-xl hover:opacity-90 transition-all active:scale-95 whitespace-nowrap flex-shrink-0"
+              >
+                <span class="material-symbols-outlined flex-shrink-0" style="font-size:16px;" id="geo-btn-icon-geo">travel_explore</span>
+                <span id="geo-btn-text-geo" data-en="Analyze Free" data-tr="Analiz Et">Analyze Free</span>
+              </button>
+            </div>
+
+            <!-- Loading state -->
+            <div id="geo-loading-geo" class="hidden rounded-2xl bg-surface-container-high/70 border border-white/5 p-4 relative overflow-hidden">
+              <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(55,234,158,0.05) 50%,transparent 70%);background-size:200% 100%;animation:hookBeam 1.4s ease-in-out infinite;pointer-events:none;"></div>
+              <div class="relative flex items-center gap-3 mb-3">
+                <div style="width:18px;height:18px;border:2px solid rgba(55,234,158,0.25);border-top-color:#37ea9e;border-radius:50%;animation:coreSpin 0.75s linear infinite;flex-shrink:0;"></div>
+                <p id="geo-loading-msg-geo" class="text-sm text-slate-300 font-medium"></p>
+              </div>
+              <div class="flex gap-2 flex-wrap relative">
+                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">ChatGPT</span>
+                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Perplexity</span>
+                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Google AI</span>
+                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Gemini</span>
+              </div>
+            </div>
+
+            <!-- Results teaser -->
+            <div id="geo-results-geo" class="hidden rounded-2xl border border-primary-container/25 overflow-hidden relative" style="background:rgba(6,20,35,0.9);">
+              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.9) 50%,rgba(55,234,158,0.6) 70%,transparent);"></div>
+              <div class="p-5 relative">
+                <!-- Domain + Score -->
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-slate-500" style="font-size:16px;font-variation-settings:'FILL' 1">domain</span>
+                    <span id="geo-result-url-geo" class="text-sm font-black text-white"></span>
+                  </div>
+                  <div id="geo-score-badge-geo" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-black"></div>
+                </div>
+                <!-- Checks list -->
+                <div id="geo-checks-list-geo" class="space-y-2 mb-4"></div>
+                <!-- Lock -->
+                <div class="flex items-center gap-2.5 rounded-xl bg-surface-container-highest/50 border border-white/5 px-3.5 py-2.5 mb-4">
+                  <span class="material-symbols-outlined text-slate-600 flex-shrink-0" style="font-size:16px;">lock</span>
+                  <p class="text-xs text-slate-500" data-en="Full 18-point audit — unlocked in your free session." data-tr="Tam 18 maddelik denetim — ücretsiz görüşmede açılıyor.">Full 18-point audit — unlocked in your free session.</p>
+                </div>
+                <button type="button" onclick="bookFromAnalysis()" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">
+                  <span class="material-symbols-outlined text-base">calendar_month</span>
+                  <span data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">Get Your Full Report — Free →</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- İletişim CTA -->
           <div class="rounded-2xl p-6 border border-primary-container/20 bg-primary-container/5 relative overflow-hidden">
             <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.8) 50%,rgba(55,234,158,0.6) 70%,transparent);"></div>
@@ -3330,18 +3401,19 @@
     contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const runGeoAnalysis = async () => {
-    const input = document.getElementById('geo-url-input');
+  const runGeoAnalysis = async (sfx) => {
+    const s = sfx || '';
+    const input = document.getElementById('geo-url-input' + s);
     let url = (input ? input.value : '').trim();
     if (!url) { if (input) input.focus(); return; }
     if (!url.match(/^https?:\/\//)) url = 'https://' + url;
 
     const isEn      = (typeof currentLang === 'undefined' || currentLang === 'en');
-    const loadingEl = document.getElementById('geo-loading');
-    const resultsEl = document.getElementById('geo-results');
-    const btn       = document.getElementById('geo-analyze-btn');
-    const btnText   = document.getElementById('geo-btn-text');
-    const loadingMsg= document.getElementById('geo-loading-msg');
+    const loadingEl = document.getElementById('geo-loading' + s);
+    const resultsEl = document.getElementById('geo-results' + s);
+    const btn       = document.getElementById('geo-analyze-btn' + s);
+    const btnText   = document.getElementById('geo-btn-text' + s);
+    const loadingMsg= document.getElementById('geo-loading-msg' + s);
     if (!loadingEl || !resultsEl || !btn) return;
 
     resultsEl.classList.add('hidden');
@@ -3363,8 +3435,8 @@
       loadingEl.classList.add('hidden');
 
       /* Score badge */
-      const scoreEl = document.getElementById('geo-score-badge');
-      const urlEl   = document.getElementById('geo-result-url');
+      const scoreEl = document.getElementById('geo-score-badge' + s);
+      const urlEl   = document.getElementById('geo-result-url' + s);
       if (urlEl) urlEl.textContent = data.domain || url;
       if (scoreEl) {
         const colors = { high: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10', medium: 'text-amber-400 border-amber-500/30 bg-amber-500/10', low: 'text-red-400 border-red-500/30 bg-red-500/10' };
@@ -3374,7 +3446,7 @@
       }
 
       /* Checks list */
-      const listEl = document.getElementById('geo-checks-list');
+      const listEl = document.getElementById('geo-checks-list' + s);
       if (listEl && data.checks) {
         const checkDefs = [
           { key: 'robots', icon: 'smart_toy',   labelEn: 'AI Bot Access',    labelTr: 'AI Bot Erişimi' },
@@ -3416,11 +3488,12 @@
     }
   };
 
-  // Enter key support for URL input
+  // Enter key support — hero bar
   const geoInput = document.getElementById('geo-url-input');
-  if (geoInput) {
-    geoInput.addEventListener('keydown', e => { if (e.key === 'Enter') runGeoAnalysis(); });
-  }
+  if (geoInput) geoInput.addEventListener('keydown', e => { if (e.key === 'Enter') runGeoAnalysis(); });
+  // Enter key support — GEO card bar
+  const geoInput2 = document.getElementById('geo-url-input-geo');
+  if (geoInput2) geoInput2.addEventListener('keydown', e => { if (e.key === 'Enter') runGeoAnalysis('-geo'); });
 
 </script>
 

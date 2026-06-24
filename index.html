@@ -1283,6 +1283,62 @@
             <p class="text-slate-400 text-sm leading-relaxed max-w-2xl" data-en="We build systems that ensure your brand is cited as a source and recommended over competitors in AI engines like ChatGPT, Gemini and Perplexity.">
               ChatGPT, Gemini ve Perplexity gibi AI motorlarında markanızın kaynak olarak anılmasını ve rakip yerine sizin önerilmenizi sağlayan sistemler kuruyoruz.
             </p>
+
+            <!-- GEO Kart — URL Analyzer -->
+            <div class="mt-5" id="geo-analyzer-wrap-geo">
+              <p class="text-xs text-slate-400 mb-2.5 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-primary-container" style="font-size:13px;font-variation-settings:'FILL' 1">verified</span>
+                <span data-en="Free AI Visibility Analysis — enter your URL, see your score instantly." data-tr="Ücretsiz AI Görünürlük Analizi — URL'ini gir, skorunu gör.">Free AI Visibility Analysis — enter your URL, see your score instantly.</span>
+              </p>
+              <!-- Input row -->
+              <div class="flex gap-2 p-1.5 rounded-2xl bg-surface-container-high border border-white/10 focus-within:border-primary-container/40 transition-colors mb-3">
+                <div class="flex items-center pl-3 text-slate-600 flex-shrink-0">
+                  <span class="material-symbols-outlined" style="font-size:18px;">language</span>
+                </div>
+                <input type="url" id="geo-url-input-geo" placeholder="yoursite.com" data-en-ph="yoursite.com" data-tr-ph="siteniz.com" class="flex-1 bg-transparent text-white placeholder-slate-600 text-sm font-medium outline-none py-2 pr-2 min-w-0"/>
+                <button id="geo-analyze-btn-geo" onclick="runGeoAnalysis('-geo')" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container text-sm font-black px-5 py-2.5 rounded-xl hover:opacity-90 transition-all active:scale-95 whitespace-nowrap flex-shrink-0">
+                  <span class="material-symbols-outlined flex-shrink-0" style="font-size:16px;" id="geo-btn-icon-geo">travel_explore</span>
+                  <span id="geo-btn-text-geo" data-en="Analyze Free" data-tr="Analiz Et">Analyze Free</span>
+                </button>
+              </div>
+              <!-- Loading -->
+              <div id="geo-loading-geo" class="hidden rounded-2xl bg-surface-container-high/70 border border-white/5 p-4 relative overflow-hidden">
+                <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(55,234,158,0.05) 50%,transparent 70%);background-size:200% 100%;animation:hookBeam 1.4s ease-in-out infinite;pointer-events:none;"></div>
+                <div class="relative flex items-center gap-3 mb-3">
+                  <div style="width:18px;height:18px;border:2px solid rgba(55,234,158,0.25);border-top-color:#37ea9e;border-radius:50%;animation:coreSpin 0.75s linear infinite;flex-shrink:0;"></div>
+                  <p id="geo-loading-msg-geo" class="text-sm text-slate-300 font-medium"></p>
+                </div>
+                <div class="flex gap-2 flex-wrap relative">
+                  <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">ChatGPT</span>
+                  <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Perplexity</span>
+                  <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Google AI</span>
+                  <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Gemini</span>
+                </div>
+              </div>
+              <!-- Results -->
+              <div id="geo-results-geo" class="hidden rounded-2xl border border-primary-container/25 overflow-hidden relative" style="background:rgba(6,20,35,0.9);">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.9) 50%,rgba(55,234,158,0.6) 70%,transparent);"></div>
+                <div class="p-5 relative">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-slate-500" style="font-size:16px;font-variation-settings:'FILL' 1">domain</span>
+                      <span id="geo-result-url-geo" class="text-sm font-black text-white"></span>
+                    </div>
+                    <div id="geo-score-badge-geo" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-black"></div>
+                  </div>
+                  <div id="geo-checks-list-geo" class="space-y-2 mb-4"></div>
+                  <div class="flex items-center gap-2.5 rounded-xl bg-surface-container-highest/50 border border-white/5 px-3.5 py-2.5 mb-4">
+                    <span class="material-symbols-outlined text-slate-600 flex-shrink-0" style="font-size:16px;">lock</span>
+                    <p class="text-xs text-slate-500" data-en="Full 18-point audit — unlocked in your free session." data-tr="Tam 18 maddelik denetim — ücretsiz görüşmede açılıyor.">Full 18-point audit — unlocked in your free session.</p>
+                  </div>
+                  <button type="button" onclick="bookFromAnalysis()" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full">
+                    <span class="material-symbols-outlined text-base">calendar_month</span>
+                    <span data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">Get Your Full Report — Free →</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="hidden md:flex flex-col items-end gap-1 flex-shrink-0">
             <span class="text-5xl font-black text-primary-container/10 font-mono leading-none">GEO</span>
@@ -1454,77 +1510,6 @@
                 <p class="text-[11px] text-slate-400 leading-relaxed" data-en="GPTBot and PerplexityBot visited your site — but which pages did they read? This data shows which content AI is using as a source, and which pages need to be improved for better AI indexing.">GPTBot ve PerplexityBot sitenizi ziyaret etti — peki hangi sayfaları okudu? Bu veriler, hangi içeriğin AI'a kaynak olduğunu ve hangi sayfaların daha iyi AI indekslenmesi için güçlendirilmesi gerektiğini gösteriyor.</p>
               </div>
 
-            </div>
-          </div>
-
-          <!-- GEO Kart — URL Analyzer -->
-          <div class="mb-6" id="geo-analyzer-wrap-geo">
-            <p class="text-xs text-slate-400 mb-2.5 flex items-center gap-1.5" data-en="Free AI Visibility Analysis — enter your URL, see your score instantly." data-tr="Ücretsiz AI Görünürlük Analizi — URL'ini gir, skorunu gör.">
-              <span class="material-symbols-outlined text-primary-container" style="font-size:13px;font-variation-settings:'FILL' 1">verified</span>
-              <span data-en="Free AI Visibility Analysis — enter your URL, see your score instantly." data-tr="Ücretsiz AI Görünürlük Analizi — URL'ini gir, skorunu gör.">Free AI Visibility Analysis — enter your URL, see your score instantly.</span>
-            </p>
-            <!-- Input row -->
-            <div class="flex gap-2 p-1.5 rounded-2xl bg-surface-container-high border border-white/10 focus-within:border-primary-container/40 transition-colors mb-3">
-              <div class="flex items-center pl-3 text-slate-600 flex-shrink-0">
-                <span class="material-symbols-outlined" style="font-size:18px;">language</span>
-              </div>
-              <input
-                type="url"
-                id="geo-url-input-geo"
-                placeholder="yoursite.com"
-                data-en-ph="yoursite.com"
-                data-tr-ph="siteniz.com"
-                class="flex-1 bg-transparent text-white placeholder-slate-600 text-sm font-medium outline-none py-2 pr-2 min-w-0"
-              />
-              <button
-                id="geo-analyze-btn-geo"
-                onclick="runGeoAnalysis('-geo')"
-                class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container text-sm font-black px-5 py-2.5 rounded-xl hover:opacity-90 transition-all active:scale-95 whitespace-nowrap flex-shrink-0"
-              >
-                <span class="material-symbols-outlined flex-shrink-0" style="font-size:16px;" id="geo-btn-icon-geo">travel_explore</span>
-                <span id="geo-btn-text-geo" data-en="Analyze Free" data-tr="Analiz Et">Analyze Free</span>
-              </button>
-            </div>
-
-            <!-- Loading state -->
-            <div id="geo-loading-geo" class="hidden rounded-2xl bg-surface-container-high/70 border border-white/5 p-4 relative overflow-hidden">
-              <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(55,234,158,0.05) 50%,transparent 70%);background-size:200% 100%;animation:hookBeam 1.4s ease-in-out infinite;pointer-events:none;"></div>
-              <div class="relative flex items-center gap-3 mb-3">
-                <div style="width:18px;height:18px;border:2px solid rgba(55,234,158,0.25);border-top-color:#37ea9e;border-radius:50%;animation:coreSpin 0.75s linear infinite;flex-shrink:0;"></div>
-                <p id="geo-loading-msg-geo" class="text-sm text-slate-300 font-medium"></p>
-              </div>
-              <div class="flex gap-2 flex-wrap relative">
-                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">ChatGPT</span>
-                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Perplexity</span>
-                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Google AI</span>
-                <span class="text-[11px] text-slate-600 bg-surface-container-highest/80 px-2.5 py-1 rounded-full">Gemini</span>
-              </div>
-            </div>
-
-            <!-- Results teaser -->
-            <div id="geo-results-geo" class="hidden rounded-2xl border border-primary-container/25 overflow-hidden relative" style="background:rgba(6,20,35,0.9);">
-              <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(55,234,158,0.6) 30%,rgba(55,234,158,0.9) 50%,rgba(55,234,158,0.6) 70%,transparent);"></div>
-              <div class="p-5 relative">
-                <!-- Domain + Score -->
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-slate-500" style="font-size:16px;font-variation-settings:'FILL' 1">domain</span>
-                    <span id="geo-result-url-geo" class="text-sm font-black text-white"></span>
-                  </div>
-                  <div id="geo-score-badge-geo" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-black"></div>
-                </div>
-                <!-- Checks list -->
-                <div id="geo-checks-list-geo" class="space-y-2 mb-4"></div>
-                <!-- Lock -->
-                <div class="flex items-center gap-2.5 rounded-xl bg-surface-container-highest/50 border border-white/5 px-3.5 py-2.5 mb-4">
-                  <span class="material-symbols-outlined text-slate-600 flex-shrink-0" style="font-size:16px;">lock</span>
-                  <p class="text-xs text-slate-500" data-en="Full 18-point audit — unlocked in your free session." data-tr="Tam 18 maddelik denetim — ücretsiz görüşmede açılıyor.">Full 18-point audit — unlocked in your free session.</p>
-                </div>
-                <button type="button" onclick="bookFromAnalysis()" class="flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-black text-sm py-3 rounded-xl hover:opacity-90 transition-opacity w-full" data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">
-                  <span class="material-symbols-outlined text-base">calendar_month</span>
-                  <span data-en="Get Your Full Report — Free →" data-tr="Ücretsiz Tam Raporu Al →">Get Your Full Report — Free →</span>
-                </button>
-              </div>
             </div>
           </div>
 

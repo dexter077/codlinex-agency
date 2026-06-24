@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Legal — Privacy, Terms & Refund Policy | CodLinex</title>
+<meta name="description" content="CodLinex legal documentation: Privacy Policy, Terms of Use, and Refund Policy for AI automation and GEO optimization services."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://codlinex.com/legal.html"/>
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #020817;
+    --surface: #0a0f1e;
+    --border: #1e293b;
+    --teal: #37ea9e;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dim: #64748b;
+  }
+  html { scroll-behavior: smooth; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:15px; line-height:1.75; }
+
+  /* Layout */
+  .page-wrap { display:grid; grid-template-columns:260px 1fr; min-height:100vh; max-width:1200px; margin:0 auto; }
+
+  /* Sidebar */
+  .sidebar { position:sticky; top:0; height:100vh; overflow-y:auto; padding:40px 24px; border-right:1px solid var(--border); }
+  .sidebar-logo { display:flex; align-items:center; gap:8px; margin-bottom:36px; text-decoration:none; }
+  .logo-dot { width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px var(--teal); }
+  .logo-name { font-size:16px; font-weight:800; color:#f1f5f9; }
+  .sidebar-title { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); margin-bottom:12px; }
+  .sidebar-nav { list-style:none; margin-bottom:32px; }
+  .sidebar-nav li { margin-bottom:2px; }
+  .sidebar-nav a { display:flex; align-items:center; gap:8px; padding:7px 10px; border-radius:7px; font-size:13px; font-weight:500; color:var(--muted); text-decoration:none; transition:all 0.15s; }
+  .sidebar-nav a:hover, .sidebar-nav a.active { background:#0f172a; color:#f1f5f9; }
+  .sidebar-nav a.section-link { font-size:12px; color:var(--dim); padding-left:24px; }
+  .sidebar-nav a.section-link:hover { color:var(--muted); }
+  .sidebar-nav .nav-icon { font-size:14px; width:18px; text-align:center; }
+  .sidebar-divider { border:none; border-top:1px solid var(--border); margin:20px 0; }
+  .sidebar-contact { font-size:12px; color:var(--dim); line-height:1.7; }
+  .sidebar-contact a { color:var(--teal); text-decoration:none; }
+
+  /* Main content */
+  .main { padding:60px 64px; max-width:800px; }
+
+  /* Page header */
+  .page-header { margin-bottom:56px; }
+  .page-tag { display:inline-flex; align-items:center; gap:6px; background:#0f172a; border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+  .page-tag-dot { width:5px; height:5px; border-radius:50%; background:var(--teal); }
+  .page-header h1 { font-size:36px; font-weight:900; color:#f1f5f9; margin-bottom:10px; }
+  .page-header p { font-size:15px; color:var(--muted); }
+  .meta-pills { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .meta-pill { background:#0f172a; border:1px solid var(--border); border-radius:6px; padding:4px 12px; font-size:12px; color:var(--dim); }
+
+  /* Section */
+  .policy-section { margin-bottom:80px; scroll-margin-top:40px; }
+  .policy-section-header { display:flex; align-items:center; gap:12px; margin-bottom:32px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+  .policy-section-icon { font-size:22px; }
+  .policy-section-title { font-size:26px; font-weight:800; color:#f1f5f9; }
+  .policy-section-updated { font-size:11px; color:var(--dim); }
+
+  /* Content */
+  .policy-content h2 { font-size:17px; font-weight:700; color:#f1f5f9; margin:32px 0 12px; }
+  .policy-content h3 { font-size:14px; font-weight:700; color:var(--teal); margin:20px 0 8px; text-transform:uppercase; letter-spacing:0.5px; }
+  .policy-content p { color:var(--muted); margin-bottom:14px; }
+  .policy-content p strong { color:#e2e8f0; font-weight:600; }
+  .policy-content ul, .policy-content ol { color:var(--muted); padding-left:20px; margin-bottom:16px; }
+  .policy-content li { margin-bottom:6px; }
+  .policy-content li strong { color:#e2e8f0; }
+  .policy-content a { color:var(--teal); text-decoration:none; }
+  .policy-content a:hover { text-decoration:underline; }
+
+  /* Info cards */
+  .info-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin:20px 0; }
+  .info-card.highlight { border-color:#37ea9e30; background:#060d1a; }
+  .info-card.warn { border-color:#f9731630; background:#0a0800; }
+  .info-card.teal-left { border-left:3px solid var(--teal); border-radius:0 10px 10px 0; }
+  .info-card-title { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+  .info-card.highlight .info-card-title { color:var(--teal); }
+  .info-card.warn .info-card-title { color:#f97316; }
+  .info-card p { margin:0; font-size:14px; }
+
+  /* Table */
+  .policy-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+  .policy-table th { background:#0f172a; color:#f1f5f9; font-weight:700; padding:10px 14px; text-align:left; border:1px solid var(--border); font-size:12px; text-transform:uppercase; letter-spacing:0.5px; }
+  .policy-table td { padding:10px 14px; border:1px solid var(--border); color:var(--muted); vertical-align:top; }
+  .policy-table tr:nth-child(even) td { background:#060a14; }
+
+  /* Rights grid */
+  .rights-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0; }
+  .right-item { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px; }
+  .right-item-title { font-size:12px; font-weight:700; color:#f1f5f9; margin-bottom:4px; }
+  .right-item-desc { font-size:12px; color:var(--dim); }
+
+  /* Guarantee card */
+  .guarantee-card { background:linear-gradient(135deg,#060d1a,#04100a); border:1px solid #37ea9e30; border-radius:14px; padding:28px; margin:24px 0; text-align:center; }
+  .guarantee-icon { font-size:36px; margin-bottom:12px; }
+  .guarantee-title { font-size:22px; font-weight:800; color:#f1f5f9; margin-bottom:8px; }
+  .guarantee-sub { font-size:14px; color:var(--muted); max-width:400px; margin:0 auto; }
+  .guarantee-badges { display:flex; gap:10px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+  .guarantee-badge { background:#37ea9e12; border:1px solid #37ea9e30; border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; color:var(--teal); }
+
+  /* Section divider */
+  .section-divider { border:none; border-top:1px solid var(--border); margin:64px 0; }
+
+  /* Contact CTA */
+  .contact-cta { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:32px; }
+  .contact-cta p { color:var(--muted); font-size:14px; margin:0; }
+  .contact-cta a { display:inline-flex; align-items:center; gap:6px; background:var(--teal); color:#020817; font-weight:700; font-size:13px; padding:10px 20px; border-radius:8px; text-decoration:none; white-space:nowrap; }
+
+  /* Footer */
+  .legal-footer { grid-column:1/-1; border-top:1px solid var(--border); padding:24px 40px; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--dim); }
+  .legal-footer a { color:var(--teal); text-decoration:none; }
+
+  @media (max-width:768px) {
+    .page-wrap { grid-template-columns:1fr; }
+    .sidebar { display:none; }
+    .main { padding:32px 20px; }
+    .rights-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="https://codlinex.com" class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-name">CodLinex</div>
+    </a>
+
+    <div class="sidebar-title">Legal Documents</div>
+    <ul class="sidebar-nav">
+      <li><a href="#privacy"><span class="nav-icon">🔒</span> Privacy Policy</a></li>
+      <li><a href="#privacy-collect" class="section-link">Data Collection</a></li>
+      <li><a href="#privacy-ai" class="section-link">AI Data Processing</a></li>
+      <li><a href="#privacy-rights" class="section-link">Your Rights</a></li>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li><a href="#terms"><span class="nav-icon">📋</span> Terms of Use</a></li>
+      <li><a href="#terms-services" class="section-link">Services</a></li>
+      <li><a href="#terms-ai" class="section-link">AI System Terms</a></li>
+      <li><a href="#terms-billing" class="section-link">Billing & Subscription</a></li>
+      <li><a href="#terms-ip" class="section-link">Intellectual Property</a></li>
+      <li><a href="#terms-liability" class="section-link">Liability</a></li>
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li><a href="#refund"><span class="nav-icon">↩️</span> Refund Policy</a></li>
+      <li><a href="#refund-guarantee" class="section-link">30-Day Guarantee</a></li>
+      <li><a href="#refund-process" class="section-link">How to Request</a></li>
+      <li><a href="#refund-exceptions" class="section-link">Exceptions</a></li>
+    </ul>
+
+    <hr class="sidebar-divider"/>
+    <div class="sidebar-contact">
+      <strong style="color:#e2e8f0;">Legal Questions?</strong><br/>
+      <a href="mailto:info@codlinex.com">info@codlinex.com</a><br/>
+      Ecomlinex LLC<br/>
+      Delaware, United States
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-tag"><span class="page-tag-dot"></span> Legal Documentation</div>
+      <h1>Legal Center</h1>
+      <p>Privacy, Terms of Use, and Refund Policy for CodLinex AI automation and GEO optimization services.</p>
+      <div class="meta-pills">
+        <div class="meta-pill">Ecomlinex LLC · Delaware</div>
+        <div class="meta-pill">Last updated: June 24, 2026</div>
+        <div class="meta-pill">Governing law: State of Delaware, USA</div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- PRIVACY POLICY                                    -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section id="privacy" class="policy-section">
+      <div class="policy-section-header">
+        <div class="policy-section-icon">🔒</div>
+        <div>
+          <div class="policy-section-title">Privacy Policy</div>
+          <div class="policy-section-updated">Effective: June 24, 2026 · Ecomlinex LLC d/b/a CodLinex</div>
+        </div>
+      </div>
+
+      <div class="policy-content">
+
+        <div class="info-card highlight">
+          <div class="info-card-title">Plain Language Summary</div>
+          <p>We collect only what we need to deliver our services. We do not sell your data. You can request deletion at any time. AI model providers (OpenAI, Anthropic, Google) process data as part of agent system operation — we disclose this clearly below.</p>
+        </div>
+
+        <h2>1. Who We Are</h2>
+        <p><strong>Ecomlinex LLC</strong>, doing business as <strong>CodLinex</strong>, is a Delaware limited liability company providing AI automation systems and Generative Engine Optimization (GEO) services. References to "CodLinex," "we," "us," or "our" in this Policy refer to Ecomlinex LLC.</p>
+        <p>Contact: <a href="mailto:info@codlinex.com">info@codlinex.com</a> · Website: <a href="https://codlinex.com">codlinex.com</a></p>
+
+        <h2 id="privacy-collect">2. Information We Collect</h2>
+
+        <h3>2.1 Information You Provide</h3>
+        <ul>
+          <li><strong>Contact & Inquiry Data:</strong> Name, email address, company name, job title, phone number submitted via contact forms, scheduling tools, or direct email.</li>
+          <li><strong>Account Data:</strong> Credentials and profile information when accessing client dashboards or reporting portals.</li>
+          <li><strong>Payment Data:</strong> Billing information processed exclusively by <strong>Stripe, Inc.</strong> We do not store, process, or have access to full payment card numbers. We receive transaction confirmations and last-four digits for recordkeeping.</li>
+          <li><strong>Communications:</strong> Emails, chat messages, and support tickets you send us, including attachments.</li>
+          <li><strong>Business Data:</strong> Information about your business operations, workflows, and objectives provided for the purpose of building AI automation systems.</li>
+        </ul>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <ul>
+          <li><strong>Usage & Analytics Data:</strong> Pages visited, time on page, referral source, browser type, operating system, and device type — collected via Vercel Analytics.</li>
+          <li><strong>IP Address & Geolocation:</strong> Approximate location (country/region level) derived from IP address for service localization.</li>
+          <li><strong>Cookies & Local Storage:</strong> Session management, preference storage, and analytics. See Section 6 for details.</li>
+          <li><strong>Log Data:</strong> Server access logs, error logs, and API call logs retained for security and debugging purposes.</li>
+        </ul>
+
+        <h3>2.3 AI System Interaction Data</h3>
+        <div class="info-card warn">
+          <div class="info-card-title">Important — AI Data Processing</div>
+          <p>When you use AI agent systems built by CodLinex, your business data and end-customer interactions may be processed by third-party AI model providers (OpenAI, Anthropic, Google). Each provider has their own privacy practices and data processing agreements. By engaging CodLinex services, you acknowledge and consent to this processing as described in Section 5.</p>
+        </div>
+
+        <h2 id="privacy-use">3. How We Use Your Information</h2>
+        <table class="policy-table">
+          <tr><th>Purpose</th><th>Legal Basis</th><th>Data Used</th></tr>
+          <tr><td>Delivering AI automation and GEO services</td><td>Contract performance</td><td>All categories</td></tr>
+          <tr><td>Billing and payment processing</td><td>Contract performance</td><td>Payment data, contact info</td></tr>
+          <tr><td>Client onboarding and support</td><td>Contract performance</td><td>Contact, business data</td></tr>
+          <tr><td>Service improvement and product development</td><td>Legitimate interest</td><td>Usage data (anonymized)</td></tr>
+          <tr><td>Security monitoring and fraud prevention</td><td>Legitimate interest</td><td>IP, log data</td></tr>
+          <tr><td>Marketing communications (opt-in only)</td><td>Consent</td><td>Email, name</td></tr>
+          <tr><td>Legal compliance and recordkeeping</td><td>Legal obligation</td><td>All applicable categories</td></tr>
+          <tr><td>Anonymous case studies and performance benchmarks</td><td>Legitimate interest</td><td>Aggregated, anonymized results</td></tr>
+        </table>
+
+        <h2 id="privacy-ai">4. AI Data Processing Details</h2>
+        <p>CodLinex builds AI agent systems using large language models (LLMs) provided by third parties. When these systems process data on your behalf:</p>
+        <ul>
+          <li><strong>OpenAI (GPT-4o):</strong> Data submitted to AI agents built on OpenAI's API is processed per <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI's Privacy Policy</a>. Enterprise API usage does not train OpenAI's models by default.</li>
+          <li><strong>Anthropic (Claude):</strong> Data processed per <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic's Privacy Policy</a>. API usage is not used for model training.</li>
+          <li><strong>Google (Gemini):</strong> Data processed per <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> and applicable Cloud Data Processing Addendum.</li>
+        </ul>
+        <p>CodLinex enters into Data Processing Agreements (DPAs) with these providers where required. We configure AI systems to minimize unnecessary data exposure and implement appropriate data handling instructions in system prompts.</p>
+        <p><strong>Client Responsibility:</strong> You are responsible for ensuring your end-users are informed that their interactions may be processed by AI systems. CodLinex provides guidance on required disclosures upon request.</p>
+
+        <h2>5. Third-Party Service Providers</h2>
+        <table class="policy-table">
+          <tr><th>Provider</th><th>Purpose</th><th>Location</th></tr>
+          <tr><td>Vercel Inc.</td><td>Website hosting, CDN, analytics</td><td>United States</td></tr>
+          <tr><td>Stripe, Inc.</td><td>Payment processing</td><td>United States</td></tr>
+          <tr><td>Calendly LLC</td><td>Meeting scheduling</td><td>United States</td></tr>
+          <tr><td>Formspree</td><td>Contact form processing</td><td>United States</td></tr>
+          <tr><td>OpenAI, L.P.</td><td>AI language model (GPT-4o)</td><td>United States</td></tr>
+          <tr><td>Anthropic, PBC</td><td>AI language model (Claude)</td><td>United States</td></tr>
+          <tr><td>Google LLC</td><td>AI language model (Gemini)</td><td>United States</td></tr>
+          <tr><td>GitHub, Inc.</td><td>Code repository hosting</td><td>United States</td></tr>
+        </table>
+        <p>We do not sell, rent, or trade your personal information to any third party for their own marketing purposes.</p>
+
+        <h2>6. Cookies</h2>
+        <p>We use the following categories of cookies:</p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for basic website functionality (session management, security). Cannot be disabled.</li>
+          <li><strong>Analytics Cookies:</strong> Aggregated, anonymized data on website usage via Vercel Analytics. No personal profiles are created.</li>
+          <li><strong>Preference Cookies:</strong> Store language and region preferences (EN/TR detection).</li>
+        </ul>
+        <p>You can control non-essential cookies through your browser settings. Disabling analytics cookies will not affect website functionality.</p>
+
+        <h2 id="privacy-rights">7. Your Privacy Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+
+        <div class="rights-grid">
+          <div class="right-item">
+            <div class="right-item-title">Right to Access</div>
+            <div class="right-item-desc">Request a copy of the personal data we hold about you.</div>
+          </div>
+          <div class="right-item">
+            <div class="right-item-title">Right to Deletion</div>
+            <div class="right-item-desc">Request deletion of your personal data, subject to legal retention requirements.</div>
+          </div>
+          <div class="right-item">
+            <div class="right-item-title">Right to Correction</div>
+            <div class="right-item-desc">Request correction of inaccurate or incomplete personal data.</div>
+          </div>
+          <div class="right-item">
+            <div class="right-item-title">Right to Portability</div>
+            <div class="right-item-desc">Receive your data in a structured, machine-readable format.</div>
+          </div>
+          <div class="right-item">
+            <div class="right-item-title">Right to Object</div>
+            <div class="right-item-desc">Object to processing based on legitimate interest or for direct marketing.</div>
+          </div>
+          <div class="right-item">
+            <div class="right-item-title">Right to Opt-Out (CCPA)</div>
+            <div class="right-item-desc">California residents: right to opt out of sale of personal information. (We do not sell data.)</div>
+          </div>
+        </div>
+
+        <p>To exercise any of these rights, email <a href="mailto:info@codlinex.com">info@codlinex.com</a> with the subject line "Privacy Request." We will respond within 30 days. We may require identity verification before processing requests.</p>
+        <p><strong>KVKK (Türkiye):</strong> Türk kullanıcılar, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamındaki haklarını kullanmak için <a href="mailto:info@codlinex.com">info@codlinex.com</a> adresine yazabilirler.</p>
+
+        <h2>8. Data Retention</h2>
+        <p>We retain personal data for as long as necessary to deliver services and comply with legal obligations. Specifically:</p>
+        <ul>
+          <li>Active client data: retained for the duration of the service relationship plus 3 years.</li>
+          <li>Financial and billing records: 7 years (US tax law requirement).</li>
+          <li>Marketing opt-in records: until opt-out plus 3 years.</li>
+          <li>Contact form submissions (non-clients): 12 months.</li>
+          <li>Analytics data: 24 months, aggregated and anonymized.</li>
+        </ul>
+
+        <h2>9. Security</h2>
+        <p>We implement industry-standard security measures including TLS/HTTPS encryption in transit, encrypted storage, access controls, and regular security reviews. Vercel's infrastructure provides SOC 2 Type II compliance. Stripe is PCI DSS Level 1 certified.</p>
+        <p>No method of transmission or storage is 100% secure. In the event of a data breach affecting your rights, we will notify you as required by applicable law, no later than 72 hours after becoming aware.</p>
+
+        <h2>10. Children</h2>
+        <p>CodLinex services are intended for business professionals and organizations. We do not knowingly collect personal information from individuals under 18 years of age. If we discover we have inadvertently collected such information, we will delete it promptly.</p>
+
+        <h2>11. Policy Updates</h2>
+        <p>We may update this Privacy Policy to reflect changes in our practices or applicable law. Material changes will be communicated via email (for active clients) and by updating the "Last Updated" date. Continued use of services after changes constitutes acceptance.</p>
+
+        <div class="contact-cta">
+          <p>Privacy questions or data requests?</p>
+          <a href="mailto:info@codlinex.com">info@codlinex.com →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- TERMS OF USE                                      -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section id="terms" class="policy-section">
+      <div class="policy-section-header">
+        <div class="policy-section-icon">📋</div>
+        <div>
+          <div class="policy-section-title">Terms of Use</div>
+          <div class="policy-section-updated">Effective: June 24, 2026 · Ecomlinex LLC d/b/a CodLinex</div>
+        </div>
+      </div>
+
+      <div class="policy-content">
+
+        <div class="info-card teal-left">
+          <p>By accessing codlinex.com or engaging CodLinex services, you ("Client," "you," or "your") agree to be bound by these Terms of Use ("Terms"). If you are entering into these Terms on behalf of a company or other legal entity, you represent that you have authority to bind that entity. If you do not agree, do not use our services.</p>
+        </div>
+
+        <h2>1. Parties</h2>
+        <p>These Terms constitute a legally binding agreement between <strong>Ecomlinex LLC</strong>, a Delaware limited liability company doing business as <strong>CodLinex</strong> ("CodLinex," "we," "us"), and the Client. These Terms govern access to and use of CodLinex's website, platforms, AI agent systems, GEO optimization services, and all related deliverables (collectively, the "Services").</p>
+
+        <h2 id="terms-services">2. Description of Services</h2>
+        <p>CodLinex provides the following categories of Services:</p>
+
+        <h3>2.1 AI Agent System Development & Deployment</h3>
+        <p>Design, development, configuration, and deployment of custom multi-agent AI automation systems. Includes Manager Agent, Worker Agents, and Monitor Agent architecture. Systems are integrated with Client's existing tools and workflows and deployed within the agreed timeline (standard: 48 hours from onboarding completion).</p>
+
+        <h3>2.2 Generative Engine Optimization (GEO)</h3>
+        <p>Technical and content optimization services designed to improve a website's visibility in AI-generated responses on platforms including ChatGPT Search, Perplexity AI, Google AI Overviews, and Gemini. GEO services are informed by peer-reviewed research (Aggarwal et al., Princeton KDD 2024) and proprietary methodology. CodLinex does not guarantee specific rankings or citation rates, as AI platform behavior is controlled by third parties outside our control.</p>
+
+        <h3>2.3 Business Process Automation</h3>
+        <p>End-to-end automation of defined business workflows using AI tools, APIs, and integration platforms. Includes documentation of automated processes and client training.</p>
+
+        <h3>2.4 GEO Monitoring</h3>
+        <p>Monthly automated auditing of GEO scores, competitive positioning, and AI visibility metrics. Includes report generation and file updates as applicable under the service plan.</p>
+
+        <h2 id="terms-ai">3. AI System Terms</h2>
+
+        <h3>3.1 Nature of AI Outputs</h3>
+        <div class="info-card warn">
+          <div class="info-card-title">AI Disclaimer — Please Read Carefully</div>
+          <p>AI-generated content, responses, decisions, and recommendations produced by systems built by CodLinex are <strong>probabilistic outputs</strong>, not guaranteed facts or professional advice. AI systems may produce inaccurate, incomplete, biased, or contextually inappropriate outputs. Client is solely responsible for reviewing, validating, and approving all AI-generated outputs before use in business operations, customer-facing communications, or decision-making.</p>
+        </div>
+
+        <h3>3.2 No Professional Advice</h3>
+        <p>CodLinex AI systems are not a substitute for licensed professional advice. Systems deployed in or adjacent to regulated industries — including but not limited to healthcare, financial services, legal services, insurance, and real estate — must comply with all applicable regulations. CodLinex does not warrant that AI systems meet specific regulatory or compliance requirements of any industry. Client is responsible for obtaining independent compliance review.</p>
+
+        <h3>3.3 Human Oversight Requirement</h3>
+        <p>Client agrees to maintain appropriate human oversight of all AI agent systems. This includes configuring escalation thresholds, reviewing automated communications before broad deployment, and monitoring system behavior on an ongoing basis. CodLinex provides monitoring tools and dashboards; ultimate oversight responsibility lies with the Client.</p>
+
+        <h3>3.4 Data Input Responsibility</h3>
+        <p>Client is responsible for the accuracy, legality, and appropriateness of all data, content, and instructions provided as input to AI systems. CodLinex does not independently verify input data. Client warrants that data provided does not violate third-party rights, applicable law, or the acceptable use policies of underlying AI model providers.</p>
+
+        <h3>3.5 Third-Party AI Model Providers</h3>
+        <p>CodLinex AI systems use foundation models provided by OpenAI, Anthropic, and Google. These providers maintain independent terms of service and usage policies. CodLinex reserves the right to switch underlying AI models to maintain service quality, with 30 days' notice to Client except in cases of model deprecation by the provider. Performance characteristics may vary between models.</p>
+
+        <h2 id="terms-billing">4. Subscription, Billing & Cancellation</h2>
+
+        <h3>4.1 Subscription Plans</h3>
+        <p>Services are provided on a monthly subscription basis. Current plans are Starter ($497/month), Growth ($997/month), and Enterprise ($2,497/month), with specific inclusions defined at the time of purchase. CodLinex reserves the right to modify pricing with 30 days' advance written notice.</p>
+
+        <h3>4.2 Billing Cycle</h3>
+        <p>Subscriptions are billed monthly in advance on the date of initial purchase. Payment is processed via Stripe using the payment method on file. Failed payments result in a 7-day grace period; if unresolved, services may be suspended until payment is made.</p>
+
+        <h3>4.3 Auto-Renewal</h3>
+        <p>Subscriptions automatically renew monthly unless cancelled. By subscribing, you authorize CodLinex to charge your payment method on a recurring monthly basis until cancellation.</p>
+
+        <h3>4.4 Cancellation</h3>
+        <p>Client may cancel at any time by emailing <a href="mailto:info@codlinex.com">info@codlinex.com</a>. Cancellation takes effect at the end of the current billing period. Access to services and deliverables continues through the paid period. CodLinex will deactivate agent systems and remove access to reporting tools upon subscription expiration.</p>
+
+        <h3>4.5 Upgrades & Downgrades</h3>
+        <p>Upgrades take effect immediately with prorated billing. Downgrades take effect at the start of the next billing cycle.</p>
+
+        <h2 id="terms-ip">5. Intellectual Property</h2>
+
+        <h3>5.1 CodLinex Property</h3>
+        <p>CodLinex retains all intellectual property rights in its proprietary methodologies, frameworks, software tools, automation architectures, GEO audit systems, prompt engineering techniques, and platform infrastructure. These Terms do not transfer any CodLinex IP to Client.</p>
+
+        <h3>5.2 Client Property</h3>
+        <p>Client retains ownership of: (a) all data and content provided as input to Services; (b) Client's business-specific configurations and customizations of agent systems; and (c) AI-generated outputs produced specifically for Client's business operations during the service term, to the extent such outputs are owned by any party.</p>
+
+        <h3>5.3 License Grant</h3>
+        <p>During the active subscription period, CodLinex grants Client a limited, non-exclusive, non-transferable license to use the deliverables and systems built under these Terms solely for Client's internal business purposes.</p>
+
+        <h3>5.4 Anonymized Case Studies</h3>
+        <p>CodLinex may reference Client's project outcomes in marketing materials, case studies, and portfolio presentations in anonymized or aggregated form, unless Client provides written objection. No confidential business information will be disclosed without explicit written consent.</p>
+
+        <h2>6. Acceptable Use</h2>
+        <p>Client agrees not to use CodLinex services to:</p>
+        <ul>
+          <li>Generate, distribute, or automate illegal, defamatory, obscene, harassing, or otherwise harmful content;</li>
+          <li>Create or deploy systems for spam, phishing, smishing, or any form of unsolicited communications;</li>
+          <li>Automate actions that violate the terms of service of third-party platforms (social media, e-commerce platforms, etc.);</li>
+          <li>Circumvent, disable, or interfere with security features of any system or network;</li>
+          <li>Impersonate any person, entity, or AI system in a deceptive or misleading manner;</li>
+          <li>Process personal data of third parties without appropriate legal basis and disclosures;</li>
+          <li>Engage in any activity that violates applicable local, state, national, or international law or regulation.</li>
+        </ul>
+        <p>Violation of acceptable use terms may result in immediate service suspension without refund.</p>
+
+        <h2 id="terms-liability">7. Disclaimers & Limitation of Liability</h2>
+
+        <h3>7.1 Service Disclaimer</h3>
+        <p>SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." CODLINEX DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY OF AI OUTPUTS, OR UNINTERRUPTED SERVICE. CODLINEX DOES NOT WARRANT THAT GEO SERVICES WILL RESULT IN SPECIFIC RANKING IMPROVEMENTS, CITATION RATES, OR REVENUE OUTCOMES, AS AI PLATFORM BEHAVIOR IS CONTROLLED BY INDEPENDENT THIRD PARTIES.</p>
+
+        <h3>7.2 Limitation of Liability</h3>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, CODLINEX'S TOTAL LIABILITY FOR ANY CLAIM ARISING FROM OR RELATED TO THESE TERMS OR THE SERVICES SHALL NOT EXCEED THE TOTAL FEES PAID BY CLIENT IN THE THREE (3) MONTHS PRECEDING THE CLAIM. CODLINEX SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS OPPORTUNITIES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+        <h3>7.3 Indemnification</h3>
+        <p>Client agrees to indemnify, defend, and hold harmless CodLinex, its members, officers, employees, and agents from and against any claims, liabilities, damages, and expenses (including reasonable attorneys' fees) arising from: (a) Client's use of Services in violation of these Terms; (b) Client's violation of any law or third-party rights; (c) Client's content or data submitted to AI systems; or (d) AI-generated outputs used by Client in business operations without appropriate review.</p>
+
+        <h2>8. Confidentiality</h2>
+        <p>Each party agrees to maintain the confidentiality of the other party's non-public business information disclosed during the service relationship and to use such information solely for the purpose of performing obligations under these Terms. This obligation survives termination for a period of three (3) years. The confidentiality obligation does not apply to information that is or becomes publicly known through no breach of these Terms.</p>
+
+        <h2>9. Governing Law & Dispute Resolution</h2>
+        <p>These Terms are governed by the laws of the <strong>State of Delaware</strong>, without regard to conflict of law principles. The parties agree to first attempt resolution of any dispute through good-faith negotiation for a period of 30 days. If unresolved, disputes shall be submitted to binding arbitration administered by the <strong>American Arbitration Association (AAA)</strong> under its Commercial Arbitration Rules. Arbitration shall be conducted in English, remotely, with one arbitrator. Each party shall bear its own costs. <strong>Client waives any right to participate in a class action lawsuit or class-wide arbitration.</strong></p>
+
+        <h2>10. Modifications to Terms</h2>
+        <p>CodLinex reserves the right to modify these Terms at any time. Material changes will be communicated via email to active clients at least 30 days before taking effect. Continued use of Services after the effective date of changes constitutes acceptance. If you do not agree to modified Terms, your sole remedy is to cancel your subscription before the effective date.</p>
+
+        <div class="contact-cta">
+          <p>Questions about our terms?</p>
+          <a href="mailto:info@codlinex.com">info@codlinex.com →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider"/>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- REFUND POLICY                                     -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section id="refund" class="policy-section">
+      <div class="policy-section-header">
+        <div class="policy-section-icon">↩️</div>
+        <div>
+          <div class="policy-section-title">Refund Policy</div>
+          <div class="policy-section-updated">Effective: June 24, 2026 · Ecomlinex LLC d/b/a CodLinex</div>
+        </div>
+      </div>
+
+      <div class="policy-content">
+
+        <div id="refund-guarantee" class="guarantee-card">
+          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-title">30-Day Money-Back Guarantee</div>
+          <div class="guarantee-sub">If you are not satisfied with CodLinex services within the first 30 days, we will issue a full refund — no questions asked, no penalty.</div>
+          <div class="guarantee-badges">
+            <span class="guarantee-badge">Full Refund</span>
+            <span class="guarantee-badge">No Questions Asked</span>
+            <span class="guarantee-badge">All Plans</span>
+            <span class="guarantee-badge">5–10 Business Days</span>
+          </div>
+        </div>
+
+        <h2>1. Our Commitment</h2>
+        <p>CodLinex stands behind the quality of its AI automation and GEO optimization services. We offer a <strong>30-day money-back guarantee</strong> on all subscription plans — Starter, Growth, and Enterprise — because we believe the value of our work should be self-evident.</p>
+        <p>This guarantee reflects our confidence in delivering measurable results. If our services do not meet your expectations within the first 30 days, you are entitled to a full refund of your initial payment.</p>
+
+        <h2 id="refund-guarantee-details">2. 30-Day Guarantee Terms</h2>
+
+        <h3>2.1 What Qualifies</h3>
+        <ul>
+          <li>The guarantee applies to the <strong>first payment</strong> of any subscription plan.</li>
+          <li>Eligible requests must be received <strong>within 30 calendar days</strong> of the initial payment date.</li>
+          <li>The guarantee applies to all plan tiers: Starter, Growth, and Enterprise.</li>
+          <li>One refund per business entity. The guarantee does not apply to subsequent subscriptions or re-subscriptions after a prior refund.</li>
+        </ul>
+
+        <h3>2.2 What "Full Refund" Means</h3>
+        <p>A full refund covers the subscription fee paid for the first billing period. The refund is returned to the original payment method (credit/debit card via Stripe). Processing time is <strong>5–10 business days</strong> from approval, plus any additional time required by your bank or card issuer.</p>
+
+        <h3>2.3 No Questions Asked</h3>
+        <p>You do not need to provide a reason for requesting a refund within the 30-day window. We may ask for brief feedback to improve our services — this is entirely optional and will not affect your refund eligibility or processing time.</p>
+
+        <h2 id="refund-process">3. How to Request a Refund</h2>
+        <p>To request a refund within the 30-day window:</p>
+        <ol>
+          <li>Send an email to <a href="mailto:info@codlinex.com">info@codlinex.com</a> with the subject line: <strong>"Refund Request — [Your Company Name]"</strong></li>
+          <li>Include your full name, email address used at signup, and date of purchase.</li>
+          <li>You will receive confirmation within 1 business day.</li>
+          <li>Refund is initiated within 2 business days of confirmation.</li>
+          <li>Funds appear in your account within 5–10 business days depending on your payment provider.</li>
+        </ol>
+
+        <div class="info-card highlight">
+          <div class="info-card-title">Upon Refund</div>
+          <p>Following refund approval, your AI agent systems will be deactivated at the end of the current billing period. You retain access to any deliverables already completed (e.g., GEO audit reports, documentation). Reactivation at any time is available at standard pricing.</p>
+        </div>
+
+        <h2 id="refund-exceptions">4. Non-Refundable Items & Exceptions</h2>
+
+        <h3>4.1 Payments Beyond 30 Days</h3>
+        <p>Monthly subscription renewals (second month and beyond) are non-refundable. Cancellation stops future charges; it does not generate refunds for past billing periods. To avoid unwanted charges, cancel before the renewal date.</p>
+
+        <h3>4.2 Custom Development Work</h3>
+        <p>Fees for custom agent development, bespoke integrations, or one-time build work that has been delivered and accepted are non-refundable, as these represent time and resources already expended. A clear scope of work and acceptance process is established before such work begins.</p>
+
+        <h3>4.3 GEO Audit Fees (One-Time)</h3>
+        <p>Where GEO audits are offered as standalone one-time services, these fees are non-refundable once the audit report has been delivered, as the work has been completed and the deliverable provided.</p>
+
+        <h3>4.4 Third-Party Costs</h3>
+        <p>CodLinex may incur costs with third-party providers (API usage, platform fees, tool licenses) in the process of delivering services. These costs are not refundable once incurred, though they are typically absorbed within subscription pricing and not separately charged.</p>
+
+        <h3>4.5 Violation of Terms</h3>
+        <p>Refunds are not available where services have been terminated due to violations of our Terms of Use, including but not limited to acceptable use policy violations, payment fraud, or misrepresentation.</p>
+
+        <h2>5. Cancellation vs. Refund</h2>
+        <table class="policy-table">
+          <tr><th>Action</th><th>Within 30 Days</th><th>After 30 Days</th></tr>
+          <tr><td>Cancellation</td><td>Stops future charges</td><td>Stops future charges</td></tr>
+          <tr><td>Refund</td><td>Full refund of initial payment</td><td>Not available</td></tr>
+          <tr><td>Service Access</td><td>Continues until billing period ends</td><td>Continues until billing period ends</td></tr>
+          <tr><td>Agent Systems</td><td>Deactivated at period end</td><td>Deactivated at period end</td></tr>
+          <tr><td>Deliverables</td><td>Retained by Client</td><td>Retained by Client</td></tr>
+        </table>
+
+        <h2>6. Disputes</h2>
+        <p>If you believe a charge was made in error or you have a billing dispute not covered by this policy, please contact us at <a href="mailto:info@codlinex.com">info@codlinex.com</a>. We commit to investigating and responding to all billing disputes within 5 business days. We prefer to resolve issues directly before any chargeback is initiated with your payment provider.</p>
+
+        <h2>7. Currency & Taxes</h2>
+        <p>All prices are in <strong>United States Dollars (USD)</strong>. Applicable taxes (including VAT, GST, or sales tax) may be added depending on your location and the nature of services provided. Tax amounts are disclosed at checkout. Refunds are returned in USD; currency conversion and exchange rate differences are outside our control and not our responsibility.</p>
+
+        <div class="contact-cta">
+          <p>Refund requests or billing questions?</p>
+          <a href="mailto:info@codlinex.com">info@codlinex.com →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="legal-footer">
+  <div>© 2026 Ecomlinex LLC d/b/a CodLinex · Delaware, United States · <a href="https://codlinex.com">codlinex.com</a></div>
+  <div>Questions: <a href="mailto:info@codlinex.com">info@codlinex.com</a></div>
+</div>
+
+<script>
+  // Highlight active sidebar link on scroll
+  const sections = document.querySelectorAll('section[id], h2[id]');
+  const links = document.querySelectorAll('.sidebar-nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

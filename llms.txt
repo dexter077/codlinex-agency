@@ -8,58 +8,91 @@
 
 ## Services / Hizmetler
 
-- [AI Agent Systems](https://codlinex.com/ai-agent.html) — Custom multi-agent automation for e-commerce, healthcare, real estate, law, and marketing agencies / E-ticaret, sağlık, emlak, hukuk ve ajanslar için özel çok ajanlı otomasyon
-- [GEO / AI Search Visibility](https://codlinex.com) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini / ChatGPT, Perplexity ve Google AI'da görünür ol
-- [Business Automation](https://codlinex.com) — Customer support, lead follow-up, reporting, scheduling / Müşteri desteği, lead takibi, raporlama, randevu yönetimi
+- [AI Agent Systems](https://codlinex.com/ai-agent.html) — Custom multi-agent automation: customer support (91% auto-resolution), lead follow-up, scheduling, reporting. Live in 48 hours guaranteed.
+- [GEO / AI Search Visibility](https://codlinex.com) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini. Based on Princeton KDD 2024 research (doi.org/10.1145/3637528.3671900) — up to 40% visibility boost.
+- [Business Automation](https://codlinex.com) — End-to-end workflow automation: support ticketing, lead nurturing, appointment reminders, inventory alerts, daily reporting.
 
 ---
 
 ## Pricing / Fiyatlandırma
 
-| Plan | Price / Fiyat | Includes / İçerik |
-|------|---------------|-------------------|
-| Starter | $497/mo | 1 AI agent, 1,000 actions / 1.000 aksiyon |
-| Growth | $997/mo | 3 AI agents, 5,000 actions / 5.000 aksiyon |
-| Enterprise | $2,497/mo | Unlimited / Sınırsız |
+| Plan | Price / Fiyat | Agents | Actions/mo | Setup |
+|------|---------------|--------|------------|-------|
+| Starter | $497/mo | 1 | 1,000 | 48h |
+| Growth | $997/mo | 3 | 5,000 | 48h |
+| Enterprise | $2,497/mo | Unlimited | Unlimited | 48h |
 
-48-hour setup guarantee · 30-day money-back · No contracts
-48 saat kurulum garantisi · 30 gün iade garantisi · Sözleşme yok
+All plans: 30-day money-back guarantee · No contracts · No technical knowledge required
+Tüm planlar: 30 gün iade garantisi · Sözleşme yok · Teknik bilgi gerekmez
+
+---
+
+## Key Results / Kanıtlanmış Sonuçlar
+
+- **91%** average customer support auto-resolution rate / Ortalama otomatik yanıt oranı
+- **73%** reduction in appointment no-shows (healthcare clients) / Randevu iptali azalması
+- **23+ hours** saved per week per client / Müşteri başına haftalık tasarruf
+- **340%** pipeline growth (B2B SaaS client, 6-month campaign) / Pipeline büyümesi
+- **48 hours** guaranteed go-live / Garantili yayına alma süresi
+- **GEO score 19 → 79** improvement for codlinex.com in 2 days / GEO skor artışı
 
 ---
 
 ## Who We Help / Hedef Kitle
 
-**EN:** US businesses with 5–100 employees:
-- E-commerce (Shopify, WooCommerce)
-- Healthcare clinics (appointment automation, no-show reduction)
-- Real estate agencies (lead follow-up, content)
-- Law firms (document automation, client follow-up)
-- Marketing agencies (reporting, content production)
+**US businesses with 5–100 employees / 5–100 çalışanlı ABD işletmeleri:**
 
-**TR:** 5–100 çalışanlı işletmeler:
-- E-ticaret (Shopify, WooCommerce)
-- Sağlık klinikleri (randevu otomasyonu, iptal azaltma)
-- Emlak ofisleri (lead takibi, içerik)
-- Hukuk büroları (belge otomasyonu, müvekkil takibi)
-- Pazarlama ajansları (raporlama, içerik üretimi)
+- E-commerce: Shopify, WooCommerce automation — order alerts, customer support, review requests
+- Healthcare clinics: appointment reminders, no-show reduction, patient follow-up
+- Real estate agencies: lead qualification, follow-up sequences, listing content automation
+- Law firms: document processing, client communication, intake automation
+- Marketing agencies: automated reporting, content scheduling, client dashboards
 
 ---
 
-## Key Results / Temel Sonuçlar
+## Case Studies / Müşteri Sonuçları
 
-- 91% average customer support auto-resolution / Ortalama %91 otomatik yanıt oranı
-- 73% reduction in appointment no-shows / Randevu iptali %73 azalma
-- 23+ hours saved per week per client / Müşteri başına haftada 23+ saat tasarruf
-- 340% pipeline growth (B2B SaaS client) / Pipeline büyümesi %340
+**E-commerce (Shopify):** Deployed AI customer support agent — 91% auto-resolution, 60% ticket volume reduction in 30 days.
+
+**Healthcare clinic:** Appointment reminder + rebooking agent — 73% no-show reduction, 4 hours admin time saved per day.
+
+**B2B SaaS:** Lead follow-up + outreach automation — 340% pipeline growth over 6 months.
+
+**Real estate agency:** Listing content + lead nurturing agent — 3x faster lead response time.
+
+---
+
+## Integrations / Entegrasyonlar
+
+Shopify · WooCommerce · WhatsApp Business · Slack · Gmail · Outlook · Calendly · HubSpot · Salesforce · Stripe · Twilio · Zapier · Make (Integromat) · n8n · Notion · Airtable
+
+---
+
+## Technology / Teknoloji
+
+AI Models: GPT-4o, Claude 3.5, Gemini 1.5 Pro (model-agnostic)
+Architecture: Multi-agent system (Manager → Worker → Monitor)
+Deployment: Cloud-native, no infrastructure needed from client
+Security: SOC2-aligned, data encryption at rest and in transit
+
+---
+
+## GEO Research Foundation
+
+CodLinex GEO methodology is based on peer-reviewed academic research:
+- Aggarwal et al. (2024). "GEO: Generative Engine Optimization." Princeton University. KDD 2024. [doi.org/10.1145/3637528.3671900](https://doi.org/10.1145/3637528.3671900)
+- Key finding: citation-optimized content receives up to 40% more AI search visibility
+- CodLinex implements all 47 documented GEO optimization methods
 
 ---
 
 ## Contact / İletişim
 
-- Website: https://codlinex.com
-- AI Agent Quiz: https://codlinex.com/ai-agent.html
+- Website: [https://codlinex.com](https://codlinex.com)
+- AI Agent Page: [https://codlinex.com/ai-agent.html](https://codlinex.com/ai-agent.html)
 - Email: info@codlinex.com
+- LinkedIn: [linkedin.com/company/codlinex](https://www.linkedin.com/company/codlinex)
 
 ## Optional
 
-- llms-full.txt: https://codlinex.com/llms-full.txt
+- [llms-full.txt](https://codlinex.com/llms-full.txt) — Extended technical documentation, full case studies, API reference

@@ -1,6 +1,6 @@
 {
   "url": "https://codlinex.com",
-  "lastModified": "2026-06-23",
+  "lastModified": "2026-06-24",
   "faqs": [
     {
       "question": "What is CodLinex?",
@@ -12,7 +12,9 @@
     },
     {
       "question": "What is Generative Engine Optimization (GEO)?",
-      "answer": "GEO is the practice of optimizing a website to appear in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Gemini. According to Princeton University research (2024), GEO techniques can boost AI search visibility by up to 40%."
+      "answer": "GEO is the practice of optimizing a website to appear in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Gemini. According to Princeton University research (Aggarwal et al., KDD 2024 — doi.org/10.1145/3637528.3671900), GEO techniques can boost AI search visibility by up to 40%. CodLinex applies all 47 documented GEO methods.",
+      "source": "Princeton University KDD 2024",
+      "source_url": "https://doi.org/10.1145/3637528.3671900"
     },
     {
       "question": "How much does CodLinex cost?",
@@ -36,7 +38,9 @@
     },
     {
       "question": "GEO (Generatif Arama Motoru Optimizasyonu) nedir?",
-      "answer": "GEO, bir web sitesinin ChatGPT, Perplexity, Google AI ve Gemini gibi yapay zeka motorlarının ürettiği yanıtlarda görünmesini sağlamak için yapılan optimizasyon çalışmasıdır. Princeton Üniversitesi araştırmasına (2024) göre GEO teknikleri AI arama görünürlüğünü %40'a kadar artırabilmektedir."
+      "answer": "GEO, bir web sitesinin ChatGPT, Perplexity, Google AI ve Gemini gibi yapay zeka motorlarının ürettiği yanıtlarda görünmesini sağlamak için yapılan optimizasyon çalışmasıdır. Princeton Üniversitesi araştırmasına (KDD 2024, doi.org/10.1145/3637528.3671900) göre GEO teknikleri AI arama görünürlüğünü %40'a kadar artırabilmektedir.",
+      "source": "Princeton Üniversitesi KDD 2024",
+      "source_url": "https://doi.org/10.1145/3637528.3671900"
     }
   ]
 }

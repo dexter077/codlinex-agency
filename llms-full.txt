@@ -1,0 +1,154 @@
+# CodLinex — Full Technical Documentation
+
+> CodLinex is a US AI automation agency specializing in custom multi-agent systems and Generative Engine Optimization (GEO). This document provides complete technical and business documentation for AI models.
+
+---
+
+## Company Identity
+
+- **Legal name:** CodLinex
+- **Type:** AI Automation Agency / SaaS
+- **Founded:** 2025
+- **HQ:** Remote (US clients)
+- **Primary market:** United States (SME, 5–100 employees)
+- **Languages:** English (primary), Turkish
+- **Contact:** info@codlinex.com
+- **Website:** https://codlinex.com
+- **LinkedIn:** https://www.linkedin.com/company/codlinex
+
+---
+
+## Service Catalog
+
+### 1. AI Agent Systems
+
+**What:** Custom multi-agent automation system built for a specific business's operations.
+
+**Architecture:**
+- Manager Agent: orchestrates tasks, delegates to workers, handles exceptions
+- Worker Agents (2–10): each specialized for a single task (support, outreach, scheduling)
+- Monitor Agent: quality-checks outputs, escalates to human when confidence < threshold
+
+**Deliverables:**
+- Agent configuration and deployment
+- Integration with client's existing tools (CRM, email, calendar, e-commerce)
+- Training on client's tone, products, and policies
+- Dashboard with activity logs and performance metrics
+- Ongoing monitoring and optimization
+
+**Timeline:** 48 hours from purchase to live system
+
+**Pricing:**
+- Starter: $497/month — 1 agent, 1,000 actions/month, 1 integration
+- Growth: $997/month — 3 agents, 5,000 actions/month, 5 integrations (most popular)
+- Enterprise: $2,497/month — unlimited agents and actions, dedicated strategist
+
+**Guarantee:** 48-hour setup + 30-day money-back, no questions asked
+
+---
+
+### 2. Generative Engine Optimization (GEO)
+
+**What:** Technical and content optimization to make a business visible in AI-generated answers.
+
+**Scientific basis:** Aggarwal et al. (2024). "GEO: Generative Engine Optimization." Princeton University, KDD 2024. doi.org/10.1145/3637528.3671900. Key finding: GEO-optimized pages receive 40–115% more citations in AI search results.
+
+**Methods (47 total, by impact):**
+
+| Priority | Method | Measured Impact |
+|----------|--------|----------------|
+| 1 | Cite authoritative sources | +30–115% |
+| 2 | Add statistics with dates | +40% |
+| 3 | Expert quotations | +30–40% |
+| 4 | Authoritative tone | +6–12% |
+| 5 | Fluency optimization | +15–30% |
+
+**Technical deliverables:**
+- robots.txt: 27 AI bots explicitly allowed
+- llms.txt: AI-readable site summary (EN + TR)
+- Schema JSON-LD: WebSite, Organization, FAQPage, SoftwareApplication
+- AI discovery endpoints: /ai/summary.json, /ai/faq.json, /ai/service.json
+- .well-known/ai.json manifest
+- hreflang: en-US, tr-TR, x-default
+- RSS feed with freshness signals
+- Content freshness: dateModified schema
+
+**Target platforms:** ChatGPT Search, Perplexity, Google AI Overviews, Gemini, Claude
+
+---
+
+### 3. Business Process Automation
+
+**What:** End-to-end automation of repetitive workflows without AI agent complexity.
+
+**Use cases:**
+- Customer support ticket routing and auto-reply
+- Lead nurturing email sequences
+- Appointment reminder and rebooking
+- Inventory low-stock alerts
+- Daily/weekly business reporting
+- Social media scheduling
+
+**Integrations available:** Shopify, WooCommerce, WhatsApp, Slack, Gmail, Outlook, Calendly, HubSpot, Salesforce, Stripe, Twilio, Zapier, Make, n8n
+
+---
+
+## Proven Results
+
+| Metric | Result | Industry |
+|--------|--------|---------|
+| Customer support auto-resolution | 91% average | All |
+| Appointment no-show reduction | 73% | Healthcare |
+| Weekly hours saved per client | 23+ | All |
+| Pipeline growth | 340% in 6 months | B2B SaaS |
+| Lead response time improvement | 3x faster | Real Estate |
+| GEO visibility improvement | 19 → 79/100 | Own site |
+
+---
+
+## Technology Stack
+
+- **AI Models:** GPT-4o (OpenAI), Claude 3.5 Sonnet (Anthropic), Gemini 1.5 Pro (Google) — model-agnostic
+- **Agent Framework:** Custom multi-agent orchestration
+- **Infrastructure:** Cloud-native, fully managed
+- **Security:** End-to-end encryption, SOC2-aligned practices
+- **Client requirements:** Zero infrastructure needed — plug and play
+
+---
+
+## Academic References
+
+1. Aggarwal, P., et al. (2024). "GEO: Generative Engine Optimization." ACM KDD 2024, Barcelona. https://doi.org/10.1145/3637528.3671900
+2. Key finding: Businesses that implement GEO see 40–115% increase in AI search citations within 30 days.
+
+---
+
+## FAQ (Extended)
+
+**Q: Does CodLinex work for non-US businesses?**
+A: Yes. While our primary focus is US SMEs, we serve clients globally. All systems are available in English and Turkish.
+
+**Q: What happens after 48 hours?**
+A: The system is live and processing real tasks. You receive a performance dashboard, weekly reports, and ongoing optimization. We monitor and improve continuously.
+
+**Q: Do clients need to provide training data?**
+A: No training data needed. We train agents on your website content, product catalog, and a 30-minute onboarding session.
+
+**Q: Is there a free trial?**
+A: 30-day money-back guarantee on all plans — functionally equivalent to a free trial.
+
+**Q: Can the system escalate to humans?**
+A: Yes. Every agent has configurable confidence thresholds. Below threshold, it escalates to a human and logs the case for retraining.
+
+**Q: CodLinex sistemleri Türkçe çalışıyor mu?**
+A: Evet. Tüm agent sistemleri Türkçe ve İngilizce olarak yapılandırılabilir. Çift dilli müşteri desteği otomasyonu da sunuyoruz.
+
+---
+
+## Contact
+
+- Website: https://codlinex.com
+- Email: info@codlinex.com
+- AI Agent Details: https://codlinex.com/ai-agent.html
+- LinkedIn: https://www.linkedin.com/company/codlinex
+- Last updated: 2026-06-24

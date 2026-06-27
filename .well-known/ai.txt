@@ -1,0 +1,12 @@
+Name: CodLinex
+URL: https://codlinex.com
+Description: CodLinex is an AI automation agency for US businesses. We build custom AI agent systems and provide GEO optimization so brands appear in ChatGPT, Perplexity, and Google AI answers.
+Contact: info@codlinex.com
+Markets: United States
+Languages: en-US, tr-TR
+Crawl-Policy: allow-all-ai-bots
+
+Services: https://codlinex.com/ai/service.json
+Summary: https://codlinex.com/ai/summary.json
+FAQ: https://codlinex.com/ai/faq.json
+LLMS: https://codlinex.com/llms.txt

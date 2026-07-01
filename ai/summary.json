@@ -5,9 +5,15 @@
   "description_tr": "CodLinex, küçük ve orta ölçekli işletmeler için özel AI otomasyon sistemleri kuran bir yapay zeka ajansıdır. Müşteri desteği, lead takibi, randevu yönetimi ve raporlamayı otomatize ederek haftada 20+ saat tasarruf sağlıyoruz.",
   "email": "info@codlinex.com",
   "contact": "https://codlinex.com/#contact",
-  "lastModified": "2026-06-24",
-  "areaServed": ["United States", "Turkey"],
-  "languages": ["en-US", "tr-TR"],
+  "lastModified": "2026-07-01",
+  "areaServed": [
+    "United States",
+    "Turkey"
+  ],
+  "languages": [
+    "en-US",
+    "tr-TR"
+  ],
   "guarantee": "48-hour setup, 30-day money-back",
   "services": [
     "AI Agent Systems",

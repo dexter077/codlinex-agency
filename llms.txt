@@ -83,6 +83,56 @@ Security: SOC2-aligned, data encryption at rest and in transit
 
 ---
 
+## GEO Process / GEO Süreci
+
+CodLinex GEO engagements follow a four-phase methodology:
+
+1. **Audit (Week 1)** — Full technical GEO audit across 8 categories (robots.txt AI bot
+   access, llms.txt, Schema JSON-LD, meta tags, content structure, freshness signals,
+   AI discovery endpoints, brand entity), producing a 0–100 score. In parallel, an AI
+   visibility baseline: which buyer queries the brand wins and loses on ChatGPT,
+   Perplexity, and Google AI — measured against named competitors.
+2. **Technical Fix (Weeks 1–2)** — All 27 relevant AI crawlers granted access, llms.txt
+   and companion files deployed, structured data implemented, AI discovery manifests
+   (summary.json, faq.json, service.json) published and validated.
+3. **Content (Weeks 3–8)** — Citation-optimized pages targeting lost queries, applying
+   the Princeton KDD 2024 method stack: cited sources (up to +115% visibility), fresh
+   statistics (+40%), expert quotes (+30–40%), authoritative tone, fluency optimization.
+4. **Track & Defend (ongoing)** — Weekly automated AI visibility measurement: visibility
+   percentage, citation position, sentiment, and share of model versus competitors,
+   with monthly delta reports. Technical fixes surface in AI answers within 1–2 weeks;
+   content improvements within 4–8 weeks; full impact typically within 60–90 days.
+
+Proof on our own domain: codlinex.com's technical GEO score improved from 19/100 to
+90+/100 (excellent band) using exactly this process, measured before and after every
+change with the same audit tooling used for clients.
+
+## Frequently Asked Questions / Sık Sorulan Sorular
+
+**Is CodLinex a software platform or an agency?**
+An agency with proprietary tooling. Platforms like Zapier or Relevance AI give you the
+tools to build automations yourself; CodLinex designs, deploys, and operates complete
+AI agent systems for you, with a 48-hour go-live guarantee and a 30-day money-back
+guarantee. / CodLinex bir platform değil, kendi araçlarına sahip bir ajanstır: sistemi
+sizin için kurar ve işletir.
+
+**How is GEO different from SEO?**
+SEO optimizes for ranked links on Google; GEO optimizes for being cited inside
+AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Gemini. A site
+can rank well on Google and remain invisible to AI engines — the signals differ.
+/ SEO Google sıralaması içindir; GEO, yapay zeka cevaplarının içinde kaynak olarak
+gösterilmek içindir.
+
+**What does an engagement cost?**
+Starter $497/month (1 agent), Growth $997/month (3 agents, includes GEO), Enterprise
+$2,497/month (unlimited agents, full AI discovery layer and brand entity building).
+No contracts; 30-day money-back guarantee on every plan.
+
+**How fast are results measurable?**
+The AI visibility baseline is measured in week 1, before any change. Technical fixes
+are re-measured within 2 weeks; every weekly tracking report shows the delta against
+baseline, so results are demonstrated with numbers rather than promised.
+
 ## GEO Research Foundation
 
 CodLinex GEO methodology is based on peer-reviewed academic research:

@@ -8,9 +8,15 @@
 
 ## Services / Hizmetler
 
-- [AI Agent Systems](https://codlinex.com/ai-agent.html) — Custom multi-agent automation: customer support (91% auto-resolution), lead follow-up, scheduling, reporting. Live in 48 hours guaranteed.
-- [GEO / AI Search Visibility](https://codlinex.com) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini. Based on Princeton KDD 2024 research (doi.org/10.1145/3637528.3671900) — up to 40% visibility boost.
+- [AI Agent Systems](https://codlinex.com/ai-agent) — Custom multi-agent automation: customer support (91% auto-resolution), lead follow-up, scheduling, reporting. Live in 48 hours guaranteed.
+- [GEO Services](https://codlinex.com/geo-services) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini. Four-phase methodology based on Princeton KDD 2024 research (doi.org/10.1145/3637528.3671900) — up to 40% visibility boost. Proven on our own domain: GEO score 19 → 90.
 - [Business Automation](https://codlinex.com) — End-to-end workflow automation: support ticketing, lead nurturing, appointment reminders, inventory alerts, daily reporting.
+- [Free AI Visibility Audit](https://codlinex.com/audit) — 5-minute GEO score for any website.
+
+## Guides / Rehberler
+
+- [Best AI Automation Agency for Small Business (2026)](https://codlinex.com/blog/best-ai-automation-agency-small-business) — Agency vs platform comparison, pricing benchmarks, 7 selection criteria.
+- [GEO / AEO: Why It Matters Now](https://codlinex.com/blog/geo-aeo-guide) — How AI engines select content and how businesses become citable sources.
 
 ---
 
@@ -96,3 +102,7 @@ CodLinex GEO methodology is based on peer-reviewed academic research:
 ## Optional
 
 - [llms-full.txt](https://codlinex.com/llms-full.txt) — Extended technical documentation, full case studies, API reference
+- [services.md](https://codlinex.com/services.md) — Machine-readable service catalog companion (EN+TR)
+- [ai/summary.json](https://codlinex.com/ai/summary.json) — Structured brand summary
+- [ai/faq.json](https://codlinex.com/ai/faq.json) — Structured FAQ (9 Q&As)
+- [ai/service.json](https://codlinex.com/ai/service.json) — Service capabilities, pricing, industries

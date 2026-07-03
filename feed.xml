@@ -5,10 +5,28 @@
     <link>https://codlinex.com</link>
     <description>CodLinex builds custom AI agent systems and provides Generative Engine Optimization (GEO) for US businesses. Latest updates, case studies, and AI automation insights.</description>
     <language>en-US</language>
-    <lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://codlinex.com/feed.xml" rel="self" type="application/rss+xml"/>
     <copyright>Copyright 2026 CodLinex</copyright>
     <managingEditor>info@codlinex.com (CodLinex)</managingEditor>
+
+    <item>
+      <title>Best AI Automation Agency for Small Business: 2026 Selection Guide</title>
+      <link>https://codlinex.com/blog/best-ai-automation-agency-small-business</link>
+      <description>Agency vs platform comparison (CodLinex, Zapier, Make, Relevance AI, Lindy), 2026 pricing benchmarks, and 7 selection criteria for US small businesses — including why AI search visibility now belongs on the checklist.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://codlinex.com/blog/best-ai-automation-agency-small-business</guid>
+      <dc:creator>CodLinex</dc:creator>
+    </item>
+
+    <item>
+      <title>Generative Engine Optimization (GEO) Services: Get Cited by AI</title>
+      <link>https://codlinex.com/geo-services</link>
+      <description>CodLinex GEO services: four-phase methodology (audit, technical fix, citation-optimized content, weekly tracking) grounded in Princeton KDD 2024 research. Proof on our own domain: GEO score 19 to 90, excellent band.</description>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://codlinex.com/geo-services</guid>
+      <dc:creator>CodLinex</dc:creator>
+    </item>
 
     <item>
       <title>CodLinex Now Ranks in ChatGPT, Perplexity, and Google AI Answers</title>

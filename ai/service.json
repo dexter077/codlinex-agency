@@ -3,7 +3,16 @@
   "description": "CodLinex builds custom AI agent systems and provides GEO optimization for US businesses, making brands visible on ChatGPT, Perplexity, and Google AI.",
   "url": "https://codlinex.com",
   "email": "info@codlinex.com",
-  "lastModified": "2026-06-24",
+  "lastModified": "2026-07-03",
+  "capabilities": [
+    "Custom AI agent system design and deployment (48-hour setup)",
+    "Customer support automation with 91% average auto-resolution",
+    "Lead follow-up and nurturing sequence automation",
+    "Appointment scheduling and no-show reduction automation",
+    "Generative Engine Optimization (GEO) — ChatGPT, Perplexity, Google AI visibility",
+    "AI visibility auditing and weekly tracking",
+    "Business process automation across Shopify, WhatsApp, Slack, CRM and email"
+  ],
   "services": [
     {
       "id": "ai-agent-systems",

@@ -54,7 +54,13 @@
   "provider": { "@type": "Organization", "name": "CodLinex", "url": "https://codlinex.com" },
   "areaServed": { "@type": "Country", "name": "United States" },
   "url": "https://codlinex.com/geo-services",
-  "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "997", "description": "GEO service included in Growth plan from $997/month" }
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "997",
+    "highPrice": "3497",
+    "offerCount": "3"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -105,7 +111,7 @@
 
     <div class="flex items-center gap-3 mb-6">
       <span class="stat-pill">GEO SERVICES</span>
-      <span class="text-xs text-slate-500">Updated July 3, 2026</span>
+      <span class="text-xs text-slate-500">Updated July 4, 2026</span>
     </div>
 
     <h1 class="text-3xl md:text-4xl font-black text-white font-headline leading-tight mb-6" style="text-wrap:balance">
@@ -168,11 +174,63 @@
       delta as the program takes effect — no invented numbers, only what the tracker measures.</p>
     </div>
 
-    <h2>Pricing</h2>
-    <p>GEO is included in CodLinex plans: <strong>Growth ($997/mo)</strong> covers technical GEO plus
-    content optimization; <strong>Enterprise ($2,497/mo)</strong> adds the full AI discovery layer, brand
-    entity building, and quarterly strategy. Standalone GEO audits are available — start with the
-    <a href="/audit">free 5-minute visibility score</a> to see where you stand.</p>
+    <h2>Pricing — three GEO packages</h2>
+    <p>Which package fits depends on where your technical GEO audit lands. Critical/foundation-band
+    sites (score under 68) need the full technical build-out first; good-band sites (68+) can start
+    with tracking and content. Every package starts with the same audit tooling we use on our own
+    domain — <a href="/audit">get your free score</a> to see which tier applies.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-8">
+
+      <div class="glass p-6 flex flex-col">
+        <span class="stat-pill mb-4" style="align-self:flex-start">STARTER</span>
+        <div class="text-3xl font-black text-white font-headline mb-1">$997<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+        <p class="text-xs text-slate-400 mb-5" style="min-height:32px">For sites already in the Good band (68–85) — infrastructure exists, needs tracking and refinement.</p>
+        <div class="text-sm text-slate-300 space-y-2.5 mb-6 flex-1">
+          <div>✅ Full technical GEO audit — 8 categories, 0–100 score, competitor benchmark</div>
+          <div>✅ Technical fix: robots.txt (27 AI bots), llms.txt, Schema JSON-LD, AI discovery files</div>
+          <div>✅ Monthly automated AI visibility tracking — Google + Perplexity</div>
+          <div>✅ Monthly delta report: visibility %, citation position, sentiment</div>
+        </div>
+        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+           class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
+      </div>
+
+      <div class="glass p-6 flex flex-col relative" style="border:2px solid #37ea9e;box-shadow:0 0 40px rgba(55,234,158,0.12)">
+        <span class="absolute px-3 py-1 rounded-full text-xs font-bold text-[#061423] bg-[#37ea9e]" style="top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap">MOST POPULAR</span>
+        <span class="stat-pill mb-4 mt-2" style="align-self:flex-start">GROWTH</span>
+        <div class="text-3xl font-black text-white font-headline mb-1">$1,997<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+        <p class="text-xs text-slate-400 mb-5" style="min-height:32px">For Foundation-band sites (36–67) — technical basics need pairing with citation-ready content.</p>
+        <div class="text-sm text-slate-300 space-y-2.5 mb-6 flex-1">
+          <div>✅ Everything in Starter</div>
+          <div>✅ Citation-optimized content — sourced statistics, expert quotes, answer-first structure</div>
+          <div>✅ Weekly automated tracking — adds ChatGPT + Gemini (4 engines total)</div>
+          <div>✅ Perplexity-priority acceleration (13.05% citation rate vs ChatGPT's 0.59%)</div>
+          <div>✅ Monthly strategy call</div>
+        </div>
+        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+           class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
+      </div>
+
+      <div class="glass p-6 flex flex-col">
+        <span class="stat-pill mb-4" style="align-self:flex-start">AUTHORITY</span>
+        <div class="text-3xl font-black text-white font-headline mb-1">$3,497<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+        <p class="text-xs text-slate-400 mb-5" style="min-height:32px">For Critical-band sites (0–35) — no AI-visible infrastructure yet, full build required.</p>
+        <div class="text-sm text-slate-300 space-y-2.5 mb-6 flex-1">
+          <div>✅ Everything in Growth</div>
+          <div>✅ Full AI discovery layer: summary.json, faq.json, service.json, .well-known/ai.json</div>
+          <div>✅ Brand entity building — LinkedIn, Wikidata, Crunchbase knowledge-graph signals</div>
+          <div>✅ Expanded competitor tracking + AI Overview / share-of-model reporting</div>
+          <div>✅ Quarterly strategy session, priority support</div>
+        </div>
+        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+           class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
+      </div>
+
+    </div>
+    <p class="text-xs text-slate-500">Already fully optimized? Ask about <strong>Maintenance ($497/mo)</strong> —
+    tracking and upkeep only, for clients who completed the full program. No contracts on any tier;
+    cancel anytime.</p>
 
     <h2>Türkçe Özet — GEO (Generatif Arama Motoru Optimizasyonu) Hizmetleri</h2>
     <p><strong>GEO, işletmenizin ChatGPT, Perplexity ve Google AI cevaplarının içinde görünmesini
@@ -187,8 +245,11 @@
     <p>Kanıt kendi sitemizde: codlinex.com'un GEO skoru bu süreçle <strong>19 → 77 (23 Haziran 2026) →
     95 (3 Temmuz 2026)</strong> şeklinde ilerledi (excellent bandı). İkinci canlı vaka: ShopbyEasy'de
     (kendi e-ticaret markamız) 3 Temmuz 2026'da ölçülen baseline görünürlük <strong>%33.3</strong> —
-    haftalık otomatik takip şu an çalışıyor, sonuçlar ölçüldükçe paylaşılacak. GEO, Growth ($997/ay)
-    ve Enterprise ($2.497/ay) planlarına dahildir. Başlangıç için
+    haftalık otomatik takip şu an çalışıyor, sonuçlar ölçüldükçe paylaşılacak.</p>
+    <p><strong>Üç GEO paketi:</strong> Starter ($997/ay, Good bandı 68-85 için — takip ve
+    ince ayar), Growth ($1.997/ay, Foundation bandı 36-67 için — içerik optimizasyonu eklenir),
+    Authority ($3.497/ay, Critical bandı 0-35 için — tam teknik + brand entity kurulumu).
+    Hangi paketin size uygun olduğunu görmek için önce
     <a href="/audit">ücretsiz AI görünürlük skorunuzu</a> alın — 5 dakika sürer.</p>
 
   </article>

@@ -17,15 +17,14 @@ CodLinex (codlinex.com) — US AI automation agency website. Hosted on Vercel. A
 - **aaron-seo-geo v9.9.10** — `/aaron:audit https://codlinex.com` for full SEO+GEO+authority audit
 - **geo-optimizer-skill** — `geo audit --url https://codlinex.com --format json` for scored audit
 
-## GEO Score (last updated: 2026-06-23)
+## GEO Score (last updated: 2026-07-03)
 
-**77/100 — GOOD** | Baseline: 19/100 | +58 points
+**95/100 — EXCELLENT** | Baseline: 19/100 | +76 points
+Timeline: 19 (baseline) → 77 (2026-06-23, GOOD) → 90 → 95 (2026-07-03, EXCELLENT)
 
-Priority fixes remaining:
-1. signals 3/6 → add `lang="en-US"`, RSS feed, freshness meta (+3)
-2. ai_discovery 3/6 → Vercel indexing `.well-known/ai.json` and `ai/service.json` (auto, +3)
-3. llms_txt 12/18 → enrich with Case Studies, Integrations sections (+4)
-4. brand_entity 6/10 → LinkedIn page + Wikidata index (+4)
+95 is the honest ceiling for the homepage — remaining 5 points require a 5,000+ word
+llms.txt (unrealistic) and an Article schema on the homepage (semantically wrong, left
+deliberately). Full history: `C:\Users\Pc\Desktop\HERMES AGENT SYS\memory\audits\`.
 
 ## Component Authoring
 

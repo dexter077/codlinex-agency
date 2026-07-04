@@ -105,7 +105,8 @@
 | Weekly hours saved per client | 23+ | All |
 | Pipeline growth | 340% in 6 months | B2B SaaS |
 | Lead response time improvement | 3x faster | Real Estate |
-| GEO visibility improvement | 19 → 79/100 | Own site |
+| GEO score: 19 → 77 (Jun 23) → 95 (Jul 3, 2026) | +76 points, excellent band | Own site (codlinex.com) |
+| AI visibility baseline: 33.3% (Jul 3, 2026), tracking ongoing | second live case study | ShopbyEasy (own e-commerce brand) |
 
 ---
 

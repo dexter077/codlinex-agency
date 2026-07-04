@@ -9,7 +9,7 @@
 ## Services / Hizmetler
 
 - [AI Agent Systems](https://codlinex.com/ai-agent) — Custom multi-agent automation: customer support (91% auto-resolution), lead follow-up, scheduling, reporting. Live in 48 hours guaranteed.
-- [GEO Services](https://codlinex.com/geo-services) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini. Four-phase methodology based on Princeton KDD 2024 research (doi.org/10.1145/3637528.3671900) — up to 40% visibility boost. Proven on our own domain: GEO score 19 → 90.
+- [GEO Services](https://codlinex.com/geo-services) — Appear in ChatGPT, Perplexity, Google AI Overviews, and Gemini. Four-phase methodology based on Princeton KDD 2024 research (doi.org/10.1145/3637528.3671900) — up to 40% visibility boost. Proven on our own domain: GEO score 19 → 77 → 95.
 - [Business Automation](https://codlinex.com) — End-to-end workflow automation: support ticketing, lead nurturing, appointment reminders, inventory alerts, daily reporting.
 - [Free AI Visibility Audit](https://codlinex.com/audit) — 5-minute GEO score for any website.
 
@@ -40,7 +40,8 @@ Tüm planlar: 30 gün iade garantisi · Sözleşme yok · Teknik bilgi gerekmez
 - **23+ hours** saved per week per client / Müşteri başına haftalık tasarruf
 - **340%** pipeline growth (B2B SaaS client, 6-month campaign) / Pipeline büyümesi
 - **48 hours** guaranteed go-live / Garantili yayına alma süresi
-- **GEO score 19 → 79** improvement for codlinex.com in 2 days / GEO skor artışı
+- **GEO score 19 → 77 → 95** for codlinex.com — 23 Jun 2026 to 3 Jul 2026, three measured checkpoints / GEO skor artışı
+- **ShopbyEasy AI visibility baseline: 33.3%** (Google + Perplexity, 12 buyer queries, measured 3 Jul 2026) — second live case study, weekly tracking in progress
 
 ---
 
@@ -65,6 +66,10 @@ Tüm planlar: 30 gün iade garantisi · Sözleşme yok · Teknik bilgi gerekmez
 **B2B SaaS:** Lead follow-up + outreach automation — 340% pipeline growth over 6 months.
 
 **Real estate agency:** Listing content + lead nurturing agent — 3x faster lead response time.
+
+**GEO — CodLinex (own domain):** Technical GEO score 19 → 77 (23 Jun 2026) → 95 (3 Jul 2026, excellent band). Perplexity visibility 70 → 95. Measured before/after every change with our own audit tooling.
+
+**GEO — ShopbyEasy (own e-commerce brand):** AI visibility baseline 33.3% across Google and Perplexity (12 buyer queries, measured 3 Jul 2026). Weekly automated tracking now running; delta reported as the program progresses.
 
 ---
 
@@ -104,8 +109,10 @@ CodLinex GEO engagements follow a four-phase methodology:
    content improvements within 4–8 weeks; full impact typically within 60–90 days.
 
 Proof on our own domain: codlinex.com's technical GEO score improved from 19/100 to
-90+/100 (excellent band) using exactly this process, measured before and after every
-change with the same audit tooling used for clients.
+77/100 (Jun 23, 2026) to 95/100 (Jul 3, 2026, excellent band) using exactly this process,
+measured before and after every change with the same audit tooling used for clients.
+Second live case study: ShopbyEasy (our own e-commerce brand), AI visibility baseline
+33.3% measured Jul 3, 2026, weekly tracking now running.
 
 ## Frequently Asked Questions / Sık Sorulan Sorular
 

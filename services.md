@@ -20,7 +20,8 @@ Make your business visible in AI answers on ChatGPT, Perplexity, Google AI Overv
 - Technical layer: robots.txt AI bot access, llms.txt, Schema JSON-LD, AI discovery files
 - Content layer: citation-optimized content based on Princeton KDD 2024 research (up to +40% visibility)
 - Measurement layer: weekly AI visibility tracking — visibility %, citation position, share of model
-- Proof: codlinex.com GEO score improved 19 → 90 (excellent band)
+- Proof: codlinex.com GEO score 19 → 77 (Jun 23, 2026) → 95 (Jul 3, 2026, excellent band)
+- Second live case study: ShopbyEasy (own e-commerce brand) — AI visibility baseline 33.3% (Jul 3, 2026), weekly tracking in progress
 
 ## Business Process Automation
 

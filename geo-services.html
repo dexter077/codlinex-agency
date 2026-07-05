@@ -43,6 +43,7 @@
   table.phases th { text-align: left; color: #c8daea; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid rgba(55,234,158,0.3); }
   table.phases td { color: #9eb3c8; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
   .tbl-wrap { overflow-x: auto; }
+  .glow-green-sm { box-shadow: 0 0 20px rgba(55, 234, 158, 0.1); }
 </style>
 <script type="application/ld+json">
 {
@@ -106,7 +107,8 @@
   </div>
 </nav>
 
-<main class="max-w-3xl mx-auto px-6 md:px-10 py-14">
+<main>
+<section class="max-w-3xl mx-auto px-6 md:px-10 py-14">
   <article class="prose-dark">
 
     <div class="flex items-center gap-3 mb-6">
@@ -147,6 +149,77 @@
     </table>
     </div>
 
+  </article>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 md:px-10 py-8 md:py-14" id="pricing">
+
+  <div class="text-center mb-14">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-primary-container/10 mb-5">
+      <span class="text-xs font-bold text-primary-container tracking-widest uppercase">Pricing</span>
+    </div>
+    <h2 class="text-3xl md:text-5xl font-black font-headline text-white mb-5">Three GEO packages</h2>
+    <p class="text-slate-400 max-w-xl mx-auto text-sm md:text-base">Which package fits depends on where your technical
+      GEO audit lands — <a href="/audit" class="text-[#37ea9e]">get your free score</a> to see which tier applies.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+    <div class="bg-surface rounded-3xl p-8 border border-white/5 hover:border-primary-container/20 transition-all flex flex-col">
+      <span class="text-xs font-bold text-primary-container tracking-widest uppercase mb-4">Starter</span>
+      <div class="text-4xl font-black text-white font-headline mb-2">$997<span class="text-base text-slate-400 font-normal">/mo</span></div>
+      <p class="text-slate-400 text-sm leading-relaxed mb-6" style="min-height:60px">For sites already in the Good band (68–85) — infrastructure exists, needs tracking and refinement.</p>
+      <ul class="space-y-3 mb-8 flex-1">
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Full technical GEO audit — 8 categories, 0–100 score, competitor benchmark</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Technical fix: robots.txt (27 AI bots), llms.txt, Schema JSON-LD, AI discovery files</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Monthly automated AI visibility tracking — Google + Perplexity</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Monthly delta report: visibility %, citation position, sentiment</li>
+      </ul>
+      <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+         class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
+    </div>
+
+    <div class="bg-surface rounded-3xl p-8 border border-primary-container/25 ring-1 ring-primary-container/10 hover:border-primary-container/40 transition-all glow-green-sm relative flex flex-col">
+      <span class="absolute px-3 py-1 rounded-full text-xs font-bold text-[#061423] bg-[#37ea9e]" style="top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap">MOST POPULAR</span>
+      <span class="text-xs font-bold text-primary-container tracking-widest uppercase mb-4 mt-2">Growth</span>
+      <div class="text-4xl font-black text-white font-headline mb-2">$1,997<span class="text-base text-slate-400 font-normal">/mo</span></div>
+      <p class="text-slate-400 text-sm leading-relaxed mb-6" style="min-height:60px">For Foundation-band sites (36–67) — technical basics need pairing with citation-ready content.</p>
+      <ul class="space-y-3 mb-8 flex-1">
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Everything in Starter</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Citation-optimized content — sourced statistics, expert quotes, answer-first structure</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Weekly automated tracking — adds ChatGPT + Gemini (4 engines total)</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Perplexity-priority acceleration (13.05% citation rate vs ChatGPT's 0.59%)</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Monthly strategy call</li>
+      </ul>
+      <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+         class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
+    </div>
+
+    <div class="bg-surface rounded-3xl p-8 border border-white/5 hover:border-primary-container/20 transition-all flex flex-col">
+      <span class="text-xs font-bold text-primary-container tracking-widest uppercase mb-4">Authority</span>
+      <div class="text-4xl font-black text-white font-headline mb-2">$3,497<span class="text-base text-slate-400 font-normal">/mo</span></div>
+      <p class="text-slate-400 text-sm leading-relaxed mb-6" style="min-height:60px">For Critical-band sites (0–35) — no AI-visible infrastructure yet, full build required.</p>
+      <ul class="space-y-3 mb-8 flex-1">
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Everything in Growth</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Full AI discovery layer: summary.json, faq.json, service.json, .well-known/ai.json</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Brand entity building — LinkedIn, Wikidata, Crunchbase knowledge-graph signals</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Expanded competitor tracking + AI Overview / share-of-model reporting</li>
+        <li class="flex items-start gap-2 text-xs text-slate-400"><span class="text-primary-container text-sm mt-0.5">✓</span> Quarterly strategy session, priority support</li>
+      </ul>
+      <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
+         class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
+    </div>
+
+  </div>
+
+  <p class="text-center text-xs text-slate-500 mt-8">Already fully optimized? Ask about <strong class="text-slate-300">Maintenance ($497/mo)</strong> —
+    tracking and upkeep only, for clients who completed the full program. No contracts on any tier; cancel anytime.</p>
+
+</section>
+
+<section class="max-w-3xl mx-auto px-6 md:px-10 pb-14">
+  <article class="prose-dark">
+
     <h2>AI search visibility: how we measure it</h2>
     <p>Most agencies promise visibility; we measure it. CodLinex runs a proprietary weekly tracking
     system — the same class of tooling as enterprise platforms — that queries AI engines with your
@@ -174,64 +247,6 @@
       delta as the program takes effect — no invented numbers, only what the tracker measures.</p>
     </div>
 
-    <h2>Pricing — three GEO packages</h2>
-    <p>Which package fits depends on where your technical GEO audit lands. Critical/foundation-band
-    sites (score under 68) need the full technical build-out first; good-band sites (68+) can start
-    with tracking and content. Every package starts with the same audit tooling we use on our own
-    domain — <a href="/audit">get your free score</a> to see which tier applies.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-8">
-
-      <div class="glass p-6 flex flex-col">
-        <span class="stat-pill mb-4" style="align-self:flex-start">STARTER</span>
-        <div class="text-3xl font-black text-white font-headline mb-1">$997<span class="text-sm text-slate-400 font-normal">/mo</span></div>
-        <p class="text-xs text-slate-400 mb-5" style="min-height:32px">For sites already in the Good band (68–85) — infrastructure exists, needs tracking and refinement.</p>
-        <div class="text-sm text-slate-300 space-y-2.5 mb-6 flex-1">
-          <div>✅ Full technical GEO audit — 8 categories, 0–100 score, competitor benchmark</div>
-          <div>✅ Technical fix: robots.txt (27 AI bots), llms.txt, Schema JSON-LD, AI discovery files</div>
-          <div>✅ Monthly automated AI visibility tracking — Google + Perplexity</div>
-          <div>✅ Monthly delta report: visibility %, citation position, sentiment</div>
-        </div>
-        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
-           class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
-      </div>
-
-      <div class="glass p-6 flex flex-col relative" style="border:2px solid #37ea9e;box-shadow:0 0 40px rgba(55,234,158,0.12)">
-        <span class="absolute px-3 py-1 rounded-full text-xs font-bold text-[#061423] bg-[#37ea9e]" style="top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap">MOST POPULAR</span>
-        <span class="stat-pill mb-4 mt-2" style="align-self:flex-start">GROWTH</span>
-        <div class="text-3xl font-black text-white font-headline mb-1">$1,997<span class="text-sm text-slate-400 font-normal">/mo</span></div>
-        <p class="text-xs text-slate-400 mb-5" style="min-height:32px">For Foundation-band sites (36–67) — technical basics need pairing with citation-ready content.</p>
-        <div class="text-sm text-slate-300 space-y-2.5 mb-6 flex-1">
-          <div>✅ Everything in Starter</div>
-          <div>✅ Citation-optimized content — sourced statistics, expert quotes, answer-first structure</div>
-          <div>✅ Weekly automated tracking — adds ChatGPT + Gemini (4 engines total)</div>
-          <div>✅ Perplexity-priority acceleration (13.05% citation rate vs ChatGPT's 0.59%)</div>
-          <div>✅ Monthly strategy call</div>
-        </div>
-        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
-           class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
-      </div>
-
-      <div class="glass p-6 flex flex-col">
-        <span class="stat-pill mb-4" style="align-self:flex-start">AUTHORITY</span>
-        <div class="text-3xl font-black text-white font-headline mb-1">$3,497<span class="text-sm text-slate-400 font-normal">/mo</span></div>
-        <p class="text-xs text-slate-400 mb-5" style="min-height:32px">For Critical-band sites (0–35) — no AI-visible infrastructure yet, full build required.</p>
-        <div class="text-sm text-slate-300 space-y-2.5 mb-6 flex-1">
-          <div>✅ Everything in Growth</div>
-          <div>✅ Full AI discovery layer: summary.json, faq.json, service.json, .well-known/ai.json</div>
-          <div>✅ Brand entity building — LinkedIn, Wikidata, Crunchbase knowledge-graph signals</div>
-          <div>✅ Expanded competitor tracking + AI Overview / share-of-model reporting</div>
-          <div>✅ Quarterly strategy session, priority support</div>
-        </div>
-        <a href="https://calendly.com/ecomlinex/30min" target="_blank" rel="noopener noreferrer"
-           class="inline-block text-center text-sm font-semibold px-6 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors no-underline">Book a Strategy Call</a>
-      </div>
-
-    </div>
-    <p class="text-xs text-slate-500">Already fully optimized? Ask about <strong>Maintenance ($497/mo)</strong> —
-    tracking and upkeep only, for clients who completed the full program. No contracts on any tier;
-    cancel anytime.</p>
-
     <h2>Türkçe Özet — GEO (Generatif Arama Motoru Optimizasyonu) Hizmetleri</h2>
     <p><strong>GEO, işletmenizin ChatGPT, Perplexity ve Google AI cevaplarının içinde görünmesini
     sağlama işidir.</strong> Müşteriniz yapay zekaya "kimi işe almalıyım?" diye sorduğunda cevap siz
@@ -254,11 +269,12 @@
 
   </article>
 
-  <div class="glass p-8 mt-12 text-center">
+  <div class="glass p-8 mt-4 text-center">
     <h3 class="text-xl font-bold text-white font-headline mb-2">Where does your business stand today?</h3>
     <p class="text-sm text-slate-400 mb-5">Free AI visibility audit — your GEO score in 5 minutes, no sales call required.</p>
     <a href="/audit" class="inline-block text-sm font-semibold px-8 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors">Get My Free AI Visibility Score</a>
   </div>
+</section>
 </main>
 
 <footer class="border-t border-white/5 mt-10">

@@ -1,6 +1,6 @@
 {
   "url": "https://codlinex.com",
-  "lastModified": "2026-06-24",
+  "lastModified": "2026-07-08",
   "faqs": [
     {
       "question": "What is CodLinex?",
@@ -17,8 +17,12 @@
       "source_url": "https://doi.org/10.1145/3637528.3671900"
     },
     {
-      "question": "How much does CodLinex cost?",
-      "answer": "CodLinex offers three plans: Starter at $497/month (1 AI agent, 1,000 actions), Growth at $997/month (3 AI agents, 5,000 actions — most popular), and Enterprise at $2,497/month (unlimited agents and actions). All plans include 48-hour setup and a 30-day money-back guarantee."
+      "question": "How much do CodLinex AI Agent automation plans cost?",
+      "answer": "These AI Agent automation plans are separate from GEO pricing (see next question). CodLinex offers three AI Agent plans: Starter at $497/month (1 AI agent, 1,000 actions), Growth at $997/month (3 AI agents, 5,000 actions — most popular), and Enterprise at $2,497/month (unlimited agents and actions). All plans include 48-hour setup and a 30-day money-back guarantee."
+    },
+    {
+      "question": "How much does CodLinex GEO (AI visibility) service cost?",
+      "answer": "CodLinex offers three GEO packages, priced by your technical GEO audit score: Starter at $997/month (Good band, 68-85 score — tracking and refinement), Growth at $1,997/month (Foundation band, 36-67 — adds citation-optimized content, most popular), and Authority at $3,497/month (Critical band, 0-35 — full technical and brand-entity build). A Maintenance tier at $497/month covers tracking-only for clients who completed the full program. No long-term contracts on any tier. Get a free GEO audit score at codlinex.com/audit to see which tier fits."
     },
     {
       "question": "How fast does CodLinex set up an AI system?",

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="tr">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -1506,8 +1506,10 @@
     });
   };
 
-  /* ── Language ── English is the default (target market: US/global) ── */
-  let isEnAi = true;
+  /* ── Language ── English is the default (target market: US/global).
+     Shares the same localStorage key as index.html so the user's EN/TR
+     choice persists while navigating the site. ── */
+  let isEnAi = localStorage.getItem('cl_lang') !== 'tr';
 
   const applyLang = () => {
     const label = document.getElementById('lang-label-ai');
@@ -1523,7 +1525,11 @@
     });
   };
 
-  const toggleLangAi = () => { isEnAi = !isEnAi; applyLang(); };
+  const toggleLangAi = () => {
+    isEnAi = !isEnAi;
+    localStorage.setItem('cl_lang', isEnAi ? 'en' : 'tr');
+    applyLang();
+  };
 
   document.addEventListener('DOMContentLoaded', applyLang);
 </script>

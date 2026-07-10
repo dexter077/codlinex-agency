@@ -3,7 +3,7 @@
   "description": "CodLinex builds custom AI agent systems and provides GEO optimization for US businesses, making brands visible on ChatGPT, Perplexity, and Google AI.",
   "url": "https://codlinex.com",
   "email": "info@codlinex.com",
-  "lastModified": "2026-07-03",
+  "lastModified": "2026-07-08",
   "capabilities": [
     "Custom AI agent system design and deployment (48-hour setup)",
     "Customer support automation with 91% average auto-resolution",
@@ -56,7 +56,7 @@
       "url": "https://codlinex.com"
     }
   ],
-  "pricing": [
+  "pricing_ai_agent_systems": [
     {
       "plan": "Starter",
       "price_usd_monthly": 497,
@@ -87,6 +87,33 @@
       "integrations": "unlimited",
       "setup_hours": 48,
       "guarantee_days": 30
+    }
+  ],
+  "pricing_geo": [
+    {
+      "plan": "Starter",
+      "price_usd_monthly": 997,
+      "audit_score_band": "Good (68-85)",
+      "includes": ["Full technical GEO audit", "Technical fix (robots.txt, llms.txt, Schema JSON-LD, AI discovery files)", "Monthly automated AI visibility tracking (Google + Perplexity)", "Monthly delta report"]
+    },
+    {
+      "plan": "Growth",
+      "price_usd_monthly": 1997,
+      "audit_score_band": "Foundation (36-67)",
+      "most_popular": true,
+      "includes": ["Everything in Starter", "Citation-optimized content", "Weekly automated tracking (adds ChatGPT + Gemini, 4 engines total)", "Perplexity-priority acceleration", "Monthly strategy call"]
+    },
+    {
+      "plan": "Authority",
+      "price_usd_monthly": 3497,
+      "audit_score_band": "Critical (0-35)",
+      "includes": ["Everything in Growth", "Full AI discovery layer", "Brand entity building", "Expanded competitor tracking + AI Overview / share-of-model reporting", "Quarterly strategy session"]
+    },
+    {
+      "plan": "Maintenance",
+      "price_usd_monthly": 497,
+      "audit_score_band": "post-program",
+      "includes": ["Tracking and upkeep only, for clients who completed the full program"]
     }
   ],
   "industries": [

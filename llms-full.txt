@@ -79,9 +79,9 @@
 **Target platforms:** ChatGPT Search, Perplexity, Google AI Overviews, Gemini, Claude
 
 **Pricing (GEO packages — see homepage codlinex.com/#pricing for current pricing, separate from AI Agent Systems pricing above):**
-- Starter: $997/month — for sites already in the Good band (68–85 audit score). Full technical GEO audit, technical fix (robots.txt, llms.txt, Schema JSON-LD, AI discovery files), monthly automated AI visibility tracking (Google + Perplexity), monthly delta report.
-- Growth: $1,997/month (most popular) — for Foundation-band sites (36–67). Everything in Starter, plus citation-optimized content, weekly automated tracking (adds ChatGPT + Gemini, 4 engines total), Perplexity-priority acceleration, monthly strategy call.
-- Authority: $3,497/month — for Critical-band sites (0–35), no AI-visible infrastructure yet. Everything in Growth, plus full AI discovery layer (summary.json, faq.json, service.json, .well-known/ai.json), brand entity building, expanded competitor tracking, quarterly strategy session.
+- Starter: $499/month — for sites already in the Good band (68–85 audit score). Full technical GEO audit, technical fix (robots.txt, llms.txt, Schema JSON-LD, AI discovery files), monthly automated AI visibility tracking (Google + Perplexity), monthly delta report.
+- Growth: $799/month (most popular) — for Foundation-band sites (36–67). Everything in Starter, plus citation-optimized content, weekly automated tracking (adds ChatGPT + Gemini, 4 engines total), Perplexity-priority acceleration, monthly strategy call.
+- Authority: $1,299/month — for Critical-band sites (0–35), no AI-visible infrastructure yet. Everything in Growth, plus full AI discovery layer (summary.json, faq.json, service.json, .well-known/ai.json), brand entity building, expanded competitor tracking, quarterly strategy session.
 - Maintenance: $497/month — tracking and upkeep only, for clients who completed the full program.
 - No long-term contracts on any tier; cancel anytime. Which tier fits depends on the free technical GEO audit score (see /audit).
 

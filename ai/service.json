@@ -92,20 +92,20 @@
   "pricing_geo": [
     {
       "plan": "Starter",
-      "price_usd_monthly": 997,
+      "price_usd_monthly": 499,
       "audit_score_band": "Good (68-85)",
       "includes": ["Full technical GEO audit", "Technical fix (robots.txt, llms.txt, Schema JSON-LD, AI discovery files)", "Monthly automated AI visibility tracking (Google + Perplexity)", "Monthly delta report"]
     },
     {
       "plan": "Growth",
-      "price_usd_monthly": 1997,
+      "price_usd_monthly": 799,
       "audit_score_band": "Foundation (36-67)",
       "most_popular": true,
       "includes": ["Everything in Starter", "Citation-optimized content", "Weekly automated tracking (adds ChatGPT + Gemini, 4 engines total)", "Perplexity-priority acceleration", "Monthly strategy call"]
     },
     {
       "plan": "Authority",
-      "price_usd_monthly": 3497,
+      "price_usd_monthly": 1299,
       "audit_score_band": "Critical (0-35)",
       "includes": ["Everything in Growth", "Full AI discovery layer", "Brand entity building", "Expanded competitor tracking + AI Overview / share-of-model reporting", "Quarterly strategy session"]
     },

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<title>Free llms.txt Generator — Make Your Site AI-Readable | CodLinex</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061423'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2337ea9e' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2337ea9e'/%3E%3C/svg%3E"/>
+<meta name="description" content="Free llms.txt generator — create the AI-optimized llms.txt file that helps ChatGPT, Perplexity and Google AI understand and recommend your site. No signup."/>
+<link rel="canonical" href="https://codlinex.com/llms-txt-generator"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+      colors: {
+        "surface-container-high": "#1e2b3b", "surface-container": "#132030",
+        "surface": "#061423", "background": "#061423", "secondary": "#bac7dd",
+        "primary-container": "#37ea9e", "on-background": "#d6e3f9",
+        "outline": "#859589", "muted": "#8ea0b5",
+      },
+      fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] }
+    } }
+  }
+</script>
+<style>
+  * { scroll-behavior: smooth; }
+  body { background:#061423; color:#d6e3f9; font-family:'Inter',sans-serif; overflow-x:hidden; }
+  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(55,234,158,0.06) 1px, transparent 0); background-size:40px 40px; }
+  .gradient-text { background:linear-gradient(135deg,#37ea9e 0%,#9effc8 50%,#54ffb0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .glass { background:rgba(30,43,59,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+  .fld { width:100%; border-radius:0.75rem; background:#132030; border:1px solid rgba(255,255,255,0.10); padding:0.7rem 0.9rem; font-size:14px; color:#fff; }
+  .fld:focus { outline:none; border-color:rgba(55,234,158,0.55); box-shadow:0 0 0 2px rgba(55,234,158,0.15); }
+  .lbl { display:block; font-size:12.5px; font-weight:600; color:#bac7dd; margin-bottom:5px; }
+  ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-thumb { background:#1e2b3b; border-radius:3px; }
+</style>
+</head>
+<body class="neural-grid">
+
+<header class="sticky top-0 z-30 glass border-b border-white/5">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
+    <a href="/" class="flex items-center gap-2 font-headline font-black text-lg">
+      <span class="grid h-7 w-7 place-items-center rounded-lg bg-primary-container/15 text-primary-container">◎</span>
+      CodLinex
+    </a>
+    <div class="flex items-center gap-4 text-sm font-semibold text-secondary">
+      <a href="/geo-audit" class="hover:text-white transition-colors">Free GEO Audit</a>
+      <a href="/#pricing" class="hover:text-white transition-colors">Pricing →</a>
+    </div>
+  </div>
+</header>
+
+<section class="max-w-3xl mx-auto px-5 pt-12 pb-6 text-center">
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20 mb-5">
+    <span class="text-xs font-bold text-primary-container tracking-widest uppercase">Free tool · No signup</span>
+  </div>
+  <h1 class="font-headline text-4xl md:text-5xl font-black leading-tight mb-4">
+    Free <span class="gradient-text">llms.txt</span> Generator
+  </h1>
+  <p class="text-secondary max-w-xl mx-auto text-[15px] leading-relaxed">
+    llms.txt is the file that tells AI engines (ChatGPT, Perplexity, Google AI) what your site is
+    and which pages matter — so they can read and recommend you correctly. Fill in a few fields, get a
+    ready-to-upload file.
+  </p>
+</section>
+
+<section class="max-w-3xl mx-auto px-5 pb-16">
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Form -->
+    <div class="glass rounded-2xl border border-white/8 p-5 space-y-4">
+      <div>
+        <label class="lbl" for="f-name">Business / site name *</label>
+        <input id="f-name" class="fld" placeholder="Acme HVAC"/>
+      </div>
+      <div>
+        <label class="lbl" for="f-summary">One-line summary *</label>
+        <input id="f-summary" class="fld" placeholder="Licensed HVAC repair & installation in Austin, TX."/>
+      </div>
+      <div>
+        <label class="lbl" for="f-url">Website URL</label>
+        <input id="f-url" class="fld" placeholder="acmehvac.com"/>
+      </div>
+      <div>
+        <label class="lbl" for="f-about">About (1-3 sentences)</label>
+        <textarea id="f-about" rows="3" class="fld" placeholder="We've served the Austin area since 2008, offering 24/7 emergency HVAC service with NATE-certified technicians."></textarea>
+      </div>
+      <div>
+        <label class="lbl" for="f-pages">Key pages — one per line: <span class="text-outline font-normal">Title | https://url | short note</span></label>
+        <textarea id="f-pages" rows="4" class="fld font-mono text-[12.5px]" placeholder="Services | https://acmehvac.com/services | AC & heating repair, installation
+Pricing | https://acmehvac.com/pricing | Upfront flat-rate pricing
+Contact | https://acmehvac.com/contact | Book a visit"></textarea>
+      </div>
+      <div>
+        <label class="lbl" for="f-services">Services / topics <span class="text-outline font-normal">(comma-separated)</span></label>
+        <input id="f-services" class="fld" placeholder="AC repair, heating installation, duct cleaning"/>
+      </div>
+      <div>
+        <label class="lbl" for="f-email">Contact email <span class="text-outline font-normal">(optional)</span></label>
+        <input id="f-email" class="fld" placeholder="hello@acmehvac.com"/>
+      </div>
+      <button id="gen-btn" class="w-full inline-flex items-center justify-center rounded-xl bg-primary-container px-5 py-3 text-[15px] font-bold text-[#061423] transition-all hover:opacity-90">
+        Generate llms.txt
+      </button>
+    </div>
+
+    <!-- Output -->
+    <div class="glass rounded-2xl border border-white/8 p-5 flex flex-col">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-xs font-bold text-primary-container tracking-widest uppercase">llms.txt</span>
+        <div class="flex gap-2">
+          <button id="copy-btn" class="rounded-lg border border-white/10 px-3 py-1.5 text-[12px] font-medium hover:bg-white/5 transition-colors">Copy</button>
+          <button id="dl-btn" class="rounded-lg bg-primary-container/15 text-primary-container px-3 py-1.5 text-[12px] font-semibold hover:bg-primary-container/25 transition-colors">Download</button>
+        </div>
+      </div>
+      <pre id="out" class="flex-1 min-h-[320px] overflow-auto whitespace-pre-wrap rounded-lg border border-white/8 bg-background/70 p-3.5 font-mono text-[12px] leading-relaxed text-foreground/90 text-secondary">Fill in the fields and click Generate — your llms.txt appears here.</pre>
+      <p class="mt-2 text-[11px] text-outline">Upload the file to your site root as <span class="font-mono text-secondary">/llms.txt</span> (e.g. yoursite.com/llms.txt).</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-6 rounded-2xl border border-primary-container/25 bg-primary-container/[0.06] p-5 md:p-6 text-center">
+    <h3 class="font-headline text-lg font-bold mb-1">Want it live and fully optimized?</h3>
+    <p class="text-[14px] text-secondary leading-relaxed mb-4 max-w-xl mx-auto">
+      An llms.txt is one signal. Our free GEO audit checks all of them — robots.txt, schema, AI discovery files —
+      and shows whether ChatGPT and Perplexity actually recommend you.
+    </p>
+    <a href="/geo-audit" class="inline-block rounded-xl bg-primary-container px-6 py-3 text-[14px] font-bold text-[#061423] transition-all hover:opacity-90 no-underline">Run your free GEO audit →</a>
+  </div>
+</section>
+
+<footer class="border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-5 py-6 text-center text-[12px] text-outline">
+    <a href="/" class="hover:text-secondary">codlinex.com</a> ·
+    <a href="/geo-audit" class="hover:text-secondary">GEO Audit</a> ·
+    <a href="/geo-services" class="hover:text-secondary">GEO Services</a> ·
+    <a href="/#pricing" class="hover:text-secondary">Pricing</a>
+  </div>
+</footer>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  let current = "";
+
+  function normUrl(u) {
+    u = (u || "").trim();
+    if (!u) return "";
+    return /^https?:\/\//i.test(u) ? u : "https://" + u;
+  }
+
+  function generate() {
+    const name = $("f-name").value.trim();
+    const summary = $("f-summary").value.trim();
+    if (!name || !summary) {
+      $("out").textContent = "⚠️ Business name and one-line summary are required.";
+      return;
+    }
+    const url = normUrl($("f-url").value);
+    const about = $("f-about").value.trim();
+    const email = $("f-email").value.trim();
+    const services = $("f-services").value.split(",").map(s => s.trim()).filter(Boolean);
+
+    const pages = $("f-pages").value.split("\n").map(line => {
+      const parts = line.split("|").map(p => p.trim());
+      if (!parts[0]) return null;
+      return { title: parts[0], url: normUrl(parts[1] || ""), note: parts[2] || "" };
+    }).filter(Boolean);
+
+    let out = `# ${name}\n\n> ${summary}\n`;
+    if (about) out += `\n${about}\n`;
+    if (pages.length) {
+      out += `\n## Key Pages\n\n`;
+      for (const p of pages) {
+        const link = p.url ? `[${p.title}](${p.url})` : p.title;
+        out += `- ${link}${p.note ? ": " + p.note : ""}\n`;
+      }
+    }
+    if (services.length) {
+      out += `\n## Services\n\n`;
+      for (const s of services) out += `- ${s}\n`;
+    }
+    if (url || email) {
+      out += `\n## Contact\n\n`;
+      if (url) out += `- Website: ${url}\n`;
+      if (email) out += `- Email: ${email}\n`;
+    }
+    out += `\n<!-- Generated free at codlinex.com/llms-txt-generator -->\n`;
+
+    current = out;
+    $("out").textContent = out;
+    $("out").classList.remove("text-secondary");
+  }
+
+  $("gen-btn").addEventListener("click", generate);
+  $("copy-btn").addEventListener("click", () => {
+    if (!current) return;
+    navigator.clipboard.writeText(current).then(() => {
+      const b = $("copy-btn"); const t = b.textContent; b.textContent = "Copied ✓";
+      setTimeout(() => (b.textContent = t), 1500);
+    });
+  });
+  $("dl-btn").addEventListener("click", () => {
+    if (!current) generate();
+    if (!current) return;
+    const blob = new Blob([current], { type: "text/plain" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "llms.txt";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+</script>
+</body>
+</html>

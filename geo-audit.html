@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<title>Free GEO Audit — Is your site visible to AI search? | CodLinex</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061423'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2337ea9e' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2337ea9e'/%3E%3C/svg%3E"/>
+<meta name="description" content="Free instant GEO audit — check if ChatGPT, Perplexity and Google AI can see and recommend your site. Get your AI visibility score in seconds."/>
+<link rel="canonical" href="https://codlinex.com/geo-audit"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+      colors: {
+        "surface-container-high": "#1e2b3b", "surface-container": "#132030",
+        "surface": "#061423", "background": "#061423", "secondary": "#bac7dd",
+        "primary-container": "#37ea9e", "on-background": "#d6e3f9",
+        "outline": "#859589", "muted": "#8ea0b5",
+      },
+      fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] }
+    } }
+  }
+</script>
+<style>
+  * { scroll-behavior: smooth; }
+  body { background:#061423; color:#d6e3f9; font-family:'Inter',sans-serif; overflow-x:hidden; }
+  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(55,234,158,0.06) 1px, transparent 0); background-size:40px 40px; }
+  .gradient-text { background:linear-gradient(135deg,#37ea9e 0%,#9effc8 50%,#54ffb0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .glass { background:rgba(30,43,59,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+  .ring-bg { stroke:rgba(255,255,255,0.08); }
+  .ring-fg { stroke:#37ea9e; stroke-linecap:round; transition:stroke-dashoffset 1s ease, stroke 0.4s; transform:rotate(-90deg); transform-origin:50% 50%; }
+  .spin { animation:spin 0.8s linear infinite; } @keyframes spin { to { transform:rotate(360deg); } }
+  .fade-in { animation:fadeIn 0.5s ease forwards; } @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+</style>
+</head>
+<body class="neural-grid">
+
+<!-- Nav -->
+<header class="sticky top-0 z-30 glass border-b border-white/5">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
+    <a href="/" class="flex items-center gap-2 font-headline font-black text-lg">
+      <span class="grid h-7 w-7 place-items-center rounded-lg bg-primary-container/15 text-primary-container">◎</span>
+      CodLinex
+    </a>
+    <a href="/#pricing" class="text-sm font-semibold text-secondary hover:text-white transition-colors">Pricing →</a>
+  </div>
+</header>
+
+<!-- Hero + tool -->
+<section class="max-w-3xl mx-auto px-5 pt-14 pb-10 text-center">
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-container/20 mb-5">
+    <span class="text-xs font-bold text-primary-container tracking-widest uppercase">Free GEO Audit · No signup</span>
+  </div>
+  <h1 class="font-headline text-4xl md:text-5xl font-black leading-tight mb-4">
+    Is your site visible to <span class="gradient-text">AI search?</span>
+  </h1>
+  <p class="text-secondary max-w-xl mx-auto mb-8 text-[15px] leading-relaxed">
+    ChatGPT, Perplexity and Google AI now answer your customers directly. Enter your URL to see, in seconds,
+    whether AI engines can read and recommend your site — and where you're losing visibility.
+  </p>
+
+  <form id="audit-form" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+    <input id="url-input" type="text" inputmode="url" autocomplete="url" required
+      placeholder="yourwebsite.com"
+      class="flex-1 rounded-xl bg-surface-container border border-white/10 px-4 py-3.5 text-[15px] text-white placeholder:text-outline focus:border-primary-container/60 focus:outline-none focus:ring-2 focus:ring-primary-container/20"/>
+    <button id="run-btn" type="submit"
+      class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-container px-6 py-3.5 text-[15px] font-bold text-[#061423] transition-all hover:opacity-90 disabled:opacity-50">
+      Run free audit
+    </button>
+  </form>
+  <p id="form-error" class="mt-3 text-[13px] text-red-400 hidden">Enter a valid website (e.g. acme.com).</p>
+</section>
+
+<!-- Results -->
+<section id="results" class="max-w-3xl mx-auto px-5 pb-16 hidden">
+  <div class="glass rounded-3xl border border-white/8 p-6 md:p-8 fade-in">
+    <div class="flex flex-col sm:flex-row items-center gap-6">
+      <!-- Score ring -->
+      <div class="relative shrink-0" style="width:132px;height:132px">
+        <svg width="132" height="132" viewBox="0 0 132 132">
+          <circle class="ring-bg" cx="66" cy="66" r="58" fill="none" stroke-width="10"/>
+          <circle id="ring" class="ring-fg" cx="66" cy="66" r="58" fill="none" stroke-width="10"
+            stroke-dasharray="364.4" stroke-dashoffset="364.4"/>
+        </svg>
+        <div class="absolute inset-0 grid place-items-center">
+          <div class="text-center">
+            <div id="score-num" class="font-headline text-4xl font-black leading-none">0</div>
+            <div class="text-[10px] uppercase tracking-widest text-outline mt-1">/ 100</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center sm:text-left flex-1">
+        <p class="text-xs uppercase tracking-widest text-outline mb-1">AI Visibility Score</p>
+        <h2 id="result-domain" class="font-headline text-xl font-bold mb-1">—</h2>
+        <p id="result-rating" class="text-[14px] text-secondary"></p>
+      </div>
+    </div>
+
+    <!-- Checks -->
+    <div id="checks" class="grid sm:grid-cols-2 gap-3 mt-7"></div>
+
+    <!-- Upsell -->
+    <div id="upsell" class="mt-8 rounded-2xl border border-primary-container/25 bg-primary-container/[0.06] p-5 md:p-6">
+      <h3 class="font-headline text-lg font-bold mb-1">This is the 15-second technical scan.</h3>
+      <p class="text-[14px] text-secondary leading-relaxed mb-4">
+        The full <strong class="text-white">Deep GEO Audit</strong> runs a live test on ChatGPT, Perplexity and Google AI with your
+        buyers' real questions — showing exactly which queries you lose, to whom, and a prioritized 30-day plan.
+        <strong class="text-white">$249, credited to your first month.</strong>
+      </p>
+      <form id="lead-form" class="flex flex-col sm:flex-row gap-3">
+        <input id="email-input" type="email" required autocomplete="email" placeholder="you@company.com"
+          class="flex-1 rounded-xl bg-surface-container border border-white/10 px-4 py-3 text-[14px] text-white placeholder:text-outline focus:border-primary-container/60 focus:outline-none"/>
+        <button type="submit"
+          class="inline-flex items-center justify-center rounded-xl bg-primary-container px-5 py-3 text-[14px] font-bold text-[#061423] transition-all hover:opacity-90">
+          Get my full report
+        </button>
+      </form>
+      <p id="lead-done" class="mt-3 text-[13px] text-primary-container hidden">
+        ✓ Thanks — we've got your details. Check your inbox for next steps, or
+        <a href="/#pricing" class="underline">see packages</a>.
+      </p>
+      <p class="mt-3 text-[11px] text-outline">Free scan checks technical signals only. We never share your email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-5 py-6 text-center text-[12px] text-outline">
+    <a href="/" class="hover:text-secondary">codlinex.com</a> ·
+    <a href="/geo-services" class="hover:text-secondary">GEO Services</a> ·
+    <a href="/#pricing" class="hover:text-secondary">Pricing</a> ·
+    <a href="/legal" class="hover:text-secondary">Legal</a>
+  </div>
+</footer>
+
+<script>
+  const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwH_GKYYgieldmKlw5HdQkIMsueb0wVrdknbz4z4shw-P9jO6yZrsWcDrzM2iSAoAyP/exec';
+  const CIRC = 364.4; // 2πr, r=58
+  let lastAudit = { url: '', score: null };
+
+  const form = document.getElementById('audit-form');
+  const runBtn = document.getElementById('run-btn');
+  const err = document.getElementById('form-error');
+
+  const CHECK_META = {
+    robots:  { icon: '🤖', name: 'AI bot access' },
+    llms:    { icon: '📄', name: 'llms.txt' },
+    schema:  { icon: '🔖', name: 'Structured data' },
+    content: { icon: '📝', name: 'Answer-ready content' },
+    https:   { icon: '🔒', name: 'Secure (HTTPS)' },
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    err.classList.add('hidden');
+    let url = document.getElementById('url-input').value.trim();
+    if (!url || !/\.[a-z]{2,}/i.test(url)) { err.classList.remove('hidden'); return; }
+
+    runBtn.disabled = true;
+    runBtn.innerHTML = '<span class="spin inline-block h-4 w-4 rounded-full border-2 border-[#061423] border-t-transparent"></span> Auditing…';
+    try {
+      const res = await fetch('/api/analyze?url=' + encodeURIComponent(url));
+      const data = await res.json();
+      if (!res.ok || !data.checks) throw new Error(data.error || 'error');
+      render(data);
+      lastAudit = { url: data.domain || url, score: data.score };
+    } catch (_) {
+      err.textContent = "Couldn't reach that site — check the URL and try again.";
+      err.classList.remove('hidden');
+    } finally {
+      runBtn.disabled = false;
+      runBtn.textContent = 'Run free audit';
+    }
+  });
+
+  function render(data) {
+    const results = document.getElementById('results');
+    results.classList.remove('hidden');
+    document.getElementById('result-domain').textContent = data.domain;
+
+    const RATING = {
+      high:   { t: 'Strong — AI engines can read your site well. Now win the answer share.', c: '#37ea9e' },
+      medium: { t: 'Partial — the foundation is forming, but AI engines are missing key signals.', c: '#f5b544' },
+      low:    { t: 'Critical — AI engines can barely see you. Big first-mover upside here.', c: '#ff6b6b' },
+    };
+    const r = RATING[data.rating] || RATING.medium;
+    document.getElementById('result-rating').textContent = r.t;
+
+    // animate ring + number
+    const ring = document.getElementById('ring');
+    ring.style.stroke = r.c;
+    requestAnimationFrame(() => { ring.style.strokeDashoffset = CIRC * (1 - data.score / 100); });
+    const numEl = document.getElementById('score-num');
+    let cur = 0; const target = data.score;
+    const step = () => { cur += Math.max(1, Math.round(target / 30)); if (cur >= target) cur = target; numEl.textContent = cur; if (cur < target) requestAnimationFrame(step); };
+    step();
+
+    // checks
+    const wrap = document.getElementById('checks');
+    wrap.innerHTML = '';
+    for (const [key, meta] of Object.entries(CHECK_META)) {
+      const c = data.checks[key]; if (!c) continue;
+      const ok = c.pass === true, warn = c.pass === null;
+      const dot = ok ? 'bg-primary-container' : warn ? 'bg-yellow-400' : 'bg-red-400';
+      const el = document.createElement('div');
+      el.className = 'flex items-start gap-3 rounded-xl border border-white/8 bg-surface-container/60 p-3.5';
+      el.innerHTML =
+        '<span class="text-lg leading-none mt-0.5">' + meta.icon + '</span>' +
+        '<div class="min-w-0"><div class="flex items-center gap-2"><span class="text-[13.5px] font-semibold">' + meta.name + '</span>' +
+        '<span class="inline-block h-1.5 w-1.5 rounded-full ' + dot + '"></span></div>' +
+        '<p class="text-[12px] text-muted leading-snug mt-0.5">' + c.label + '</p></div>';
+      wrap.appendChild(el);
+    }
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Lead capture → Google Sheets (fire-and-forget), then reveal confirmation
+  document.getElementById('lead-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email-input').value.trim();
+    if (!email || !email.includes('@')) return;
+    const params = new URLSearchParams({
+      email, url: lastAudit.url, score: (lastAudit.score ?? '') + '',
+      source: 'geo-audit-tool', ts: new Date().toISOString(),
+    });
+    new Image().src = SHEETS_URL + '?' + params.toString();
+    document.getElementById('lead-form').classList.add('hidden');
+    document.getElementById('lead-done').classList.remove('hidden');
+  });
+</script>
+</body>
+</html>

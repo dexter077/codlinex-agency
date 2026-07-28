@@ -2,8 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/.well-known/:path*", "destination": "/.well-known/:path*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/.well-known/:path*", "destination": "/.well-known/:path*" }
   ],
   "headers": [
     {

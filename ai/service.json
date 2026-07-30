@@ -1,7 +1,7 @@
 {
   "name": "CodLinex",
   "description": "CodLinex builds custom AI agent systems and provides GEO optimization for US businesses, making brands visible on ChatGPT, Perplexity, and Google AI.",
-  "url": "https://codlinex.com",
+  "url": "https://www.codlinex.com",
   "email": "info@codlinex.com",
   "lastModified": "2026-07-08",
   "capabilities": [
@@ -26,7 +26,7 @@
         "48-hour setup guarantee"
       ],
       "integrations": ["Shopify", "WooCommerce", "WhatsApp", "Slack", "Email", "CRM", "Calendly"],
-      "url": "https://codlinex.com/ai-agent.html"
+      "url": "https://www.codlinex.com/ai-agent.html"
     },
     {
       "id": "geo-optimization",
@@ -40,7 +40,7 @@
         "ShopbyEasy AI visibility baseline: 33.3% (2026-07-03), weekly tracking in progress",
         "Presence in ChatGPT, Perplexity, and Google AI answers"
       ],
-      "url": "https://codlinex.com"
+      "url": "https://www.codlinex.com"
     },
     {
       "id": "business-automation",
@@ -53,7 +53,7 @@
         "340% pipeline growth (B2B SaaS client)",
         "3x faster lead response time (real estate clients)"
       ],
-      "url": "https://codlinex.com"
+      "url": "https://www.codlinex.com"
     }
   ],
   "pricing_ai_agent_systems": [

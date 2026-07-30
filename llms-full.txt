@@ -13,7 +13,7 @@
 - **Primary market:** United States (SME, 5–100 employees)
 - **Languages:** English (primary), Turkish
 - **Contact:** info@codlinex.com
-- **Website:** https://codlinex.com
+- **Website:** https://www.codlinex.com
 - **LinkedIn:** https://www.linkedin.com/company/codlinex
 - **Crunchbase:** https://www.crunchbase.com/organization/codlinex
 - **GitHub:** https://github.com/Codlinex
@@ -158,8 +158,8 @@ A: Evet. Tüm agent sistemleri Türkçe ve İngilizce olarak yapılandırılabil
 
 ## Contact
 
-- Website: https://codlinex.com
+- Website: https://www.codlinex.com
 - Email: info@codlinex.com
-- AI Agent Details: https://codlinex.com/ai-agent.html
+- AI Agent Details: https://www.codlinex.com/ai-agent.html
 - LinkedIn: https://www.linkedin.com/company/codlinex
 - Last updated: 2026-06-24

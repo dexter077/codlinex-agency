@@ -112,4 +112,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://codlinex.com/sitemap.xml
+Sitemap: https://www.codlinex.com/sitemap.xml

@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061423'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2337ea9e' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2337ea9e'/%3E%3C/svg%3E"/>
 <meta name="description" content="Find the AI agent built for your exact business problem. 2 minutes, 5 questions, personalized recommendation."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script id="tailwind-config">
   tailwind.config = {
@@ -17,32 +17,32 @@
     theme: {
       extend: {
         colors: {
-          "surface-container-high": "#1e2b3b", "surface-container": "#132030",
-          "primary-fixed": "#54ffb0", "primary": "#9effc8", "inverse-primary": "#006c45",
-          "surface-dim": "#061423", "secondary": "#bac7dd", "secondary-container": "#3d4a5b",
-          "on-secondary": "#243142", "tertiary": "#eaebec", "surface-variant": "#293646",
-          "on-background": "#d6e3f9", "on-primary": "#003822", "primary-container": "#37ea9e",
-          "on-surface-variant": "#bacbbe", "on-primary-container": "#006540",
-          "outline-variant": "#3c4a40", "surface-container-low": "#0f1c2c",
-          "surface-container-lowest": "#020f1e", "on-surface": "#d6e3f9",
-          "surface-container-highest": "#293646", "surface-bright": "#2d3a4b",
-          "surface": "#061423", "background": "#061423", "outline": "#859589",
+          "surface-container-high": "#16161c", "surface-container": "#131318",
+          "primary-fixed": "#92d4a8", "primary": "#92d4a8", "inverse-primary": "#1f4f37",
+          "surface-dim": "#08080a", "secondary": "#8b8b94", "secondary-container": "#1d1d23",
+          "on-secondary": "#0e0e12", "tertiary": "#fafafa", "surface-variant": "#1d1d23",
+          "on-background": "#fafafa", "on-primary": "#06120a", "primary-container": "#7dc596",
+          "on-surface-variant": "#d4d4d8", "on-primary-container": "#06120a",
+          "outline-variant": "#27272f", "surface-container-low": "#0e0e12",
+          "surface-container-lowest": "#08080a", "on-surface": "#fafafa",
+          "surface-container-highest": "#1d1d23", "surface-bright": "#27272f",
+          "surface": "#08080a", "background": "#08080a", "outline": "#5b5b63",
         },
-        fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] }
+        fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"], "mono": ["JetBrains Mono"] }
       }
     }
   }
 </script>
 <style>
   * { scroll-behavior: smooth; }
-  body { background-color: #061423; color: #d6e3f9; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+  body { background-color: #08080a; color: #fafafa; overflow-x: hidden; font-family: 'Inter', sans-serif; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(55,234,158,0.06) 1px, transparent 0); background-size: 40px 40px; }
-  .glass-card { background: rgba(30,43,59,0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-  .glass-nav { background: rgba(6,20,35,0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-  .gradient-text { background: linear-gradient(135deg,#37ea9e 0%,#9effc8 50%,#54ffb0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  .text-glow { text-shadow: 0 0 40px rgba(55,234,158,0.4); }
-  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background:#061423; } ::-webkit-scrollbar-thumb { background:#1e2b3b; border-radius:3px; }
+  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(125,197,150,0.06) 1px, transparent 0); background-size: 40px 40px; }
+  .glass-card { background: rgba(19,19,24,0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .glass-nav { background: rgba(8,8,10,0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .gradient-text { color: #7dc596; }
+  .text-glow { text-shadow: none; }
+  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background:#08080a; } ::-webkit-scrollbar-thumb { background:#16161c; border-radius:3px; }
 
   /* ── QUIZ STEPS ── */
   .quiz-step { display: none; }
@@ -53,11 +53,11 @@
 
   /* ── PROGRESS BAR ── */
   .progress-track { background: rgba(255,255,255,0.06); border-radius: 999px; height: 4px; }
-  .progress-fill { background: linear-gradient(90deg,#37ea9e,#06d68a); border-radius:999px; height:4px; transition: width 0.5s ease; }
+  .progress-fill { background: linear-gradient(90deg,#7dc596,#7dc596); border-radius:999px; height:4px; transition: width 0.5s ease; }
 
   /* ── QUIZ CARDS ── */
   .quiz-card {
-    background: rgba(19,32,48,0.6);
+    background: rgba(19,19,24,0.6);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
     padding: 16px;
@@ -67,10 +67,10 @@
     width: 100%;
     position: relative;
   }
-  .quiz-card:hover { border-color: rgba(55,234,158,0.35); background: rgba(30,43,59,0.7); transform: translateY(-1px); }
-  .quiz-card.selected { border-color: rgba(55,234,158,0.65) !important; background: rgba(55,234,158,0.09); }
-  .quiz-card.selected .sel-ring { background: #37ea9e; border-color: #37ea9e; }
-  .quiz-card.selected .sel-check { display: flex; color: #003822; }
+  .quiz-card:hover { border-color: rgba(125,197,150,0.35); background: rgba(19,19,24,0.7); transform: translateY(-1px); }
+  .quiz-card.selected { border-color: rgba(125,197,150,0.65) !important; background: rgba(125,197,150,0.09); }
+  .quiz-card.selected .sel-ring { background: #7dc596; border-color: #7dc596; }
+  .quiz-card.selected .sel-check { display: flex; color: #06120a; }
   .quiz-card.disabled { opacity: 0.35; pointer-events: none; }
   .quiz-card.shake { animation: shake 0.3s ease; }
 
@@ -81,16 +81,16 @@
   @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
 
   /* ── NEXT BUTTON ── */
-  .next-btn { background:linear-gradient(135deg,#37ea9e,#06d68a); color:#003822; font-weight:700; border:none; cursor:pointer; transition:all 0.2s ease; }
-  .next-btn:hover { background:linear-gradient(135deg,#54ffb0,#37ea9e); box-shadow:0 8px 32px rgba(55,234,158,0.35); transform:translateY(-2px); }
-  .next-btn:disabled { background:rgba(55,234,158,0.2); color:rgba(55,234,158,0.4); cursor:not-allowed; transform:none; box-shadow:none; }
-  .back-btn { background:transparent; border:1px solid rgba(255,255,255,0.1); color:#859589; font-weight:500; cursor:pointer; transition:all 0.2s; }
-  .back-btn:hover { border-color:rgba(255,255,255,0.25); color:#d6e3f9; }
+  .next-btn { background:linear-gradient(135deg,#7dc596,#7dc596); color:#06120a; font-weight:700; border:none; cursor:pointer; transition:all 0.2s ease; }
+  .next-btn:hover { background:linear-gradient(135deg,#92d4a8,#7dc596); box-shadow:0 8px 32px rgba(125,197,150,0.35); transform:translateY(-2px); }
+  .next-btn:disabled { background:rgba(125,197,150,0.2); color:rgba(125,197,150,0.4); cursor:not-allowed; transform:none; box-shadow:none; }
+  .back-btn { background:transparent; border:1px solid rgba(255,255,255,0.1); color:#5b5b63; font-weight:500; cursor:pointer; transition:all 0.2s; }
+  .back-btn:hover { border-color:rgba(255,255,255,0.25); color:#fafafa; }
 
   /* ── ANALYZING SCREEN ── */
   #analyzing { display:none; align-items:center; justify-content:center; min-height:60vh; flex-direction:column; }
   @keyframes dotBounce { 0%,100%{transform:translateY(0);opacity:0.4;} 50%{transform:translateY(-8px);opacity:1;} }
-  @keyframes agentPulse { 0%,100%{box-shadow:0 0 0 0 rgba(55,234,158,0.4),0 0 30px rgba(55,234,158,0.2);} 50%{box-shadow:0 0 0 14px rgba(55,234,158,0),0 0 60px rgba(55,234,158,0.35);} }
+  @keyframes agentPulse { 0%,100%{box-shadow:0 0 0 0 rgba(125,197,150,0.4),0 0 14px rgba(125,197,150,0.2);} 50%{box-shadow:0 0 0 10px rgba(125,197,150,0),0 0 24px rgba(125,197,150,0.3);} }
   .orb-pulse { animation: agentPulse 2.8s ease-in-out infinite; }
   @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
 
@@ -103,31 +103,31 @@
   .result-block:nth-child(5){animation-delay:0.4s;opacity:0;}
   .result-block:nth-child(6){animation-delay:0.5s;opacity:0;}
 
-  .check-icon { color:#37ea9e; }
+  .check-icon { color:#7dc596; }
 
   /* ── INPUT FIELDS ── */
   .input-field {
-    background: rgba(19,32,48,0.7);
+    background: rgba(19,19,24,0.7);
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: 12px;
     padding: 12px 16px;
-    color: #d6e3f9;
+    color: #fafafa;
     font-size: 14px;
     width: 100%;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     font-family: 'Inter', sans-serif;
   }
-  .input-field:focus { border-color: rgba(55,234,158,0.5); box-shadow: 0 0 0 3px rgba(55,234,158,0.08); }
-  .input-field::placeholder { color: #3d4a5b; }
+  .input-field:focus { border-color: rgba(125,197,150,0.5); box-shadow: 0 0 0 3px rgba(125,197,150,0.08); }
+  .input-field::placeholder { color: #1d1d23; }
   .input-field.error { border-color: rgba(248,113,113,0.6); }
-  .stripe-btn { background:linear-gradient(135deg,#37ea9e,#06d68a); color:#003822; font-weight:700; transition:all 0.2s; }
-  .stripe-btn:hover { background:linear-gradient(135deg,#54ffb0,#37ea9e); box-shadow:0 8px 32px rgba(55,234,158,0.4); transform:translateY(-2px); }
-  .ghost-btn { border:1px solid rgba(55,234,158,0.35); color:#37ea9e; font-weight:600; transition:all 0.2s; }
-  .ghost-btn:hover { background:rgba(55,234,158,0.08); border-color:rgba(55,234,158,0.6); }
+  .stripe-btn { background:linear-gradient(135deg,#7dc596,#7dc596); color:#06120a; font-weight:700; transition:all 0.2s; }
+  .stripe-btn:hover { background:linear-gradient(135deg,#92d4a8,#7dc596); box-shadow:0 8px 32px rgba(125,197,150,0.4); transform:translateY(-2px); }
+  .ghost-btn { border:1px solid rgba(125,197,150,0.35); color:#7dc596; font-weight:600; transition:all 0.2s; }
+  .ghost-btn:hover { background:rgba(125,197,150,0.08); border-color:rgba(125,197,150,0.6); }
 
   /* Result plan card glow */
-  @keyframes planGlow { 0%,100%{box-shadow:0 0 0 1.5px rgba(55,234,158,0.5),0 0 40px rgba(55,234,158,0.1);} 50%{box-shadow:0 0 0 1.5px rgba(55,234,158,0.8),0 0 60px rgba(55,234,158,0.2);} }
+  @keyframes planGlow { 0%,100%{box-shadow:0 0 0 1.5px rgba(125,197,150,0.5),0 0 18px rgba(125,197,150,0.1);} 50%{box-shadow:0 0 0 1.5px rgba(125,197,150,0.8),0 0 24px rgba(125,197,150,0.2);} }
   .plan-card-result { animation: planGlow 3s ease-in-out infinite; border-color:transparent !important; }
 </style>
 </head>
@@ -141,7 +141,7 @@
     <div class="flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-2.5">
         <div class="w-8 h-8 rounded-lg bg-primary-container/20 border border-primary-container/30 flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#37ea9e"/><circle cx="8" cy="8" r="6" fill="none" stroke="#37ea9e" stroke-width="1" stroke-opacity="0.4"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#7dc596"/><circle cx="8" cy="8" r="6" fill="none" stroke="#7dc596" stroke-width="1" stroke-opacity="0.4"/></svg>
         </div>
         <span class="font-headline font-bold text-on-background text-base tracking-tight">CodLinex</span>
       </a>
@@ -559,7 +559,7 @@
       <p class="text-secondary text-sm leading-relaxed mb-4 italic" id="result-testimonial-quote">"Support tickets dropped 91% in the first month."</p>
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0" id="result-avatar"
-             style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7;">SK</div>
+             style="background:rgba(125,197,150,0.15);border:1px solid rgba(125,197,150,0.3);color:#92d4a8;">SK</div>
         <div>
           <p class="text-sm font-bold text-on-background" id="result-testimonial-name">Sarah K.</p>
           <p class="text-xs text-outline" id="result-testimonial-role">Fashion Brand Owner · Austin, TX</p>
@@ -642,7 +642,7 @@
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
     <a href="index.html" class="flex items-center gap-2">
       <div class="w-7 h-7 rounded-lg bg-primary-container/20 border border-primary-container/30 flex items-center justify-center">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#37ea9e"/><circle cx="8" cy="8" r="6" fill="none" stroke="#37ea9e" stroke-width="1" stroke-opacity="0.4"/></svg>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#7dc596"/><circle cx="8" cy="8" r="6" fill="none" stroke="#7dc596" stroke-width="1" stroke-opacity="0.4"/></svg>
       </div>
       <span class="font-headline font-bold text-on-background text-sm">CodLinex</span>
     </a>
@@ -844,14 +844,14 @@
 
     /* Agent profiles per sector */
     const profiles = {
-      'ecommerce':  { name: 'E-commerce Support Agent',    sector: 'E-commerce & Retail',          avatar: 'SK', avatarStyle: 'background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7;' },
+      'ecommerce':  { name: 'E-commerce Support Agent',    sector: 'E-commerce & Retail',          avatar: 'SK', avatarStyle: 'background:rgba(125,197,150,0.15);border:1px solid rgba(125,197,150,0.3);color:#92d4a8;' },
       'healthcare': { name: 'Patient Experience Agent',    sector: 'Healthcare & Clinics',          avatar: 'JR', avatarStyle: 'background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);color:#93c5fd;' },
       'realestate': { name: 'Real Estate Lead Agent',      sector: 'Real Estate & Property',        avatar: 'DM', avatarStyle: 'background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fcd34d;' },
       'legal':      { name: 'Client Intake Agent',         sector: 'Legal & Professional Services', avatar: 'AC', avatarStyle: 'background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:#c4b5fd;' },
       'marketing':  { name: 'Agency Ops Agent',            sector: 'Marketing & Agency',            avatar: 'RL', avatarStyle: 'background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3);color:#f9a8d4;' },
       'restaurant': { name: 'Guest Experience Agent',      sector: 'Restaurant & Hospitality',      avatar: 'MT', avatarStyle: 'background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.3);color:#fdba74;' },
       'b2b-saas':   { name: 'B2B Pipeline Agent',          sector: 'B2B SaaS & Tech',               avatar: 'MT', avatarStyle: 'background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;' },
-      'other':      { name: 'Custom Business Agent',       sector: 'Your Business',                 avatar: 'YB', avatarStyle: 'background:rgba(55,234,158,0.15);border:1px solid rgba(55,234,158,0.3);color:#37ea9e;' },
+      'other':      { name: 'Custom Business Agent',       sector: 'Your Business',                 avatar: 'YB', avatarStyle: 'background:rgba(125,197,150,0.15);border:1px solid rgba(125,197,150,0.3);color:#7dc596;' },
     };
 
     /* Pain → capability text */
@@ -934,7 +934,7 @@
     // Capabilities
     const capHtml = topPains.map(p =>
       `<li class="flex items-start gap-2.5">
-        <span class="material-symbols-outlined text-base mt-0.5" style="color:#37ea9e;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span>
+        <span class="material-symbols-outlined text-base mt-0.5" style="color:#7dc596;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span>
         <span class="text-sm text-secondary">${painCaps[p] || 'Automate your core business workflow'}</span>
       </li>`
     ).join('');

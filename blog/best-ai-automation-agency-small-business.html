@@ -13,34 +13,34 @@
 <meta property="og:site_name" content="CodLinex"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061423'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2337ea9e' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2337ea9e'/%3E%3C/svg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script id="tailwind-config">
   tailwind.config = { darkMode: "class", theme: { extend: { colors: {
-    "surface-container-high": "#1e2b3b", "surface-container": "#132030",
-    "primary-fixed": "#54ffb0", "primary": "#9effc8", "primary-container": "#37ea9e",
-    "surface-container-lowest": "#020f1e", "surface-container-low": "#0f1c2c",
-    "surface-container-highest": "#293646", "surface-dim": "#061423",
-    "surface": "#061423", "background": "#061423", "on-background": "#d6e3f9",
-    "on-surface": "#d6e3f9", "secondary": "#bac7dd", "outline-variant": "#3c4a40"
-  }, fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] } } } }
+    "surface-container-high": "#16161c", "surface-container": "#131318",
+    "primary-fixed": "#92d4a8", "primary": "#92d4a8", "primary-container": "#7dc596",
+    "surface-container-lowest": "#08080a", "surface-container-low": "#0e0e12",
+    "surface-container-highest": "#1d1d23", "surface-dim": "#08080a",
+    "surface": "#08080a", "background": "#08080a", "on-background": "#fafafa",
+    "on-surface": "#fafafa", "secondary": "#8b8b94", "outline-variant": "#27272f"
+  }, fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"], "mono": ["JetBrains Mono"] } } } }
 </script>
 <style>
   * { scroll-behavior: smooth; }
-  body { background-color: #061423; color: #d6e3f9; overflow-x: hidden; font-family: 'Inter', sans-serif; }
-  .gradient-text { background: linear-gradient(135deg, #37ea9e 0%, #9effc8 50%, #54ffb0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  body { background-color: #08080a; color: #fafafa; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+  .gradient-text { color: #7dc596; }
   .glass { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); }
-  .prose-dark p { color: #9eb3c8; line-height: 1.8; margin-bottom: 1.1rem; }
+  .prose-dark p { color: #8b8b94; line-height: 1.8; margin-bottom: 1.1rem; }
   .prose-dark h2 { color: #e2edf7; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.35rem; margin: 2.4rem 0 0.9rem; }
-  .prose-dark h3 { color: #c8daea; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.05rem; margin: 1.6rem 0 0.6rem; }
-  .prose-dark ul, .prose-dark ol { color: #9eb3c8; padding-left: 1.4rem; margin-bottom: 1rem; }
+  .prose-dark h3 { color: #d4d4d8; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.05rem; margin: 1.6rem 0 0.6rem; }
+  .prose-dark ul, .prose-dark ol { color: #8b8b94; padding-left: 1.4rem; margin-bottom: 1rem; }
   .prose-dark li { margin-bottom: 0.4rem; line-height: 1.75; }
-  .prose-dark strong { color: #c8daea; font-weight: 600; }
-  .prose-dark a { color: #37ea9e; }
-  .callout { background: rgba(55,234,158,0.06); border-left: 3px solid #37ea9e; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 1.6rem 0; }
-  .stat-pill { background: rgba(55,234,158,0.1); border: 1px solid rgba(55,234,158,0.2); border-radius: 999px; padding: 3px 14px; font-size: 12px; color: #37ea9e; font-weight: 700; display: inline-block; }
+  .prose-dark strong { color: #d4d4d8; font-weight: 600; }
+  .prose-dark a { color: #7dc596; }
+  .callout { background: rgba(125,197,150,0.06); border-left: 3px solid #7dc596; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 1.6rem 0; }
+  .stat-pill { background: rgba(125,197,150,0.1); border: 1px solid rgba(125,197,150,0.2); border-radius: 999px; padding: 3px 14px; font-size: 12px; color: #7dc596; font-weight: 700; display: inline-block; }
   table.cmp { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.2rem 0; }
-  table.cmp th { text-align: left; color: #c8daea; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid rgba(55,234,158,0.3); }
-  table.cmp td { color: #9eb3c8; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
+  table.cmp th { text-align: left; color: #d4d4d8; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid rgba(125,197,150,0.3); }
+  table.cmp td { color: #8b8b94; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; }
   .tbl-wrap { overflow-x: auto; }
 </style>
 <script type="application/ld+json">
@@ -89,14 +89,14 @@
 </head>
 <body class="min-h-screen">
 
-<nav style="background:rgba(6,20,35,0.95);border-bottom:1px solid rgba(255,255,255,0.05);" class="sticky top-0 z-50 backdrop-blur-md">
+<nav style="background:rgba(8,8,10,0.95);border-bottom:1px solid rgba(255,255,255,0.05);" class="sticky top-0 z-50 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5">
       <span class="text-lg font-black tracking-tight text-white font-headline">Cod<span class="gradient-text">Linex</span></span>
     </a>
     <div class="flex items-center gap-4">
       <a href="/blog" class="text-sm text-slate-400 hover:text-white transition-colors">← Blog</a>
-      <a href="/audit" class="text-sm font-semibold px-5 py-2 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors">Free AI Visibility Score</a>
+      <a href="/audit" class="text-sm font-semibold px-5 py-2 rounded-xl text-[#08080a] bg-[#7dc596] hover:bg-[#92d4a8] transition-colors">Free AI Visibility Score</a>
     </div>
   </div>
 </nav>
@@ -197,14 +197,14 @@
   <div class="glass rounded-2xl p-8 mt-12 text-center">
     <h3 class="text-xl font-bold text-white font-headline mb-2">Is your business visible to AI?</h3>
     <p class="text-sm text-slate-400 mb-5">Free 5-minute audit — see your GEO score the way ChatGPT and Perplexity see you.</p>
-    <a href="/audit" class="inline-block text-sm font-semibold px-8 py-3 rounded-xl text-[#061423] bg-[#37ea9e] hover:bg-[#54ffb0] transition-colors">Get My Free AI Visibility Score</a>
+    <a href="/audit" class="inline-block text-sm font-semibold px-8 py-3 rounded-xl text-[#08080a] bg-[#7dc596] hover:bg-[#92d4a8] transition-colors">Get My Free AI Visibility Score</a>
   </div>
 </main>
 
 <footer class="border-t border-white/5 mt-10">
   <div class="max-w-7xl mx-auto px-6 md:px-10 py-8 text-xs text-slate-500 flex flex-wrap gap-4 justify-between">
     <span>© 2026 CodLinex · Ecomlinex LLC</span>
-    <span><a href="/" class="hover:text-[#37ea9e]">Home</a> · <a href="/blog" class="hover:text-[#37ea9e]">Blog</a> · <a href="/legal" class="hover:text-[#37ea9e]">Legal</a></span>
+    <span><a href="/" class="hover:text-[#7dc596]">Home</a> · <a href="/blog" class="hover:text-[#7dc596]">Blog</a> · <a href="/legal" class="hover:text-[#7dc596]">Legal</a></span>
   </div>
 </footer>
 </body>

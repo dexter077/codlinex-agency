@@ -10,7 +10,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23061423'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%2337ea9e' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2337ea9e'/%3E%3C/svg%3E"/>
 <meta name="description" content="CodLinex AI Agent — 48 saatte işletmenize özel AI çalışan. Müşteri desteği, raporlama, lead takibi — otomatik."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script id="tailwind-config">
   tailwind.config = {
@@ -18,35 +18,36 @@
     theme: {
       extend: {
         colors: {
-          "surface-container-high": "#1e2b3b",
-          "surface-container": "#132030",
-          "primary-fixed": "#54ffb0",
-          "primary": "#9effc8",
-          "inverse-primary": "#006c45",
-          "surface-dim": "#061423",
-          "secondary": "#bac7dd",
-          "secondary-container": "#3d4a5b",
-          "on-secondary": "#243142",
-          "tertiary": "#eaebec",
-          "surface-variant": "#293646",
-          "on-background": "#d6e3f9",
-          "on-primary": "#003822",
-          "primary-container": "#37ea9e",
-          "on-surface-variant": "#bacbbe",
-          "on-primary-container": "#006540",
-          "outline-variant": "#3c4a40",
-          "surface-container-low": "#0f1c2c",
-          "surface-container-lowest": "#020f1e",
-          "on-surface": "#d6e3f9",
-          "surface-container-highest": "#293646",
-          "surface-bright": "#2d3a4b",
-          "surface": "#061423",
-          "background": "#061423",
-          "outline": "#859589",
+          "surface-container-high": "#16161c",
+          "surface-container": "#131318",
+          "primary-fixed": "#92d4a8",
+          "primary": "#92d4a8",
+          "inverse-primary": "#1f4f37",
+          "surface-dim": "#08080a",
+          "secondary": "#8b8b94",
+          "secondary-container": "#1d1d23",
+          "on-secondary": "#0e0e12",
+          "tertiary": "#fafafa",
+          "surface-variant": "#1d1d23",
+          "on-background": "#fafafa",
+          "on-primary": "#06120a",
+          "primary-container": "#7dc596",
+          "on-surface-variant": "#d4d4d8",
+          "on-primary-container": "#06120a",
+          "outline-variant": "#27272f",
+          "surface-container-low": "#0e0e12",
+          "surface-container-lowest": "#08080a",
+          "on-surface": "#fafafa",
+          "surface-container-highest": "#1d1d23",
+          "surface-bright": "#27272f",
+          "surface": "#08080a",
+          "background": "#08080a",
+          "outline": "#5b5b63",
         },
         fontFamily: {
           "headline": ["Plus Jakarta Sans"],
           "body": ["Inter"],
+          "mono": ["JetBrains Mono"],
         }
       }
     }
@@ -54,36 +55,31 @@
 </script>
 <style>
   * { scroll-behavior: smooth; }
-  body { background-color: #061423; color: #d6e3f9; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+  body { background-color: #08080a; color: #fafafa; overflow-x: hidden; font-family: 'Inter', sans-serif; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
   .neural-grid {
-    background-image: radial-gradient(circle at 2px 2px, rgba(55, 234, 158, 0.06) 1px, transparent 0);
+    background-image: radial-gradient(circle at 2px 2px, rgba(125, 197, 150, 0.06) 1px, transparent 0);
     background-size: 40px 40px;
   }
-  .glass-card { background: rgba(30, 43, 59, 0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-  .glass-nav { background: rgba(6, 20, 35, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-  .glow-green { box-shadow: 0 0 40px rgba(55, 234, 158, 0.15); }
-  .text-glow { text-shadow: 0 0 40px rgba(55, 234, 158, 0.4); }
-  .gradient-text {
-    background: linear-gradient(135deg, #37ea9e 0%, #9effc8 50%, #54ffb0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  .glass-card { background: rgba(19, 19, 24, 0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .glass-nav { background: rgba(8, 8, 10, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .glow-green { box-shadow: 0 0 0 1px rgba(125, 197, 150, 0.15), 0 0 24px -6px rgba(125, 197, 150, 0.25); }
+  .text-glow { text-shadow: none; }
+  .gradient-text { color: #7dc596; }
   .gradient-border {
-    background: linear-gradient(#061423, #061423) padding-box,
-                linear-gradient(135deg, #37ea9e, #006c45, #37ea9e) border-box;
+    background: linear-gradient(#08080a, #08080a) padding-box,
+                linear-gradient(135deg, #7dc596, #1f4f37, #7dc596) border-box;
     border: 1px solid transparent;
   }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #061423; }
-  ::-webkit-scrollbar-thumb { background: #1e2b3b; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #37ea9e44; }
+  ::-webkit-scrollbar-track { background: #08080a; }
+  ::-webkit-scrollbar-thumb { background: #16161c; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7dc59644; }
 
   .nav-link { position: relative; }
-  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #37ea9e; transition: width 0.3s ease; }
+  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #7dc596; transition: width 0.3s ease; }
   .nav-link:hover::after { width: 100%; }
 
   @keyframes fadeInUp {
@@ -104,17 +100,17 @@
 
   /* Pricing card popular highlight */
   .plan-popular {
-    background: linear-gradient(135deg, rgba(55,234,158,0.12) 0%, rgba(30,43,59,0.6) 100%);
-    border-color: rgba(55,234,158,0.5) !important;
-    box-shadow: 0 0 60px rgba(55,234,158,0.12);
+    background: linear-gradient(135deg, rgba(125,197,150,0.12) 0%, rgba(19,19,24,0.6) 100%);
+    border-color: rgba(125,197,150,0.5) !important;
+    box-shadow: 0 0 0 1px rgba(125,197,150,0.15), 0 0 28px -6px rgba(125,197,150,0.2);
   }
   .plan-card { transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
   .plan-card:hover { transform: translateY(-6px); }
 
   /* Agent pulse */
   @keyframes agentPulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(55,234,158,0.4); }
-    50%     { box-shadow: 0 0 0 12px rgba(55,234,158,0); }
+    0%,100% { box-shadow: 0 0 0 0 rgba(125,197,150,0.4); }
+    50%     { box-shadow: 0 0 0 12px rgba(125,197,150,0); }
   }
   .agent-pulse { animation: agentPulse 2.5s ease-in-out infinite; }
 
@@ -136,25 +132,25 @@
 
   /* Stripe button */
   .stripe-btn {
-    background: linear-gradient(135deg, #37ea9e 0%, #06d68a 100%);
-    color: #003822;
+    background: linear-gradient(135deg, #7dc596 0%, #7dc596 100%);
+    color: #06120a;
     font-weight: 700;
     transition: all 0.2s ease;
   }
   .stripe-btn:hover {
-    background: linear-gradient(135deg, #54ffb0 0%, #37ea9e 100%);
-    box-shadow: 0 8px 32px rgba(55,234,158,0.4);
+    background: linear-gradient(135deg, #92d4a8 0%, #7dc596 100%);
+    box-shadow: 0 8px 32px rgba(125,197,150,0.4);
     transform: translateY(-2px);
   }
   .stripe-btn-ghost {
-    border: 1px solid rgba(55,234,158,0.4);
-    color: #37ea9e;
+    border: 1px solid rgba(125,197,150,0.4);
+    color: #7dc596;
     font-weight: 600;
     transition: all 0.2s ease;
   }
   .stripe-btn-ghost:hover {
-    background: rgba(55,234,158,0.08);
-    border-color: rgba(55,234,158,0.7);
+    background: rgba(125,197,150,0.08);
+    border-color: rgba(125,197,150,0.7);
     transform: translateY(-2px);
   }
 
@@ -167,31 +163,31 @@
 
   /* Video placeholder */
   .video-placeholder {
-    background: linear-gradient(135deg, #0a1f35 0%, #1e2b3b 100%);
-    border: 2px dashed rgba(55,234,158,0.2);
+    background: linear-gradient(135deg, #0e0e12 0%, #16161c 100%);
+    border: 2px dashed rgba(125,197,150,0.2);
   }
   .video-play-btn {
     width: 72px; height: 72px;
-    background: rgba(55,234,158,0.15);
-    border: 2px solid rgba(55,234,158,0.4);
+    background: rgba(125,197,150,0.15);
+    border: 2px solid rgba(125,197,150,0.4);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.3s ease;
     cursor: pointer;
   }
   .video-play-btn:hover {
-    background: rgba(55,234,158,0.25);
-    box-shadow: 0 0 40px rgba(55,234,158,0.3);
+    background: rgba(125,197,150,0.25);
+    box-shadow: 0 0 20px rgba(125,197,150,0.25);
     transform: scale(1.1);
   }
 
   /* Feature check */
-  .check-icon { color: #37ea9e; }
-  .cross-icon { color: #4a5568; }
+  .check-icon { color: #7dc596; }
+  .cross-icon { color: #5b5b63; }
 
   /* ── HERMES DASHBOARD CARD ── */
   .hermes-card-glow {
-    box-shadow: 0 0 80px rgba(55,234,158,0.12), 0 0 200px rgba(55,234,158,0.05);
+    box-shadow: 0 0 0 1px rgba(125,197,150,0.1), 0 0 40px -10px rgba(125,197,150,0.15);
   }
 
   /* Chip orbit animations */
@@ -212,8 +208,8 @@
     to   { transform: translate(-50%,-50%) rotate(-360deg); }
   }
   @keyframes orbGlow {
-    0%,100% { box-shadow: 0 0 0 0 rgba(55,234,158,0.4), 0 0 30px rgba(55,234,158,0.2); }
-    50%     { box-shadow: 0 0 0 14px rgba(55,234,158,0), 0 0 60px rgba(55,234,158,0.35); }
+    0%,100% { box-shadow: 0 0 0 0 rgba(125,197,150,0.4), 0 0 30px rgba(125,197,150,0.2); }
+    50%     { box-shadow: 0 0 0 10px rgba(125,197,150,0), 0 0 24px rgba(125,197,150,0.3); }
   }
   .orb-pulse { animation: orbGlow 2.8s ease-in-out infinite; }
 
@@ -229,8 +225,8 @@
   .task-log-item:nth-child(4) { animation-delay: 0.7s; opacity:0; }
 
   /* Billing toggle */
-  .billing-btn { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #9ca3af; cursor: pointer; transition: all 0.2s ease; }
-  .billing-btn.active { background: rgba(55,234,158,0.12); border-color: rgba(55,234,158,0.4); color: #37ea9e; }
+  .billing-btn { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #8b8b94; cursor: pointer; transition: all 0.2s ease; }
+  .billing-btn.active { background: rgba(125,197,150,0.12); border-color: rgba(125,197,150,0.4); color: #7dc596; }
 
   /* Save badge */
   .save-badge { display:none; }
@@ -251,11 +247,11 @@
 
   /* Comparison table — animated cycling border */
   @keyframes borderColorCycle {
-    0%   { box-shadow: 0 0 0 1.5px rgba(55,234,158,0.65),  0 0 50px rgba(55,234,158,0.12); }
-    25%  { box-shadow: 0 0 0 1.5px rgba(99,102,241,0.65),  0 0 50px rgba(99,102,241,0.12); }
-    50%  { box-shadow: 0 0 0 1.5px rgba(251,191,36,0.65),  0 0 50px rgba(251,191,36,0.10); }
-    75%  { box-shadow: 0 0 0 1.5px rgba(59,130,246,0.65),  0 0 50px rgba(59,130,246,0.12); }
-    100% { box-shadow: 0 0 0 1.5px rgba(55,234,158,0.65),  0 0 50px rgba(55,234,158,0.12); }
+    0%   { box-shadow: 0 0 0 1.5px rgba(125,197,150,0.65),  0 0 20px rgba(125,197,150,0.12); }
+    25%  { box-shadow: 0 0 0 1.5px rgba(99,102,241,0.65),  0 0 20px rgba(99,102,241,0.12); }
+    50%  { box-shadow: 0 0 0 1.5px rgba(251,191,36,0.65),  0 0 20px rgba(251,191,36,0.10); }
+    75%  { box-shadow: 0 0 0 1.5px rgba(59,130,246,0.65),  0 0 20px rgba(59,130,246,0.12); }
+    100% { box-shadow: 0 0 0 1.5px rgba(125,197,150,0.65),  0 0 20px rgba(125,197,150,0.12); }
   }
   .compare-glow {
     border-color: transparent !important;
@@ -275,8 +271,8 @@
       <a href="index.html" class="flex items-center gap-2.5 group">
         <div class="w-8 h-8 rounded-lg bg-primary-container/20 border border-primary-container/30 flex items-center justify-center">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="8" cy="8" r="3" fill="#37ea9e"/>
-            <circle cx="8" cy="8" r="6" fill="none" stroke="#37ea9e" stroke-width="1" stroke-opacity="0.4"/>
+            <circle cx="8" cy="8" r="3" fill="#7dc596"/>
+            <circle cx="8" cy="8" r="6" fill="none" stroke="#7dc596" stroke-width="1" stroke-opacity="0.4"/>
           </svg>
         </div>
         <span class="font-headline font-bold text-on-background text-base tracking-tight">CodLinex</span>
@@ -310,9 +306,9 @@
 <section class="relative min-h-screen flex items-center pt-16 pb-16 px-4 overflow-hidden">
   <!-- Ambient glows -->
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-1/2 left-1/4 w-[500px] h-[500px] -translate-y-1/2 rounded-full" style="background: radial-gradient(circle, rgba(55,234,158,0.06) 0%, transparent 65%);"></div>
+    <div class="absolute top-1/2 left-1/4 w-[500px] h-[500px] -translate-y-1/2 rounded-full" style="background: radial-gradient(circle, rgba(125,197,150,0.06) 0%, transparent 65%);"></div>
     <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full" style="background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 65%);"></div>
-    <div class="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(55,234,158,0.04) 0%, transparent 65%);"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(125,197,150,0.04) 0%, transparent 65%);"></div>
   </div>
 
   <div class="max-w-7xl mx-auto w-full relative z-10">
@@ -384,10 +380,10 @@
         <div class="glass-card rounded-3xl border border-primary-container/25 overflow-hidden hermes-card-glow">
 
           <!-- Mac-style header bar -->
-          <div class="flex items-center gap-2 px-5 py-3.5 border-b border-white/5" style="background:rgba(6,20,35,0.7);">
+          <div class="flex items-center gap-2 px-5 py-3.5 border-b border-white/5" style="background:rgba(8,8,10,0.7);">
             <span class="w-3 h-3 rounded-full" style="background:#ff5f57;"></span>
             <span class="w-3 h-3 rounded-full" style="background:#febc2e;"></span>
-            <span class="w-3 h-3 rounded-full" style="background:#37ea9e;"></span>
+            <span class="w-3 h-3 rounded-full" style="background:#7dc596;"></span>
             <span class="ml-4 text-xs text-outline font-mono">hermes.agent — live session</span>
             <div class="ml-auto flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-primary-container blink"></span>
@@ -400,59 +396,59 @@
                style="background-image:url('hermes-bg.jpg');background-size:cover;background-position:center 20%;">
 
             <!-- Edge fade — blends photo into card borders invisibly -->
-            <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,rgba(6,20,35,0.90) 0%,rgba(6,20,35,0.55) 40%,rgba(6,20,35,0.90) 100%),linear-gradient(90deg,rgba(6,20,35,0.85) 0%,transparent 25%,transparent 75%,rgba(6,20,35,0.85) 100%);"></div>
+            <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(180deg,rgba(8,8,10,0.90) 0%,rgba(8,8,10,0.55) 40%,rgba(8,8,10,0.90) 100%),linear-gradient(90deg,rgba(8,8,10,0.85) 0%,transparent 25%,transparent 75%,rgba(8,8,10,0.85) 100%);"></div>
             <!-- Green radial glow -->
-            <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 60%,rgba(55,234,158,0.10) 0%,transparent 65%);"></div>
+            <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 60%,rgba(125,197,150,0.10) 0%,transparent 65%);"></div>
 
             <!-- Orbit container -->
             <div class="relative" style="width:260px; height:260px; z-index:1;">
 
               <!-- Outer dashed ring — CCW slow -->
-              <div style="position:absolute; top:50%; left:50%; width:248px; height:248px; margin:-124px 0 0 -124px; border-radius:50%; border:1px dashed rgba(55,234,158,0.18); animation: dashRingCCW 28s linear infinite;"></div>
+              <div style="position:absolute; top:50%; left:50%; width:248px; height:248px; margin:-124px 0 0 -124px; border-radius:50%; border:1px dashed rgba(125,197,150,0.18); animation: dashRingCCW 28s linear infinite;"></div>
 
               <!-- Inner ring — CW -->
-              <div style="position:absolute; top:50%; left:50%; width:160px; height:160px; margin:-80px 0 0 -80px; border-radius:50%; border:1px solid rgba(55,234,158,0.28); animation: dashRingCW 16s linear infinite;"></div>
+              <div style="position:absolute; top:50%; left:50%; width:160px; height:160px; margin:-80px 0 0 -80px; border-radius:50%; border:1px solid rgba(125,197,150,0.28); animation: dashRingCW 16s linear infinite;"></div>
 
               <!-- Subtle inner fill -->
-              <div style="position:absolute; top:50%; left:50%; width:96px; height:96px; margin:-48px 0 0 -48px; border-radius:50%; background: radial-gradient(circle, rgba(55,234,158,0.08) 0%, transparent 100%);"></div>
+              <div style="position:absolute; top:50%; left:50%; width:96px; height:96px; margin:-48px 0 0 -48px; border-radius:50%; background: radial-gradient(circle, rgba(125,197,150,0.08) 0%, transparent 100%);"></div>
 
               <!-- Center avatar -->
-              <div class="orb-pulse" style="position:absolute; top:50%; left:50%; width:80px; height:80px; margin:-40px 0 0 -40px; border-radius:50%; background:rgba(55,234,158,0.12); border:2px solid rgba(55,234,158,0.55); display:flex; align-items:center; justify-content:center;">
+              <div class="orb-pulse" style="position:absolute; top:50%; left:50%; width:80px; height:80px; margin:-40px 0 0 -40px; border-radius:50%; background:rgba(125,197,150,0.12); border:2px solid rgba(125,197,150,0.55); display:flex; align-items:center; justify-content:center;">
                 <span class="material-symbols-outlined text-primary-container" style="font-size:36px; font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 36;">smart_toy</span>
               </div>
 
               <!-- Orbiting chips — 5 chips, 72° apart, period 20s -->
               <!-- Chip 0: E-posta (0°, delay 0s) -->
               <div style="position:absolute; top:50%; left:50%; width:0; height:0; transform-origin:0 0; animation: chipSpin 20s linear infinite; animation-delay:0s;">
-                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:0s; padding:5px 12px; border-radius:999px; background:rgba(13,28,44,0.92); border:1px solid rgba(55,234,158,0.35); white-space:nowrap; backdrop-filter:blur(8px);">
-                  <span style="font-size:11px; font-weight:700; color:#37ea9e; letter-spacing:0.02em;" data-en="Email">E-posta</span>
+                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:0s; padding:5px 12px; border-radius:999px; background:rgba(14,14,18,0.92); border:1px solid rgba(125,197,150,0.35); white-space:nowrap; backdrop-filter:blur(8px);">
+                  <span style="font-size:11px; font-weight:700; color:#7dc596; letter-spacing:0.02em;" data-en="Email">E-posta</span>
                 </div>
               </div>
 
               <!-- Chip 1: WhatsApp (72°, delay -4s) -->
               <div style="position:absolute; top:50%; left:50%; width:0; height:0; transform-origin:0 0; animation: chipSpin 20s linear infinite; animation-delay:-4s;">
-                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-4s; padding:5px 12px; border-radius:999px; background:rgba(13,28,44,0.92); border:1px solid rgba(37,211,102,0.35); white-space:nowrap; backdrop-filter:blur(8px);">
+                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-4s; padding:5px 12px; border-radius:999px; background:rgba(14,14,18,0.92); border:1px solid rgba(37,211,102,0.35); white-space:nowrap; backdrop-filter:blur(8px);">
                   <span style="font-size:11px; font-weight:700; color:#25d366; letter-spacing:0.02em;">WhatsApp</span>
                 </div>
               </div>
 
               <!-- Chip 2: Raporlama (144°, delay -8s) -->
               <div style="position:absolute; top:50%; left:50%; width:0; height:0; transform-origin:0 0; animation: chipSpin 20s linear infinite; animation-delay:-8s;">
-                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-8s; padding:5px 12px; border-radius:999px; background:rgba(13,28,44,0.92); border:1px solid rgba(99,102,241,0.4); white-space:nowrap; backdrop-filter:blur(8px);">
+                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-8s; padding:5px 12px; border-radius:999px; background:rgba(14,14,18,0.92); border:1px solid rgba(99,102,241,0.4); white-space:nowrap; backdrop-filter:blur(8px);">
                   <span style="font-size:11px; font-weight:700; color:#a5b4fc; letter-spacing:0.02em;" data-en="Reports">Raporlama</span>
                 </div>
               </div>
 
               <!-- Chip 3: Slack (216°, delay -12s) -->
               <div style="position:absolute; top:50%; left:50%; width:0; height:0; transform-origin:0 0; animation: chipSpin 20s linear infinite; animation-delay:-12s;">
-                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-12s; padding:5px 12px; border-radius:999px; background:rgba(13,28,44,0.92); border:1px solid rgba(251,191,36,0.35); white-space:nowrap; backdrop-filter:blur(8px);">
+                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-12s; padding:5px 12px; border-radius:999px; background:rgba(14,14,18,0.92); border:1px solid rgba(251,191,36,0.35); white-space:nowrap; backdrop-filter:blur(8px);">
                   <span style="font-size:11px; font-weight:700; color:#fcd34d; letter-spacing:0.02em;">Slack</span>
                 </div>
               </div>
 
               <!-- Chip 4: Lead Takibi (288°, delay -16s) -->
               <div style="position:absolute; top:50%; left:50%; width:0; height:0; transform-origin:0 0; animation: chipSpin 20s linear infinite; animation-delay:-16s;">
-                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-16s; padding:5px 12px; border-radius:999px; background:rgba(13,28,44,0.92); border:1px solid rgba(167,139,250,0.4); white-space:nowrap; backdrop-filter:blur(8px);">
+                <div style="position:absolute; top:0; left:122px; animation: chipCounterSpin 20s linear infinite; animation-delay:-16s; padding:5px 12px; border-radius:999px; background:rgba(14,14,18,0.92); border:1px solid rgba(167,139,250,0.4); white-space:nowrap; backdrop-filter:blur(8px);">
                   <span style="font-size:11px; font-weight:700; color:#c4b5fd; letter-spacing:0.02em;" data-en="Lead Follow-up">Lead Takibi</span>
                 </div>
               </div>
@@ -478,22 +474,22 @@
 
           <!-- Live task log -->
           <div class="px-5 space-y-2 mb-5">
-            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(30,43,59,0.5);">
+            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(19,19,24,0.5);">
               <span class="material-symbols-outlined text-primary-container text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span>
               <span class="text-xs text-secondary flex-1" data-en="Replied to 3 support tickets">3 destek talebini yanıtladı</span>
               <span class="text-xs text-outline font-mono">09:14</span>
             </div>
-            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(30,43,59,0.5);">
+            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(19,19,24,0.5);">
               <span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">bar_chart</span>
               <span class="text-xs text-secondary flex-1" data-en="Weekly report generated & sent">Haftalık rapor oluşturuldu ve gönderildi</span>
               <span class="text-xs text-outline font-mono">09:31</span>
             </div>
-            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(30,43,59,0.5);">
+            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(19,19,24,0.5);">
               <span class="material-symbols-outlined text-violet-400 text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">person_add</span>
               <span class="text-xs text-secondary flex-1" data-en="5 lead follow-ups sent via WhatsApp">5 lead takibi WhatsApp'tan gönderildi</span>
               <span class="text-xs text-outline font-mono">10:02</span>
             </div>
-            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(30,43,59,0.5);">
+            <div class="task-log-item flex items-center gap-3 rounded-xl px-4 py-2.5" style="background:rgba(19,19,24,0.5);">
               <span class="material-symbols-outlined text-amber-400 text-sm" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">inventory_2</span>
               <span class="text-xs text-secondary flex-1" data-en="Low stock alert sent to Slack">Düşük stok uyarısı Slack'e iletildi</span>
               <span class="text-xs text-outline font-mono">10:45</span>
@@ -501,25 +497,25 @@
           </div>
 
           <!-- Connected integrations bar -->
-          <div class="flex items-center gap-2 flex-wrap px-5 py-4 border-t border-white/5" style="background:rgba(6,20,35,0.4);">
+          <div class="flex items-center gap-2 flex-wrap px-5 py-4 border-t border-white/5" style="background:rgba(8,8,10,0.4);">
             <span class="text-xs text-outline mr-1" data-en="Connected:">Bağlı:</span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(30,43,59,0.7);">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(19,19,24,0.7);">
               <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><rect width="20" height="20" rx="4" fill="#96bf48"/><path d="M10 3L14 8H11V17H9V8H6L10 3Z" fill="white"/></svg>
               Shopify
             </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(30,43,59,0.7);">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(19,19,24,0.7);">
               <span style="color:#25d366; font-size:9px;">●</span>
               WhatsApp
             </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(30,43,59,0.7);">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(19,19,24,0.7);">
               <span style="display:inline-block; width:10px; height:10px; background:#4a154b; border-radius:2px; font-size:7px; color:white; text-align:center; line-height:10px; font-weight:900;">S</span>
               Slack
             </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(30,43,59,0.7);">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-secondary" style="background:rgba(19,19,24,0.7);">
               <span style="color:#ea4335; font-size:10px;">✉</span>
               Gmail
             </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-outline" style="background:rgba(30,43,59,0.7);">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-white/8 text-xs text-outline" style="background:rgba(19,19,24,0.7);">
               +3 <span data-en="more">daha</span>
             </span>
           </div>
@@ -538,18 +534,18 @@
 <div class="hidden px-6 md:px-10 max-w-7xl mx-auto mb-8">
   <a href="/ai-agent"
      onclick="window.location.href='ai-agent.html';return false;"
-     class="group relative flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 rounded-3xl overflow-hidden px-8 py-6 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/50 hover:shadow-[0_0_60px_rgba(55,234,158,0.12)] no-underline"
-     style="background: linear-gradient(115deg, rgba(13,28,44,0.95) 0%, rgba(20,38,58,0.9) 50%, rgba(13,28,44,0.95) 100%);">
+     class="group relative flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 rounded-3xl overflow-hidden px-8 py-6 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/50 hover:shadow-[0_0_60px_rgba(125,197,150,0.12)] no-underline"
+     style="background: linear-gradient(115deg, rgba(14,14,18,0.95) 0%, rgba(22,22,28,0.9) 50%, rgba(14,14,18,0.95) 100%);">
 
     <!-- Subtle animated glow blob -->
-    <div class="absolute top-0 left-0 w-56 h-full pointer-events-none" style="background: radial-gradient(ellipse at 0% 50%, rgba(55,234,158,0.08) 0%, transparent 70%);"></div>
+    <div class="absolute top-0 left-0 w-56 h-full pointer-events-none" style="background: radial-gradient(ellipse at 0% 50%, rgba(125,197,150,0.08) 0%, transparent 70%);"></div>
     <div class="absolute bottom-0 right-0 w-56 h-full pointer-events-none" style="background: radial-gradient(ellipse at 100% 50%, rgba(99,102,241,0.06) 0%, transparent 70%);"></div>
 
     <!-- Left: icon + copy -->
     <div class="relative z-10 flex items-center gap-5">
       <!-- Pulsing icon -->
       <div class="relative flex-shrink-0">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center border border-primary-container/40 group-hover:border-primary-container/70 transition-all duration-300" style="background: rgba(55,234,158,0.12);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center border border-primary-container/40 group-hover:border-primary-container/70 transition-all duration-300" style="background: rgba(125,197,150,0.12);">
           <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">smart_toy</span>
         </div>
         <!-- Live dot -->
@@ -576,8 +572,8 @@
 
     <!-- Right: CTA -->
     <div class="relative z-10 flex-shrink-0">
-      <div class="stripe-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold group-hover:shadow-[0_8px_32px_rgba(55,234,158,0.35)] transition-all duration-300"
-           style="background: linear-gradient(135deg, #37ea9e 0%, #06d68a 100%); color:#003822;">
+      <div class="stripe-btn inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold group-hover:shadow-[0_8px_32px_rgba(125,197,150,0.35)] transition-all duration-300"
+           style="background: linear-gradient(135deg, #7dc596 0%, #7dc596 100%); color:#06120a;">
         <span data-en="See Details →" data-tr="Detaylar →">See Details →</span>
         <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
       </div>
@@ -591,24 +587,24 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="px-6 md:px-10 max-w-7xl mx-auto mb-10">
   <a href="/audit"
-     class="group relative flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl overflow-hidden px-8 py-7 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/55 hover:shadow-[0_0_64px_rgba(55,234,158,0.13)] no-underline"
-     style="background:linear-gradient(115deg,rgba(13,28,44,0.97) 0%,rgba(20,38,58,0.92) 50%,rgba(13,28,44,0.97) 100%);backdrop-filter:blur(14px);">
+     class="group relative flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl overflow-hidden px-8 py-7 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/55 hover:shadow-[0_0_64px_rgba(125,197,150,0.13)] no-underline"
+     style="background:linear-gradient(115deg,rgba(14,14,18,0.97) 0%,rgba(22,22,28,0.92) 50%,rgba(14,14,18,0.97) 100%);backdrop-filter:blur(14px);">
 
     <!-- Radial glows -->
-    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 0% 50%,rgba(55,234,158,0.07) 0%,transparent 55%),radial-gradient(ellipse at 100% 50%,rgba(99,102,241,0.05) 0%,transparent 55%);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 0% 50%,rgba(125,197,150,0.07) 0%,transparent 55%),radial-gradient(ellipse at 100% 50%,rgba(99,102,241,0.05) 0%,transparent 55%);"></div>
 
     <!-- Left: icon + copy -->
     <div class="relative z-10 flex items-start gap-5">
       <!-- Icon circle -->
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary-container/35 group-hover:border-primary-container/65 group-hover:shadow-[0_0_24px_rgba(55,234,158,0.28)] transition-all duration-300"
-           style="background:rgba(55,234,158,0.10);">
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary-container/35 group-hover:border-primary-container/65 group-hover:shadow-[0_0_24px_rgba(125,197,150,0.28)] transition-all duration-300"
+           style="background:rgba(125,197,150,0.10);">
         <span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">search_insights</span>
       </div>
 
       <div>
         <!-- Badge row -->
         <div class="flex items-center gap-2 mb-1.5">
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold text-on-primary" style="background:#37ea9e;" data-en="Free Audit">Ücretsiz Teşhis</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold text-on-primary" style="background:#7dc596;" data-en="Free Audit">Ücretsiz Teşhis</span>
           <span class="text-xs text-outline">·</span>
           <span class="text-xs text-outline" data-en="No email required">Email gerekmez</span>
         </div>
@@ -628,8 +624,8 @@
 
     <!-- Right: CTA button -->
     <div class="relative z-10 flex-shrink-0 text-center">
-      <div class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-bold text-sm text-on-primary transition-all duration-300 group-hover:shadow-[0_8px_32px_rgba(55,234,158,0.42)] group-hover:-translate-y-0.5"
-           style="background:linear-gradient(135deg,#37ea9e,#06d68a);">
+      <div class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-bold text-sm text-on-primary transition-all duration-300 group-hover:shadow-[0_8px_32px_rgba(125,197,150,0.42)] group-hover:-translate-y-0.5"
+           style="background:linear-gradient(135deg,#7dc596,#7dc596);">
         <span class="material-symbols-outlined text-base">arrow_forward</span>
         <span data-en="Take the 2-Min Audit →">2 Dakikalık Testi Başlat →</span>
       </div>
@@ -650,7 +646,7 @@
 
     <!-- Claude badge -->
     <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(217,119,87,0.12);border:1px solid rgba(217,119,87,0.3);">
-      <svg width="12" height="11" viewBox="0 0 24 22" fill="none"><path d="M12 1L23 21H1L12 1Z" fill="#d97757"/><path d="M12 8L17.5 21H6.5L12 8Z" fill="#061423"/></svg>
+      <svg width="12" height="11" viewBox="0 0 24 22" fill="none"><path d="M12 1L23 21H1L12 1Z" fill="#d97757"/><path d="M12 8L17.5 21H6.5L12 8Z" fill="#08080a"/></svg>
       <span style="font-size:11px;font-weight:700;color:#d97757;letter-spacing:0.04em;">Claude</span>
     </span>
 
@@ -676,9 +672,9 @@
     <span class="text-primary-container text-xs px-2">✦</span>
 
     <!-- DeepSeek badge -->
-    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.3);">
-      <svg width="14" height="12" viewBox="0 0 28 22" fill="none"><ellipse cx="14" cy="11" rx="12" ry="7" fill="none" stroke="#00d4aa" stroke-width="2"/><path d="M14 7C14 7 18 9 22 11C18 13 14 15 14 15C14 15 10 13 6 11C10 9 14 7 14 7Z" fill="#00d4aa" opacity="0.6"/><circle cx="22" cy="8" r="2.5" fill="#00d4aa"/></svg>
-      <span style="font-size:11px;font-weight:700;color:#00d4aa;letter-spacing:0.04em;">DeepSeek</span>
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(125,197,150,0.12);border:1px solid rgba(125,197,150,0.3);">
+      <svg width="14" height="12" viewBox="0 0 28 22" fill="none"><ellipse cx="14" cy="11" rx="12" ry="7" fill="none" stroke="#7dc596" stroke-width="2"/><path d="M14 7C14 7 18 9 22 11C18 13 14 15 14 15C14 15 10 13 6 11C10 9 14 7 14 7Z" fill="#7dc596" opacity="0.6"/><circle cx="22" cy="8" r="2.5" fill="#7dc596"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#7dc596;letter-spacing:0.04em;">DeepSeek</span>
     </span>
 
     <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">CRM Integration</span>
@@ -695,7 +691,7 @@
     <span class="text-primary-container text-xs px-2">✦</span>
 
     <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(217,119,87,0.12);border:1px solid rgba(217,119,87,0.3);">
-      <svg width="12" height="11" viewBox="0 0 24 22" fill="none"><path d="M12 1L23 21H1L12 1Z" fill="#d97757"/><path d="M12 8L17.5 21H6.5L12 8Z" fill="#061423"/></svg>
+      <svg width="12" height="11" viewBox="0 0 24 22" fill="none"><path d="M12 1L23 21H1L12 1Z" fill="#d97757"/><path d="M12 8L17.5 21H6.5L12 8Z" fill="#08080a"/></svg>
       <span style="font-size:11px;font-weight:700;color:#d97757;letter-spacing:0.04em;">Claude</span>
     </span>
 
@@ -718,9 +714,9 @@
     <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">Stock & Order Alerts</span>
     <span class="text-primary-container text-xs px-2">✦</span>
 
-    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.3);">
-      <svg width="14" height="12" viewBox="0 0 28 22" fill="none"><ellipse cx="14" cy="11" rx="12" ry="7" fill="none" stroke="#00d4aa" stroke-width="2"/><path d="M14 7C14 7 18 9 22 11C18 13 14 15 14 15C14 15 10 13 6 11C10 9 14 7 14 7Z" fill="#00d4aa" opacity="0.6"/><circle cx="22" cy="8" r="2.5" fill="#00d4aa"/></svg>
-      <span style="font-size:11px;font-weight:700;color:#00d4aa;letter-spacing:0.04em;">DeepSeek</span>
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 mx-3 rounded-full flex-shrink-0" style="background:rgba(125,197,150,0.12);border:1px solid rgba(125,197,150,0.3);">
+      <svg width="14" height="12" viewBox="0 0 28 22" fill="none"><ellipse cx="14" cy="11" rx="12" ry="7" fill="none" stroke="#7dc596" stroke-width="2"/><path d="M14 7C14 7 18 9 22 11C18 13 14 15 14 15C14 15 10 13 6 11C10 9 14 7 14 7Z" fill="#7dc596" opacity="0.6"/><circle cx="22" cy="8" r="2.5" fill="#7dc596"/></svg>
+      <span style="font-size:11px;font-weight:700;color:#7dc596;letter-spacing:0.04em;">DeepSeek</span>
     </span>
 
     <span class="text-xs text-secondary px-5 tracking-wider uppercase font-medium">CRM Integration</span>
@@ -751,14 +747,14 @@
   <div class="glass-card rounded-3xl overflow-hidden border border-white/8 mb-6">
 
     <!-- Card top bar -->
-    <div class="flex items-center gap-3 px-7 py-4 border-b border-white/6" style="background:rgba(55,234,158,0.04);">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(55,234,158,0.12);border:1px solid rgba(55,234,158,0.25);">
+    <div class="flex items-center gap-3 px-7 py-4 border-b border-white/6" style="background:rgba(125,197,150,0.04);">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(125,197,150,0.12);border:1px solid rgba(125,197,150,0.25);">
         <span class="material-symbols-outlined text-primary-container text-base" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">local_hospital</span>
       </div>
       <div>
         <p class="text-xs font-bold text-primary-container uppercase tracking-wider" data-en="Example: Healthcare & Clinics">Örnek Sektör: Klinik &amp; Sağlık</p>
       </div>
-      <div class="ml-auto inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full" style="background:rgba(55,234,158,0.1);border:1px solid rgba(55,234,158,0.2);">
+      <div class="ml-auto inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full" style="background:rgba(125,197,150,0.1);border:1px solid rgba(125,197,150,0.2);">
         <span class="w-1.5 h-1.5 rounded-full bg-primary-container" style="animation:blink 1.5s ease infinite;"></span>
         <span class="text-xs font-medium text-primary-container" data-en="Live in 48h">48 saatte canlı</span>
       </div>
@@ -818,7 +814,7 @@
           <span class="material-symbols-outlined text-outline text-xl flex-shrink-0 rotate-90 sm:rotate-0">arrow_forward</span>
           <!-- $750 -->
           <div class="flex items-center gap-3 flex-1">
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:rgba(55,234,158,0.1);border:1px solid rgba(55,234,158,0.25);">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:rgba(125,197,150,0.1);border:1px solid rgba(125,197,150,0.25);">
               <span class="font-headline font-black text-lg text-primary-container">$750</span>
             </div>
             <div>
@@ -845,8 +841,8 @@
   <!-- Form / CTA links -->
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
     <a href="audit.html"
-       class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl font-bold text-sm text-on-primary transition-all duration-300 hover:shadow-[0_8px_32px_rgba(55,234,158,0.4)] hover:-translate-y-0.5"
-       style="background:linear-gradient(135deg,#37ea9e,#06d68a);">
+       class="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl font-bold text-sm text-on-primary transition-all duration-300 hover:shadow-[0_8px_32px_rgba(125,197,150,0.4)] hover:-translate-y-0.5"
+       style="background:linear-gradient(135deg,#7dc596,#7dc596);">
       <span class="material-symbols-outlined text-base">search_insights</span>
       <span data-en="Find My Custom Agent →">Sektörüme Özel Agent'ı Bul →</span>
     </a>
@@ -875,7 +871,7 @@
     <div class="absolute inset-0 flex flex-col items-center justify-center gap-5">
       <!-- Animated scan line for "incoming" feel -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,rgba(55,234,158,0.4),transparent); animation:scanLine 3s ease-in-out infinite;"></div>
+        <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,rgba(125,197,150,0.4),transparent); animation:scanLine 3s ease-in-out infinite;"></div>
       </div>
 
       <div class="video-play-btn" style="width:80px;height:80px;">
@@ -892,7 +888,7 @@
                  data-en-ph="your@email.com"/>
           <button type="submit"
                   class="text-xs px-3 py-2 rounded-lg font-semibold flex-shrink-0"
-                  style="background:rgba(55,234,158,0.15);border:1px solid rgba(55,234,158,0.35);color:#37ea9e;">
+                  style="background:rgba(125,197,150,0.15);border:1px solid rgba(125,197,150,0.35);color:#7dc596;">
             <span data-en="Notify me">Haber ver</span>
           </button>
         </form>
@@ -1063,7 +1059,7 @@
       </p>
       <div class="flex items-center gap-3 pt-5 border-t border-white/5">
         <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
-             style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7;">SK</div>
+             style="background:rgba(125,197,150,0.15);border:1px solid rgba(125,197,150,0.3);color:#92d4a8;">SK</div>
         <div>
           <p class="text-sm font-bold text-on-background">Sarah K.</p>
           <p class="text-xs text-outline" data-en="Fashion Brand Owner · Austin, TX">Moda Marka Sahibi · Austin, TX</p>
@@ -1131,7 +1127,7 @@
         <thead>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
             <th class="text-left px-6 py-4 text-sm text-outline font-medium" data-en="Feature">Özellik</th>
-            <th class="px-5 py-4 text-sm font-bold text-primary-container text-center" style="background:rgba(55,234,158,0.06);">
+            <th class="px-5 py-4 text-sm font-bold text-primary-container text-center" style="background:rgba(125,197,150,0.06);">
               <span class="block">CodLinex</span>
               <span class="text-xs font-normal text-secondary">Hermes</span>
             </th>
@@ -1146,56 +1142,56 @@
         <tbody>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Starting price">Başlangıç fiyatı</td>
-            <td class="px-5 py-3.5 text-center font-bold text-primary-container text-sm" style="background:rgba(55,234,158,0.04);">$497/mo</td>
+            <td class="px-5 py-3.5 text-center font-bold text-primary-container text-sm" style="background:rgba(125,197,150,0.04);">$497/mo</td>
             <td class="px-5 py-3.5 text-center text-sm text-secondary" data-en="Enterprise*">Kurumsal*</td>
             <td class="px-5 py-3.5 text-center text-sm text-secondary">$599/mo</td>
             <td class="px-5 py-3.5 text-center text-sm text-secondary">$799/mo</td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Custom AI agent (not just triggers)">Özel AI agent (tetikleyici değil)</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Done-for-you setup (zero coding)">Sizin için kurulum (sıfır kod)</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Live in 48 hours — guaranteed">48 saatte aktif — garantili</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center" style="color:#fbbf24;"><span class="material-symbols-outlined" style="font-size:20px;">remove_circle</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Natural language AI (not rule-based)">Doğal dil AI (kural bazlı değil)</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center" style="color:#fbbf24;"><span class="material-symbols-outlined" style="font-size:20px;">remove_circle</span></td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Multi-channel (WhatsApp, Slack, Email)">Çok kanallı (WhatsApp, Slack, E-posta)</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center" style="color:#fbbf24;"><span class="material-symbols-outlined" style="font-size:20px;">remove_circle</span></td>
             <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="30-day money-back guarantee">30 gün para iade garantisi</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
           </tr>
           <tr>
             <td class="px-6 py-3.5 text-sm text-secondary" data-en="Human expert support included">İnsan uzman desteği dahil</td>
-            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(55,234,158,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
+            <td class="px-5 py-3.5 text-center text-primary-container" style="background:rgba(125,197,150,0.04);"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
             <td class="px-5 py-3.5 text-center text-outline"><span class="material-symbols-outlined" style="font-size:20px;">cancel</span></td>
             <td class="px-5 py-3.5 text-center text-primary-container"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">check_circle</span></td>
@@ -1229,13 +1225,13 @@
     <!-- Audit card -->
     <div class="max-w-2xl mx-auto mb-8">
       <a href="audit.html"
-         class="group relative flex flex-col sm:flex-row items-center justify-between gap-5 rounded-3xl overflow-hidden px-7 py-6 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/55 hover:shadow-[0_0_50px_rgba(55,234,158,0.13)] no-underline"
-         style="background:linear-gradient(115deg,rgba(13,28,44,0.97) 0%,rgba(20,38,58,0.92) 50%,rgba(13,28,44,0.97) 100%);backdrop-filter:blur(14px);">
-        <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 0% 50%,rgba(55,234,158,0.07) 0%,transparent 55%),radial-gradient(ellipse at 100% 50%,rgba(99,102,241,0.05) 0%,transparent 55%);"></div>
+         class="group relative flex flex-col sm:flex-row items-center justify-between gap-5 rounded-3xl overflow-hidden px-7 py-6 border border-primary-container/25 transition-all duration-300 hover:border-primary-container/55 hover:shadow-[0_0_50px_rgba(125,197,150,0.13)] no-underline"
+         style="background:linear-gradient(115deg,rgba(14,14,18,0.97) 0%,rgba(22,22,28,0.92) 50%,rgba(14,14,18,0.97) 100%);backdrop-filter:blur(14px);">
+        <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 0% 50%,rgba(125,197,150,0.07) 0%,transparent 55%),radial-gradient(ellipse at 100% 50%,rgba(99,102,241,0.05) 0%,transparent 55%);"></div>
 
         <div class="relative z-10 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary-container/35 group-hover:border-primary-container/65 group-hover:shadow-[0_0_20px_rgba(55,234,158,0.28)] transition-all duration-300"
-               style="background:rgba(55,234,158,0.10);">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 border border-primary-container/35 group-hover:border-primary-container/65 group-hover:shadow-[0_0_20px_rgba(125,197,150,0.28)] transition-all duration-300"
+               style="background:rgba(125,197,150,0.10);">
             <span class="material-symbols-outlined text-primary-container text-xl" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">search_insights</span>
           </div>
           <div>
@@ -1248,8 +1244,8 @@
         </div>
 
         <div class="relative z-10 flex-shrink-0">
-          <div class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm text-on-primary transition-all duration-300 group-hover:shadow-[0_8px_28px_rgba(55,234,158,0.40)] group-hover:-translate-y-0.5"
-               style="background:linear-gradient(135deg,#37ea9e,#06d68a);">
+          <div class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm text-on-primary transition-all duration-300 group-hover:shadow-[0_8px_28px_rgba(125,197,150,0.40)] group-hover:-translate-y-0.5"
+               style="background:linear-gradient(135deg,#7dc596,#7dc596);">
             <span data-en="Find My Plan →">Planımı Bul →</span>
           </div>
         </div>
@@ -1539,7 +1535,7 @@
 <section class="max-w-4xl mx-auto px-4 mb-24">
   <div class="glass-card rounded-3xl p-12 border border-primary-container/15 glow-green text-center relative overflow-hidden">
     <!-- Glow -->
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 0%, rgba(55,234,158,0.08) 0%, transparent 60%);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 0%, rgba(125,197,150,0.08) 0%, transparent 60%);"></div>
 
     <div class="relative z-10">
       <div class="w-16 h-16 rounded-2xl bg-primary-container/15 border border-primary-container/30 flex items-center justify-center mx-auto mb-6 agent-pulse">
@@ -1580,8 +1576,8 @@
     <a href="index.html" class="flex items-center gap-2 group">
       <div class="w-7 h-7 rounded-lg bg-primary-container/20 border border-primary-container/30 flex items-center justify-center">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="8" r="3" fill="#37ea9e"/>
-          <circle cx="8" cy="8" r="6" fill="none" stroke="#37ea9e" stroke-width="1" stroke-opacity="0.4"/>
+          <circle cx="8" cy="8" r="3" fill="#7dc596"/>
+          <circle cx="8" cy="8" r="6" fill="none" stroke="#7dc596" stroke-width="1" stroke-opacity="0.4"/>
         </svg>
       </div>
       <span class="font-headline font-bold text-on-background text-sm">CodLinex</span>

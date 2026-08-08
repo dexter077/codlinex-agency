@@ -9,29 +9,29 @@
 <meta name="description" content="Free instant GEO audit — check if ChatGPT, Perplexity and Google AI can see and recommend your site. Get your AI visibility score in seconds."/>
 <link rel="canonical" href="https://www.codlinex.com/geo-audit"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script>
   tailwind.config = {
     darkMode: "class",
     theme: { extend: {
       colors: {
-        "surface-container-high": "#1e2b3b", "surface-container": "#132030",
-        "surface": "#061423", "background": "#061423", "secondary": "#bac7dd",
-        "primary-container": "#37ea9e", "on-background": "#d6e3f9",
-        "outline": "#859589", "muted": "#8ea0b5",
+        "surface-container-high": "#16161c", "surface-container": "#131318",
+        "surface": "#08080a", "background": "#08080a", "secondary": "#8b8b94",
+        "primary-container": "#7dc596", "on-background": "#fafafa",
+        "outline": "#5b5b63", "muted": "#8b8b94",
       },
-      fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] }
+      fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"], "mono": ["JetBrains Mono"] }
     } }
   }
 </script>
 <style>
   * { scroll-behavior: smooth; }
-  body { background:#061423; color:#d6e3f9; font-family:'Inter',sans-serif; overflow-x:hidden; }
-  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(55,234,158,0.06) 1px, transparent 0); background-size:40px 40px; }
-  .gradient-text { background:linear-gradient(135deg,#37ea9e 0%,#9effc8 50%,#54ffb0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  .glass { background:rgba(30,43,59,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+  body { background:#08080a; color:#fafafa; font-family:'Inter',sans-serif; overflow-x:hidden; }
+  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(125,197,150,0.06) 1px, transparent 0); background-size:40px 40px; }
+  .gradient-text { color: #7dc596; }
+  .glass { background:rgba(19,19,24,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
   .ring-bg { stroke:rgba(255,255,255,0.08); }
-  .ring-fg { stroke:#37ea9e; stroke-linecap:round; transition:stroke-dashoffset 1s ease, stroke 0.4s; transform:rotate(-90deg); transform-origin:50% 50%; }
+  .ring-fg { stroke:#7dc596; stroke-linecap:round; transition:stroke-dashoffset 1s ease, stroke 0.4s; transform:rotate(-90deg); transform-origin:50% 50%; }
   .spin { animation:spin 0.8s linear infinite; } @keyframes spin { to { transform:rotate(360deg); } }
   .fade-in { animation:fadeIn 0.5s ease forwards; } @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
 </style>
@@ -68,7 +68,7 @@
       placeholder="yourwebsite.com"
       class="flex-1 rounded-xl bg-surface-container border border-white/10 px-4 py-3.5 text-[15px] text-white placeholder:text-outline focus:border-primary-container/60 focus:outline-none focus:ring-2 focus:ring-primary-container/20"/>
     <button id="run-btn" type="submit"
-      class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-container px-6 py-3.5 text-[15px] font-bold text-[#061423] transition-all hover:opacity-90 disabled:opacity-50">
+      class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-container px-6 py-3.5 text-[15px] font-bold text-[#08080a] transition-all hover:opacity-90 disabled:opacity-50">
       Show me my score
     </button>
   </form>
@@ -116,7 +116,7 @@
         <input id="email-input" type="email" required autocomplete="email" placeholder="you@company.com"
           class="flex-1 rounded-xl bg-surface-container border border-white/10 px-4 py-3 text-[14px] text-white placeholder:text-outline focus:border-primary-container/60 focus:outline-none"/>
         <button type="submit"
-          class="inline-flex items-center justify-center rounded-xl bg-primary-container px-5 py-3 text-[14px] font-bold text-[#061423] transition-all hover:opacity-90">
+          class="inline-flex items-center justify-center rounded-xl bg-primary-container px-5 py-3 text-[14px] font-bold text-[#08080a] transition-all hover:opacity-90">
           Get my full report
         </button>
       </form>
@@ -163,7 +163,7 @@
     if (!url || !/\.[a-z]{2,}/i.test(url)) { err.classList.remove('hidden'); return; }
 
     runBtn.disabled = true;
-    runBtn.innerHTML = '<span class="spin inline-block h-4 w-4 rounded-full border-2 border-[#061423] border-t-transparent"></span> Auditing…';
+    runBtn.innerHTML = '<span class="spin inline-block h-4 w-4 rounded-full border-2 border-[#08080a] border-t-transparent"></span> Auditing…';
     try {
       const res = await fetch('/api/analyze?url=' + encodeURIComponent(url));
       const data = await res.json();
@@ -185,7 +185,7 @@
     document.getElementById('result-domain').textContent = data.domain;
 
     const RATING = {
-      high:   { t: 'Strong — AI engines can read your site well. Now win the answer share.', c: '#37ea9e' },
+      high:   { t: 'Strong — AI engines can read your site well. Now win the answer share.', c: '#7dc596' },
       medium: { t: 'Partial — the foundation is forming, but AI engines are missing key signals.', c: '#f5b544' },
       low:    { t: 'Critical — AI engines can barely see you. Big first-mover upside here.', c: '#ff6b6b' },
     };

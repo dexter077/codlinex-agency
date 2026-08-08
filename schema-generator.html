@@ -9,31 +9,31 @@
 <meta name="description" content="Free JSON-LD schema markup generator — create valid Organization, FAQPage and Article structured data that helps Google and AI engines understand your content. No signup."/>
 <link rel="canonical" href="https://www.codlinex.com/schema-generator"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script>
   tailwind.config = {
     darkMode: "class",
     theme: { extend: {
       colors: {
-        "surface-container-high": "#1e2b3b", "surface-container": "#132030",
-        "surface": "#061423", "background": "#061423", "secondary": "#bac7dd",
-        "primary-container": "#37ea9e", "on-background": "#d6e3f9",
-        "outline": "#859589", "muted": "#8ea0b5",
+        "surface-container-high": "#16161c", "surface-container": "#131318",
+        "surface": "#08080a", "background": "#08080a", "secondary": "#8b8b94",
+        "primary-container": "#7dc596", "on-background": "#fafafa",
+        "outline": "#5b5b63", "muted": "#8b8b94",
       },
-      fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"] }
+      fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Inter"], "mono": ["JetBrains Mono"] }
     } }
   }
 </script>
 <style>
   * { scroll-behavior: smooth; }
-  body { background:#061423; color:#d6e3f9; font-family:'Inter',sans-serif; overflow-x:hidden; }
-  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(55,234,158,0.06) 1px, transparent 0); background-size:40px 40px; }
-  .gradient-text { background:linear-gradient(135deg,#37ea9e 0%,#9effc8 50%,#54ffb0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  .glass { background:rgba(30,43,59,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
-  .fld { width:100%; border-radius:0.75rem; background:#132030; border:1px solid rgba(255,255,255,0.10); padding:0.65rem 0.9rem; font-size:14px; color:#fff; }
-  .fld:focus { outline:none; border-color:rgba(55,234,158,0.55); box-shadow:0 0 0 2px rgba(55,234,158,0.15); }
-  .lbl { display:block; font-size:12.5px; font-weight:600; color:#bac7dd; margin-bottom:5px; }
-  ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-thumb { background:#1e2b3b; border-radius:3px; }
+  body { background:#08080a; color:#fafafa; font-family:'Inter',sans-serif; overflow-x:hidden; }
+  .neural-grid { background-image: radial-gradient(circle at 2px 2px, rgba(125,197,150,0.06) 1px, transparent 0); background-size:40px 40px; }
+  .gradient-text { color: #7dc596; }
+  .glass { background:rgba(19,19,24,0.45); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+  .fld { width:100%; border-radius:0.75rem; background:#131318; border:1px solid rgba(255,255,255,0.10); padding:0.65rem 0.9rem; font-size:14px; color:#fff; }
+  .fld:focus { outline:none; border-color:rgba(125,197,150,0.55); box-shadow:0 0 0 2px rgba(125,197,150,0.15); }
+  .lbl { display:block; font-size:12.5px; font-weight:600; color:#8b8b94; margin-bottom:5px; }
+  ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-thumb { background:#16161c; border-radius:3px; }
   .hidden { display:none; }
 </style>
 </head>
@@ -109,7 +109,7 @@ https://www.instagram.com/acmehvac"></textarea></div>
         <div><label class="lbl">Description</label><textarea id="a-desc" rows="2" class="fld"></textarea></div>
       </div>
 
-      <button id="gen-btn" class="w-full inline-flex items-center justify-center rounded-xl bg-primary-container px-5 py-3 text-[15px] font-bold text-[#061423] transition-all hover:opacity-90">
+      <button id="gen-btn" class="w-full inline-flex items-center justify-center rounded-xl bg-primary-container px-5 py-3 text-[15px] font-bold text-[#08080a] transition-all hover:opacity-90">
         Generate JSON-LD
       </button>
     </div>
@@ -134,7 +134,7 @@ https://www.instagram.com/acmehvac"></textarea></div>
       Our free GEO audit checks your live structured data — plus robots.txt, llms.txt and AI discovery —
       and shows whether ChatGPT and Perplexity can actually read you.
     </p>
-    <a href="/geo-audit" class="inline-block rounded-xl bg-primary-container px-6 py-3 text-[14px] font-bold text-[#061423] transition-all hover:opacity-90 no-underline">Run your free GEO audit →</a>
+    <a href="/geo-audit" class="inline-block rounded-xl bg-primary-container px-6 py-3 text-[14px] font-bold text-[#08080a] transition-all hover:opacity-90 no-underline">Run your free GEO audit →</a>
   </div>
 </section>
 
